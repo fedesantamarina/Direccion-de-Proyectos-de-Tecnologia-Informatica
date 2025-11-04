@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase 2: Fundamentos de la Gestión de Proyectos - UAI</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true, theme: 'default' });
+    </script>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <h1>UAI - Especialización en Dirección de Proyectos TI</h1>
+            </div>
+            <nav class="main-nav">
+                <a href="index.html">Inicio</a>
+                <a href="index.html#about">Sobre la Carrera</a>
+                <a href="index.html#contact">Contacto</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <aside class="sidebar">
+            <h2>Contenido del Curso</h2>
+            <nav class="chapters-nav">
+                <ul>
+                    <li><a href="clase-01.html">Clase 1: Introducción a la Dirección de Proyectos TI</a></li>
+                    <li><a href="clase-02.html" class="active">Clase 2: Fundamentos de la Gestión de Proyectos</a></li>
+                    <li><a href="clase-03.html">Clase 3: Metodologías Tradicionales</a></li>
+                    <li><a href="clase-04.html">Clase 4: Metodologías Ágiles</a></li>
+                    <li><a href="clase-05.html">Clase 5: Planificación y Gestión del Alcance</a></li>
+                    <li><a href="clase-06.html">Clase 6: Gestión del Tiempo y Cronogramas</a></li>
+                    <li><a href="clase-07.html">Clase 7: Gestión de Costos y Presupuestos</a></li>
+                    <li><a href="clase-08.html">Clase 8: Gestión de Riesgos</a></li>
+                    <li><a href="clase-09.html">Clase 9: Ingeniería de Requerimientos</a></li>
+                    <li><a href="clase-10.html">Clase 10: Métricas de Software</a></li>
+                    <li><a href="clase-11.html">Clase 11: Calidad del Software y Estándares</a></li>
+                    <li><a href="clase-12.html">Clase 12: Gestión del Capital Humano</a></li>
+                    <li><a href="clase-13.html">Clase 13: Arquitectura y Diseño de Software</a></li>
+                    <li><a href="clase-14.html">Clase 14: Testing y Aseguramiento de Calidad</a></li>
+                    <li><a href="clase-15.html">Clase 15: DevOps y Entrega Continua</a></li>
+                    <li><a href="clase-16.html">Clase 16: Tendencias Emergentes</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <article>
+                <h1>Clase 2: Fundamentos de la Gestión de Proyectos</h1>
+
+                <section>
+                    <h2>2.1 Conceptos Básicos: Proyectos, Programas y Portfolios</h2>
+
+                    <p>
+                        La comprensión precisa de la terminología fundamental constituye el punto de partida para cualquier
+                        profesional en dirección de proyectos. Un proyecto se define como un esfuerzo temporal emprendido para
+                        crear un producto, servicio o resultado único. La temporalidad implica que todo proyecto tiene un inicio
+                        y un final definidos, distinguiéndose así de las operaciones continuas de una organización. La unicidad
+                        significa que, aunque puedan existir elementos repetitivos o estándar, cada proyecto produce un resultado
+                        diferenciado y específico.
+                    </p>
+
+                    <p>
+                        En el contexto de tecnología informática, los proyectos típicamente involucran el desarrollo de software,
+                        la implementación de sistemas, la migración de plataformas, o la transformación digital de procesos
+                        organizacionales. Cada uno de estos emprendimientos presenta características únicas derivadas del contexto
+                        específico, los requerimientos particulares y las restricciones propias del entorno donde se ejecutan. La
+                        naturaleza temporal no implica necesariamente corta duración; proyectos de TI pueden extenderse desde
+                        semanas hasta varios años, dependiendo de su complejidad y alcance.
+                    </p>
+
+                    <p>
+                        Un programa, por su parte, representa un grupo de proyectos relacionados gestionados de manera coordinada
+                        para obtener beneficios que no estarían disponibles si se gestionaran individualmente. Los programas
+                        proporcionan una estructura de gobernanza que permite la alineación estratégica de múltiples proyectos,
+                        la optimización de recursos compartidos y la gestión de interdependencias complejas. En el ámbito de TI,
+                        un programa podría incluir proyectos de desarrollo de aplicaciones, actualización de infraestructura y
+                        capacitación de usuarios, todos orientados hacia un objetivo estratégico común como la transformación
+                        digital de una organización.
+                    </p>
+
+                    <p>
+                        El portfolio de proyectos constituye el nivel más alto de agregación, abarcando proyectos, programas y
+                        otras iniciativas gestionadas como grupo para alcanzar objetivos estratégicos organizacionales. La gestión
+                        de portfolios se centra en hacer las cosas correctas, es decir, en seleccionar y priorizar las inversiones
+                        en proyectos y programas que mejor alineen con la estrategia corporativa, maximizando el valor global y
+                        optimizando la utilización de recursos limitados. Las decisiones de portfolio consideran factores como
+                        retorno de inversión, riesgos estratégicos, capacidad organizacional y alineación con objetivos de negocio.
+                    </p>
+
+                    <p>
+                        La distinción entre proyectos, programas y portfolios resulta fundamental para establecer estructuras
+                        apropiadas de gobernanza, definir roles y responsabilidades adecuados, y aplicar metodologías y herramientas
+                        pertinentes. Mientras que los proyectos se enfocan en entregar productos o servicios específicos dentro de
+                        parámetros definidos, los programas buscan realizar beneficios estratégicos a través de la coordinación de
+                        múltiples proyectos, y los portfolios se orientan hacia la optimización del valor organizacional total a
+                        través de decisiones de inversión estratégicas.
+                    </p>
+
+                    <div class="mermaid">
+                    graph TD
+                        A[Portfolio de TI] --> B[Programa: Transformación Digital]
+                        A --> C[Programa: Modernización Infraestructura]
+                        A --> D[Proyectos Individuales]
+                        B --> B1[Proyecto: Sistema ERP]
+                        B --> B2[Proyecto: Portal Web]
+                        B --> B3[Proyecto: App Móvil]
+                        C --> C1[Proyecto: Migración Cloud]
+                        C --> C2[Proyecto: Actualización Servidores]
+                        C --> C3[Proyecto: Seguridad Perimetral]
+                        D --> D1[Proyecto: Help Desk]
+                        D --> D2[Proyecto: Dashboard BI]
+
+                        style A fill:#e1f5ff
+                        style B fill:#fff4e1
+                        style C fill:#fff4e1
+                    </div>
+
+                    <div class="info-box">
+                        <h4>Características Distintivas</h4>
+                        <ul>
+                            <li><strong>Proyecto:</strong> Temporal, único, con objetivos específicos y entregables definidos</li>
+                            <li><strong>Programa:</strong> Coordinación de proyectos relacionados para beneficios estratégicos</li>
+                            <li><strong>Portfolio:</strong> Alineación estratégica y optimización del valor organizacional total</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>2.2 Ciclo de Vida de los Proyectos</h2>
+
+                    <p>
+                        El ciclo de vida de un proyecto representa la serie de fases que atraviesa desde su inicio hasta su
+                        conclusión. La comprensión del ciclo de vida proporciona un marco estructurado para organizar y gestionar
+                        el trabajo del proyecto, facilitando la comunicación entre stakeholders, la planificación de recursos y
+                        el establecimiento de puntos de control para la evaluación del progreso. Si bien los ciclos de vida
+                        específicos varían según la industria, la metodología aplicada y la naturaleza del proyecto, existen
+                        patrones comunes que se repiten en la mayoría de los proyectos de tecnología informática.
+                    </p>
+
+                    <p>
+                        El ciclo de vida genérico típicamente comprende las siguientes fases: inicio, planificación, ejecución,
+                        monitoreo y control, y cierre. Durante la fase de inicio, se define el proyecto a alto nivel, se identifica
+                        su justificación de negocio, se designa al director del proyecto y se obtiene la autorización formal para
+                        proceder. Esta fase culmina con la elaboración del acta de constitución del proyecto (project charter),
+                        documento que formalmente autoriza la existencia del proyecto y otorga al director la autoridad para
+                        aplicar recursos organizacionales a las actividades del proyecto.
+                    </p>
+
+                    <p>
+                        La fase de planificación desarrolla detalladamente el plan para la dirección del proyecto, abordando todas
+                        las áreas de conocimiento relevantes: alcance, cronograma, costos, calidad, recursos, comunicaciones,
+                        riesgos, adquisiciones y stakeholders. En proyectos de TI, esta fase incluye actividades críticas como el
+                        análisis de requerimientos, el diseño arquitectónico preliminar, la estimación de esfuerzos, la identificación
+                        de riesgos técnicos y la definición de criterios de aceptación. La profundidad y formalidad de la planificación
+                        varía según la metodología adoptada, siendo más exhaustiva en enfoques tradicionales y más ligera en contextos
+                        ágiles.
+                    </p>
+
+                    <p>
+                        Durante la ejecución, el equipo del proyecto realiza el trabajo definido en el plan para satisfacer los
+                        requerimientos establecidos. En proyectos de software, esta fase abarca actividades de desarrollo,
+                        codificación, pruebas, integración y despliegue. El director de proyectos coordina personas y recursos,
+                        gestiona las expectativas de stakeholders, implementa los planes aprobados y gestiona los cambios necesarios.
+                        La fase de monitoreo y control ocurre simultáneamente con la ejecución, rastreando, revisando y regulando
+                        el progreso y desempeño del proyecto, identificando áreas donde se requieren cambios al plan e iniciando
+                        los cambios correspondientes.
+                    </p>
+
+                    <p>
+                        La fase de cierre formaliza la finalización de todas las actividades, completando la entrega de productos
+                        o servicios al cliente, documentando lecciones aprendidas, liberando recursos y archivando información del
+                        proyecto. En proyectos de TI, el cierre incluye la transición a operaciones, la transferencia de conocimiento
+                        a equipos de soporte, la actualización de documentación técnica y la obtención de aceptación formal del cliente.
+                        Un cierre apropiado asegura que el conocimiento generado durante el proyecto se capture y esté disponible para
+                        iniciativas futuras, contribuyendo a la mejora continua de las capacidades organizacionales.
+                    </p>
+
+                    <div class="mermaid">
+                    graph LR
+                        A[Inicio] --> B[Planificación]
+                        B --> C[Ejecución]
+                        C --> D[Monitoreo y Control]
+                        D --> C
+                        D --> E[Cierre]
+
+                        A1[Project Charter<br/>Identificación Stakeholders] --> A
+                        B1[Plan de Proyecto<br/>WBS<br/>Cronograma<br/>Presupuesto] --> B
+                        C1[Desarrollo<br/>Pruebas<br/>Integración] --> C
+                        D1[Informes de Progreso<br/>Control de Cambios<br/>Gestión de Riesgos] --> D
+                        E1[Entrega Final<br/>Lecciones Aprendidas<br/>Cierre Administrativo] --> E
+
+                        style A fill:#e1f5ff
+                        style B fill:#fff4e1
+                        style C fill:#e1ffe1
+                        style D fill:#ffe1e1
+                        style E fill:#f0e1ff
+                    </div>
+                </section>
+
+                <section>
+                    <h2>2.3 Áreas de Conocimiento según PMI</h2>
+
+                    <p>
+                        El Project Management Institute (PMI), organización profesional líder en gestión de proyectos, ha
+                        sistematizado el conocimiento de la disciplina en áreas específicas que representan aspectos clave que
+                        deben ser gestionados para el éxito del proyecto. El PMBoK Guide (Project Management Body of Knowledge)
+                        identifica diez áreas de conocimiento que proporcionan un marco comprehensivo para la gestión de proyectos.
+                        La comprensión profunda de estas áreas constituye un requisito fundamental para cualquier director de
+                        proyectos profesional.
+                    </p>
+
+                    <p>
+                        La Gestión de la Integración del Proyecto asegura que los diversos elementos del proyecto sean coordinados
+                        apropiadamente. Incluye procesos como el desarrollo del acta de constitución, el plan para la dirección
+                        del proyecto, la dirección y gestión del trabajo del proyecto, la gestión del conocimiento del proyecto,
+                        el monitoreo y control del trabajo, el control integrado de cambios, y el cierre del proyecto o fase. Esta
+                        área actúa como elemento unificador, asegurando que las decisiones tomadas en una área no afecten
+                        adversamente otras áreas del proyecto.
+                    </p>
+
+                    <p>
+                        La Gestión del Alcance del Proyecto garantiza que el proyecto incluya todo el trabajo requerido, y solo el
+                        trabajo requerido, para completar exitosamente el proyecto. Comprende la planificación del alcance, la
+                        recolección de requerimientos, la definición del alcance, la creación de la Estructura de Desglose del
+                        Trabajo (WBS), la validación del alcance y el control del alcance. En proyectos de TI, esta área resulta
+                        particularmente crítica debido a la tendencia del scope creep (expansión no controlada del alcance) que
+                        representa una de las principales causas de fracaso.
+                    </p>
+
+                    <p>
+                        La Gestión del Cronograma del Proyecto incluye procesos para asegurar la finalización oportuna del proyecto.
+                        Abarca la planificación de la gestión del cronograma, la definición de actividades, el secuenciamiento de
+                        actividades, la estimación de duraciones, el desarrollo del cronograma y el control del cronograma.
+                        Herramientas como diagramas de Gantt, PERT (Program Evaluation and Review Technique) y métodos de ruta
+                        crítica (CPM - Critical Path Method) proporcionan técnicas analíticas para la gestión efectiva de
+                        cronogramas complejos.
+                    </p>
+
+                    <p>
+                        La Gestión de Costos del Proyecto asegura que el proyecto se complete dentro del presupuesto aprobado.
+                        Incluye la planificación de la gestión de costos, la estimación de costos, la determinación del presupuesto
+                        y el control de costos. Técnicas como la gestión del valor ganado (EVM - Earned Value Management) permiten
+                        integrar mediciones de alcance, cronograma y costos para evaluar el desempeño y progreso del proyecto. En
+                        proyectos de TI, donde las estimaciones frecuentemente presentan alta incertidumbre, la gestión de costos
+                        requiere particular atención y uso de técnicas probabilísticas de estimación.
+                    </p>
+
+                    <p>
+                        Las áreas restantes incluyen Gestión de la Calidad (asegurando que el proyecto satisfaga las necesidades
+                        para las que fue emprendido), Gestión de Recursos (identificando, adquiriendo y gestionando recursos
+                        necesarios), Gestión de las Comunicaciones (asegurando generación, recolección, distribución y disposición
+                        apropiada de información del proyecto), Gestión de Riesgos (planificando, identificando, analizando y
+                        respondiendo a riesgos del proyecto), Gestión de Adquisiciones (comprando o adquiriendo productos, servicios
+                        o resultados necesarios fuera del equipo del proyecto), y Gestión de Stakeholders (identificando y gestionando
+                        personas, grupos u organizaciones que pueden afectar o ser afectados por el proyecto).
+                    </p>
+
+                    <div class="mermaid">
+                    mindmap
+                        root((Áreas de Conocimiento<br/>PMI))
+                            Integración
+                                Charter
+                                Plan de Proyecto
+                                Control de Cambios
+                                Cierre
+                            Alcance
+                                Requerimientos
+                                WBS
+                                Validación
+                                Control
+                            Cronograma
+                                Actividades
+                                Secuenciamiento
+                                Estimación
+                                Ruta Crítica
+                            Costos
+                                Estimación
+                                Presupuesto
+                                Control
+                                Valor Ganado
+                            Calidad
+                                Planificación
+                                Aseguramiento
+                                Control
+                            Recursos
+                                Planificación
+                                Adquisición
+                                Desarrollo de Equipo
+                            Comunicaciones
+                                Planificación
+                                Gestión
+                                Monitoreo
+                            Riesgos
+                                Identificación
+                                Análisis
+                                Respuesta
+                                Monitoreo
+                            Adquisiciones
+                                Planificación
+                                Conducción
+                                Control
+                            Stakeholders
+                                Identificación
+                                Planificación
+                                Gestión
+                                Monitoreo
+                    </div>
+                </section>
+
+                <section>
+                    <h2>2.4 Grupos de Procesos de Gestión de Proyectos</h2>
+
+                    <p>
+                        Los grupos de procesos de gestión de proyectos constituyen agrupaciones lógicas de procesos relacionados
+                        que, en conjunto, guían el proyecto desde su inicio hasta su conclusión. El PMBoK Guide identifica cinco
+                        grupos de procesos: Inicio, Planificación, Ejecución, Monitoreo y Control, y Cierre. Es fundamental
+                        comprender que estos grupos no son fases secuenciales sino conjuntos de procesos que se superponen e
+                        interactúan a lo largo del ciclo de vida del proyecto. En cualquier momento dado, procesos de diferentes
+                        grupos pueden estar ejecutándose simultáneamente.
+                    </p>
+
+                    <p>
+                        El Grupo de Procesos de Inicio define y autoriza el proyecto o una fase del proyecto. Los procesos de
+                        inicio establecen la visión inicial del proyecto, identifican stakeholders clave y obtienen el compromiso
+                        y autorización formal para proceder. Los dos procesos principales de este grupo son el desarrollo del acta
+                        de constitución del proyecto y la identificación de stakeholders. El acta de constitución documenta las
+                        necesidades de negocio, la justificación del proyecto, los objetivos de alto nivel, los requerimientos
+                        iniciales conocidos, un resumen del cronograma de hitos, un presumen del presupuesto, y designa al director
+                        del proyecto otorgándole autoridad para aplicar recursos organizacionales.
+                    </p>
+
+                    <p>
+                        El Grupo de Procesos de Planificación desarrolla el plan para la dirección del proyecto y los documentos
+                        del proyecto que se utilizarán para llevarlo a cabo. Este grupo incluye 24 procesos que abarcan todas las
+                        áreas de conocimiento, desarrollando planes subsidiarios que integran para formar el plan comprehensivo de
+                        dirección del proyecto. La planificación es iterativa y continua; a medida que se obtiene más información
+                        y se conocen mejor los requerimientos, los planes se refinan y elaboran progresivamente. En metodologías
+                        ágiles, la planificación ocurre de manera más continua y adaptativa, pero los elementos fundamentales
+                        persisten.
+                    </p>
+
+                    <p>
+                        El Grupo de Procesos de Ejecución realiza el trabajo definido en el plan para la dirección del proyecto
+                        para satisfacer los requisitos del proyecto. Incluye procesos como dirigir y gestionar el trabajo del
+                        proyecto, gestionar el conocimiento del proyecto, gestionar la calidad, adquirir recursos, desarrollar el
+                        equipo, dirigir el equipo, gestionar las comunicaciones, implementar respuestas a los riesgos, conducir
+                        las adquisiciones, y gestionar el involucramiento de stakeholders. Durante la ejecución, pueden requerirse
+                        actualizaciones al plan de dirección del proyecto y a los documentos del proyecto a medida que surgen
+                        cambios o se obtiene nueva información.
+                    </p>
+
+                    <p>
+                        El Grupo de Procesos de Monitoreo y Control rastrea, revisa y regula el progreso y desempeño del proyecto,
+                        identifica áreas donde se requieren cambios al plan, e inicia los cambios correspondientes. Incluye procesos
+                        como monitorear y controlar el trabajo del proyecto, realizar el control integrado de cambios, validar el
+                        alcance, controlar el alcance, controlar el cronograma, controlar los costos, controlar la calidad, controlar
+                        los recursos, monitorear las comunicaciones, monitorear los riesgos, controlar las adquisiciones, y monitorear
+                        el involucramiento de stakeholders. Este grupo proporciona retroalimentación continua entre la ejecución y la
+                        planificación, permitiendo acciones correctivas y preventivas.
+                    </p>
+
+                    <p>
+                        El Grupo de Procesos de Cierre finaliza formalmente todas las actividades del proyecto, del grupo de procesos
+                        y del contrato, según corresponda, para completar el proyecto o fase. Asegura que todos los entregables sean
+                        aceptados, que se transfiera el producto o servicio final, que se complete la documentación, que se liberen
+                        los recursos, y que se capture el conocimiento adquirido. El cierre apropiado del proyecto es frecuentemente
+                        descuidado en la práctica, pero resulta esencial para la madurez organizacional y la mejora continua.
+                    </p>
+
+                    <div class="mermaid">
+                    graph TD
+                        A[Inicio] --> B[Planificación]
+                        B --> C[Ejecución]
+                        C --> D{Monitoreo y Control}
+                        D -->|Cambios requeridos| B
+                        D -->|En curso| C
+                        D -->|Completo| E[Cierre]
+
+                        A1[Desarrollar Charter<br/>Identificar Stakeholders] -.-> A
+                        B1[24 Procesos de<br/>Planificación] -.-> B
+                        C1[10 Procesos de<br/>Ejecución] -.-> C
+                        D1[12 Procesos de<br/>Monitoreo] -.-> D
+                        E1[Cerrar Proyecto<br/>Cerrar Adquisiciones] -.-> E
+
+                        style A fill:#e1f5ff
+                        style B fill:#fff4e1
+                        style C fill:#e1ffe1
+                        style D fill:#ffe1e1
+                        style E fill:#f0e1ff
+                    </div>
+                </section>
+
+                <section>
+                    <h2>2.5 Gestión de Stakeholders</h2>
+
+                    <p>
+                        La gestión de stakeholders constituye uno de los factores críticos de éxito en proyectos de tecnología
+                        informática. Los stakeholders son individuos, grupos u organizaciones que pueden afectar, ser afectados o
+                        percibirse como afectados por una decisión, actividad o resultado del proyecto. La identificación temprana,
+                        el análisis sistemático y la gestión proactiva de stakeholders pueden significar la diferencia entre el
+                        éxito y el fracaso del proyecto, independientemente de la excelencia técnica de la solución implementada.
+                    </p>
+
+                    <p>
+                        El proceso de identificación de stakeholders debe comenzar tan pronto como sea posible en el proyecto,
+                        idealmente durante la fase de inicio, y continuar a lo largo del ciclo de vida a medida que nuevos
+                        stakeholders emergen o cambian las circunstancias. En proyectos de TI, los stakeholders típicamente incluyen
+                        sponsors ejecutivos, usuarios finales, equipos de desarrollo, equipos de operaciones, departamentos de
+                        seguridad, proveedores externos, auditores, y potencialmente clientes externos o el público en general,
+                        dependiendo de la naturaleza del sistema.
+                    </p>
+
+                    <p>
+                        Una vez identificados, los stakeholders deben ser analizados para comprender su nivel de interés, influencia,
+                        expectativas, y potencial impacto en el proyecto. Herramientas como la matriz de poder-interés permiten
+                        categorizar stakeholders en cuadrantes (alto poder/alto interés, alto poder/bajo interés, bajo poder/alto
+                        interés, bajo poder/bajo interés) y determinar estrategias apropiadas de gestión para cada categoría. Los
+                        stakeholders de alto poder y alto interés requieren gestión cercana y comunicación frecuente, mientras que
+                        aquellos de bajo poder y bajo interés requieren simplemente monitoreo general.
+                    </p>
+
+                    <p>
+                        El análisis de stakeholders también debe considerar sus expectativas, preocupaciones, resistencias
+                        potenciales y posibles contribuciones al proyecto. En proyectos de transformación digital, por ejemplo,
+                        es común encontrar resistencia de usuarios acostumbrados a sistemas legacy o preocupaciones de equipos
+                        de operaciones sobre la complejidad de nuevas tecnologías. La identificación temprana de estas dinámicas
+                        permite desarrollar estrategias de mitigación apropiadas, como programas de capacitación, comunicación
+                        de beneficios, o involucramiento temprano en decisiones de diseño.
+                    </p>
+
+                    <p>
+                        La gestión efectiva de stakeholders requiere un plan de comunicaciones bien estructurado que defina qué
+                        información necesita cada stakeholder, con qué frecuencia, en qué formato, y a través de qué canales. La
+                        comunicación debe ser bidireccional, no solo diseminando información sino también recolectando feedback,
+                        identificando preocupaciones emergentes y ajustando el enfoque del proyecto según sea necesario. Las
+                        reuniones regulares con stakeholders clave, los informes de progreso apropiadamente adaptados a cada
+                        audiencia, y los canales abiertos de comunicación contribuyen significativamente al involucramiento y
+                        compromiso de stakeholders a lo largo del proyecto.
+                    </p>
+
+                    <p>
+                        El monitoreo continuo del involucramiento de stakeholders permite identificar cambios en actitudes, nuevas
+                        preocupaciones o conflictos emergentes, facilitando respuestas proactivas antes de que pequeños problemas
+                        escalen a crisis mayores. Métricas como el nivel de participación en reuniones, el tono de las comunicaciones,
+                        el tiempo de respuesta a solicitudes de información, y la resistencia a decisiones del proyecto proporcionan
+                        indicadores valiosos del estado de las relaciones con stakeholders.
+                    </p>
+
+                    <div class="info-box">
+                        <h4>Estrategias de Gestión según Matriz Poder-Interés</h4>
+                        <ul>
+                            <li><strong>Alto Poder / Alto Interés:</strong> Gestionar de cerca - Comunicación frecuente y detallada</li>
+                            <li><strong>Alto Poder / Bajo Interés:</strong> Mantener satisfecho - Información resumida periódica</li>
+                            <li><strong>Bajo Poder / Alto Interés:</strong> Mantener informado - Comunicación regular sobre progreso</li>
+                            <li><strong>Bajo Poder / Bajo Interés:</strong> Monitorear - Información general ocasional</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>2.6 Documentación Fundamental del Proyecto</h2>
+
+                    <p>
+                        La documentación apropiada constituye un elemento esencial para la gestión efectiva de proyectos de
+                        tecnología informática. Más allá de satisfacer requisitos de gobernanza organizacional o cumplimiento
+                        regulatorio, la documentación bien estructurada facilita la comunicación, reduce ambigüedades, proporciona
+                        trazabilidad de decisiones, y crea memoria organizacional que beneficia proyectos futuros. Sin embargo, es
+                        fundamental encontrar el equilibrio apropiado; documentación excesiva puede consumir recursos sin agregar
+                        valor proporcional, mientras que documentación insuficiente genera confusión y riesgos.
+                    </p>
+
+                    <p>
+                        El Acta de Constitución del Proyecto (Project Charter) representa el documento fundacional que autoriza
+                        formalmente la existencia del proyecto. Típicamente emitido por un sponsor o iniciador externo al proyecto,
+                        el charter proporciona al director del proyecto la autoridad para aplicar recursos organizacionales a las
+                        actividades del proyecto. Debe incluir el propósito o justificación del proyecto, objetivos medibles y
+                        criterios de éxito, requerimientos de alto nivel, descripción del proyecto a nivel macro, riesgos iniciales
+                        conocidos, resumen del cronograma de hitos, resumen del presupuesto, lista de stakeholders clave, requisitos
+                        de aprobación del proyecto, y la designación del director del proyecto con su nivel de autoridad.
+                    </p>
+
+                    <p>
+                        El Plan para la Dirección del Proyecto constituye el documento central que integra y consolida todos los
+                        planes subsidiarios y líneas base necesarias para gestionar el proyecto. No es un documento único monolítico
+                        sino un conjunto coherente de documentos que pueden incluir el plan de gestión del alcance, el plan de gestión
+                        del cronograma, el plan de gestión de costos, el plan de gestión de calidad, el plan de gestión de recursos,
+                        el plan de gestión de comunicaciones, el plan de gestión de riesgos, el plan de gestión de adquisiciones, y
+                        el plan de involucramiento de stakeholders, además de las líneas base de alcance, cronograma y costos.
+                    </p>
+
+                    <p>
+                        El Registro de Supuestos y Restricciones documenta elementos que se consideran verdaderos, reales o ciertos
+                        sin prueba o demostración, junto con limitaciones que restringen las opciones del equipo del proyecto. Los
+                        supuestos representan riesgos potenciales; si un supuesto resulta incorrecto, puede impactar negativamente
+                        el proyecto. Por ejemplo, asumir que cierta API de terceros estará disponible sin verificarlo constituye un
+                        supuesto que, de resultar incorrecto, podría requerir rediseño significativo. Las restricciones pueden
+                        relacionarse con presupuesto, cronograma, recursos, tecnologías permitidas, regulaciones, o estándares
+                        organizacionales.
+                    </p>
+
+                    <p>
+                        El Registro de Riesgos captura información sobre amenazas y oportunidades identificadas que pueden afectar
+                        el proyecto. Para cada riesgo, debe documentarse su descripción, categoría, causas raíz, probabilidad de
+                        ocurrencia, impacto potencial, estrategia de respuesta, acciones específicas de respuesta, responsable de
+                        la respuesta, y estado actual. El registro de riesgos es un documento vivo que se actualiza continuamente
+                        a medida que se identifican nuevos riesgos, se implementan respuestas, y cambian las condiciones del proyecto.
+                    </p>
+
+                    <p>
+                        El Registro de Cambios documenta todos los cambios solicitados al proyecto, su evaluación, decisión de
+                        aprobación o rechazo, y su implementación. El control de cambios formal resulta esencial para prevenir
+                        el scope creep y mantener la integridad de las líneas base del proyecto. Cada solicitud de cambio debe
+                        incluir descripción del cambio propuesto, justificación, impacto en alcance, cronograma y presupuesto,
+                        análisis de riesgos, recomendación, decisión del comité de control de cambios, y acciones de implementación
+                        si fue aprobado.
+                    </p>
+
+                    <p>
+                        El Registro de Lecciones Aprendidas captura conocimiento adquirido durante el proyecto que puede beneficiar
+                        proyectos futuros o fases subsiguientes del proyecto actual. Debe documentarse continuamente, no solo al
+                        final del proyecto, capturando tanto éxitos (para repetirse) como problemas (para evitarse). Las lecciones
+                        aprendidas efectivas describen la situación, qué se hizo, qué funcionó o no funcionó, por qué, y qué se
+                        recomienda hacer diferente en el futuro. Esta documentación contribuye a la madurez organizacional en
+                        gestión de proyectos.
+                    </p>
+
+                    <div class="success-box">
+                        <h4>Documentos Fundamentales del Proyecto</h4>
+                        <ul class="checklist">
+                            <li>Acta de Constitución del Proyecto (Project Charter)</li>
+                            <li>Plan para la Dirección del Proyecto</li>
+                            <li>Registro de Supuestos y Restricciones</li>
+                            <li>Registro de Riesgos</li>
+                            <li>Registro de Cambios</li>
+                            <li>Registro de Lecciones Aprendidas</li>
+                            <li>Cronograma del Proyecto</li>
+                            <li>Presupuesto del Proyecto</li>
+                            <li>Matriz de Trazabilidad de Requisitos</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <div class="class-navigation">
+                    <a href="clase-01.html" class="nav-button prev">Clase Anterior</a>
+                    <a href="clase-03.html" class="nav-button next">Siguiente Clase</a>
+                </div>
+            </article>
+        </main>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Universidad Abierta Interamericana - Especialización en Dirección de Proyectos de Tecnología Informática</p>
+        <p>Dictamen CONEAU Sesión N° 619 - RCS 6350/23</p>
+    </footer>
+</body>
+</html>

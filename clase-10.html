@@ -1,0 +1,698 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase 10: Métricas de Software y Medición de Proyectos - UAI</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true, theme: 'default' });
+    </script>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <h1>UAI - Especialización en Dirección de Proyectos TI</h1>
+            </div>
+            <nav class="main-nav">
+                <a href="index.html">Inicio</a>
+                <a href="index.html#about">Sobre la Carrera</a>
+                <a href="index.html#contact">Contacto</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <aside class="sidebar">
+            <h2>Contenido del Curso</h2>
+            <nav class="chapters-nav">
+                <ul>
+                    <li><a href="clase-01.html">Clase 1: Introducción a la Dirección de Proyectos TI</a></li>
+                    <li><a href="clase-02.html">Clase 2: Fundamentos de la Gestión de Proyectos</a></li>
+                    <li><a href="clase-03.html">Clase 3: Metodologías Tradicionales</a></li>
+                    <li><a href="clase-04.html">Clase 4: Metodologías Ágiles</a></li>
+                    <li><a href="clase-05.html">Clase 5: Planificación y Gestión del Alcance</a></li>
+                    <li><a href="clase-06.html">Clase 6: Gestión del Tiempo y Cronogramas</a></li>
+                    <li><a href="clase-07.html">Clase 7: Gestión de Costos y Presupuestos</a></li>
+                    <li><a href="clase-08.html">Clase 8: Gestión de Riesgos</a></li>
+                    <li><a href="clase-09.html">Clase 9: Ingeniería de Requerimientos</a></li>
+                    <li><a href="clase-10.html" class="active">Clase 10: Métricas de Software</a></li>
+                    <li><a href="clase-11.html">Clase 11: Calidad del Software y Estándares</a></li>
+                    <li><a href="clase-12.html">Clase 12: Gestión del Capital Humano</a></li>
+                    <li><a href="clase-13.html">Clase 13: Arquitectura y Diseño de Software</a></li>
+                    <li><a href="clase-14.html">Clase 14: Testing y Aseguramiento de Calidad</a></li>
+                    <li><a href="clase-15.html">Clase 15: DevOps y Entrega Continua</a></li>
+                    <li><a href="clase-16.html">Clase 16: Tendencias Emergentes</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <article>
+                <h1>Clase 10: Métricas de Software y Medición de Proyectos</h1>
+
+                <section>
+                    <h2>10.1 Métricas de Producto de Software</h2>
+
+                    <p>
+                        Las métricas de producto de software cuantifican características del software en sí mismo, independientemente
+                        del proceso utilizado para desarrollarlo o el proyecto que lo gestiona. Estas métricas proporcionan mediciones
+                        objetivas de atributos como tamaño, complejidad, calidad, funcionalidad y mantenibilidad del código. En un
+                        campo donde la naturaleza intangible del software dificulta la evaluación objetiva, las métricas de producto
+                        ofrecen datos concretos que fundamentan decisiones técnicas, evaluaciones de calidad y estimaciones de
+                        esfuerzo. Sin embargo, es crucial reconocer que las métricas son indicadores, no objetivos en sí mismos; la
+                        optimización ciega de métricas sin considerar contexto puede conducir a resultados contraproducentes.
+                    </p>
+
+                    <p>
+                        Las métricas de tamaño cuantifican la magnitud del producto de software utilizando diversas unidades de
+                        medida. Las líneas de código (Lines of Code, LOC o SLOC por Source Lines of Code) representan la métrica
+                        de tamaño más simple y directa, contando líneas de código fuente. Sin embargo, LOC presenta limitaciones
+                        significativas: varía dramáticamente entre lenguajes de programación (una funcionalidad en Python puede
+                        requerir significativamente menos líneas que en Java), no distingue entre código productivo y código de
+                        comentarios, incentiva verbosidad sobre concisión, y no correlaciona necesariamente con funcionalidad
+                        entregada. A pesar de estas limitaciones, LOC permanece ampliamente utilizado debido a su simplicidad de
+                        cálculo mediante herramientas automatizadas.
+                    </p>
+
+                    <p>
+                        La complejidad ciclomática, desarrollada por Thomas McCabe en 1976, mide la complejidad estructural del
+                        código basándose en el número de caminos de ejecución linealmente independientes a través del código. Se
+                        calcula mediante la fórmula M = E - N + 2P, donde E es el número de aristas en el grafo de flujo de control,
+                        N es el número de nodos, y P es el número de componentes conectados. Pragmáticamente, la complejidad ciclomática
+                        puede aproximarse contando las estructuras de decisión (if, while, for, case) y añadiendo 1. Una complejidad
+                        ciclomática alta (típicamente > 10) indica código difícil de comprender, probar y mantener, señalando
+                        candidatos prioritarios para refactorización.
+                    </p>
+
+                    <p>
+                        Las métricas de acoplamiento (coupling) miden el grado de interdependencia entre módulos de software. El
+                        acoplamiento alto indica que cambios en un módulo probablemente requerirán cambios en otros módulos,
+                        incrementando costo de mantenimiento y riesgo de efectos secundarios no anticipados. El acoplamiento aferente
+                        (Ca) cuenta cuántos módulos externos dependen de un módulo específico; el acoplamiento eferente (Ce) cuenta
+                        de cuántos módulos externos depende un módulo. La inestabilidad I = Ce / (Ca + Ce) proporciona una medida
+                        normalizada: I = 0 indica un módulo completamente estable (muchas dependencias entrantes, ninguna saliente),
+                        I = 1 indica un módulo completamente inestable (dependencias solo salientes).
+                    </p>
+
+                    <p>
+                        Las métricas de cohesión miden cuán relacionadas están las responsabilidades dentro de un módulo. La cohesión
+                        alta indica que los elementos del módulo trabajan juntos para lograr un propósito bien definido, mientras
+                        que cohesión baja sugiere que el módulo está realizando múltiples tareas no relacionadas. Aunque la cohesión
+                        es conceptualmente más difícil de medir objetivamente que el acoplamiento, técnicas como LCOM (Lack of
+                        Cohesion in Methods) cuantifican cohesión basándose en cuántos métodos de una clase acceden a las mismas
+                        variables de instancia. El principio de diseño fundamental es maximizar cohesión y minimizar acoplamiento,
+                        creando módulos focalizados y débilmente acoplados.
+                    </p>
+
+                    <div class="info-box">
+                        <h4>Métricas Fundamentales de Producto de Software</h4>
+                        <ul>
+                            <li><strong>Tamaño:</strong> LOC, SLOC, número de clases, número de métodos, archivos de código</li>
+                            <li><strong>Complejidad:</strong> Complejidad ciclomática, profundidad de anidamiento, fan-in/fan-out</li>
+                            <li><strong>Acoplamiento:</strong> Acoplamiento aferente/eferente, inestabilidad, dependencias</li>
+                            <li><strong>Cohesión:</strong> LCOM, cohesión relacional, cohesión funcional</li>
+                            <li><strong>Documentación:</strong> Porcentaje de código comentado, cobertura de documentación API</li>
+                            <li><strong>Duplicación:</strong> Porcentaje de código duplicado, clones de código</li>
+                        </ul>
+                    </div>
+
+                    <p>
+                        Las métricas de calidad de código cuantifican características relacionadas con mantenibilidad y ausencia de
+                        defectos. La densidad de defectos mide defectos por mil líneas de código (defectos/KLOC), proporcionando un
+                        indicador de calidad normalizado por tamaño. La deuda técnica cuantifica el costo estimado de refactorizar
+                        código subóptimo para llevarlo a estándares deseables, frecuentemente expresado en días-persona de esfuerzo
+                        de remediación. El índice de mantenibilidad combina múltiples métricas (complejidad ciclomática, LOC, volumen
+                        de Halstead, porcentaje de comentarios) en un valor único entre 0 y 100, donde valores más altos indican
+                        mejor mantenibilidad.
+                    </p>
+
+                    <p>
+                        Herramientas de análisis estático de código como SonarQube, PMD, Checkstyle (para Java), ESLint (para
+                        JavaScript), o Pylint (para Python) automatizan la recopilación de métricas de producto, integrándose en
+                        pipelines de integración continua para proporcionar retroalimentación inmediata sobre calidad de código.
+                        Estas herramientas no solo calculan métricas sino también identifican patrones de código problemáticos
+                        (code smells), violaciones de estándares de codificación, y vulnerabilidades de seguridad potenciales. La
+                        integración de análisis de métricas en el flujo de trabajo de desarrollo permite gestión proactiva de
+                        calidad en lugar de descubrimiento reactivo de problemas en fases tardías.
+                    </p>
+                </section>
+
+                <section>
+                    <h2>10.2 Métricas de Proceso de Desarrollo</h2>
+
+                    <p>
+                        Las métricas de proceso de desarrollo cuantifican características del proceso mediante el cual el software
+                        se construye, proporcionando visibilidad sobre la efectividad y eficiencia de las prácticas de ingeniería
+                        de software. Mientras que las métricas de producto miden el artefacto resultante, las métricas de proceso
+                        miden cómo se produjo ese artefacto. Estas métricas son esenciales para identificar cuellos de botella en
+                        el flujo de trabajo, evaluar el impacto de mejoras de proceso, comparar productividad entre equipos o
+                        proyectos, y fundamentar decisiones sobre adopción o modificación de prácticas de desarrollo.
+                    </p>
+
+                    <p>
+                        Las métricas de productividad intentan cuantificar la cantidad de software producido por unidad de esfuerzo.
+                        La métrica más simple es líneas de código por persona-mes (LOC/PM), pero esta métrica es profundamente
+                        problemática: no distingue entre código de alta calidad y código deficiente, varía dramáticamente entre
+                        lenguajes y dominios, e incentiva perversamente escribir más código en lugar de código mejor. Los puntos de
+                        función por persona-mes (FP/PM) proporcionan una medida más orientada a funcionalidad que a líneas de código,
+                        aunque la complejidad de calcular puntos de función limita su adopción. En contextos ágiles, story points
+                        por sprint (velocidad) mide productividad en términos de funcionalidad entregada relativa a estimaciones
+                        del equipo.
+                    </p>
+
+                    <p>
+                        Las métricas de ciclo de vida rastrean cuánto tiempo toma el trabajo moverse a través de diferentes fases
+                        del proceso de desarrollo. El lead time mide el tiempo total desde que un ítem de trabajo se solicita hasta
+                        que se entrega a producción, proporcionando una métrica de tiempo de respuesta desde la perspectiva del
+                        cliente. El cycle time mide el tiempo desde que el trabajo comienza activamente hasta que se completa,
+                        excluyendo tiempo de espera en backlogs. El trabajo en progreso (Work in Progress, WIP) cuenta cuántos ítems
+                        están siendo trabajados simultáneamente; la Ley de Little establece que Lead Time promedio = WIP / Throughput,
+                        sugiriendo que limitar WIP reduce lead times.
+                    </p>
+
+                    <p>
+                        Las métricas de calidad de proceso cuantifican cuán efectivamente el proceso detecta y previene defectos.
+                        La tasa de detección de defectos (Defect Detection Rate, DDR) mide qué porcentaje de defectos se descubren
+                        en fases específicas (revisiones de código, testing unitario, testing de sistema) versus defectos que escapan
+                        a producción. Una DDR alta en fases tempranas indica proceso de calidad efectivo que detecta problemas cuando
+                        son más económicos de corregir. El tiempo medio de resolución de defectos (Mean Time to Repair, MTTR) mide
+                        cuán rápidamente se corrigen defectos una vez identificados, proporcionando insight sobre capacidad de
+                        respuesta del equipo.
+                    </p>
+
+                    <div class="mermaid">
+                    graph LR
+                        A[Métricas de Proceso] --> B[Productividad]
+                        A --> C[Tiempo de Ciclo]
+                        A --> D[Calidad de Proceso]
+
+                        B --> B1[Story Points / Sprint]
+                        B --> B2[Commits por Desarrollador]
+                        B --> B3[PRs Completados]
+
+                        C --> C1[Lead Time]
+                        C --> C2[Cycle Time]
+                        C --> C3[WIP - Work in Progress]
+
+                        D --> D1[Tasa Detección Defectos]
+                        D --> D2[MTTR - Mean Time to Repair]
+                        D --> D3[Tasa de Reelaboración]
+
+                        B1 --> E[Análisis de Tendencias]
+                        C1 --> E
+                        D1 --> E
+
+                        E --> F[Mejora Continua del Proceso]
+
+                        style F fill:#90EE90
+                    </mermaid>
+
+                    <p>
+                        Las métricas de revisión de código cuantifican la efectividad de las revisiones de pares. El porcentaje de
+                        código revisado mide qué fracción de cambios de código pasa por revisión formal antes de integrarse. El
+                        número de defectos detectados por revisión normalizado por tamaño de cambio (defectos/KLOC revisado)
+                        proporciona una medida de efectividad de las revisiones. El tiempo de revisión mide cuánto tarda un pull
+                        request en revisarse y aprobarse, afectando directamente lead time del desarrollo. Las herramientas de
+                        gestión de código fuente como GitHub, GitLab o Bitbucket proporcionan métricas integradas sobre actividad
+                        de revisión de código.
+                    </p>
+
+                    <p>
+                        Las métricas de integración continua y despliegue rastrean la efectividad de pipelines de CI/CD. La frecuencia
+                        de builds mide cuántas veces por día se compila e integra el código. La tasa de éxito de builds indica qué
+                        porcentaje de builds completan exitosamente versus fallan, con tasas de fallo altas sugiriendo problemas de
+                        calidad o estabilidad de ambiente. El tiempo de build mide cuánto tarda un build completo en ejecutarse,
+                        afectando directamente ciclos de retroalimentación para desarrolladores. La frecuencia de despliegues mide
+                        con qué frecuencia se liberan cambios a producción, con organizaciones de alto desempeño desplegando múltiples
+                        veces por día.
+                    </p>
+
+                    <p>
+                        Las métricas de cobertura de testing cuantifican cuán exhaustivamente el código se ejercita mediante pruebas
+                        automatizadas. La cobertura de líneas mide qué porcentaje de líneas de código se ejecutan por al menos una
+                        prueba. La cobertura de ramas mide qué porcentaje de ramas de decisión (caminos en estructuras if/else) se
+                        ejercitan. La cobertura de mutaciones evalúa cuán efectivamente las pruebas detectarían defectos introduciendo
+                        intencionalmente mutaciones (cambios pequeños) en el código. Aunque cobertura alta es deseable, cobertura
+                        100% no garantiza ausencia de defectos; es posible tener alta cobertura con aserciones débiles que no verifican
+                        comportamiento correcto.
+                    </p>
+
+                    <div class="warning-box">
+                        <h4>Antipatrones en Uso de Métricas de Proceso</h4>
+                        <ul>
+                            <li><strong>Optimización local:</strong> Mejorar una métrica a expensas de objetivos generales del sistema</li>
+                            <li><strong>Métricas como objetivos:</strong> Ley de Goodhart - cuando una métrica se vuelve objetivo, deja de ser buena métrica</li>
+                            <li><strong>Comparaciones injustas:</strong> Comparar métricas entre equipos sin considerar contexto diferente</li>
+                            <li><strong>Parálisis por análisis:</strong> Recopilar métricas excesivas sin actuar sobre insights</li>
+                            <li><strong>Ignorar variabilidad:</strong> Tomar decisiones basándose en promedios sin considerar distribuciones</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>10.3 Métricas de Proyecto: Tiempo, Costo, Calidad</h2>
+
+                    <p>
+                        Las métricas de proyecto proporcionan visibilidad sobre el desempeño del proyecto en las dimensiones
+                        fundamentales de tiempo, costo y calidad, permitiendo a directores de proyecto monitorizar progreso, identificar
+                        desviaciones tempranamente, y tomar acciones correctivas oportunas. Estas métricas integran información de
+                        producto y proceso en indicadores de alto nivel que son relevantes para stakeholders ejecutivos que pueden
+                        no estar interesados en detalles técnicos pero requieren comprensión clara de si el proyecto está en camino
+                        de cumplir compromisos de cronograma, presupuesto y calidad.
+                    </p>
+
+                    <p>
+                        Las métricas de cronograma cuantifican el desempeño temporal del proyecto. La variación de cronograma (Schedule
+                        Variance, SV) ya discutida en el contexto de Earned Value Management, mide la diferencia entre el trabajo
+                        realmente completado y el trabajo planificado para una fecha específica. El índice de desempeño de cronograma
+                        (Schedule Performance Index, SPI = Valor Ganado / Valor Planificado) normaliza esta variación, permitiendo
+                        comparaciones entre proyectos de diferentes tamaños. Un SPI consistentemente menor que 1.0 indica retrasos
+                        crónicos que probablemente afectarán la fecha de entrega final, requiriendo intervención mediante compresión
+                        de cronograma o renegociación de fecha de entrega.
+                    </p>
+
+                    <p>
+                        El porcentaje de completación proporciona una medida intuitiva de progreso del proyecto, pero su cálculo
+                        requiere cuidado para evitar el notorio "síndrome del 90%". Métodos objetivos de cálculo incluyen porcentaje
+                        de hitos completados, porcentaje de funcionalidades implementadas y probadas (no solo desarrolladas), o
+                        método de valor ganado donde la completación se mide por valor presupuestado del trabajo completado. La
+                        regla 0/100 (una actividad está 0% completa hasta que finaliza, luego 100%) es conservadora pero elimina
+                        ambigüedad. La regla 50/50 (50% al iniciar, 50% al finalizar) proporciona reconocimiento de progreso intermedio
+                        para actividades de larga duración.
+                    </p>
+
+                    <p>
+                        Las métricas de costo rastrean el desempeño financiero del proyecto. La variación de costo (Cost Variance,
+                        CV = Valor Ganado - Costo Real) mide si el proyecto está bajo o sobre presupuesto. El índice de desempeño
+                        de costo (Cost Performance Index, CPI = Valor Ganado / Costo Real) normaliza esta variación. La estimación
+                        al completar (Estimate at Completion, EAC) proyecta el costo total esperado del proyecto basándose en
+                        desempeño hasta la fecha, calculada típicamente como EAC = BAC / CPI donde BAC es el Budget at Completion
+                        original. La variación al completar (Variance at Completion, VAC = BAC - EAC) proyecta el déficit o superávit
+                        presupuestario final.
+                    </p>
+
+                    <p>
+                        Las métricas de calidad cuantifican cuán bien el producto cumple estándares y requerimientos. La densidad
+                        de defectos (defectos por KLOC o por punto de función) normaliza conteos absolutos de defectos por tamaño
+                        del producto. La severidad de defectos categoriza defectos según impacto (crítico, alto, medio, bajo),
+                        reconociendo que no todos los defectos son igualmente importantes. La tasa de escape de defectos (Defect
+                        Escape Rate) mide qué porcentaje de defectos no fueron detectados hasta producción, indicando efectividad
+                        del proceso de calidad. Una tasa de escape alta señala gaps en testing o en controles de calidad que requieren
+                        fortalecimiento.
+                    </p>
+
+                    <div class="info-box">
+                        <h4>Dashboard de Métricas de Proyecto: Indicadores Clave</h4>
+                        <ul>
+                            <li><strong>Cronograma:</strong> SPI, Variación de Cronograma, Forecast de fecha de entrega</li>
+                            <li><strong>Costo:</strong> CPI, Variación de Costo, EAC, Consumo de contingencia</li>
+                            <li><strong>Alcance:</strong> Porcentaje de requerimientos completados, Cambios aprobados vs. línea base</li>
+                            <li><strong>Calidad:</strong> Densidad de defectos, Severidad de defectos, Tasa de escape</li>
+                            <li><strong>Riesgo:</strong> Número de riesgos altos, Riesgos materializados, Reserva de riesgo remanente</li>
+                            <li><strong>Recursos:</strong> Utilización de equipo, Rotación de personal, Disponibilidad de skills críticos</li>
+                        </ul>
+                    </div>
+
+                    <p>
+                        Las métricas de satisfacción de stakeholders cuantifican percepciones de valor y calidad. Las encuestas
+                        periódicas de stakeholders pueden medir satisfacción en escalas Likert (1-5 o 1-7) sobre dimensiones como
+                        comunicación, capacidad de respuesta a cambios, calidad de entregables y alineación con expectativas. El Net
+                        Promoter Score (NPS) pregunta cuán probable es que stakeholders recomienden el equipo del proyecto a otros,
+                        proporcionando una métrica única de satisfacción general. Aunque subjetivas, estas métricas capturan aspectos
+                        de éxito del proyecto que métricas puramente objetivas pueden perder.
+                    </p>
+
+                    <div class="mermaid">
+                    %%{init: {'theme':'base'}}%%
+                    xychart-beta
+                        title "Tendencias de Métricas de Proyecto a lo Largo del Tiempo"
+                        x-axis [Sprint 1, Sprint 2, Sprint 3, Sprint 4, Sprint 5, Sprint 6]
+                        y-axis "Índice de Desempeño" 0.7 --> 1.3
+                        line "SPI - Schedule Performance" [0.95, 0.92, 0.88, 0.90, 0.95, 0.98]
+                        line "CPI - Cost Performance" [1.05, 1.02, 0.98, 0.95, 0.93, 0.94]
+                        line "Objetivo (1.0)" [1.0, 1.0, 1.0, 1.0, 1.0, 1.0]
+                    </mermaid>
+
+                    <p>
+                        La presentación efectiva de métricas de proyecto mediante dashboards visuales facilita comunicación rápida
+                        de estado. Los dashboards deben balancear comprensividad con simplicidad, presentando las métricas más
+                        críticas sin abrumar con detalles. El uso de codificación por colores (verde para métricas dentro de umbrales
+                        aceptables, amarillo para métricas que requieren atención, rojo para métricas críticas) permite identificación
+                        rápida de áreas problemáticas. Los gráficos de tendencias muestran trayectorias de métricas a lo largo del
+                        tiempo, permitiendo distinguir fluctuaciones temporales de tendencias sistemáticas que requieren intervención.
+                    </p>
+                </section>
+
+                <section>
+                    <h2>10.4 Puntos de Función (Function Points)</h2>
+
+                    <p>
+                        Los Puntos de Función (Function Points, FP) representan una métrica de tamaño de software orientada a
+                        funcionalidad que cuantifica la cantidad de funcionalidad entregada al usuario independientemente del
+                        lenguaje de programación o tecnología de implementación. Desarrollados por Allan Albrecht en IBM a finales
+                        de los años 1970, los puntos de función abordan las limitaciones fundamentales de líneas de código como
+                        métrica de tamaño, proporcionando una medida que correlaciona más estrechamente con el esfuerzo de desarrollo
+                        y el valor entregado al usuario. Los puntos de función son particularmente valiosos para estimación de
+                        proyectos, benchmarking de productividad y análisis de portafolios de aplicaciones.
+                    </p>
+
+                    <p>
+                        El método de conteo de puntos de función identifica y clasifica cinco tipos de componentes funcionales en
+                        un sistema de software. Las Entradas Externas (External Inputs, EI) son procesos que aceptan datos desde
+                        fuera de la aplicación, como formularios de entrada de datos. Las Salidas Externas (External Outputs, EO)
+                        son procesos que envían datos fuera de la aplicación, como reportes o pantallas de consulta con lógica de
+                        procesamiento. Las Consultas Externas (External Inquiries, EQ) son combinaciones simples de entrada-salida
+                        que recuperan datos sin actualización, como búsquedas o consultas. Los Archivos Lógicos Internos (Internal
+                        Logical Files, ILF) son grupos de datos lógicamente relacionados mantenidos dentro de la aplicación. Las
+                        Interfaces de Archivos Externos (External Interface Files, EIF) son grupos de datos mantenidos por otras
+                        aplicaciones pero referenciados por esta aplicación.
+                    </p>
+
+                    <p>
+                        Cada componente funcional identificado se clasifica como de complejidad baja, media o alta basándose en el
+                        número de Data Element Types (DETs) y Record Element Types (RETs) o File Types Referenced (FTRs). Por ejemplo,
+                        una Entrada Externa con pocos campos de datos (DETs) y que actualiza un solo archivo (FTR) se clasificaría
+                        como de baja complejidad, mientras que una entrada con muchos campos que actualiza múltiples archivos sería
+                        de alta complejidad. Tablas de peso estándar asignan puntos de función a cada combinación de tipo de componente
+                        y complejidad: una EI de baja complejidad vale 3 FP, de complejidad media vale 4 FP, de alta complejidad
+                        vale 6 FP.
+                    </p>
+
+                    <p>
+                        Los Puntos de Función No Ajustados (Unadjusted Function Points, UFP) se calculan sumando los valores de
+                        todos los componentes funcionales contados. Este total se ajusta mediante un Value Adjustment Factor (VAF)
+                        que considera 14 Características Generales del Sistema (General System Characteristics, GSC) como complejidad
+                        de procesamiento, rendimiento, usabilidad, y facilidad de instalación. Cada GSC se califica de 0 (sin
+                        influencia) a 5 (influencia fuerte), sumándose para obtener un Total Degree of Influence (TDI). El VAF se
+                        calcula como VAF = 0.65 + (0.01 × TDI), resultando en un rango de 0.65 a 1.35. Los Puntos de Función
+                        Ajustados finales se calculan como FP = UFP × VAF.
+                    </p>
+
+                    <div class="mermaid">
+                    graph TD
+                        A[Análisis de Puntos de Función] --> B[Identificación de Componentes]
+
+                        B --> C[Entradas Externas - EI]
+                        B --> D[Salidas Externas - EO]
+                        B --> E[Consultas Externas - EQ]
+                        B --> F[Archivos Internos - ILF]
+                        B --> G[Interfaces Externas - EIF]
+
+                        C --> H[Clasificación de Complejidad]
+                        D --> H
+                        E --> H
+                        F --> H
+                        G --> H
+
+                        H --> I[Asignación de Pesos]
+                        I --> J[UFP - Puntos No Ajustados]
+
+                        J --> K[Características Generales del Sistema]
+                        K --> L[VAF - Factor de Ajuste]
+
+                        J --> M[FP = UFP × VAF]
+                        L --> M
+
+                        M --> N[Puntos de Función Totales]
+
+                        style N fill:#90EE90
+                    </mermaid>
+
+                    <p>
+                        Los puntos de función facilitan estimación de esfuerzo mediante el uso de tasas de productividad históricas
+                        expresadas en horas por punto de función o puntos de función por persona-mes. Por ejemplo, si datos históricos
+                        indican que el equipo produce en promedio 5 FP por persona-mes, y un nuevo proyecto se estima en 500 FP,
+                        la estimación de esfuerzo sería 500 / 5 = 100 persona-meses. Esta estimación es más robusta que estimaciones
+                        basadas en LOC porque es independiente del lenguaje de programación y refleja funcionalidad desde la
+                        perspectiva del usuario. Sin embargo, la precisión depende críticamente de la calidad de los datos históricos
+                        y de cuán comparables son los proyectos.
+                    </p>
+
+                    <p>
+                        Variantes de puntos de función han emergido para dominios específicos. Los COSMIC Function Points se diseñaron
+                        para software en tiempo real y embebido, superando limitaciones del método original orientado a sistemas de
+                        información de gestión. Los Use Case Points estiman tamaño basándose en casos de uso en lugar de funciones,
+                        alineándose mejor con metodologías de desarrollo orientadas a objetos. Los Story Points en metodologías ágiles
+                        comparten filosofía con puntos de función (medición relativa de complejidad) pero se aplican a nivel más
+                        granular de historias de usuario individuales.
+                    </p>
+
+                    <div class="success-box">
+                        <h4>Aplicaciones de Puntos de Función en Gestión de Proyectos</h4>
+                        <ul class="checklist">
+                            <li>Estimación de esfuerzo y costo en fases tempranas cuando código no existe</li>
+                            <li>Benchmarking de productividad entre proyectos con diferentes tecnologías</li>
+                            <li>Análisis de portafolio para dimensionar y comparar aplicaciones</li>
+                            <li>Medición de valor entregado independiente de implementación técnica</li>
+                            <li>Normalización de métricas de calidad (defectos por FP en lugar de por KLOC)</li>
+                            <li>Contratos basados en funcionalidad entregada en lugar de tiempo y materiales</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>10.5 Métricas Ágiles: Velocidad, Burndown, Burnup</h2>
+
+                    <p>
+                        Las metodologías ágiles han desarrollado un conjunto distintivo de métricas optimizadas para desarrollo
+                        iterativo e incremental, enfatizando transparencia, auto-organización del equipo y adaptación continua. Estas
+                        métricas divergen de enfoques tradicionales en varios aspectos: favorecen mediciones relativas sobre absolutas,
+                        enfatizan valor de negocio entregado sobre artefactos producidos, y se diseñan para ser recopiladas y
+                        visualizadas por el equipo en lugar de reportadas a gestión externa. Las métricas ágiles son herramientas
+                        para el equipo para comprender su propio desempeño y mejorar continuamente, no instrumentos de control
+                        gerencial.
+                    </p>
+
+                    <p>
+                        La velocidad representa la métrica central en Scrum, midiendo cuántos story points el equipo completa en
+                        promedio por Sprint. La velocidad se calcula sumando los puntos de las historias de usuario completamente
+                        terminadas (cumpliendo Definition of Done) en cada Sprint. Durante los primeros 3-5 Sprints, la velocidad
+                        típicamente fluctúa mientras el equipo calibra sus estimaciones y estabiliza su composición y procesos. Una
+                        vez estabilizada, la velocidad promedio de los últimos 3-4 Sprints proporciona una base para planificación
+                        de releases: si la velocidad promedio es 40 points/Sprint y el Product Backlog priorizado contiene 200 points
+                        de trabajo, la proyección es aproximadamente 5 Sprints para completar ese trabajo.
+                    </p>
+
+                    <p>
+                        Es crucial reconocer que la velocidad es una métrica de capacidad del equipo, no de productividad individual.
+                        Comparar velocidades entre diferentes equipos es fundamentalmente inválido porque las estimaciones de story
+                        points son relativas al equipo específico. Un equipo que estima conservadoramente puede tener velocidad
+                        numérica más baja que un equipo que estima agresivamente, pero entregar igual o mayor funcionalidad real.
+                        Intentar "incrementar velocidad" como objetivo puede incentivar inflación de estimaciones en lugar de mejora
+                        genuina de productividad. La velocidad debe usarse para planificación y auto-evaluación del equipo, no para
+                        comparación entre equipos o evaluación de desempeño individual.
+                    </p>
+
+                    <p>
+                        El gráfico de Burndown visualiza trabajo restante versus tiempo, proporcionando una representación intuitiva
+                        de progreso hacia un objetivo. En un Sprint Burndown, el eje vertical representa story points o tareas
+                        restantes, y el eje horizontal representa días del Sprint. Idealmente, el trabajo restante disminuye
+                        linealmente desde el total al inicio del Sprint hasta cero al final. La línea de burndown real se plotea
+                        diariamente, permitiendo al equipo visualizar si está adelantado, retrasado, o en camino de completar el
+                        Sprint commitment. Las desviaciones significativas de la trayectoria ideal señalan necesidad de acciones
+                        correctivas: re-priorización de trabajo, solicitud de ayuda adicional, o renegociación del Sprint scope con
+                        el Product Owner.
+                    </p>
+
+                    <div class="mermaid">
+                    %%{init: {'theme':'base'}}%%
+                    xychart-beta
+                        title "Sprint Burndown Chart - Sprint 15"
+                        x-axis [Día 1, Día 2, Día 3, Día 4, Día 5, Día 6, Día 7, Día 8, Día 9, Día 10]
+                        y-axis "Story Points Restantes" 0 --> 50
+                        line "Ideal Burndown" [45, 40, 35, 30, 25, 20, 15, 10, 5, 0]
+                        line "Burndown Real" [45, 43, 38, 35, 30, 28, 22, 15, 8, 0]
+                    </mermaid>
+
+                    <p>
+                        El gráfico de Burnup proporciona una perspectiva alternativa, mostrando trabajo completado acumulado versus
+                        trabajo total del proyecto. El eje vertical representa story points, y el eje horizontal representa Sprints
+                        o tiempo. Dos líneas se plotean: una línea que muestra trabajo total planificado (que puede cambiar si se
+                        añaden o remueven historias del Product Backlog), y una línea que muestra trabajo completado acumulado que
+                        aumenta monotónicamente a medida que Sprints completan. El Burnup hace más visible el impacto de cambios de
+                        scope: cuando se añaden historias, la línea de trabajo total se incrementa, mostrando explícitamente que el
+                        objetivo se ha movido. En contraste, un Burndown puede dar la impresión de que el equipo está retrasado
+                        cuando en realidad el scope aumentó.
+                    </p>
+
+                    <p>
+                        Los diagramas de flujo acumulativo (Cumulative Flow Diagrams, CFD) visualizan el flujo de trabajo a través
+                        de diferentes estados (por ejemplo, To Do, In Progress, In Review, Done) a lo largo del tiempo. El eje
+                        horizontal representa tiempo, y el eje vertical representa número de ítems. Diferentes áreas coloreadas
+                        apiladas representan ítems en cada estado. El ancho vertical de un área indica cuántos ítems están en ese
+                        estado en un momento dado (Work in Progress para ese estado). El ancho horizontal entre las líneas límite
+                        de dos estados indica lead time promedio para ítems que fluyen entre esos estados. Los CFD permiten
+                        identificar visualmente cuellos de botella (áreas que se ensanchan indicando acumulación) y variabilidad en
+                        throughput.
+                    </p>
+
+                    <p>
+                        Las métricas de ciclo de vida complementan las métricas de Sprint. El lead time mide tiempo desde que una
+                        historia se añade al Product Backlog hasta que se despliega a producción, proporcionando visibilidad de
+                        tiempo de respuesta completo. El cycle time mide tiempo desde que desarrollo comienza activamente en una
+                        historia hasta que se completa, excluyendo tiempo de espera en backlog. Reducir estos tiempos incrementa
+                        agilidad organizacional, permitiendo respuesta más rápida a cambios de mercado o feedback de usuarios. La
+                        Ley de Little (Lead Time = WIP / Throughput) sugiere que limitar WIP es crítico para reducir lead times.
+                    </p>
+
+                    <div class="important-box">
+                        <h4>Principios para Uso Efectivo de Métricas Ágiles</h4>
+                        <p>
+                            Las métricas ágiles deben ser transparentes y visibles a todo el equipo, típicamente en radiators de
+                            información física o dashboards digitales. Deben recopilarse con overhead mínimo, idealmente como
+                            subproducto automático del flujo de trabajo normal en herramientas como Jira o Azure DevOps. Deben
+                            usarse por el equipo para inspección y adaptación en retrospectivas, no impuestas externamente para
+                            evaluación de desempeño. Deben complementarse con discusión cualitativa: los números cuentan qué está
+                            pasando, pero las conversaciones explican por qué y qué hacer al respecto. Finalmente, las métricas
+                            deben evolucionar: a medida que el equipo madura, puede necesitar diferentes métricas que proporcionen
+                            insights más profundos sobre nuevos aspectos de su desempeño.
+                        </p>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>10.6 KPIs para Proyectos de Tecnología Informática</h2>
+
+                    <p>
+                        Los Indicadores Clave de Desempeño (Key Performance Indicators, KPIs) representan métricas específicamente
+                        seleccionadas y monitorizadas porque proporcionan insight crítico sobre el éxito del proyecto en sus objetivos
+                        estratégicos. Mientras que las organizaciones pueden rastrear docenas o cientos de métricas, los KPIs son
+                        el subconjunto limitado (típicamente 5-12) que realmente importa para stakeholders ejecutivos y que impulsa
+                        decisiones significativas. Los KPIs efectivos están alineados con objetivos estratégicos, son cuantificables,
+                        tienen targets definidos, son accionables (se pueden influenciar mediante acciones del equipo), y se comunican
+                        regular y consistentemente.
+                    </p>
+
+                    <p>
+                        Los KPIs de entrega miden cuán efectivamente el proyecto está cumpliendo compromisos de cronograma y alcance.
+                        El porcentaje de releases en fecha mide qué fracción de releases planificadas se entregan en o antes de la
+                        fecha comprometida, proporcionando visibilidad sobre confiabilidad de compromisos. El throughput de features
+                        mide cuántas features o historias de usuario se completan por unidad de tiempo (Sprint, mes, trimestre),
+                        indicando ritmo de entrega de valor. El porcentaje de scope completado versus planificado compara funcionalidad
+                        realmente entregada contra lo originalmente comprometido, revelando si el proyecto está cumpliendo expectativas
+                        de alcance o experimentando descoping significativo.
+                    </p>
+
+                    <p>
+                        Los KPIs de calidad cuantifican cuán bien el software cumple estándares y satisface usuarios. La densidad
+                        de defectos en producción (defectos por release o por KLOC) mide calidad del producto entregado. El Mean
+                        Time Between Failures (MTBF) mide confiabilidad del sistema en producción, particularmente relevante para
+                        sistemas críticos de alta disponibilidad. El índice de satisfacción de usuarios, medido mediante encuestas
+                        post-release o Net Promoter Score (NPS), captura percepción de calidad desde la perspectiva del usuario
+                        final. El porcentaje de defectos críticos resueltos en SLA mide capacidad de respuesta a problemas de alta
+                        severidad.
+                    </p>
+
+                    <p>
+                        Los KPIs financieros evalúan el valor económico generado por el proyecto. El Return on Investment (ROI)
+                        compara beneficios acumulados contra costos incurridos, idealmente alcanzando ROI positivo dentro del horizonte
+                        temporal esperado. El costo por feature o por punto de función normaliza gastos del proyecto por valor
+                        funcional entregado, permitiendo comparación de eficiencia entre proyectos. La variación de presupuesto
+                        (budget variance) mide desviación de costos reales contra presupuesto aprobado, con variaciones significativas
+                        señalando necesidad de acciones correctivas o renegociación de funding.
+                    </p>
+
+                    <p>
+                        Los KPIs de recursos humanos rastrean la salud y efectividad del equipo del proyecto. La tasa de rotación
+                        (attrition rate) mide qué porcentaje del equipo deja el proyecto o la organización, con rotación alta
+                        indicando problemas de moral, compensación o cultura que requieren atención. El índice de satisfacción del
+                        equipo, medido mediante encuestas periódicas, proporciona early warning de problemas antes de que escalen a
+                        rotación visible. El porcentaje de capacitación completada mide inversión en desarrollo de habilidades del
+                        equipo. La utilización de equipo mide qué porcentaje de tiempo disponible se asigna productivamente a trabajo
+                        de proyecto versus tiempo ocioso o overhead administrativo.
+                    </p>
+
+                    <div class="mermaid">
+                    graph TD
+                        A[KPI Dashboard de Proyecto] --> B[KPIs de Entrega]
+                        A --> C[KPIs de Calidad]
+                        A --> D[KPIs Financieros]
+                        A --> E[KPIs de Recursos]
+
+                        B --> B1[% Releases en Fecha: 85%]
+                        B --> B2[Throughput Features: 12/mes]
+                        B --> B3[Velocidad Promedio: 45 SP]
+
+                        C --> C1[Defectos Prod: 0.8/KLOC]
+                        C --> C2[NPS Usuarios: 72]
+                        C --> C3[Cobertura Tests: 87%]
+
+                        D --> D1[CPI: 0.94]
+                        D --> D2[ROI Proyectado: 145%]
+                        D --> D3[Costo por Feature: $8.5K]
+
+                        E --> E1[Rotación Equipo: 8%]
+                        E --> E2[Satisfacción: 4.2/5]
+                        E --> E3[Utilización: 78%]
+
+                        B1 --> F{Semáforo}
+                        C1 --> F
+                        D1 --> F
+                        E1 --> F
+
+                        F -->|Verde| G[Desempeño Objetivo]
+                        F -->|Amarillo| H[Requiere Atención]
+                        F -->|Rojo| I[Acción Inmediata]
+
+                        style G fill:#90EE90
+                        style H fill:#FFFF99
+                        style I fill:#FFB6C1
+                    </mermaid>
+
+                    <p>
+                        Los KPIs de eficiencia de proceso miden cuán bien funcionan los procesos de desarrollo y gestión. El lead
+                        time promedio desde requerimiento hasta deployment mide agilidad del proceso completo de entrega. El
+                        porcentaje de tiempo de desarrollo versus tiempo de espera revela cuánto del cycle time total se gasta en
+                        trabajo productivo versus colas y handoffs. La frecuencia de deployment mide cuántas veces por período
+                        (día, semana, mes) se liberan cambios a producción, con mayor frecuencia indicando madurez de capacidades
+                        de CI/CD. El porcentaje de builds exitosos mide estabilidad de pipelines de integración continua.
+                    </p>
+
+                    <p>
+                        La presentación de KPIs debe diseñarse para facilitar comprensión rápida y acción decisiva. Los dashboards
+                        de KPIs típicamente utilizan visualizaciones como gráficos de medidor (gauge charts) que muestran valor
+                        actual contra target, gráficos de tendencia que revelan trayectorias temporales, y semáforos (verde/amarillo/rojo)
+                        que indican si cada KPI está dentro de umbral aceptable. Los KPIs deben revisarse en intervalos regulares
+                        apropiados a su naturaleza: algunos KPIs (como defectos en producción) pueden requerir monitoreo diario,
+                        mientras que otros (como ROI) se evalúan mensual o trimestralmente.
+                    </p>
+
+                    <div class="warning-box">
+                        <h4>Errores Comunes en Definición y Uso de KPIs</h4>
+                        <ul>
+                            <li><strong>Demasiados KPIs:</strong> Diluye foco en lo verdaderamente crítico; limitar a 5-12 KPIs</li>
+                            <li><strong>KPIs no accionables:</strong> Medir factores que el equipo no puede influenciar directamente</li>
+                            <li><strong>Targets arbitrarios:</strong> Establecer objetivos sin fundamentación en datos históricos o benchmarks</li>
+                            <li><strong>Falta de alineación estratégica:</strong> Medir actividad que no conecta con objetivos de negocio</li>
+                            <li><strong>Métricas vanidad:</strong> KPIs que siempre se ven bien pero no reflejan salud real del proyecto</li>
+                            <li><strong>Falta de contexto:</strong> Presentar números sin explicación de qué significan y por qué importan</li>
+                        </ul>
+                    </div>
+
+                    <p>
+                        Los KPIs deben evolucionar con el proyecto y la organización. En fases iniciales de un proyecto, KPIs pueden
+                        enfatizar establecimiento de baseline y estabilización de procesos. En fases de ejecución, el énfasis puede
+                        cambiar a throughput y calidad de entregas. En fases de cierre, los KPIs pueden focalizarse en adopción de
+                        usuarios y realización de beneficios. La revisión periódica de la relevancia y efectividad de KPIs, típicamente
+                        en retrospectivas de release o revisiones trimestrales, asegura que continúen proporcionando valor y no se
+                        conviertan en rituales sin significado.
+                    </p>
+                </section>
+
+                <div class="class-navigation">
+                    <a href="clase-09.html" class="nav-button prev">Clase Anterior</a>
+                    <a href="clase-11.html" class="nav-button next">Siguiente Clase</a>
+                </div>
+            </article>
+        </main>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Universidad Abierta Interamericana - Especialización en Dirección de Proyectos de Tecnología Informática</p>
+        <p>Dictamen CONEAU Sesión N° 619 - RCS 6350/23</p>
+    </footer>
+</body>
+</html>

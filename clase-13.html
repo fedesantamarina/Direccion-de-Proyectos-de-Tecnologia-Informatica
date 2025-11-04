@@ -1,0 +1,565 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase 13: Arquitectura y Diseño de Software en Proyectos - UAI</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true, theme: 'default' });
+    </script>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <h1>UAI - Especialización en Dirección de Proyectos TI</h1>
+            </div>
+            <nav class="main-nav">
+                <a href="index.html">Inicio</a>
+                <a href="index.html#about">Sobre la Carrera</a>
+                <a href="index.html#contact">Contacto</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <aside class="sidebar">
+            <h2>Contenido del Curso</h2>
+            <nav class="chapters-nav">
+                <ul>
+                    <li><a href="clase-01.html">Clase 1: Introducción a la Dirección de Proyectos TI</a></li>
+                    <li><a href="clase-02.html">Clase 2: Fundamentos de la Gestión de Proyectos</a></li>
+                    <li><a href="clase-03.html">Clase 3: Metodologías Tradicionales</a></li>
+                    <li><a href="clase-04.html">Clase 4: Metodologías Ágiles</a></li>
+                    <li><a href="clase-05.html">Clase 5: Planificación y Gestión del Alcance</a></li>
+                    <li><a href="clase-06.html">Clase 6: Gestión del Tiempo y Cronogramas</a></li>
+                    <li><a href="clase-07.html">Clase 7: Gestión de Costos y Presupuestos</a></li>
+                    <li><a href="clase-08.html">Clase 8: Gestión de Riesgos</a></li>
+                    <li><a href="clase-09.html">Clase 9: Ingeniería de Requerimientos</a></li>
+                    <li><a href="clase-10.html">Clase 10: Métricas de Software</a></li>
+                    <li><a href="clase-11.html">Clase 11: Calidad del Software y Estándares</a></li>
+                    <li><a href="clase-12.html">Clase 12: Gestión del Capital Humano</a></li>
+                    <li><a href="clase-13.html" class="active">Clase 13: Arquitectura y Diseño de Software</a></li>
+                    <li><a href="clase-14.html">Clase 14: Testing y Aseguramiento de Calidad</a></li>
+                    <li><a href="clase-15.html">Clase 15: DevOps y Entrega Continua</a></li>
+                    <li><a href="clase-16.html">Clase 16: Tendencias Emergentes</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <article>
+                <h1>Clase 13: Arquitectura y Diseño de Software en Proyectos</h1>
+
+                <section>
+                    <h2>1. Patrones Arquitectónicos Fundamentales</h2>
+
+                    <p>
+                        La arquitectura de software constituye el conjunto de decisiones de diseño estructurales más significativas
+                        de un sistema, estableciendo la organización fundamental de sus componentes, las relaciones entre ellos,
+                        los principios que guían su diseño y evolución, y los trade-offs inherentes en estas decisiones. La
+                        comprensión de patrones arquitectónicos proporciona a los directores de proyectos un vocabulario compartido
+                        con arquitectos y desarrolladores, facilitando discusiones estratégicas sobre dirección técnica del proyecto.
+                    </p>
+
+                    <p>
+                        La arquitectura en capas (layered architecture) representa uno de los patrones más fundamentales y
+                        ampliamente adoptados. Este patrón organiza el sistema en capas horizontales, donde cada capa proporciona
+                        servicios a la capa superior y consume servicios de la capa inferior. La arquitectura clásica de tres
+                        capas distingue: capa de presentación (interfaz de usuario), capa de lógica de negocio (procesamiento de
+                        reglas de negocio) y capa de datos (acceso a persistencia). Este patrón facilita separación de
+                        preocupaciones, permitiendo que equipos especializados trabajen en capas específicas con mínima interferencia.
+                    </p>
+
+                    <p>
+                        La arquitectura cliente-servidor, fundamental en sistemas distribuidos, separa clientes que solicitan
+                        servicios de servidores que los proporcionan. Este patrón facilita centralización de datos y lógica de
+                        negocio, simplificando gestión y actualizaciones. Sin embargo, el servidor puede convertirse en cuello
+                        de botella y punto único de falla, requiriendo estrategias de escalamiento y alta disponibilidad. La
+                        evolución contemporánea incluye arquitecturas de múltiples niveles (n-tier) donde la funcionalidad se
+                        distribuye entre múltiples servidores especializados.
+                    </p>
+
+                    <p>
+                        La arquitectura orientada a eventos (event-driven architecture) organiza el sistema alrededor de la
+                        producción, detección y reacción a eventos. Los componentes emiten eventos cuando ocurren cambios de estado
+                        significativos; otros componentes suscritos a estos eventos reaccionan correspondientemente. Este patrón
+                        facilita desacoplamiento temporal y espacial entre componentes, permitiendo alta escalabilidad y
+                        flexibilidad. Sin embargo, introduce complejidad en rastreo de flujos de procesamiento y garantías de
+                        ordenamiento de eventos.
+                    </p>
+
+                    <p>
+                        La arquitectura de microkernel (plug-in architecture) define un núcleo mínimo de funcionalidad con
+                        extensiones que se conectan mediante interfaces bien definidas. Este patrón resulta efectivo para productos
+                        que requieren personalización significativa o funcionalidad opcional. Los sistemas operativos, IDEs de
+                        desarrollo y navegadores web ejemplifican esta arquitectura. La ventaja principal es la extensibilidad;
+                        el desafío radica en definir interfaces de plug-in suficientemente abstractas para acomodar extensiones
+                        no anticipadas.
+                    </p>
+
+                    <p>
+                        La arquitectura basada en espacio (space-based architecture) aborda limitaciones de escalabilidad en
+                        arquitecturas tradicionales mediante eliminación de la base de datos centralizada como cuello de botella.
+                        Los datos se replican y particionan en memoria a través de múltiples unidades de procesamiento. Este
+                        patrón facilita escalabilidad extrema mediante adición horizontal de unidades de procesamiento. Sin
+                        embargo, introduce complejidad significativa en gestión de consistencia de datos y sincronización entre
+                        unidades replicadas.
+                    </p>
+
+                    <div class="mermaid">
+                    graph TD
+                        A[Patrones Arquitectónicos] --> B[Arquitectura en Capas]
+                        A --> C[Cliente-Servidor]
+                        A --> D[Orientada a Eventos]
+                        A --> E[Microkernel]
+                        B --> B1[Presentación]
+                        B --> B2[Lógica de Negocio]
+                        B --> B3[Datos]
+                        C --> C1[Cliente: Solicita Servicios]
+                        C --> C2[Servidor: Proporciona Servicios]
+                        D --> D1[Productores de Eventos]
+                        D --> D2[Bus de Eventos]
+                        D --> D3[Consumidores de Eventos]
+                        E --> E1[Core System]
+                        E --> E2[Plug-in Modules]
+                    </div>
+
+                    <div class="info-box">
+                        <h4>Criterios de Selección Arquitectónica</h4>
+                        <ul>
+                            <li><strong>Requisitos funcionales:</strong> Capacidades que el sistema debe proporcionar</li>
+                            <li><strong>Atributos de calidad:</strong> Rendimiento, escalabilidad, disponibilidad, seguridad</li>
+                            <li><strong>Restricciones técnicas:</strong> Tecnologías existentes, competencias del equipo</li>
+                            <li><strong>Restricciones de negocio:</strong> Presupuesto, cronograma, recursos disponibles</li>
+                            <li><strong>Trade-offs:</strong> Optimizar algunos atributos típicamente compromete otros</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>2. Arquitectura de Microservicios vs Monolítica</h2>
+
+                    <p>
+                        La arquitectura monolítica tradicional organiza toda la funcionalidad de la aplicación en una única
+                        unidad desplegable. Todos los componentes (interfaz de usuario, lógica de negocio, acceso a datos) se
+                        empaquetan y ejecutan como un solo proceso. Esta arquitectura ofrece simplicidad conceptual: un solo
+                        código base para entender, una sola aplicación para desplegar, una única plataforma tecnológica para
+                        gestionar. Para aplicaciones de complejidad limitada o equipos pequeños, los monolitos frecuentemente
+                        representan la opción más pragmática y económica.
+                    </p>
+
+                    <p>
+                        Sin embargo, a medida que las aplicaciones crecen en tamaño y complejidad, las limitaciones de los
+                        monolitos se vuelven evidentes. El acoplamiento entre componentes dificulta el cambio: modificaciones
+                        en un área pueden tener efectos en cascada impredecibles. El despliegue requiere redesplegar la aplicación
+                        completa incluso para cambios menores. El escalamiento debe ser uniforme: no se puede escalar
+                        independientemente componentes con diferentes demandas de recursos. La adopción de nuevas tecnologías
+                        requiere migrar toda la aplicación simultáneamente, un proceso de alto riesgo.
+                    </p>
+
+                    <p>
+                        La arquitectura de microservicios descompone la aplicación en servicios pequeños, independientes y
+                        débilmente acoplados. Cada microservicio implementa una capacidad de negocio específica, se ejecuta en
+                        su propio proceso, se puede desplegar independientemente, y se comunica con otros servicios mediante
+                        protocolos ligeros (típicamente HTTP/REST o mensajería asíncrona). Los servicios pueden ser desarrollados
+                        por equipos autónomos usando tecnologías óptimas para su dominio específico. Esta arquitectura facilita
+                        escalamiento granular, despliegues independientes, aislamiento de fallos y autonomía de equipos.
+                    </p>
+
+                    <p>
+                        Las ventajas de microservicios son sustanciales pero no vienen sin costos. La complejidad operacional
+                        aumenta dramáticamente: en lugar de gestionar una aplicación, ahora se gestionan docenas o cientos de
+                        servicios. La comunicación entre servicios introduce latencia y puntos de falla adicionales. Las
+                        transacciones distribuidas y consistencia de datos se vuelven significativamente más complejas. El
+                        testing de integración requiere orquestar múltiples servicios. El monitoreo y debugging distribuido
+                        demandan herramientas especializadas y estrategias sofisticadas.
+                    </p>
+
+                    <p>
+                        La decisión entre arquitecturas monolíticas y microservicios no debe formularse como binaria. Muchas
+                        organizaciones adoptan enfoques híbridos: iniciar con un monolito bien estructurado (modular monolith)
+                        y descomponer selectivamente en microservicios cuando surgen presiones específicas (escalamiento diferencial,
+                        autonomía de equipos, aislamiento de riesgos). Esta estrategia evolutiva permite cosechar beneficios de
+                        simplicidad monolítica mientras se prepara para transición futura cuando la complejidad y escala lo justifiquen.
+                    </p>
+
+                    <p>
+                        Los antipatrones comunes en adopción de microservicios incluyen: microservicios excesivamente granulares
+                        (nanoservicios) que introducen overhead de comunicación desproporcionado; servicios fuertemente acoplados
+                        que requieren despliegues coordinados; bases de datos compartidas que crean dependencias de datos;
+                        orquestación centralizada que crea cuellos de botella; y migración precipitada de monolitos sin comprensión
+                        clara de límites de dominio. Los directores de proyectos deben comprender estos riesgos para evaluar
+                        críticamente propuestas arquitectónicas y asegurar que la complejidad adicional está justificada por
+                        beneficios tangibles.
+                    </p>
+
+                    <div class="mermaid">
+                    graph LR
+                        subgraph Arquitectura Monolítica
+                        A[UI] --> B[Lógica de Negocio]
+                        B --> C[Acceso a Datos]
+                        C --> D[(Base de Datos)]
+                        end
+
+                        subgraph Arquitectura de Microservicios
+                        E[API Gateway] --> F[Servicio 1]
+                        E --> G[Servicio 2]
+                        E --> H[Servicio 3]
+                        F --> I[(DB 1)]
+                        G --> J[(DB 2)]
+                        H --> K[(DB 3)]
+                        end
+                    </div>
+
+                    <div class="warning-box">
+                        <h4>Cuándo NO Usar Microservicios</h4>
+                        <ul>
+                            <li><strong>Equipos pequeños:</strong> Overhead operacional supera beneficios de autonomía</li>
+                            <li><strong>Dominios simples:</strong> Complejidad arquitectónica injustificada</li>
+                            <li><strong>Madurez DevOps limitada:</strong> Sin capacidades de CI/CD, contenedores, monitoreo</li>
+                            <li><strong>Restricciones de rendimiento:</strong> Latencia de comunicación entre servicios inaceptable</li>
+                            <li><strong>Prototipos y MVPs:</strong> Velocidad inicial más importante que escalabilidad futura</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>3. Principios SOLID de Diseño Orientado a Objetos</h2>
+
+                    <p>
+                        Los principios SOLID, término acuñado por Michael Feathers y popularizado por Robert C. Martin (Uncle Bob),
+                        representan cinco principios fundamentales de diseño orientado a objetos que promueven código mantenible,
+                        extensible y comprensible. Aunque originalmente formulados en el contexto de programación orientada a
+                        objetos, su relevancia trasciende paradigmas específicos, ofreciendo guidance arquitectónico aplicable a
+                        nivel de componentes y servicios. La comprensión de estos principios facilita a los directores de proyectos
+                        evaluar calidad de diseño y participar significativamente en revisiones arquitectónicas.
+                    </p>
+
+                    <p>
+                        El principio de Responsabilidad Única (Single Responsibility Principle - SRP) establece que una clase
+                        debe tener una, y solo una, razón para cambiar. En otras palabras, cada clase debe tener una responsabilidad
+                        claramente definida y todos sus métodos deben estar cohesivamente relacionados con esa responsabilidad.
+                        La violación de SRP resulta en clases que conocen demasiado y hacen demasiado, volviéndose difíciles de
+                        entender, probar y modificar. La aplicación de SRP típicamente resulta en clases más pequeñas y focalizadas,
+                        facilitando comprensión y mantenimiento.
+                    </p>
+
+                    <p>
+                        El principio Abierto/Cerrado (Open/Closed Principle - OCP) propone que las entidades de software deben
+                        estar abiertas para extensión pero cerradas para modificación. Este principio promueve diseños donde nueva
+                        funcionalidad se añade mediante extensión (herencia, implementación de interfaces) en lugar de modificación
+                        de código existente. OCP reduce el riesgo de introducir defectos en funcionalidad probada y estable cuando
+                        se añaden capacidades nuevas. Los patrones de diseño como Strategy, Template Method y Decorator facilitan
+                        adherencia a este principio.
+                    </p>
+
+                    <p>
+                        El principio de Sustitución de Liskov (Liskov Substitution Principle - LSP), formulado por Barbara Liskov,
+                        establece que los objetos de una superclase deben ser reemplazables por objetos de sus subclases sin
+                        alterar la corrección del programa. Este principio asegura que las jerarquías de herencia sean lógicamente
+                        consistentes y que el polimorfismo funcione correctamente. Las violaciones de LSP típicamente indican
+                        jerarquías de herencia mal diseñadas donde las subclases no representan genuinamente especializaciones de
+                        la superclase sino abstracciones fundamentalmente diferentes forzadas en una jerarquía inapropiada.
+                    </p>
+
+                    <p>
+                        El principio de Segregación de Interfaces (Interface Segregation Principle - ISP) argumenta que los
+                        clientes no deberían verse forzados a depender de interfaces que no utilizan. En lugar de interfaces
+                        monolíticas que exponen toda la funcionalidad de un componente, ISP promueve interfaces cohesivas y
+                        focalizadas adaptadas a las necesidades de clientes específicos. Este principio reduce acoplamiento y
+                        facilita que diferentes clientes evolucionen independientemente sin verse afectados por cambios en
+                        funcionalidad que no utilizan.
+                    </p>
+
+                    <p>
+                        El principio de Inversión de Dependencias (Dependency Inversion Principle - DIP) establece dos directivas
+                        relacionadas: los módulos de alto nivel no deben depender de módulos de bajo nivel, ambos deben depender
+                        de abstracciones; y las abstracciones no deben depender de detalles, los detalles deben depender de
+                        abstracciones. Este principio invierte la dirección tradicional de dependencias en diseños procedurales,
+                        promoviendo desacoplamiento y facilitando testabilidad mediante inyección de dependencias. DIP es
+                        fundamental para arquitecturas en capas donde capas superiores definen interfaces que capas inferiores
+                        implementan.
+                    </p>
+
+                    <div class="mermaid">
+                    mindmap
+                        root((Principios<br/>SOLID))
+                            S: Single Responsibility
+                                Una razón para cambiar
+                                Cohesión alta
+                                Clases focalizadas
+                            O: Open/Closed
+                                Abierto para extensión
+                                Cerrado para modificación
+                                Reducción de riesgos
+                            L: Liskov Substitution
+                                Subclases reemplazables
+                                Jerarquías consistentes
+                                Polimorfismo correcto
+                            I: Interface Segregation
+                                Interfaces focalizadas
+                                No forzar dependencias
+                                Acoplamiento reducido
+                            D: Dependency Inversion
+                                Depender de abstracciones
+                                Inversión de control
+                                Desacoplamiento
+                    </div>
+                </section>
+
+                <section>
+                    <h2>4. Patrones de Diseño GoF</h2>
+
+                    <p>
+                        Los patrones de diseño catalogados en el libro seminal "Design Patterns: Elements of Reusable
+                        Object-Oriented Software" por Gamma, Helm, Johnson y Vlissides (conocidos colectivamente como Gang of Four
+                        o GoF) representan soluciones probadas a problemas recurrentes de diseño de software. Estos 23 patrones,
+                        organizados en categorías de creación, estructura y comportamiento, constituyen un vocabulario compartido
+                        que facilita comunicación entre desarrolladores y proporciona plantillas reutilizables que aceleran diseño
+                        y mejoran calidad del código.
+                    </p>
+
+                    <p>
+                        Los patrones creacionales abordan la instanciación de objetos, abstraiendo el proceso de creación para
+                        hacer sistemas independientes de cómo sus objetos son creados, compuestos y representados. El patrón
+                        Singleton asegura que una clase tenga una única instancia y proporciona un punto de acceso global a ella,
+                        útil para coordinar acciones a través del sistema. El patrón Factory Method define una interfaz para crear
+                        objetos pero permite a las subclases decidir qué clase instanciar, diferiendo la instanciación a subclases.
+                        El patrón Abstract Factory proporciona una interfaz para crear familias de objetos relacionados sin
+                        especificar sus clases concretas.
+                    </p>
+
+                    <p>
+                        Los patrones estructurales se ocupan de la composición de clases y objetos. El patrón Adapter convierte la
+                        interfaz de una clase en otra interfaz esperada por clientes, permitiendo que clases con interfaces
+                        incompatibles trabajen juntas. El patrón Decorator adjunta responsabilidades adicionales a un objeto
+                        dinámicamente, proporcionando una alternativa flexible a la herencia para extender funcionalidad. El patrón
+                        Facade proporciona una interfaz unificada a un conjunto de interfaces en un subsistema, simplificando su
+                        uso mediante una interfaz de nivel superior. El patrón Proxy proporciona un sustituto o placeholder para
+                        otro objeto para controlar acceso a él.
+                    </p>
+
+                    <p>
+                        Los patrones de comportamiento se refieren a algoritmos y asignación de responsabilidades entre objetos.
+                        El patrón Observer define una dependencia uno-a-muchos entre objetos de modo que cuando un objeto cambia
+                        de estado, todos sus dependientes son notificados y actualizados automáticamente. El patrón Strategy
+                        define una familia de algoritmos, encapsula cada uno y los hace intercambiables, permitiendo que el
+                        algoritmo varíe independientemente de los clientes que lo utilizan. El patrón Template Method define el
+                        esqueleto de un algoritmo en una operación, diferiendo algunos pasos a subclases. El patrón Command
+                        encapsula una solicitud como un objeto, permitiendo parametrizar clientes con diferentes solicitudes,
+                        encolar solicitudes y soportar operaciones deshacer.
+                    </p>
+
+                    <p>
+                        La aplicación efectiva de patrones de diseño requiere discernimiento. Los patrones no deben aplicarse
+                        dogmáticamente sino cuando el problema de diseño genuinamente corresponde con el problema que el patrón
+                        resuelve. La sobre-aplicación de patrones (pattern overload) puede resultar en diseños innecesariamente
+                        complejos. El anti-patrón conocido como "golden hammer" describe la tendencia de aplicar un patrón favorito
+                        a todos los problemas independientemente de si es apropiado. Los arquitectos y desarrolladores maduros
+                        conocen los patrones profundamente pero los aplican juiciosamente solo cuando aportan valor genuino.
+                    </p>
+
+                    <p>
+                        Para directores de proyectos, la familiaridad con patrones de diseño fundamentales facilita: evaluación
+                        de propuestas arquitectónicas y de diseño; comunicación más efectiva con equipos técnicos usando vocabulario
+                        compartido; identificación de decisiones de diseño que pueden impactar cronogramas, costos o riesgos; y
+                        reconocimiento de señales de diseño de calidad versus diseño ad-hoc o problemático. Aunque los directores
+                        de proyectos no necesitan implementar patrones, la comprensión conceptual proporciona context awareness
+                        valioso para gestión efectiva de proyectos técnicamente complejos.
+                    </p>
+
+                    <div class="success-box">
+                        <h4>Patrones GoF por Categoría</h4>
+                        <p><strong>Creacionales:</strong></p>
+                        <ul class="checklist">
+                            <li>Singleton, Factory Method, Abstract Factory, Builder, Prototype</li>
+                        </ul>
+                        <p><strong>Estructurales:</strong></p>
+                        <ul class="checklist">
+                            <li>Adapter, Bridge, Composite, Decorator, Facade, Flyweight, Proxy</li>
+                        </ul>
+                        <p><strong>Comportamiento:</strong></p>
+                        <ul class="checklist">
+                            <li>Chain of Responsibility, Command, Iterator, Mediator, Memento</li>
+                            <li>Observer, State, Strategy, Template Method, Visitor, Interpreter</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>5. Arquitectura en la Nube: IaaS, PaaS, SaaS</h2>
+
+                    <p>
+                        La computación en la nube ha transformado fundamentalmente cómo se diseñan, despliegan y operan sistemas
+                        de software contemporáneos. El National Institute of Standards and Technology (NIST) define cloud computing
+                        como un modelo que habilita acceso ubicuo, conveniente y bajo demanda a un pool compartido de recursos
+                        computacionales configurables que pueden ser rápidamente provisionados y liberados con mínimo esfuerzo de
+                        gestión o interacción con el proveedor. Esta definición captura características esenciales: autoservicio
+                        bajo demanda, acceso amplio a la red, pooling de recursos, elasticidad rápida y servicio medido.
+                    </p>
+
+                    <p>
+                        Los modelos de servicio de nube se categorizan según el nivel de abstracción y responsabilidad compartida
+                        entre proveedor y cliente. Infrastructure as a Service (IaaS) proporciona recursos computacionales
+                        fundamentales: procesamiento, almacenamiento, redes. El cliente gestiona sistemas operativos, middleware,
+                        runtime, aplicaciones y datos, mientras el proveedor gestiona infraestructura física. Ejemplos incluyen
+                        Amazon EC2, Microsoft Azure Virtual Machines y Google Compute Engine. IaaS ofrece máximo control y
+                        flexibilidad pero requiere mayor responsabilidad operacional del cliente.
+                    </p>
+
+                    <p>
+                        Platform as a Service (PaaS) proporciona una plataforma completa para desarrollar, ejecutar y gestionar
+                        aplicaciones sin la complejidad de construir y mantener la infraestructura subyacente. El proveedor gestiona
+                        infraestructura, sistema operativo, middleware y runtime; el cliente gestiona aplicaciones y datos. PaaS
+                        facilita desarrollo y despliegue acelerado al abstraer complejidad de infraestructura. Ejemplos incluyen
+                        Heroku, Google App Engine, Azure App Service y AWS Elastic Beanstalk. PaaS resulta ideal para equipos que
+                        desean enfocarse en lógica de negocio sin invertir en gestión de plataforma.
+                    </p>
+
+                    <p>
+                        Software as a Service (SaaS) proporciona aplicaciones completas operadas por el proveedor y accesibles
+                        mediante navegadores web o APIs. El proveedor gestiona toda la pila tecnológica; el cliente simplemente
+                        usa la aplicación. Ejemplos incluyen Salesforce, Google Workspace, Microsoft 365, Slack y Zoom. SaaS
+                        minimiza responsabilidades operacionales del cliente y facilita adopción rápida, pero ofrece mínima
+                        customización y control. Para organizaciones, SaaS representa un cambio de CAPEX (gastos de capital en
+                        infraestructura) a OPEX (gastos operacionales en suscripciones).
+                    </p>
+
+                    <p>
+                        Los modelos de despliegue de nube varían según dónde reside la infraestructura y quién tiene acceso. La
+                        nube pública ofrece servicios a múltiples clientes sobre infraestructura compartida operada por proveedores
+                        terceros, maximizando economías de escala. La nube privada dedica infraestructura a una sola organización,
+                        proporcionando mayor control, seguridad y customización pero requiriendo mayor inversión. La nube híbrida
+                        combina nubes públicas y privadas, permitiendo que datos y aplicaciones se muevan entre ellas, facilitando
+                        flexibilidad, optimización de costos y mantenimiento de cargas sensibles on-premises.
+                    </p>
+
+                    <p>
+                        Las consideraciones arquitectónicas para aplicaciones cloud-native difieren significativamente de
+                        aplicaciones tradicionales. Los principios de Twelve-Factor App proporcionan guidance: código base único
+                        rastreado en control de versiones; dependencias explícitamente declaradas; configuración almacenada en
+                        el ambiente; servicios backing tratados como recursos adjuntos; estricta separación entre etapas de build,
+                        release y run; aplicaciones ejecutadas como procesos stateless; servicios exportados mediante port binding;
+                        escalamiento mediante modelo de procesos; maximización de robustez con rápido startup y shutdown graceful;
+                        paridad entre desarrollo, staging y producción; logs tratados como event streams; y procesos administrativos
+                        ejecutados como procesos one-off.
+                    </p>
+
+                    <div class="mermaid">
+                    graph TD
+                        A[Modelos de Servicio Cloud] --> B[SaaS - Software as a Service]
+                        A --> C[PaaS - Platform as a Service]
+                        A --> D[IaaS - Infrastructure as a Service]
+                        A --> E[On-Premises]
+                        B --> B1[Aplicaciones]
+                        B --> B2[Datos]
+                        B --> B3[Runtime]
+                        B --> B4[Middleware]
+                        B --> B5[OS]
+                        B --> B6[Virtualización]
+                        B --> B7[Servidores]
+                        B --> B8[Storage]
+                        B --> B9[Networking]
+                        C --> C1[Aplicaciones - Cliente]
+                        C --> C2[Datos - Cliente]
+                        C --> C3[Runtime - Proveedor]
+                        D --> D1[Aplicaciones - Cliente]
+                        D --> D2[Runtime - Cliente]
+                        D --> D3[OS - Cliente]
+                        D --> D4[Virtualización - Proveedor]
+                        E --> E1[Todo gestionado por Cliente]
+                    </div>
+                </section>
+
+                <section>
+                    <h2>6. Decisiones Arquitectónicas y Trade-offs</h2>
+
+                    <p>
+                        Las decisiones arquitectónicas representan las elecciones estructurales más significativas y de mayor
+                        impacto en proyectos de software, frecuentemente con implicaciones que persisten durante toda la vida del
+                        sistema. A diferencia de decisiones de implementación de bajo nivel que pueden modificarse relativamente
+                        fácilmente, las decisiones arquitectónicas son difíciles y costosas de revertir una vez que el sistema ha
+                        sido construido sobre ellas. Esta irreversibilidad (o más precisamente, alto costo de reversión) requiere
+                        que decisiones arquitectónicas se tomen deliberadamente, documentándose rationale y trade-offs considerados.
+                    </p>
+
+                    <p>
+                        Todo diseño arquitectónico involucra trade-offs: optimizar para algunos atributos de calidad típicamente
+                        compromete otros. El teorema CAP de Eric Brewer formaliza un trade-off fundamental en sistemas distribuidos:
+                        un sistema no puede simultáneamente garantizar Consistencia (todos los nodos ven los mismos datos al mismo
+                        tiempo), Disponibilidad (cada solicitud recibe respuesta sobre éxito o falla) y Tolerancia a Particiones
+                        (el sistema continúa operando a pesar de pérdida arbitraria de mensajes entre nodos). Ante particiones de
+                        red inevitables, los diseñadores deben elegir entre consistencia y disponibilidad, resultando en sistemas
+                        CP (como bases de datos relacionales tradicionales) o AP (como muchos sistemas NoSQL).
+                    </p>
+
+                    <p>
+                        El triángulo de Atributos de Calidad ilustra trade-offs entre rendimiento, escalabilidad, disponibilidad,
+                        seguridad, mantenibilidad, modificabilidad y otros atributos. Mejorar seguridad frecuentemente impacta
+                        rendimiento (encriptación requiere procesamiento adicional). Maximizar disponibilidad mediante redundancia
+                        aumenta complejidad y costo. Optimizar para modificabilidad mediante abstracciones y modularidad puede
+                        introducir overhead que reduce rendimiento. Los arquitectos efectivos comprenden estos trade-offs y toman
+                        decisiones conscientes alineadas con prioridades de negocio y requisitos del sistema.
+                    </p>
+
+                    <p>
+                        La documentación de decisiones arquitectónicas mediante Architecture Decision Records (ADRs) ha emergido
+                        como práctica recomendada. Un ADR captura una decisión arquitectónica significativa junto con su contexto
+                        y consecuencias. La estructura típica incluye: título descriptivo, estado (propuesto, aceptado, deprecated),
+                        contexto (fuerzas en juego, alternativas consideradas), decisión (qué se decidió y justificación),
+                        consecuencias (impactos positivos y negativos esperados). Los ADRs preservan rationale de decisiones,
+                        facilitando comprensión de futuras generaciones de desarrolladores sobre por qué el sistema es como es.
+                    </p>
+
+                    <p>
+                        El análisis de trade-off arquitectónico (Architecture Tradeoff Analysis Method - ATAM) proporciona un
+                        enfoque estructurado para evaluar arquitecturas de software. ATAM involucra stakeholders relevantes en
+                        identificación de escenarios de atributos de calidad prioritarios, análisis de cómo la arquitectura propuesta
+                        aborda estos escenarios, identificación de decisiones arquitectónicas clave, mapeo de estas decisiones a
+                        atributos de calidad, identificación de sensitivities (donde pequeños cambios tienen gran impacto) y
+                        tradeoffs (donde mejorar un atributo compromete otro), y evaluación de riesgos asociados con la arquitectura.
+                    </p>
+
+                    <p>
+                        Para directores de proyectos, la comprensión de que decisiones arquitectónicas involucran trade-offs
+                        inherentes tiene implicaciones significativas. Las discusiones arquitectónicas no deben formularse como
+                        búsqueda de la "mejor" arquitectura en abstracto sino de la arquitectura más apropiada dado el contexto
+                        específico: requisitos funcionales y no funcionales, restricciones técnicas y de negocio, competencias del
+                        equipo, cronogramas y presupuestos. Los directores efectivos facilitan que estos trade-offs se expliciten,
+                        se discutan con stakeholders relevantes y se documenten apropiadamente. La transparencia sobre trade-offs
+                        previene expectativas poco realistas y facilita decisiones informadas sobre dónde invertir esfuerzo de
+                        optimización limitado.
+                    </p>
+
+                    <div class="important-box">
+                        <h4>Reflexión: Arquitectura como Serie de Trade-offs</h4>
+                        <p>
+                            No existe una arquitectura universalmente superior; solo arquitecturas más o menos apropiadas para
+                            contextos específicos. Los directores de proyectos efectivos reconocen que decisiones arquitectónicas
+                            representan trade-offs estratégicos entre atributos de calidad competitivos, cada uno con implicaciones
+                            para cronograma, costo, riesgo y capacidades del sistema. La excelencia en dirección de proyectos TI
+                            requiere facilitar que estos trade-offs se expliciten, se evalúen rigurosamente contra prioridades de
+                            negocio, y se documenten para referencia futura. Las mejores decisiones arquitectónicas no son aquellas
+                            que eliminan trade-offs sino aquellas que los reconocen explícitamente y los resuelven conscientemente
+                            alineados con objetivos estratégicos del proyecto y la organización.
+                        </p>
+                    </div>
+                </section>
+
+                <div class="class-navigation">
+                    <a href="clase-12.html" class="nav-button prev">Clase Anterior</a>
+                    <a href="clase-14.html" class="nav-button next">Siguiente Clase</a>
+                </div>
+            </article>
+        </main>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Universidad Abierta Interamericana - Especialización en Dirección de Proyectos de Tecnología Informática</p>
+        <p>Dictamen CONEAU Sesión N° 619 - RCS 6350/23</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,648 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase 4: Metodologías Ágiles: Scrum y Kanban - UAI</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true, theme: 'default' });
+    </script>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <h1>UAI - Especialización en Dirección de Proyectos TI</h1>
+            </div>
+            <nav class="main-nav">
+                <a href="index.html">Inicio</a>
+                <a href="index.html#about">Sobre la Carrera</a>
+                <a href="index.html#contact">Contacto</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <aside class="sidebar">
+            <h2>Contenido del Curso</h2>
+            <nav class="chapters-nav">
+                <ul>
+                    <li><a href="clase-01.html">Clase 1: Introducción a la Dirección de Proyectos TI</a></li>
+                    <li><a href="clase-02.html">Clase 2: Fundamentos de la Gestión de Proyectos</a></li>
+                    <li><a href="clase-03.html">Clase 3: Metodologías Tradicionales</a></li>
+                    <li><a href="clase-04.html" class="active">Clase 4: Metodologías Ágiles</a></li>
+                    <li><a href="clase-05.html">Clase 5: Planificación y Gestión del Alcance</a></li>
+                    <li><a href="clase-06.html">Clase 6: Gestión del Tiempo y Cronogramas</a></li>
+                    <li><a href="clase-07.html">Clase 7: Gestión de Costos y Presupuestos</a></li>
+                    <li><a href="clase-08.html">Clase 8: Gestión de Riesgos</a></li>
+                    <li><a href="clase-09.html">Clase 9: Ingeniería de Requerimientos</a></li>
+                    <li><a href="clase-10.html">Clase 10: Métricas de Software</a></li>
+                    <li><a href="clase-11.html">Clase 11: Calidad del Software y Estándares</a></li>
+                    <li><a href="clase-12.html">Clase 12: Gestión del Capital Humano</a></li>
+                    <li><a href="clase-13.html">Clase 13: Arquitectura y Diseño de Software</a></li>
+                    <li><a href="clase-14.html">Clase 14: Testing y Aseguramiento de Calidad</a></li>
+                    <li><a href="clase-15.html">Clase 15: DevOps y Entrega Continua</a></li>
+                    <li><a href="clase-16.html">Clase 16: Tendencias Emergentes</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <article>
+                <h1>Clase 4: Metodologías Ágiles: Scrum y Kanban</h1>
+
+                <section>
+                    <h2>4.1 Manifiesto Ágil y Principios Fundamentales</h2>
+
+                    <p>
+                        El Manifiesto Ágil para el Desarrollo de Software, publicado en febrero de 2001 por diecisiete desarrolladores
+                        y pensadores de software reunidos en Snowbird, Utah, marcó un punto de inflexión histórico en la industria del
+                        desarrollo de software. Este documento conciso articuló valores y principios que desafiaron fundamentalmente
+                        las metodologías tradicionales dominantes, proponiendo un enfoque radicalmente diferente que priorizaba la
+                        adaptabilidad, la colaboración y la entrega de valor incremental por sobre la planificación exhaustiva, la
+                        documentación comprehensiva y el seguimiento rígido de planes predefinidos.
+                    </p>
+
+                    <p>
+                        El Manifiesto establece cuatro valores fundamentales que definen la filosofía ágil. Primero, "Individuos e
+                        interacciones sobre procesos y herramientas", reconociendo que el éxito de los proyectos de software depende
+                        primariamente de personas talentosas trabajando efectivamente juntas, y que ningún proceso o herramienta puede
+                        compensar la ausencia de colaboración humana genuina. Segundo, "Software funcionando sobre documentación
+                        exhaustiva", priorizando la entrega de software que funcione realmente y proporcione valor a los usuarios por
+                        sobre la producción de documentación detallada que frecuentemente se vuelve obsoleta o raramente se consulta.
+                    </p>
+
+                    <p>
+                        Tercero, "Colaboración con el cliente sobre negociación contractual", enfatizando que el objetivo no es
+                        simplemente cumplir términos contractuales sino trabajar colaborativamente con clientes para comprender y
+                        satisfacer sus necesidades reales, que frecuentemente evolucionan a medida que el proyecto progresa y se
+                        obtiene mayor comprensión. Cuarto, "Respuesta ante el cambio sobre seguir un plan", reconociendo que en
+                        entornos complejos y dinámicos, la capacidad de adaptarse a cambios en requisitos, tecnología o condiciones
+                        de negocio resulta más valiosa que la adherencia rígida a planes originales que pueden haberse vuelto
+                        obsoletos o subóptimos.
+                    </p>
+
+                    <p>
+                        Es crucial comprender correctamente estos valores. El Manifiesto no establece que los elementos de la derecha
+                        (procesos, documentación, contratos, planes) carecen de valor; explícitamente reconoce su valor pero prioriza
+                        los elementos de la izquierda. Esta distinción resulta fundamental; el agilismo no rechaza toda planificación,
+                        documentación o proceso, sino que busca equilibrarlos apropiadamente con enfoque en entrega de valor,
+                        colaboración humana y adaptabilidad.
+                    </p>
+
+                    <p>
+                        Los doce principios del Manifiesto Ágil elaboran estos valores en guías más específicas para la práctica:
+                        entregar software valioso frecuentemente, bienvenido a cambios de requisitos incluso tardíamente, entregas
+                        frecuentes de software funcional en escalas de tiempo cortas, colaboración diaria entre personas de negocio
+                        y desarrolladores, proyectos construidos alrededor de individuos motivados, conversación cara a cara como
+                        método más eficiente de comunicación, software funcionando como medida primaria de progreso, desarrollo
+                        sostenible manteniendo ritmo constante, atención continua a la excelencia técnica, simplicidad maximizando la
+                        cantidad de trabajo no hecho, equipos auto-organizados, y reflexión regular sobre efectividad y ajuste de
+                        comportamiento.
+                    </p>
+
+                    <p>
+                        Estos principios han influenciado profundamente no solo el desarrollo de software sino la gestión de proyectos
+                        en general. El énfasis en iteraciones cortas, feedback continuo, equipos empoderados y mejora continua ha
+                        demostrado efectividad particular en contextos de alta incertidumbre y complejidad donde enfoques tradicionales
+                        frecuentemente fallan. Sin embargo, la aplicación efectiva de principios ágiles requiere cambios culturales
+                        profundos en organizaciones, no simplemente la adopción superficial de prácticas o ceremonias ágiles.
+                    </p>
+
+                    <div class="info-box">
+                        <h4>Los Cuatro Valores del Manifiesto Ágil</h4>
+                        <ul>
+                            <li><strong>Individuos e interacciones</strong> sobre procesos y herramientas</li>
+                            <li><strong>Software funcionando</strong> sobre documentación exhaustiva</li>
+                            <li><strong>Colaboración con el cliente</strong> sobre negociación contractual</li>
+                            <li><strong>Respuesta ante el cambio</strong> sobre seguir un plan</li>
+                        </ul>
+                        <p style="margin-top: 10px; font-style: italic;">
+                            Esto es, aunque valoramos los elementos de la derecha, valoramos más los de la izquierda.
+                        </p>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>4.2 Framework Scrum: Roles, Eventos y Artefactos</h2>
+
+                    <p>
+                        Scrum constituye el framework ágil más ampliamente adoptado globalmente, proporcionando una estructura ligera
+                        pero suficiente para que equipos aborden problemas complejos y adaptativos mientras entregan productos de máximo
+                        valor posible de manera productiva y creativa. Desarrollado inicialmente por Ken Schwaber y Jeff Sutherland en
+                        la década de 1990 y formalizado en la Scrum Guide (actualizada periódicamente, siendo 2020 la versión más
+                        reciente), Scrum se fundamenta en la teoría de control de procesos empírica o empirismo, que asegura que el
+                        conocimiento proviene de la experiencia y que las decisiones se basan en lo que se conoce.
+                    </p>
+
+                    <p>
+                        Scrum define tres roles claramente diferenciados, cada uno con responsabilidades específicas que no se superponen.
+                        El Product Owner es responsable de maximizar el valor del producto resultante del trabajo del equipo de desarrollo.
+                        Gestiona el Product Backlog (lista priorizada de funcionalidades y requisitos), articulando claramente los ítems,
+                        ordenándolos para alcanzar mejor los objetivos y misión, optimizando el valor del trabajo que el equipo realiza,
+                        asegurando que el Product Backlog sea visible, transparente y claro, y que el equipo comprenda los ítems al nivel
+                        necesario. El Product Owner es una persona, no un comité, aunque puede representar los deseos de un comité.
+                    </p>
+
+                    <p>
+                        El equipo de desarrollo (Development Team) consiste en profesionales que realizan el trabajo de entregar un
+                        incremento de producto "Terminado" potencialmente liberable al final de cada Sprint. Solo los miembros del equipo
+                        de desarrollo crean el incremento. Los equipos de desarrollo son auto-organizados, nadie (ni siquiera el Scrum
+                        Master) les dice cómo convertir el Product Backlog en incrementos de funcionalidad potencialmente liberable. Son
+                        multifuncionales, con todas las habilidades necesarias como equipo para crear un incremento de producto. Scrum no
+                        reconoce títulos para los miembros del equipo de desarrollo; no hay excepciones a esta regla. No hay sub-equipos
+                        dentro del equipo de desarrollo. El tamaño óptimo es suficientemente pequeño para permanecer ágil y suficientemente
+                        grande para completar trabajo significativo, típicamente entre tres y nueve personas.
+                    </p>
+
+                    <p>
+                        El Scrum Master es responsable de promover y soportar Scrum como se define en la Scrum Guide, ayudando a todos
+                        a comprender la teoría, prácticas, reglas y valores de Scrum. Es un líder servil para el Scrum Team, ayudando
+                        a aquellos fuera del Scrum Team a comprender cuáles de sus interacciones con el equipo son útiles y cuáles no,
+                        y facilitando el cambio de estas interacciones para maximizar el valor creado por el Scrum Team. El Scrum Master
+                        sirve al Product Owner facilitando técnicas para gestión efectiva del Product Backlog, ayudando al equipo a
+                        comprender la necesidad de ítems claros y concisos, comprendiendo la planificación de producto en entornos
+                        empíricos, y facilitando eventos Scrum según se requiera o necesite.
+                    </p>
+
+                    <p>
+                        Scrum prescribe cinco eventos formales para crear regularidad y minimizar la necesidad de reuniones no definidas
+                        en Scrum. Todos los eventos son time-boxed, significando que tienen duración máxima establecida. El Sprint,
+                        corazón de Scrum, es un time-box de un mes o menos durante el cual se crea un incremento de producto "Terminado"
+                        utilizable y potencialmente liberable. Los Sprints tienen duraciones consistentes a lo largo del esfuerzo de
+                        desarrollo. Un nuevo Sprint comienza inmediatamente después de la conclusión del Sprint anterior. Durante el
+                        Sprint, no se realizan cambios que pondrían en peligro el objetivo del Sprint, las metas de calidad no disminuyen,
+                        y el alcance puede clarificarse y renegociarse entre el Product Owner y el equipo de desarrollo a medida que se
+                        aprende más.
+                    </p>
+
+                    <p>
+                        La Sprint Planning (planificación del Sprint) es time-boxed a máximo ocho horas para un Sprint de un mes,
+                        proporcionalmente menos para Sprints más cortos. El Scrum Master asegura que el evento ocurra y que los asistentes
+                        comprendan su propósito. La planificación aborda dos preguntas: ¿Qué puede entregarse en el incremento resultante
+                        del Sprint próximo?, y ¿Cómo se logrará el trabajo necesario para entregar el incremento? El Daily Scrum es un
+                        evento de 15 minutos time-boxed para que el equipo de desarrollo sincronice actividades y cree un plan para las
+                        próximas 24 horas. La Sprint Review ocurre al final del Sprint para inspeccionar el incremento y adaptar el Product
+                        Backlog si es necesario. La Sprint Retrospective es una oportunidad para que el Scrum Team se inspeccione a sí
+                        mismo y cree un plan de mejoras para implementar durante el próximo Sprint.
+                    </p>
+
+                    <p>
+                        Los artefactos de Scrum representan trabajo o valor para proporcionar transparencia y oportunidades de inspección
+                        y adaptación. El Product Backlog es una lista ordenada de todo lo que se conoce que es necesario en el producto,
+                        y es la única fuente de requisitos para cualquier cambio a realizarse en el producto. El Sprint Backlog es el
+                        conjunto de ítems del Product Backlog seleccionados para el Sprint, más un plan para entregar el incremento de
+                        producto y realizar el objetivo del Sprint. El Incremento es la suma de todos los ítems del Product Backlog
+                        completados durante un Sprint y el valor de los incrementos de todos los Sprints anteriores, debiendo estar en
+                        condición utilizable sin importar si el Product Owner decide liberarlo realmente.
+                    </p>
+
+                    <div class="mermaid">
+                    graph TB
+                        subgraph "Roles de Scrum"
+                        A[Product Owner]
+                        B[Scrum Master]
+                        C[Development Team]
+                        end
+
+                        subgraph "Eventos de Scrum"
+                        D[Sprint Planning]
+                        E[Daily Scrum]
+                        F[Sprint Review]
+                        G[Sprint Retrospective]
+                        H[Sprint - 1 a 4 semanas]
+                        end
+
+                        subgraph "Artefactos de Scrum"
+                        I[Product Backlog]
+                        J[Sprint Backlog]
+                        K[Incremento de Producto]
+                        end
+
+                        A -->|Gestiona| I
+                        A -->|Participa| D
+                        A -->|Participa| F
+                        B -->|Facilita| D
+                        B -->|Facilita| E
+                        B -->|Facilita| F
+                        B -->|Facilita| G
+                        C -->|Trabaja| J
+                        C -->|Crea| K
+                        I -->|Entrada| D
+                        D -->|Crea| J
+                        J -->|Guía| E
+                        K -->|Inspecciona| F
+                        H -->|Contiene| D
+                        H -->|Contiene| E
+                        H -->|Contiene| F
+                        H -->|Contiene| G
+
+                        style A fill:#e1f5ff
+                        style B fill:#fff4e1
+                        style C fill:#e1ffe1
+                        style I fill:#ffe1e1
+                        style J fill:#f0e1ff
+                        style K fill:#ffe1f0
+                    </mermaid>
+                </section>
+
+                <section>
+                    <h2>4.3 Método Kanban y Visualización del Flujo</h2>
+
+                    <p>
+                        Kanban, término japonés que significa "tarjeta visual" o "señalización", representa un método para gestionar
+                        trabajo del conocimiento con énfasis en entrega just-in-time y en no sobrecargar a los miembros del equipo.
+                        Originado en el Sistema de Producción Toyota desarrollado por Taiichi Ohno en la década de 1940, Kanban fue
+                        adaptado para trabajo del conocimiento y desarrollo de software por David J. Anderson en la década de 2000.
+                        A diferencia de Scrum que prescribe roles, eventos y artefactos específicos, Kanban constituye un método
+                        evolutivo de cambio que se aplica sobre procesos existentes sin requerir cambios organizacionales disruptivos.
+                    </p>
+
+                    <p>
+                        Kanban se fundamenta en cuatro principios básicos que guían su implementación. Primero, "Empezar con lo que
+                        haces ahora", reconociendo que Kanban no requiere cambios significativos en procesos, roles o responsabilidades
+                        existentes, reduciendo así la resistencia al cambio inicial. Este principio resulta particularmente valioso
+                        para organizaciones que desean beneficiarse de enfoques ágiles sin la disrupción potencial de adoptar Scrum u
+                        otros frameworks que requieren cambios más fundamentales. Segundo, "Acordar perseguir el cambio incremental y
+                        evolutivo", enfatizando mejoras graduales y continuas en lugar de transformaciones radicales.
+                    </p>
+
+                    <p>
+                        Tercero, "Respetar el proceso actual, roles, responsabilidades y títulos", reconociendo que los procesos,
+                        roles y responsabilidades existentes tienen valor y deben ser preservados inicialmente. Con el tiempo, a medida
+                        que el sistema evoluciona, cambios en estos elementos pueden emerger naturalmente. Cuarto, "Fomentar actos de
+                        liderazgo en todos los niveles", desde colaboradores individuales hasta gerencia senior, reconociendo que la
+                        mejora continua requiere participación activa de todos los niveles organizacionales, no solo dirección ejecutiva.
+                    </p>
+
+                    <p>
+                        Kanban prescribe seis prácticas fundamentales para su implementación efectiva. Primera, "Visualizar el flujo
+                        de trabajo", típicamente mediante un tablero Kanban que representa visualmente los estados por los que pasa el
+                        trabajo (por ejemplo: Backlog, Análisis, Desarrollo, Testing, Terminado). Cada ítem de trabajo se representa
+                        mediante una tarjeta que se mueve a través del tablero a medida que progresa. La visualización hace transparente
+                        el trabajo, facilitando la identificación de cuellos de botella, work in progress excesivo y distribución desigual
+                        de carga.
+                    </p>
+
+                    <p>
+                        Segunda práctica, "Limitar el Work in Progress (WIP)", estableciendo límites explícitos al número de ítems que
+                        pueden estar simultáneamente en cada estado del flujo de trabajo. Los límites WIP previenen la multitarea
+                        excesiva, reducen el tiempo de ciclo, identifican cuellos de botella, y hacen que problemas en el flujo se
+                        vuelvan visibles rápidamente. Por ejemplo, si la columna "Testing" tiene límite de tres ítems y alcanza ese
+                        límite, desarrollo debe pausar nueva codificación y asistir en testing para desbloquear el flujo. Tercera
+                        práctica, "Gestionar el flujo", monitoreando, midiendo y reportando el flujo de trabajo a través del sistema
+                        para identificar y resolver impedimentos.
+                    </p>
+
+                    <p>
+                        Cuarta práctica, "Hacer las políticas de proceso explícitas", documentando claramente las reglas y criterios
+                        para que ítems de trabajo se muevan entre estados. Por ejemplo, la "Definición de Terminado" para cada estado
+                        debe ser explícita y comprendida por todos. Quinta práctica, "Implementar ciclos de retroalimentación",
+                        estableciendo reuniones regulares para revisar y adaptar el sistema, como reuniones de reabastecimiento del
+                        backlog, revisiones de flujo, retrospectivas de entrega, y revisiones de riesgo. Sexta práctica, "Mejorar
+                        colaborativamente, evolucionar experimentalmente", utilizando modelos y el método científico para implementar
+                        cambios incrementales, adaptativos y evolutivos cuando el entendimiento compartido sugiere que mejorarán la
+                        efectividad.
+                    </p>
+
+                    <p>
+                        Las métricas fundamentales en Kanban incluyen el tiempo de ciclo (tiempo que toma un ítem desde que se inicia
+                        el trabajo hasta que se completa), el throughput (número de ítems completados por unidad de tiempo), el Work
+                        in Progress (número de ítems actualmente en proceso), y el tiempo de espera (tiempo desde que se solicita un
+                        ítem hasta que se completa). Los diagramas de flujo acumulativo (Cumulative Flow Diagrams) proporcionan
+                        visualización poderosa del comportamiento del sistema a lo largo del tiempo, mostrando la cantidad de trabajo
+                        en cada estado, identificando tendencias, y revelando problemas como cuellos de botella persistentes o
+                        variabilidad excesiva.
+                    </p>
+
+                    <div class="mermaid">
+                    graph LR
+                        A[Backlog<br/>WIP: ∞] --> B[Análisis<br/>WIP: 3]
+                        B --> C[Desarrollo<br/>WIP: 5]
+                        C --> D[Code Review<br/>WIP: 3]
+                        D --> E[Testing<br/>WIP: 4]
+                        E --> F[Desplegado<br/>WIP: ∞]
+
+                        style A fill:#e1f5ff
+                        style B fill:#fff4e1
+                        style C fill:#e1ffe1
+                        style D fill:#ffe1e1
+                        style E fill:#f0e1ff
+                        style F fill:#d4edda
+
+                        G[Principios Kanban] --> G1[Empezar con lo que haces]
+                        G --> G2[Cambio incremental]
+                        G --> G3[Respetar procesos actuales]
+                        G --> G4[Liderazgo en todos niveles]
+                    </mermaid>
+                </section>
+
+                <section>
+                    <h2>4.4 Comparación entre Scrum y Kanban</h2>
+
+                    <p>
+                        Scrum y Kanban representan dos enfoques ágiles populares con filosofías, estructuras y aplicaciones diferentes,
+                        aunque no mutuamente exclusivas. Comprender sus diferencias, fortalezas y limitaciones resulta esencial para
+                        seleccionar el enfoque apropiado para contextos específicos o, en muchos casos, para combinar elementos de ambos
+                        en enfoques híbridos que capturan los beneficios de cada uno. Esta comparación no busca establecer superioridad
+                        de un enfoque sobre otro, sino clarificar sus características distintivas para facilitar decisiones informadas.
+                    </p>
+
+                    <p>
+                        En términos de estructura prescriptiva, Scrum es significativamente más prescriptivo que Kanban. Scrum define
+                        roles específicos (Product Owner, Scrum Master, Development Team), eventos mandatorios (Sprint Planning, Daily
+                        Scrum, Sprint Review, Sprint Retrospective), y artefactos requeridos (Product Backlog, Sprint Backlog,
+                        Incremento). Esta estructura proporciona guías claras, particularmente valiosas para equipos nuevos en agilismo
+                        o en organizaciones que requieren estructura formal. Kanban, en contraste, es menos prescriptivo, no mandando
+                        roles específicos, reuniones particulares o artefactos definidos. Simplemente prescribe visualizar el flujo,
+                        limitar WIP, gestionar el flujo, hacer políticas explícitas, implementar ciclos de retroalimentación, y mejorar
+                        colaborativamente.
+                    </p>
+
+                    <p>
+                        Respecto a la cadencia de trabajo, Scrum opera en iteraciones de longitud fija denominadas Sprints, típicamente
+                        de una a cuatro semanas. Al inicio de cada Sprint, el equipo se compromete a un conjunto de trabajo definido en
+                        la Sprint Planning, y al final del Sprint, se revisa el incremento en la Sprint Review y se reflexiona sobre el
+                        proceso en la Sprint Retrospective. Esta cadencia proporciona ritmo regular y puntos de sincronización, facilitando
+                        la coordinación con stakeholders y otras partes de la organización. Kanban, por el contrario, opera con flujo
+                        continuo sin iteraciones de longitud fija. El trabajo se extrae del backlog cuando hay capacidad disponible
+                        (determinada por límites WIP), y los ítems se completan y liberan tan pronto como están listos, sin esperar al
+                        final de una iteración.
+                    </p>
+
+                    <p>
+                        En cuanto a gestión de cambios, Scrum desalienta cambios durante el Sprint una vez que la Sprint Planning está
+                        completa. El Sprint Backlog es propiedad del Development Team, y cambios significativos típicamente se difieren
+                        hasta el próximo Sprint. Esta estabilidad permite al equipo enfocarse en el trabajo comprometido sin interrupciones.
+                        Kanban, en contraste, acomoda cambios más fluidamente. Siempre que haya capacidad disponible (determinada por
+                        límites WIP), nuevos ítems pueden ser extraídos del backlog, y las prioridades pueden ajustarse continuamente.
+                        Esta flexibilidad resulta valiosa en contextos donde los requisitos cambian frecuentemente o donde el trabajo es
+                        interrumpido regularmente por issues urgentes.
+                    </p>
+
+                    <p>
+                        Respecto a las métricas primarias, Scrum típicamente utiliza velocity (puntos de historia o ítems completados
+                        por Sprint) como métrica principal de productividad, permitiendo proyecciones de cuándo se completará trabajo
+                        futuro basándose en velocity histórico. Otras métricas incluyen sprint burndown (trabajo restante en el Sprint
+                        actual) y release burndown (trabajo restante hasta un release planificado). Kanban, por su parte, enfatiza métricas
+                        de flujo como tiempo de ciclo, throughput, y Work in Progress. El diagrama de flujo acumulativo proporciona
+                        visualización rica del comportamiento del sistema. Estas métricas orientan hacia optimización del flujo y reducción
+                        de desperdicios en lugar de maximización de output.
+                    </p>
+
+                    <p>
+                        En términos de aplicabilidad, Scrum resulta particularmente apropiado para proyectos con alcance relativamente
+                        definido, equipos dedicados, y contextos donde stakeholders pueden comprometerse a revisiones regulares y
+                        feedback en cadencia de Sprint. La estructura de Scrum proporciona puntos de sincronización regulares útiles para
+                        coordinación de equipos múltiples y gestión de dependencias. Kanban resulta más apropiado para trabajo de soporte,
+                        mantenimiento, o contextos donde el trabajo llega impredeciblemente y debe ser procesado continuamente. También
+                        resulta valioso cuando el equipo procesa ítems de tamaño altamente variable o cuando la organización requiere
+                        enfoque menos disruptivo para adoptar prácticas ágiles.
+                    </p>
+
+                    <p>
+                        Muchas organizaciones contemporáneas adoptan enfoques híbridos informalmente denominados "Scrumban", combinando
+                        elementos de ambos frameworks. Por ejemplo, utilizando la estructura de roles de Scrum (Product Owner, Scrum
+                        Master) y reuniones regulares como Daily Standup y Retrospectivas, pero adoptando flujo continuo de Kanban en
+                        lugar de Sprints de longitud fija, visualización de trabajo mediante tableros Kanban con límites WIP explícitos,
+                        y métricas de flujo para optimización de proceso. Esta hibridación permite capturar beneficios de estructura y
+                        cadencia de Scrum junto con la flexibilidad y optimización de flujo de Kanban.
+                    </p>
+
+                    <div class="info-box">
+                        <h4>Comparación Scrum vs Kanban</h4>
+                        <table style="width: 100%; border-collapse: collapse;">
+                            <tr style="background-color: #f0f0f0;">
+                                <th style="padding: 10px; border: 1px solid #ddd;">Aspecto</th>
+                                <th style="padding: 10px; border: 1px solid #ddd;">Scrum</th>
+                                <th style="padding: 10px; border: 1px solid #ddd;">Kanban</th>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #ddd;"><strong>Cadencia</strong></td>
+                                <td style="padding: 10px; border: 1px solid #ddd;">Iteraciones fijas (Sprints)</td>
+                                <td style="padding: 10px; border: 1px solid #ddd;">Flujo continuo</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #ddd;"><strong>Roles</strong></td>
+                                <td style="padding: 10px; border: 1px solid #ddd;">Prescriptivos (PO, SM, Dev Team)</td>
+                                <td style="padding: 10px; border: 1px solid #ddd;">Opcionales, roles existentes</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #ddd;"><strong>Cambios</strong></td>
+                                <td style="padding: 10px; border: 1px solid #ddd;">Desalentados durante Sprint</td>
+                                <td style="padding: 10px; border: 1px solid #ddd;">Permitidos cuando hay capacidad</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #ddd;"><strong>Métricas</strong></td>
+                                <td style="padding: 10px; border: 1px solid #ddd;">Velocity, Burndown</td>
+                                <td style="padding: 10px; border: 1px solid #ddd;">Tiempo de ciclo, Throughput, WIP</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #ddd;"><strong>Contexto Ideal</strong></td>
+                                <td style="padding: 10px; border: 1px solid #ddd;">Proyectos, equipos dedicados</td>
+                                <td style="padding: 10px; border: 1px solid #ddd;">Soporte, flujo continuo de trabajo</td>
+                            </tr>
+                        </table>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>4.5 Implementación de Ceremonias Ágiles</h2>
+
+                    <p>
+                        Las ceremonias ágiles, también denominadas eventos o rituales, constituyen reuniones estructuradas que facilitan
+                        la comunicación, la coordinación, la inspección y la adaptación en equipos ágiles. La implementación efectiva de
+                        estas ceremonias resulta crítica para el éxito de enfoques ágiles; ceremonias mal ejecutadas rápidamente se
+                        perciben como overhead burocrático sin valor, minando el compromiso del equipo y la credibilidad del enfoque ágil.
+                        Esta sección explora las prácticas para implementación efectiva de las principales ceremonias ágiles, enfocándose
+                        primariamente en Scrum pero con principios aplicables más ampliamente.
+                    </p>
+
+                    <p>
+                        La Sprint Planning inicia cada Sprint, estableciendo el trabajo que se realizará. La primera mitad de la
+                        planificación aborda "¿Qué se construirá?". El Product Owner presenta los ítems priorizados del Product Backlog,
+                        el equipo los discute para comprender los requisitos, y colaborativamente se determina qué ítems pueden completarse
+                        realísticamente durante el Sprint considerando la capacity del equipo y la complejidad estimada de los ítems. El
+                        resultado es un Sprint Goal articulado que proporciona coherencia al Sprint. La segunda mitad aborda "¿Cómo se
+                        construirá?". El Development Team descompone los ítems del Product Backlog seleccionados en tareas técnicas,
+                        identifica dependencias, discute enfoques de implementación, y crea el Sprint Backlog inicial.
+                    </p>
+
+                    <p>
+                        Para que la Sprint Planning resulte efectiva, el Product Owner debe prepararse adecuadamente, asegurando que los
+                        ítems del Product Backlog estén claramente descritos, estimados, y priorizados. Los ítems candidatos para el
+                        próximo Sprint deben cumplir la "Definición de Listo" (Definition of Ready), criterios que aseguran suficiente
+                        claridad para que el equipo pueda comenzar el trabajo. El equipo debe comprender su velocity histórico y
+                        disponibilidad real durante el próximo Sprint (considerando vacaciones, días festivos, otros compromisos). La
+                        reunión debe ser colaborativa, no simplemente el Product Owner dictando trabajo; el equipo debe tener voz en qué
+                        se compromete y cómo abordará el trabajo.
+                    </p>
+
+                    <p>
+                        El Daily Scrum, reunión diaria de 15 minutos time-boxed, permite al Development Team sincronizar actividades y
+                        crear plan para las próximas 24 horas. No es una reunión de reporte de estado al Scrum Master o management, sino
+                        una reunión del equipo para el equipo. El formato tradicional de tres preguntas (¿Qué hice ayer?, ¿Qué haré hoy?,
+                        ¿Qué impedimentos tengo?) representa una estructura posible, pero la Scrum Guide 2020 reconoce que el equipo puede
+                        estructurar la reunión como prefiera, siempre que se enfoque en progreso hacia el Sprint Goal e identifique
+                        impedimentos. Algunas variaciones efectivas incluyen "walk the board" (revisar ítems del Sprint Backlog de derecha
+                        a izquierda, discutiendo progreso de cada uno) o enfoque basado en parking lot issues.
+                    </p>
+
+                    <p>
+                        Para Daily Scrums efectivos, la puntualidad resulta esencial; comenzar a tiempo respeta a quienes llegan
+                        puntualmente e incentiva puntualidad futura. La reunión debe permanecer enfocada; discusiones detalladas de
+                        soluciones técnicas deben diferirse a conversaciones separadas después del Daily con solo las personas relevantes.
+                        El Scrum Master facilita removiendo impedimentos identificados, pero no dirige la reunión; el equipo se
+                        auto-organiza. Realizar el Daily Scrum de pie (stand-up meeting) ayuda a mantener brevedad. Mantener la reunión
+                        al mismo tiempo y lugar cada día establece rutina que reduce fricción de coordinación.
+                    </p>
+
+                    <p>
+                        La Sprint Review, al final del Sprint, proporciona oportunidad para inspeccionar el incremento y adaptar el
+                        Product Backlog si es necesario. No es meramente una demostración unidireccional sino una sesión de trabajo
+                        colaborativa donde el Scrum Team y stakeholders revisan qué se completó durante el Sprint, discuten qué funcionó
+                        bien y qué problemas se encontraron, y colaboran sobre qué hacer a continuación. El Product Owner explica qué
+                        ítems del Product Backlog se completaron y cuáles no. El Development Team demuestra el incremento y responde
+                        preguntas. El grupo completo colabora sobre qué hacer a continuación, proporcionando input valioso para la próxima
+                        Sprint Planning. El Product Owner discute el Product Backlog actual y proyecta fechas probables de completación
+                        basándose en progreso actual.
+                    </p>
+
+                    <p>
+                        La Sprint Retrospective, después de la Sprint Review y antes de la próxima Sprint Planning, proporciona oportunidad
+                        para que el Scrum Team se inspeccione a sí mismo y cree plan de mejoras para implementar durante el próximo Sprint.
+                        El Scrum Master facilita la retrospectiva, asegurando que sea una reunión positiva y productiva. Formatos comunes
+                        incluyen "Start-Stop-Continue" (¿Qué deberíamos empezar a hacer?, ¿Qué deberíamos dejar de hacer?, ¿Qué deberíamos
+                        continuar haciendo?), "Glad-Sad-Mad" (reflexionando sobre sentimientos del equipo), o técnicas de facilitación más
+                        elaboradas. La clave es identificar mejoras concretas y accionables, no simplemente ventilar quejas. Los ítems de
+                        mejora identificados deben agregarse al Sprint Backlog del próximo Sprint como compromisos del equipo.
+                    </p>
+
+                    <div class="mermaid">
+                    graph TD
+                        A[Sprint Planning] -->|Inicia| B[Sprint - 2 semanas]
+                        B --> C[Daily Scrum - Diario]
+                        C --> D[Desarrollo y Testing]
+                        D --> E[Sprint Review]
+                        E --> F[Sprint Retrospective]
+                        F -->|Siguiente| A
+
+                        A1[¿Qué construir?<br/>¿Cómo construir?] -.-> A
+                        C1[Sincronización<br/>Impedimentos] -.-> C
+                        E1[Demostración<br/>Feedback] -.-> E
+                        F1[Lecciones Aprendidas<br/>Mejoras] -.-> F
+
+                        G[Incremento de Producto<br/>Potencialmente Liberable] --> E
+
+                        style A fill:#e1f5ff
+                        style C fill:#fff4e1
+                        style E fill:#e1ffe1
+                        style F fill:#ffe1e1
+                        style B fill:#f0e1ff
+                    </mermaid>
+                </section>
+
+                <section>
+                    <h2>4.6 Transición de Tradicional a Ágil</h2>
+
+                    <p>
+                        La transición de metodologías tradicionales a enfoques ágiles representa un desafío significativo que trasciende
+                        la simple adopción de nuevas prácticas o herramientas. Requiere cambios fundamentales en cultura organizacional,
+                        estructuras de poder, procesos de toma de decisiones, métricas de éxito, y mentalidades individuales. Las
+                        estadísticas indican que muchas transformaciones ágiles fallan o logran solo resultados parciales debido a
+                        subestimación de la profundidad del cambio requerido. Esta sección explora estrategias, desafíos comunes y
+                        prácticas efectivas para facilitar transiciones exitosas de enfoques tradicionales a ágiles.
+                    </p>
+
+                    <p>
+                        El primer principio para transiciones exitosas es comenzar con el "por qué" antes del "cómo". Las organizaciones
+                        frecuentemente adoptan agilismo porque "todos lo están haciendo" o porque han leído que incrementará productividad,
+                        sin articular claramente qué problemas específicos buscan resolver. Una transformación ágil exitosa comienza
+                        identificando problemas específicos en enfoques actuales: ¿Están los proyectos excediendo consistentemente
+                        cronogramas y presupuestos? ¿Están los productos fallando en satisfacer necesidades de usuarios? ¿Es el time-to-market
+                        demasiado lento comparado con competidores? ¿Está la moral del equipo baja debido a procesos burocráticos? Articular
+                        claramente los problemas a resolver proporciona contexto para la transformación y criterios para evaluar su éxito.
+                    </p>
+
+                    <p>
+                        La transformación debe comenzar con educación y construcción de comprensión compartida. Stakeholders en todos los
+                        niveles necesitan comprender qué es agilismo, por qué la organización lo está adoptando, cómo cambiará su trabajo,
+                        y qué beneficios se esperan. La capacitación formal en frameworks específicos (Scrum, Kanban, SAFe) resulta valiosa,
+                        pero igualmente importante es educación sobre principios ágiles fundamentales, pensamiento lean, y teoría de
+                        sistemas. Sin esta comprensión fundamental, la adopción ágil se vuelve superficial, con equipos ejecutando
+                        ceremonias y utilizando herramientas sin comprender realmente los principios subyacentes.
+                    </p>
+
+                    <p>
+                        El enfoque de "empezar pequeño, escalar gradualmente" resulta generalmente más exitoso que transformaciones big-bang
+                        de toda la organización simultáneamente. Seleccionar uno o pocos equipos piloto para implementar prácticas ágiles,
+                        proporcionarles coaching y soporte intensivo, permitirles aprender y adaptar, y capturar lecciones aprendidas antes
+                        de expandir a otros equipos reduce riesgo y genera casos de éxito internos que construyen momentum. Los equipos
+                        piloto idealmente involucran proyectos importantes pero no críticos para la misión, con stakeholders abiertos al
+                        cambio y dispuestos a experimentar. Éxitos tempranos son importantes para construir credibilidad y superar
+                        escepticismo.
+                    </p>
+
+                    <p>
+                        La gestión del cambio y el abordaje de resistencia resultan críticos. La resistencia al cambio representa respuesta
+                        humana natural, particularmente cuando el cambio amenaza posiciones establecidas, requiere aprendizaje de nuevas
+                        habilidades, o crea incertidumbre sobre roles futuros. Gerentes de proyecto tradicionales pueden sentir que Scrum
+                        elimina su rol. Analistas de negocios pueden preocuparse sobre cómo encajan en equipos multifuncionales. Arquitectos
+                        pueden resistir diseño emergente. Abordar estas preocupaciones requiere empatía, comunicación transparente sobre
+                        cómo evolucionarán los roles, y oportunidades para que individuos desarrollen nuevas competencias relevantes en el
+                        contexto ágil.
+                    </p>
+
+                    <p>
+                        Las estructuras organizacionales frecuentemente requieren adaptación. Los equipos ágiles trabajan mejor cuando son
+                        multifuncionales, colocados, y relativamente estables a lo largo del tiempo. Sin embargo, muchas organizaciones
+                        tradicionales están estructuradas en silos funcionales (desarrollo, testing, operaciones, análisis de negocios)
+                        con recursos asignados temporalmente a proyectos desde pools centralizados. Transicionar a equipos de producto
+                        duraderos con capacidades multifuncionales puede requerir reorganización significativa. Los sistemas de incentivos
+                        también necesitan alineación; recompensar héroes individuales socava colaboración de equipo, mientras que sistemas
+                        basados en productividad individual pueden contradecir principios ágiles de propiedad colectiva.
+                    </p>
+
+                    <p>
+                        El coaching continuo resulta esencial. Incluso con capacitación inicial, los equipos encontrarán desafíos,
+                        malentendidos y situaciones donde no es obvio cómo aplicar principios ágiles. Coaches ágiles experimentados,
+                        ya sean externos o internos, pueden guiar equipos a través de estos desafíos, facilitando retrospectivas,
+                        ayudando con técnicas de facilitación, coaching a Product Owners y Scrum Masters en sus roles, y ayudando a la
+                        organización a identificar y remover impedimentos sistémicos. El coaching debe disminuir gradualmente a medida
+                        que los equipos maduran, pero algún nivel de coaching o mentoring típicamente permanece valioso incluso para
+                        equipos experimentados.
+                    </p>
+
+                    <div class="success-box">
+                        <h4>Pasos para una Transición Ágil Exitosa</h4>
+                        <ul class="checklist">
+                            <li>Articular claramente el "por qué" - problemas específicos que se buscan resolver</li>
+                            <li>Educar ampliamente sobre principios y prácticas ágiles</li>
+                            <li>Comenzar con equipos piloto en lugar de transformación big-bang</li>
+                            <li>Proporcionar coaching continuo y soporte intensivo</li>
+                            <li>Abordar proactivamente resistencia al cambio con empatía y comunicación</li>
+                            <li>Adaptar estructuras organizacionales, incentivos y métricas</li>
+                            <li>Celebrar éxitos tempranos y compartir lecciones aprendidas</li>
+                            <li>Reconocer que la transformación es viaje de años, no meses</li>
+                            <li>Medir progreso con métricas apropiadas (valor entregado, satisfacción del cliente, moral del equipo)</li>
+                            <li>Permitir adaptación del enfoque ágil al contexto organizacional específico</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <div class="class-navigation">
+                    <a href="clase-03.html" class="nav-button prev">Clase Anterior</a>
+                    <a href="clase-05.html" class="nav-button next">Siguiente Clase</a>
+                </div>
+            </article>
+        </main>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Universidad Abierta Interamericana - Especialización en Dirección de Proyectos de Tecnología Informática</p>
+        <p>Dictamen CONEAU Sesión N° 619 - RCS 6350/23</p>
+    </footer>
+</body>
+</html>
