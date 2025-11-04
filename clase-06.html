@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase 6: Gestión del Tiempo y Cronogramas - UAI</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true, theme: 'default' });
+    </script>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <h1>UAI - Especialización en Dirección de Proyectos TI</h1>
+            </div>
+            <nav class="main-nav">
+                <a href="index.html">Inicio</a>
+                <a href="index.html#about">Sobre la Carrera</a>
+                <a href="index.html#contact">Contacto</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <aside class="sidebar">
+            <h2>Contenido del Curso</h2>
+            <nav class="chapters-nav">
+                <ul>
+                    <li><a href="clase-01.html">Clase 1: Introducción a la Dirección de Proyectos TI</a></li>
+                    <li><a href="clase-02.html">Clase 2: Fundamentos de la Gestión de Proyectos</a></li>
+                    <li><a href="clase-03.html">Clase 3: Metodologías Tradicionales</a></li>
+                    <li><a href="clase-04.html">Clase 4: Metodologías Ágiles</a></li>
+                    <li><a href="clase-05.html">Clase 5: Planificación y Gestión del Alcance</a></li>
+                    <li><a href="clase-06.html" class="active">Clase 6: Gestión del Tiempo y Cronogramas</a></li>
+                    <li><a href="clase-07.html">Clase 7: Gestión de Costos y Presupuestos</a></li>
+                    <li><a href="clase-08.html">Clase 8: Gestión de Riesgos</a></li>
+                    <li><a href="clase-09.html">Clase 9: Ingeniería de Requerimientos</a></li>
+                    <li><a href="clase-10.html">Clase 10: Métricas de Software</a></li>
+                    <li><a href="clase-11.html">Clase 11: Calidad del Software y Estándares</a></li>
+                    <li><a href="clase-12.html">Clase 12: Gestión del Capital Humano</a></li>
+                    <li><a href="clase-13.html">Clase 13: Arquitectura y Diseño de Software</a></li>
+                    <li><a href="clase-14.html">Clase 14: Testing y Aseguramiento de Calidad</a></li>
+                    <li><a href="clase-15.html">Clase 15: DevOps y Entrega Continua</a></li>
+                    <li><a href="clase-16.html">Clase 16: Tendencias Emergentes</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <article>
+                <h1>Clase 6: Gestión del Tiempo y Cronogramas en Proyectos de Tecnología Informática</h1>
+
+                <section>
+                    <h2>6.1 Definición de Actividades del Proyecto</h2>
+
+                    <p>
+                        La definición de actividades constituye el proceso fundamental de identificar y documentar las acciones
+                        específicas que deben realizarse para producir los entregables del proyecto. En el contexto de proyectos
+                        de tecnología informática, este proceso trasciende la simple descomposición de tareas para convertirse
+                        en un ejercicio de análisis exhaustivo que requiere comprensión técnica profunda, experiencia en desarrollo
+                        de software y capacidad de anticipar dependencias complejas entre componentes del sistema.
+                    </p>
+
+                    <p>
+                        El punto de partida para la definición de actividades es la Estructura de Desglose del Trabajo (EDT o WBS),
+                        que proporciona una descomposición jerárquica de los entregables del proyecto. Cada paquete de trabajo en
+                        el nivel más bajo de la EDT debe descomponerse en actividades específicas, accionables y verificables.
+                        Esta descomposición debe alcanzar un nivel de granularidad que permita estimación precisa, asignación de
+                        recursos y seguimiento efectivo, sin caer en la microgestión que genera sobrecarga administrativa.
+                    </p>
+
+                    <p>
+                        En proyectos de desarrollo de software, la definición de actividades debe considerar múltiples dimensiones
+                        del trabajo técnico. Más allá de las actividades de programación evidentes, es esencial identificar
+                        actividades de diseño arquitectónico, elaboración de especificaciones técnicas, configuración de ambientes,
+                        desarrollo de pruebas unitarias e integradas, actividades de refactorización, documentación técnica y de
+                        usuario, y actividades de despliegue. La omisión de cualquiera de estas categorías resulta en cronogramas
+                        sistemáticamente optimistas que subestiman el esfuerzo real requerido.
+                    </p>
+
+                    <p>
+                        Las metodologías ágiles introducen una perspectiva diferente sobre la definición de actividades. En Scrum,
+                        por ejemplo, las historias de usuario del Product Backlog se descomponen en tareas durante la planificación
+                        del Sprint. Esta descomposición es iterativa y emerge del equipo de desarrollo en lugar de ser impuesta por
+                        un planificador centralizado. Sin embargo, incluso en contextos ágiles, cierta planificación anticipada de
+                        actividades es necesaria, particularmente para tareas de infraestructura, dependencias externas y
+                        coordinación entre equipos.
+                    </p>
+
+                    <p>
+                        Una técnica valiosa para la definición de actividades es la descomposición progresiva o "rolling wave
+                        planning". Este enfoque reconoce que en proyectos complejos, la incertidumbre disminuye a medida que el
+                        proyecto avanza. Las actividades para el futuro cercano se planifican en detalle, mientras que las
+                        actividades más distantes se definen a nivel más general, para refinarse posteriormente cuando se disponga
+                        de mejor información. Este enfoque balancea la necesidad de planificación con el reconocimiento realista
+                        de la incertidumbre inherente.
+                    </p>
+
+                    <div class="info-box">
+                        <h4>Atributos Esenciales de una Actividad Bien Definida</h4>
+                        <ul>
+                            <li><strong>Descripción clara:</strong> Verbo de acción + objeto específico (ej: "Desarrollar módulo de autenticación")</li>
+                            <li><strong>Criterios de aceptación:</strong> Definición objetiva de cuándo la actividad está completa</li>
+                            <li><strong>Recursos requeridos:</strong> Roles, habilidades y herramientas necesarias</li>
+                            <li><strong>Estimación de esfuerzo:</strong> Horas-persona o puntos de historia según metodología</li>
+                            <li><strong>Dependencias:</strong> Actividades predecesoras que deben completarse antes</li>
+                            <li><strong>Entregables:</strong> Productos de trabajo resultantes de la actividad</li>
+                        </ul>
+                    </div>
+
+                    <p>
+                        La herramienta fundamental para documentar actividades es la lista de actividades, complementada con
+                        atributos detallados para cada una. Esta documentación debe ser suficientemente detallada para facilitar
+                        planificación, pero suficientemente flexible para adaptarse a cambios inevitables. En proyectos grandes,
+                        herramientas especializadas de gestión de proyectos (Microsoft Project, Jira, Azure DevOps) facilitan la
+                        captura, actualización y trazabilidad de actividades a lo largo del ciclo de vida del proyecto.
+                    </p>
+                </section>
+
+                <section>
+                    <h2>6.2 Secuenciación de Actividades y Dependencias</h2>
+
+                    <p>
+                        La secuenciación de actividades constituye el proceso de identificar y documentar las relaciones lógicas
+                        entre las actividades del proyecto. Este proceso transforma la lista de actividades independientes en una
+                        red integrada que refleja el flujo de trabajo del proyecto, identificando qué actividades pueden ejecutarse
+                        en paralelo y cuáles deben realizarse secuencialmente. En proyectos de tecnología informática, donde las
+                        interdependencias técnicas son numerosas y complejas, la secuenciación precisa resulta crítica para el éxito.
+                    </p>
+
+                    <p>
+                        Existen cuatro tipos fundamentales de dependencias entre actividades. Las dependencias obligatorias o "hard
+                        logic" derivan de la naturaleza inherente del trabajo o de limitaciones técnicas; por ejemplo, el código
+                        debe escribirse antes de probarse. Las dependencias discrecionales o "soft logic" reflejan mejores prácticas
+                        o preferencias del equipo; por ejemplo, preferir desarrollar módulos centrales antes que periféricos. Las
+                        dependencias externas involucran relaciones entre actividades del proyecto y factores fuera del control del
+                        equipo, como disponibilidad de APIs de terceros. Finalmente, las dependencias internas son aquellas
+                        completamente dentro del control del equipo del proyecto.
+                    </p>
+
+                    <p>
+                        El Método del Diagrama de Precedencias (PDM, Precedence Diagramming Method) es la técnica estándar para
+                        representar visualmente la secuencia de actividades. En PDM, las actividades se representan como nodos
+                        (cajas) y las relaciones de dependencia como flechas que conectan los nodos. Este formato "actividad en
+                        nodo" ha reemplazado ampliamente al método anterior de "actividad en flecha" (ADM) debido a su mayor
+                        claridad y flexibilidad.
+                    </p>
+
+                    <p>
+                        PDM soporta cuatro tipos de relaciones lógicas entre actividades. La relación Finish-to-Start (FS) es la
+                        más común: la actividad sucesora no puede comenzar hasta que la predecesora haya finalizado. La relación
+                        Finish-to-Finish (FF) indica que la actividad sucesora no puede finalizar hasta que la predecesora haya
+                        finalizado; común en actividades de documentación que deben completarse junto con el desarrollo. La relación
+                        Start-to-Start (SS) especifica que la actividad sucesora no puede comenzar hasta que la predecesora haya
+                        comenzado; útil para actividades que pueden realizarse en paralelo con cierto solapamiento. Finalmente, la
+                        relación Start-to-Finish (SF) indica que la actividad sucesora no puede finalizar hasta que la predecesora
+                        haya comenzado; raramente utilizada en la práctica.
+                    </p>
+
+                    <p>
+                        Los adelantos (leads) y los retrasos (lags) permiten refinar las relaciones de dependencia. Un adelanto
+                        permite que la actividad sucesora comience antes de que la predecesora haya finalizado completamente,
+                        acelerando el cronograma en situaciones donde es técnicamente viable. Un retraso introduce tiempo de espera
+                        obligatorio entre actividades; por ejemplo, tiempo de curado después de desplegar a producción antes de
+                        realizar pruebas de rendimiento bajo carga.
+                    </p>
+
+                    <div class="mermaid">
+                    graph LR
+                        A[Análisis de Requerimientos] --> B[Diseño de Arquitectura]
+                        B --> C[Diseño de Base de Datos]
+                        B --> D[Diseño de Interfaz]
+                        C --> E[Desarrollo Backend]
+                        D --> F[Desarrollo Frontend]
+                        E --> G[Integración]
+                        F --> G
+                        G --> H[Pruebas de Sistema]
+                        H --> I[Despliegue]
+                        I --> J[Pruebas de Aceptación]
+                    </div>
+
+                    <p>
+                        En proyectos ágiles, la secuenciación adopta características distintas. Aunque existe menos énfasis en
+                        diagramas de red formales, las dependencias siguen siendo críticas. El concepto de "Definition of Ready"
+                        para historias de usuario implícitamente captura dependencias: una historia no puede iniciarse hasta que
+                        sus prerequisitos estén satisfechos. La planificación de liberaciones (release planning) identifica
+                        dependencias entre historias de usuario, asegurando que funcionalidades fundamentales se desarrollen antes
+                        que las que dependen de ellas.
+                    </p>
+
+                    <div class="warning-box">
+                        <h4>Errores Comunes en Secuenciación</h4>
+                        <ul>
+                            <li><strong>Dependencias ficticias:</strong> Crear dependencias innecesarias que reducen paralelismo potencial</li>
+                            <li><strong>Omisión de dependencias:</strong> No identificar dependencias reales, causando retrabajos</li>
+                            <li><strong>Sobre-optimización:</strong> Maximizar paralelismo sin considerar limitaciones de recursos</li>
+                            <li><strong>Ignorar dependencias externas:</strong> No considerar dependencias con proveedores o sistemas externos</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>6.3 Estimación de Duraciones: Técnicas y Métodos</h2>
+
+                    <p>
+                        La estimación de duraciones de actividades representa uno de los desafíos más significativos en la gestión
+                        de proyectos de tecnología informática. La incertidumbre inherente al trabajo intelectual creativo, la
+                        variabilidad en la productividad individual, la complejidad técnica impredecible y las interrupciones
+                        frecuentes conspiran para hacer que la estimación precisa sea extremadamente difícil. Sin embargo, la
+                        planificación efectiva depende críticamente de estimaciones razonablemente precisas, lo que requiere
+                        aplicación rigurosa de técnicas de estimación establecidas.
+                    </p>
+
+                    <p>
+                        La estimación análoga utiliza la duración real de actividades similares en proyectos anteriores como base
+                        para estimar actividades en el proyecto actual. Esta técnica, también conocida como estimación top-down,
+                        es rápida y relativamente económica, pero su precisión depende críticamente de cuán similares son realmente
+                        los proyectos comparados. En organizaciones maduras con repositorios de datos históricos de proyectos, la
+                        estimación análoga puede ser sorprendentemente precisa. Sin embargo, las diferencias en equipo, tecnología,
+                        alcance y contexto organizacional pueden invalidar las analogías aparentemente válidas.
+                    </p>
+
+                    <p>
+                        La estimación paramétrica establece relaciones matemáticas entre variables del proyecto y la duración de
+                        actividades. Por ejemplo, en proyectos de desarrollo web, podría establecerse que cada pantalla de formulario
+                        requiere en promedio 8 horas de desarrollo. La precisión de la estimación paramétrica depende de la calidad
+                        de los datos históricos y de la estabilidad de las relaciones paramétricas. Modelos sofisticados como COCOMO
+                        (Constructive Cost Model) utilizan múltiples parámetros y factores de ajuste para generar estimaciones de
+                        esfuerzo para proyectos de software.
+                    </p>
+
+                    <p>
+                        La estimación de tres puntos reconoce explícitamente la incertidumbre inherente en las estimaciones. Para
+                        cada actividad, se desarrollan tres estimaciones: optimista (O), más probable (M) y pesimista (P). Estas
+                        tres estimaciones se combinan usando fórmulas específicas para calcular una estimación esperada. La fórmula
+                        PERT triangular calcula la estimación esperada como (O + M + P) / 3, asignando peso igual a las tres
+                        estimaciones. La fórmula PERT beta, más común, calcula (O + 4M + P) / 6, asignando mayor peso a la
+                        estimación más probable. Esta técnica no solo proporciona una estimación puntual, sino también información
+                        sobre la variabilidad y el riesgo asociado con cada actividad.
+                    </p>
+
+                    <p>
+                        La estimación bottom-up descompone el trabajo en componentes detallados, estima cada componente
+                        independientemente, y luego agrega las estimaciones para obtener el total. Este enfoque tiende a ser más
+                        preciso que las técnicas top-down, especialmente cuando involucra a los miembros del equipo que realmente
+                        realizarán el trabajo. Sin embargo, requiere inversión significativa de tiempo y esfuerzo, y puede ser
+                        impractical en fases tempranas del proyecto cuando el nivel de detalle es insuficiente.
+                    </p>
+
+                    <p>
+                        En contextos ágiles, la estimación frecuentemente utiliza medidas relativas en lugar de absolutas. El
+                        planning poker es una técnica donde los miembros del equipo estiman historias de usuario utilizando una
+                        escala (típicamente la secuencia de Fibonacci: 1, 2, 3, 5, 8, 13, 21) que representa complejidad relativa
+                        o puntos de historia. Esta estimación relativa evita la falsa precisión de las estimaciones en horas,
+                        reconoce la variabilidad en la productividad, y facilita la comparación entre historias. La velocidad del
+                        equipo (story points completados por sprint) emerge empíricamente y se utiliza para proyectar capacidad
+                        futura.
+                    </p>
+
+                    <div class="info-box">
+                        <h4>Factores que Afectan la Duración de Actividades</h4>
+                        <ul>
+                            <li><strong>Complejidad técnica:</strong> Algoritmos complejos o integraciones requieren más tiempo</li>
+                            <li><strong>Experiencia del equipo:</strong> Equipos experimentados son significativamente más productivos</li>
+                            <li><strong>Disponibilidad de recursos:</strong> Recursos compartidos o de tiempo parcial afectan duraciones</li>
+                            <li><strong>Calidad de requerimientos:</strong> Requerimientos ambiguos generan retrabajos y demoras</li>
+                            <li><strong>Riesgos técnicos:</strong> Tecnologías nuevas o no probadas introducen incertidumbre</li>
+                            <li><strong>Interrupciones:</strong> Reuniones, soporte y otras interrupciones reducen tiempo productivo</li>
+                        </ul>
+                    </div>
+
+                    <p>
+                        Independientemente de la técnica utilizada, las estimaciones deben documentarse junto con sus supuestos y
+                        restricciones. Esta documentación es esencial cuando las estimaciones resultan incorrectas, permitiendo
+                        análisis retrospectivo para mejorar futuras estimaciones. Las organizaciones maduras mantienen bases de
+                        datos de estimaciones versus resultados reales, desarrollando capacidades organizacionales de estimación
+                        cada vez más precisas a lo largo del tiempo.
+                    </p>
+                </section>
+
+                <section>
+                    <h2>6.4 Método del Camino Crítico (CPM)</h2>
+
+                    <p>
+                        El Método del Camino Crítico (Critical Path Method, CPM) constituye una de las técnicas más poderosas y
+                        fundamentales para la planificación y control de proyectos. Desarrollado independientemente por DuPont y
+                        Remington Rand en 1957, CPM identifica la secuencia de actividades que determina la duración mínima del
+                        proyecto. Cualquier retraso en las actividades del camino crítico necesariamente retrasa la finalización
+                        del proyecto completo, lo que hace que estas actividades sean el foco primario de la atención gerencial.
+                    </p>
+
+                    <p>
+                        El fundamento matemático de CPM es la construcción de un diagrama de red que representa todas las
+                        actividades del proyecto y sus interdependencias. Una vez construida la red, se realizan dos pasadas de
+                        cálculo. La pasada hacia adelante (forward pass) calcula las fechas de inicio y finalización más tempranas
+                        para cada actividad, comenzando desde el inicio del proyecto y propagando hacia adelante a través de la red.
+                        La pasada hacia atrás (backward pass) calcula las fechas de inicio y finalización más tardías permitidas
+                        para cada actividad, comenzando desde la fecha de finalización del proyecto y retrocediendo a través de la red.
+                    </p>
+
+                    <p>
+                        La diferencia entre la fecha más tardía y la fecha más temprana para una actividad se denomina holgura total
+                        o float. Las actividades con holgura cero constituyen el camino crítico: no tienen flexibilidad temporal y
+                        cualquier retraso en su ejecución retrasará el proyecto. Las actividades no críticas poseen holgura positiva,
+                        indicando cuánto pueden retrasarse sin afectar la fecha de finalización del proyecto. Esta información es
+                        invaluable para la gestión de recursos y la priorización de esfuerzos de mitigación de riesgos.
+                    </p>
+
+                    <p>
+                        Un proyecto puede tener múltiples caminos críticos simultáneamente, todos con la misma duración y holgura
+                        cero. Esta situación aumenta el riesgo del proyecto, ya que un retraso en cualquiera de los múltiples
+                        caminos críticos afectará la fecha de finalización. Las técnicas de compresión del cronograma (crashing y
+                        fast-tracking, que se discutirán posteriormente) deben aplicarse cuidadosamente cuando existen múltiples
+                        caminos críticos, ya que optimizar solo uno puede ser inefectivo si los otros permanecen sin cambios.
+                    </p>
+
+                    <div class="mermaid">
+                    graph LR
+                        A[Inicio] -->|5d| B[Análisis]
+                        B -->|8d| C[Diseño]
+                        B -->|3d| D[Prototipo]
+                        C -->|12d| E[Desarrollo]
+                        D -->|2d| E
+                        E -->|6d| F[Testing]
+                        C -->|4d| G[Documentación]
+                        G -->|2d| H[Fin]
+                        F -->|3d| H
+
+                        style A fill:#90EE90
+                        style B fill:#FFB6C1
+                        style C fill:#FFB6C1
+                        style E fill:#FFB6C1
+                        style F fill:#FFB6C1
+                        style H fill:#90EE90
+                    </div>
+
+                    <p>
+                        En proyectos de tecnología informática, el camino crítico típicamente incluye actividades de análisis de
+                        requerimientos complejos, diseño arquitectónico, desarrollo de componentes centrales del sistema, integración
+                        y pruebas de sistema. Las actividades de documentación, capacitación y algunas tareas de configuración
+                        frecuentemente tienen holgura y no están en el camino crítico, aunque siguen siendo importantes para el
+                        éxito del proyecto.
+                    </p>
+
+                    <p>
+                        La aplicación efectiva de CPM requiere actualización continua del modelo a medida que el proyecto progresa.
+                        El camino crítico no es estático: a medida que actividades se completan antes o después de lo planeado,
+                        actividades que no eran críticas pueden volverse críticas y viceversa. El director de proyecto debe
+                        recalcular el camino crítico regularmente, típicamente en cada período de reporte (semanal o quincenal),
+                        para mantener el enfoque gerencial en las actividades que realmente determinan la fecha de finalización.
+                    </p>
+
+                    <div class="success-box">
+                        <h4>Beneficios del Análisis del Camino Crítico</h4>
+                        <ul class="checklist">
+                            <li>Identifica actividades que requieren mayor monitoreo y control</li>
+                            <li>Facilita toma de decisiones sobre asignación de recursos adicionales</li>
+                            <li>Proporciona base objetiva para evaluar impacto de cambios propuestos</li>
+                            <li>Permite optimización del cronograma mediante técnicas de compresión</li>
+                            <li>Mejora comunicación con stakeholders sobre riesgos de cronograma</li>
+                            <li>Fundamenta negociaciones sobre extensiones de plazo o reducción de alcance</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>6.5 Técnica PERT: Program Evaluation and Review Technique</h2>
+
+                    <p>
+                        La Técnica de Evaluación y Revisión de Programas (Program Evaluation and Review Technique, PERT) fue
+                        desarrollada por la Marina de los Estados Unidos en 1958 para gestionar el proyecto del misil Polaris,
+                        que involucraba miles de contratistas y una complejidad sin precedentes. PERT complementa el Método del
+                        Camino Crítico incorporando explícitamente la incertidumbre en las estimaciones de duración de actividades
+                        mediante el uso de distribuciones de probabilidad, proporcionando una visión más realista y matizada del
+                        cronograma del proyecto.
+                    </p>
+
+                    <p>
+                        La característica distintiva de PERT es el uso de estimación de tres puntos para cada actividad: optimista
+                        (O), más probable (M) y pesimista (P). La estimación optimista representa el mejor escenario posible,
+                        asumiendo que todo procede excepcionalmente bien. La estimación más probable refleja lo que el equipo
+                        anticipa que sucederá bajo condiciones normales. La estimación pesimista captura el peor escenario
+                        razonable, considerando problemas probables pero no catastróficos. Estas tres estimaciones se combinan
+                        utilizando la distribución beta para calcular la duración esperada: TE = (O + 4M + P) / 6.
+                    </p>
+
+                    <p>
+                        Más allá de proporcionar una estimación esperada, PERT calcula la desviación estándar de cada actividad
+                        como σ = (P - O) / 6, proporcionando una medida cuantitativa de la incertidumbre. Para el camino crítico,
+                        las varianzas de actividades individuales se suman (asumiendo independencia estadística) para calcular la
+                        varianza total del proyecto, y la raíz cuadrada de esta varianza proporciona la desviación estándar del
+                        proyecto completo. Esta información permite hacer afirmaciones probabilísticas sobre la fecha de finalización.
+                    </p>
+
+                    <p>
+                        Asumiendo que las duraciones de actividades siguen una distribución normal (una aproximación razonable cuando
+                        el camino crítico contiene muchas actividades), podemos calcular la probabilidad de completar el proyecto en
+                        una fecha específica. Por ejemplo, utilizando la distribución normal estándar, hay aproximadamente 68% de
+                        probabilidad de que el proyecto se complete dentro de una desviación estándar de la duración esperada, y
+                        aproximadamente 95% de probabilidad dentro de dos desviaciones estándar. Esta capacidad de cuantificar la
+                        incertidumbre es invaluable para la gestión de riesgos y la comunicación con stakeholders.
+                    </p>
+
+                    <div class="mermaid">
+                    graph TD
+                        A[Actividad A<br/>O=2, M=4, P=8<br/>TE=4.33, σ=1.0] --> C[Actividad C<br/>O=3, M=5, P=9<br/>TE=5.33, σ=1.0]
+                        B[Actividad B<br/>O=1, M=3, P=5<br/>TE=3.0, σ=0.67] --> C
+                        C --> D[Actividad D<br/>O=4, M=6, P=10<br/>TE=6.33, σ=1.0]
+                        D --> E[Fin<br/>Duración Total Esperada: 16 días<br/>Desviación Estándar: 1.73 días]
+
+                        style E fill:#FFE4B5
+                    </div>
+
+                    <p>
+                        En proyectos de tecnología informática, donde la incertidumbre técnica es frecuentemente alta, PERT
+                        proporciona un marco valioso para gestionar expectativas realistas. Por ejemplo, al comprometerse a una
+                        fecha de entrega con un cliente o sponsor ejecutivo, el director de proyecto puede indicar no solo la fecha
+                        más probable, sino también el rango de confianza: "Tenemos 80% de confianza de completar para el 15 de
+                        marzo, y 95% de confianza para el 1 de abril". Esta transparencia sobre la incertidumbre, aunque
+                        inicialmente incómoda, resulta preferible a compromisos aparentemente precisos que posteriormente se incumplen.
+                    </p>
+
+                    <p>
+                        Una limitación importante de PERT es su supuesto de independencia estadística entre duraciones de actividades.
+                        En realidad, si un desarrollador es más lento de lo esperado en una actividad, probablemente será más lento
+                        en otras actividades subsecuentes. Esta correlación positiva significa que la variabilidad real del proyecto
+                        puede ser mayor que la calculada por PERT. La simulación Monte Carlo, que se discutirá en el contexto de
+                        gestión de riesgos, proporciona una técnica más sofisticada que puede modelar estas correlaciones.
+                    </p>
+
+                    <div class="important-box">
+                        <h4>Aplicación Práctica de PERT</h4>
+                        <p>
+                            Al aplicar PERT en proyectos de software, es crucial involucrar al equipo técnico en el desarrollo de
+                            las tres estimaciones (O, M, P). La estimación pesimista debe considerar riesgos técnicos específicos
+                            como complejidad algorítmica inesperada, problemas de integración con sistemas externos, o descubrimiento
+                            de deuda técnica en código legacy. La estimación optimista debe ser genuinamente posible, no fantástica.
+                            El valor de PERT reside en fomentar discusiones estructuradas sobre incertidumbre, no en cálculos
+                            matemáticos aparentemente precisos basados en estimaciones arbitrarias.
+                        </p>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>6.6 Diagramas de Gantt y Herramientas de Cronogramas</h2>
+
+                    <p>
+                        El diagrama de Gantt, desarrollado por Henry Gantt en la década de 1910, permanece como una de las
+                        herramientas de visualización de cronogramas más utilizadas en la gestión de proyectos. Su representación
+                        gráfica intuitiva de actividades contra una línea de tiempo lo hace accesible para audiencias técnicas y
+                        no técnicas, facilitando la comunicación del plan del proyecto con stakeholders diversos. En proyectos de
+                        tecnología informática, el diagrama de Gantt típicamente complementa, en lugar de reemplazar, representaciones
+                        más técnicas como diagramas de red o tableros Kanban.
+                    </p>
+
+                    <p>
+                        Un diagrama de Gantt representa cada actividad del proyecto como una barra horizontal cuya longitud es
+                        proporcional a la duración de la actividad y cuya posición en el eje temporal indica las fechas de inicio
+                        y finalización. Las barras pueden codificarse por color para indicar estado (planificado, en progreso,
+                        completado, retrasado), responsable, fase del proyecto o cualquier otra dimensión relevante. Las
+                        dependencias entre actividades típicamente se representan mediante flechas que conectan las barras, aunque
+                        en diagramas complejos estas flechas pueden generar desorden visual.
+                    </p>
+
+                    <p>
+                        Los diagramas de Gantt modernos incorporan funcionalidades significativamente más sofisticadas que las
+                        versiones originales de principios del siglo XX. La representación de hitos (milestones) como marcadores
+                        especiales en la línea de tiempo permite identificar rápidamente puntos de decisión críticos o entregas
+                        importantes. Las líneas de base (baselines) capturan el plan original del proyecto, permitiendo comparación
+                        visual entre lo planificado y lo real. La línea de progreso ("today line") indica visualmente qué actividades
+                        deberían haberse completado hasta la fecha y cuáles están pendientes.
+                    </p>
+
+                    <p>
+                        En el contexto de desarrollo de software, el diagrama de Gantt debe adaptarse a las realidades de las
+                        metodologías contemporáneas. En proyectos ágiles, mientras que los Sprints individuales pueden representarse
+                        en diagramas de Gantt de alto nivel, el trabajo detallado dentro de cada Sprint típicamente se gestiona
+                        mediante tableros Kanban o Scrum. Esta combinación de niveles de planificación (Release plan en Gantt, Sprint
+                        backlog en tablero) proporciona tanto visibilidad estratégica como flexibilidad operacional.
+                    </p>
+
+                    <div class="mermaid">
+                    gantt
+                        title Cronograma de Desarrollo Sistema de Gestión
+                        dateFormat YYYY-MM-DD
+                        section Análisis
+                        Recopilación de Requerimientos    :done, req, 2024-01-01, 2024-01-15
+                        Análisis de Procesos               :done, ana, 2024-01-16, 2024-02-05
+                        section Diseño
+                        Diseño de Arquitectura             :active, dis1, 2024-02-06, 2024-02-20
+                        Diseño de Base de Datos            :dis2, 2024-02-21, 2024-03-05
+                        Diseño de Interfaces               :dis3, 2024-02-21, 2024-03-05
+                        section Desarrollo
+                        Backend - Módulo Autenticación     :dev1, 2024-03-06, 2024-03-20
+                        Backend - Módulo Transacciones     :dev2, 2024-03-21, 2024-04-15
+                        Frontend - Componentes Base        :dev3, 2024-03-21, 2024-04-10
+                        Integración y Testing              :test, 2024-04-16, 2024-05-05
+                        section Despliegue
+                        Preparación de Ambiente            :dep1, 2024-05-06, 2024-05-12
+                        Despliegue y UAT                   :crit, dep2, 2024-05-13, 2024-05-26
+                    </div>
+
+                    <p>
+                        La selección de herramientas para la gestión de cronogramas depende del tamaño del proyecto, metodología
+                        adoptada, y preferencias organizacionales. Microsoft Project permanece como el estándar de facto para proyectos
+                        grandes y complejos gestionados con metodologías tradicionales, ofreciendo capacidades sofisticadas de
+                        nivelación de recursos, análisis de camino crítico y gestión de múltiples proyectos. Sin embargo, su
+                        complejidad y costo pueden ser excesivos para proyectos pequeños o equipos ágiles.
+                    </p>
+
+                    <p>
+                        Para equipos que adoptan metodologías ágiles, herramientas como Jira, Azure DevOps, o VersionOne proporcionan
+                        funcionalidades específicamente diseñadas para Scrum y Kanban, incluyendo gestión de backlogs, planificación
+                        de Sprints, tableros visuales y métricas de velocidad. Estas herramientas integran cronogramas con gestión
+                        de código fuente, seguimiento de defectos y automatización de pruebas, proporcionando una plataforma unificada
+                        para el desarrollo de software.
+                    </p>
+
+                    <p>
+                        Herramientas colaborativas basadas en la nube como Monday.com, Asana, o Smartsheet ofrecen un punto medio,
+                        combinando capacidades de diagramas de Gantt con colaboración en tiempo real, integraciones con otras
+                        herramientas y accesibilidad desde cualquier dispositivo. Estas plataformas son particularmente efectivas
+                        para equipos distribuidos geográficamente que requieren visibilidad compartida del cronograma del proyecto.
+                    </p>
+
+                    <div class="warning-box">
+                        <h4>Limitaciones de los Diagramas de Gantt</h4>
+                        <ul>
+                            <li><strong>Complejidad visual:</strong> Proyectos grandes generan diagramas difíciles de interpretar</li>
+                            <li><strong>Ilusión de precisión:</strong> Pueden sugerir mayor certeza de la que realmente existe</li>
+                            <li><strong>Mantenimiento intensivo:</strong> Requieren actualización frecuente para permanecer relevantes</li>
+                            <li><strong>Dependencias implícitas:</strong> Las relaciones complejas pueden no ser evidentes visualmente</li>
+                            <li><strong>Énfasis en fechas:</strong> Pueden desviar atención de valor entregado y calidad</li>
+                        </ul>
+                    </div>
+
+                    <p>
+                        Independientemente de la herramienta seleccionada, el principio fundamental permanece constante: el
+                        cronograma es un instrumento de planificación y comunicación, no un fin en sí mismo. Un cronograma
+                        meticulosamente elaborado que nadie consulta o actualiza no aporta valor. Conversamente, un cronograma
+                        relativamente simple que el equipo utiliza activamente para coordinar trabajo, identificar problemas
+                        tempranamente y comunicar progreso a stakeholders genera valor significativo para el proyecto.
+                    </p>
+                </section>
+
+                <div class="class-navigation">
+                    <a href="clase-05.html" class="nav-button prev">Clase Anterior</a>
+                    <a href="clase-07.html" class="nav-button next">Siguiente Clase</a>
+                </div>
+            </article>
+        </main>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Universidad Abierta Interamericana - Especialización en Dirección de Proyectos de Tecnología Informática</p>
+        <p>Dictamen CONEAU Sesión N° 619 - RCS 6350/23</p>
+    </footer>
+</body>
+</html>

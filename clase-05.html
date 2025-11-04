@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase 5: Planificación y Gestión del Alcance del Proyecto - UAI</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true, theme: 'default' });
+    </script>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <h1>UAI - Especialización en Dirección de Proyectos TI</h1>
+            </div>
+            <nav class="main-nav">
+                <a href="index.html">Inicio</a>
+                <a href="index.html#about">Sobre la Carrera</a>
+                <a href="index.html#contact">Contacto</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <aside class="sidebar">
+            <h2>Contenido del Curso</h2>
+            <nav class="chapters-nav">
+                <ul>
+                    <li><a href="clase-01.html">Clase 1: Introducción a la Dirección de Proyectos TI</a></li>
+                    <li><a href="clase-02.html">Clase 2: Fundamentos de la Gestión de Proyectos</a></li>
+                    <li><a href="clase-03.html">Clase 3: Metodologías Tradicionales</a></li>
+                    <li><a href="clase-04.html">Clase 4: Metodologías Ágiles</a></li>
+                    <li><a href="clase-05.html" class="active">Clase 5: Planificación y Gestión del Alcance</a></li>
+                    <li><a href="clase-06.html">Clase 6: Gestión del Tiempo y Cronogramas</a></li>
+                    <li><a href="clase-07.html">Clase 7: Gestión de Costos y Presupuestos</a></li>
+                    <li><a href="clase-08.html">Clase 8: Gestión de Riesgos</a></li>
+                    <li><a href="clase-09.html">Clase 9: Ingeniería de Requerimientos</a></li>
+                    <li><a href="clase-10.html">Clase 10: Métricas de Software</a></li>
+                    <li><a href="clase-11.html">Clase 11: Calidad del Software y Estándares</a></li>
+                    <li><a href="clase-12.html">Clase 12: Gestión del Capital Humano</a></li>
+                    <li><a href="clase-13.html">Clase 13: Arquitectura y Diseño de Software</a></li>
+                    <li><a href="clase-14.html">Clase 14: Testing y Aseguramiento de Calidad</a></li>
+                    <li><a href="clase-15.html">Clase 15: DevOps y Entrega Continua</a></li>
+                    <li><a href="clase-16.html">Clase 16: Tendencias Emergentes</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <article>
+                <h1>Clase 5: Planificación y Gestión del Alcance del Proyecto</h1>
+
+                <section>
+                    <h2>5.1 Definición del Alcance del Proyecto</h2>
+
+                    <p>
+                        La definición del alcance del proyecto representa uno de los procesos más críticos en la gestión de proyectos de
+                        tecnología informática, estableciendo los límites precisos del trabajo que será realizado y, igualmente importante,
+                        del trabajo que explícitamente no será incluido. Un alcance bien definido proporciona base sólida para la
+                        planificación subsecuente, facilita la estimación precisa de recursos y cronogramas, permite el control efectivo
+                        durante la ejecución, y establece criterios claros para la aceptación del proyecto. Por el contrario, un alcance
+                        mal definido o ambiguo constituye una de las causas principales de fracaso en proyectos de TI.
+                    </p>
+
+                    <p>
+                        El proceso de definición del alcance comienza con la recolección de requisitos, actividad que captura y documenta
+                        las necesidades de stakeholders y del proyecto. En proyectos de TI, los requisitos típicamente se categorizan en
+                        funcionales (qué debe hacer el sistema), no funcionales (cómo debe comportarse el sistema en términos de desempeño,
+                        seguridad, usabilidad, escalabilidad, etc.), de interfaz (cómo el sistema interactúa con otros sistemas o usuarios),
+                        de transición (requisitos para migración de datos o transición de sistemas legacy), y de capacitación (necesidades
+                        de preparación de usuarios). Técnicas de recolección incluyen entrevistas, talleres facilitados, grupos focales,
+                        cuestionarios, observación, análisis de documentos existentes, y prototipos.
+                    </p>
+
+                    <p>
+                        Una vez recolectados los requisitos, se elabora el Enunciado del Alcance del Proyecto (Project Scope Statement),
+                        documento que describe detalladamente los entregables del proyecto y el trabajo requerido para crearlos. Este
+                        documento debe incluir descripción del alcance del producto (características y funciones que caracterizan el
+                        producto o servicio), criterios de aceptación (condiciones que deben cumplirse antes de que los entregables sean
+                        aceptados), entregables del proyecto (productos, servicios o resultados únicos y verificables), exclusiones del
+                        proyecto (qué está explícitamente fuera del alcance), restricciones del proyecto (factores limitantes), y supuestos
+                        del proyecto (factores considerados verdaderos para propósitos de planificación).
+                    </p>
+
+                    <p>
+                        La claridad en el enunciado del alcance resulta particularmente crítica en proyectos de desarrollo de software
+                        donde los requisitos frecuentemente involucran conceptos abstractos que pueden interpretarse de múltiples maneras.
+                        Términos como "fácil de usar", "rápido", "seguro", o "robusto" requieren definición precisa; lo que un stakeholder
+                        considera "rápido" puede diferir significativamente de las expectativas de otro. Los criterios de aceptación deben
+                        ser específicos, medibles, alcanzables, relevantes y acotados en tiempo (SMART), proporcionando estándares objetivos
+                        contra los cuales la completación exitosa puede verificarse.
+                    </p>
+
+                    <p>
+                        Las exclusiones explícitas resultan tan importantes como las inclusiones. Declarar claramente qué no está incluido
+                        en el alcance previene malentendidos futuros y gestiona expectativas de stakeholders. Por ejemplo, un proyecto de
+                        desarrollo de sistema de gestión de inventarios podría excluir explícitamente: "El proyecto no incluye migración
+                        de datos históricos anteriores a 2020", "El proyecto no incluye integración con sistemas de terceros no especificados
+                        en este documento", "El proyecto no incluye desarrollo de aplicaciones móviles nativas, solo interfaz web responsive".
+                        Estas exclusiones proporcionan claridad y previenen el scope creep.
+                    </p>
+
+                    <p>
+                        El alcance del proyecto debe distinguirse del alcance del producto. El alcance del producto describe las características
+                        y funciones que caracterizan un producto, servicio o resultado. El alcance del proyecto describe el trabajo que debe
+                        realizarse para entregar un producto, servicio o resultado con las características y funciones especificadas. La
+                        completación del alcance del proyecto se mide contra el plan de dirección del proyecto, mientras que la completación
+                        del alcance del producto se mide contra los requisitos del producto. En proyectos de TI, gestionar ambos alcances
+                        resulta esencial; cumplir el alcance del proyecto (completar todas las actividades planificadas) sin satisfacer el
+                        alcance del producto (entregar un sistema que realmente satisfaga necesidades de usuarios) constituye fracaso.
+                    </p>
+
+                    <div class="info-box">
+                        <h4>Componentes del Enunciado del Alcance</h4>
+                        <ul>
+                            <li><strong>Descripción del Alcance del Producto:</strong> Características y funciones del sistema a desarrollar</li>
+                            <li><strong>Criterios de Aceptación:</strong> Condiciones específicas y medibles para aceptación de entregables</li>
+                            <li><strong>Entregables del Proyecto:</strong> Productos, servicios o resultados únicos y verificables</li>
+                            <li><strong>Exclusiones del Proyecto:</strong> Lo que explícitamente NO está incluido en el alcance</li>
+                            <li><strong>Restricciones:</strong> Factores limitantes (presupuesto, cronograma, tecnologías, regulaciones)</li>
+                            <li><strong>Supuestos:</strong> Factores considerados verdaderos para propósitos de planificación</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>5.2 Work Breakdown Structure (WBS)</h2>
+
+                    <p>
+                        La Estructura de Desglose del Trabajo (Work Breakdown Structure - WBS) constituye una de las herramientas más
+                        fundamentales y valiosas en la gestión de proyectos. El WBS representa una descomposición jerárquica orientada a
+                        entregables del trabajo que será ejecutado por el equipo del proyecto para lograr los objetivos del proyecto y
+                        crear los entregables requeridos. El WBS organiza y define el alcance total del proyecto, subdividiendo el trabajo
+                        en componentes más pequeños y manejables denominados paquetes de trabajo. Cada nivel descendente del WBS representa
+                        una definición más detallada del trabajo del proyecto.
+                    </p>
+
+                    <p>
+                        El propósito fundamental del WBS es hacer el trabajo del proyecto más manejable. Proyectos complejos de tecnología
+                        informática involucran miles de actividades y entregables; el WBS proporciona estructura para organizar este trabajo
+                        en una jerarquía comprensible. El WBS sirve múltiples propósitos: proporciona framework para planificación detallada,
+                        facilita la estimación de costos y duraciones, permite la asignación clara de responsabilidades, proporciona base
+                        para seguimiento y control del progreso, y facilita la comunicación sobre el alcance del proyecto a stakeholders.
+                        Un WBS bien construido se vuelve documento de referencia central utilizado a lo largo del ciclo de vida del proyecto.
+                    </p>
+
+                    <p>
+                        El WBS se construye típicamente utilizando enfoque top-down, comenzando con el proyecto completo como nivel superior,
+                        luego descomponiéndolo progresivamente en componentes más pequeños. El primer nivel de descomposición frecuentemente
+                        utiliza fases del ciclo de vida del proyecto (Iniciación, Planificación, Diseño, Desarrollo, Pruebas, Despliegue) o
+                        entregables principales del proyecto (Módulo de Autenticación, Módulo de Reportes, Módulo de Administración,
+                        Infraestructura, Documentación). Los niveles subsecuentes continúan la descomposición hasta alcanzar el nivel de
+                        paquetes de trabajo, el nivel más bajo del WBS.
+                    </p>
+
+                    <p>
+                        Un paquete de trabajo representa trabajo que puede ser estimado confiablemente en términos de duración, recursos y
+                        costos; puede asignarse a un individuo o equipo pequeño que tendrá responsabilidad de completarlo; puede programarse
+                        con fechas de inicio y finalización definidas; y puede monitorearse y controlarse. La regla informal es que un
+                        paquete de trabajo no debería requerir menos de 8 horas ni más de 80 horas de esfuerzo, aunque esto varía según el
+                        contexto. Para proyectos largos, paquetes de trabajo de varias semanas pueden ser apropiados, mientras que proyectos
+                        cortos pueden requerir paquetes de trabajo de solo días.
+                    </p>
+
+                    <p>
+                        Cada elemento del WBS debe asignarse un identificador único, típicamente utilizando esquema de numeración jerárquico
+                        (por ejemplo, 1.0 Análisis, 1.1 Recolección de Requisitos, 1.1.1 Entrevistas con Usuarios, 1.1.2 Talleres de
+                        Requisitos, 1.2 Documentación de Requisitos, etc.). Esta codificación facilita referencia inequívoca a elementos
+                        específicos del WBS en documentación del proyecto, comunicaciones, y sistemas de seguimiento. El diccionario del WBS
+                        complementa el WBS proporcionando descripciones detalladas de cada elemento, incluyendo descripción del trabajo,
+                        criterios de aceptación, responsable, recursos asignados, estimaciones de costo y duración, y referencias a otros
+                        documentos de planificación.
+                    </p>
+
+                    <p>
+                        Existen múltiples enfoques para estructurar el WBS. El enfoque basado en fases organiza el trabajo según las fases
+                        del ciclo de vida del proyecto. El enfoque basado en entregables organiza el trabajo según los productos principales
+                        a ser creados. El enfoque basado en subproyectos es apropiado cuando el proyecto incluye componentes relativamente
+                        independientes que pueden gestionarse como subproyectos. El enfoque híbrido combina elementos de los anteriores. En
+                        proyectos de desarrollo de software, enfoques basados en entregables o híbridos resultan frecuentemente más naturales,
+                        organizando el trabajo alrededor de componentes arquitectónicos principales, módulos funcionales, o historias de
+                        usuario agrupadas.
+                    </p>
+
+                    <p>
+                        La regla del 100% establece que el WBS debe incluir el 100% del trabajo definido por el alcance del proyecto,
+                        incluyendo gestión del proyecto. Ningún trabajo fuera del alcance debe estar representado en el WBS. Esta regla
+                        asegura que el WBS capture todo el trabajo necesario sin incluir trabajo extraño. En proyectos ágiles, el concepto
+                        de WBS se aplica de manera adaptada; el Product Backlog completo representa efectivamente el alcance total, y cada
+                        Sprint genera un mini-WBS implícito para el trabajo de ese Sprint. Sin embargo, para planificación de alto nivel,
+                        cronogramas maestros, o integración con procesos organizacionales tradicionales, un WBS formal resulta frecuentemente
+                        valioso incluso en contextos ágiles.
+                    </p>
+
+                    <div class="mermaid">
+                    graph TD
+                        A[Sistema de Gestión de Inventarios] --> B[1.0 Gestión de Proyecto]
+                        A --> C[2.0 Análisis y Diseño]
+                        A --> D[3.0 Desarrollo]
+                        A --> E[4.0 Testing]
+                        A --> F[5.0 Despliegue]
+
+                        B --> B1[1.1 Planificación]
+                        B --> B2[1.2 Seguimiento y Control]
+                        B --> B3[1.3 Cierre]
+
+                        C --> C1[2.1 Recolección Requisitos]
+                        C --> C2[2.2 Diseño Arquitectónico]
+                        C --> C3[2.3 Diseño de BD]
+                        C --> C4[2.4 Diseño UI/UX]
+
+                        D --> D1[3.1 Módulo Ingreso]
+                        D --> D2[3.2 Módulo Salida]
+                        D --> D3[3.3 Módulo Reportes]
+                        D --> D4[3.4 Módulo Administración]
+
+                        E --> E1[4.1 Testing Unitario]
+                        E --> E2[4.2 Testing Integración]
+                        E --> E3[4.3 Testing Sistema]
+                        E --> E4[4.4 Testing Aceptación]
+
+                        F --> F1[5.1 Preparación Ambiente]
+                        F --> F2[5.2 Migración Datos]
+                        F --> F3[5.3 Capacitación Usuarios]
+                        F --> F4[5.4 Go Live]
+
+                        style A fill:#e1f5ff
+                        style B fill:#fff4e1
+                        style C fill:#e1ffe1
+                        style D fill:#ffe1e1
+                        style E fill:#f0e1ff
+                        style F fill:#ffe1f0
+                    </mermaid>
+                </section>
+
+                <section>
+                    <h2>5.3 Técnicas de Descomposición del Trabajo</h2>
+
+                    <p>
+                        La descomposición del trabajo constituye el proceso de subdividir los entregables del proyecto y el trabajo del
+                        proyecto en componentes más pequeños y manejables. La efectividad del WBS depende críticamente de la calidad de la
+                        descomposición; una descomposición apropiada facilita estimación, asignación, seguimiento y control, mientras que
+                        una descomposición inadecuada genera confusión, sobrelapamiento de responsabilidades, y dificultades de gestión.
+                        Existen técnicas específicas y principios guía que facilitan la descomposición efectiva del trabajo en proyectos
+                        de tecnología informática.
+                    </p>
+
+                    <p>
+                        La técnica de descomposición top-down comienza con el proyecto completo y progresivamente lo subdivide en componentes
+                        más pequeños, continuando hasta alcanzar el nivel de paquetes de trabajo. En cada nivel, se pregunta "¿Qué componentes
+                        o entregables constituyen este elemento del nivel superior?". Para un sistema de e-commerce, por ejemplo, el nivel
+                        superior podría descomponerse en Catálogo de Productos, Carrito de Compras, Procesamiento de Pagos, Gestión de
+                        Pedidos, y Gestión de Usuarios. Cada uno de estos se descompone subsecuentemente; Procesamiento de Pagos podría
+                        subdividirse en Integración con Gateway de Pago, Validación de Tarjetas, Procesamiento de Transacciones, Manejo de
+                        Rechazos, y Confirmación de Pagos.
+                    </p>
+
+                    <p>
+                        La técnica de analogía utiliza WBS de proyectos anteriores similares como punto de partida. Si la organización ha
+                        completado previamente proyectos similares, sus WBS pueden adaptarse al proyecto actual, ahorrando tiempo y
+                        aprovechando conocimiento organizacional. Sin embargo, cada proyecto tiene características únicas; el WBS análogo
+                        debe adaptarse cuidadosamente al contexto específico del proyecto actual, no simplemente copiarse sin reflexión.
+                        Repositorios organizacionales de WBS de proyectos anteriores constituyen activos valiosos que aceleran la planificación
+                        y capturan mejores prácticas.
+                    </p>
+
+                    <p>
+                        La descomposición por fases organiza el trabajo según etapas temporales del proyecto. Este enfoque resulta natural
+                        cuando el proyecto sigue ciclo de vida secuencial o basado en fases. Las fases típicas como Iniciación, Planificación,
+                        Análisis, Diseño, Construcción, Testing, Despliegue y Cierre se convierten en elementos de primer nivel del WBS, y
+                        cada fase se descompone en actividades o entregables específicos de esa fase. Este enfoque facilita la gestión por
+                        fases y los gate reviews, pero puede dificultar el seguimiento de entregables específicos que se desarrollan a lo
+                        largo de múltiples fases.
+                    </p>
+
+                    <p>
+                        La descomposición por entregables organiza el trabajo alrededor de productos concretos a ser producidos. Este enfoque
+                        resulta frecuentemente más natural en proyectos de desarrollo de software, donde los entregables principales (módulos,
+                        componentes, subsistemas) son evidentes desde la arquitectura del sistema. Por ejemplo, un sistema de gestión
+                        hospitalaria podría descomponerse en Módulo de Admisión de Pacientes, Módulo de Historia Clínica Electrónica, Módulo
+                        de Farmacia, Módulo de Laboratorio, Módulo de Facturación, e Infraestructura de Soporte. Cada módulo se descompone
+                        subsecuentemente en sub-entregables hasta alcanzar nivel de paquetes de trabajo.
+                    </p>
+
+                    <p>
+                        La descomposición funcional organiza el trabajo según áreas funcionales o disciplinas involucradas. Este enfoque
+                        podría utilizar categorías como Desarrollo de Backend, Desarrollo de Frontend, Diseño de Base de Datos, Diseño de
+                        Interfaz de Usuario, Testing, Documentación, Gestión de Proyecto, etc. Este enfoque facilita la asignación de trabajo
+                        a equipos especializados pero puede generar desafíos de integración si las fronteras entre áreas funcionales no se
+                        gestionan cuidadosamente. En organizaciones matriciales con recursos especializados asignados desde pools funcionales,
+                        este enfoque puede resultar natural.
+                    </p>
+
+                    <p>
+                        Principios fundamentales guían la descomposición efectiva. Primero, orientación a entregables: cada elemento del WBS
+                        debe representar un entregable verificable, no simplemente una actividad o fase temporal. Segundo, completitud: el
+                        WBS debe incluir todo el trabajo necesario (regla del 100%). Tercero, exclusión mutua: elementos al mismo nivel del
+                        WBS no deben sobrelaparse; cada paquete de trabajo debe tener límites claros. Cuarto, granularidad apropiada: los
+                        paquetes de trabajo deben ser suficientemente pequeños para estimación y seguimiento efectivos, pero no tan pequeños
+                        que el overhead de gestión exceda el valor. Quinto, asignabilidad: cada paquete de trabajo debe poder asignarse a
+                        una persona o equipo con responsabilidad clara.
+                    </p>
+
+                    <div class="success-box">
+                        <h4>Criterios para Verificar Calidad del WBS</h4>
+                        <ul class="checklist">
+                            <li>¿Cada elemento del WBS representa un entregable verificable?</li>
+                            <li>¿El WBS incluye el 100% del trabajo definido por el alcance del proyecto?</li>
+                            <li>¿Los elementos al mismo nivel son mutuamente exclusivos (sin sobrelapamiento)?</li>
+                            <li>¿Los paquetes de trabajo son del tamaño apropiado para estimación y control?</li>
+                            <li>¿Cada paquete de trabajo puede asignarse a una persona o equipo específico?</li>
+                            <li>¿Cada elemento del WBS tiene un identificador único?</li>
+                            <li>¿Los criterios de completación están claros para cada paquete de trabajo?</li>
+                            <li>¿El WBS puede servir como base para programación y estimación de costos?</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>5.4 Control de Cambios de Alcance</h2>
+
+                    <p>
+                        El control de cambios de alcance representa un proceso crítico para gestionar modificaciones al alcance definido del
+                        proyecto de manera sistemática y controlada. Los cambios de alcance son inevitables en proyectos de tecnología
+                        informática; requisitos evolucionan a medida que stakeholders comprenden mejor sus necesidades, tecnologías emergen
+                        o se vuelven obsoletas, regulaciones cambian, condiciones de mercado se modifican. El desafío no es eliminar cambios,
+                        lo cual resulta imposible e indeseable, sino gestionarlos de manera que se maximice el valor mientras se mantiene
+                        control sobre cronograma, costos y calidad.
+                    </p>
+
+                    <p>
+                        El proceso formal de control de cambios comienza con la recepción de una solicitud de cambio. Las solicitudes de
+                        cambio pueden originarse de múltiples fuentes: stakeholders identificando nuevas necesidades, el equipo del proyecto
+                        descubriendo requisitos previamente no identificados, acciones correctivas o preventivas, cambios regulatorios,
+                        defectos que requieren modificación de diseño, o mejoras identificadas durante el desarrollo. Cada solicitud debe
+                        documentarse formalmente, típicamente utilizando formulario estandarizado que captura descripción del cambio propuesto,
+                        justificación o razón del cambio, análisis de impacto preliminar, y prioridad o urgencia.
+                    </p>
+
+                    <p>
+                        El análisis de impacto constituye el paso crítico siguiente. Para cada solicitud de cambio, debe evaluarse
+                        comprehensivamente su impacto en múltiples dimensiones del proyecto. El impacto en alcance debe determinarse: ¿qué
+                        entregables o funcionalidades se agregarán, modificarán o eliminarán? El impacto en cronograma debe estimarse: ¿cuánto
+                        tiempo adicional requerirá el cambio, considerando tanto el trabajo directo como las dependencias? El impacto en
+                        costos debe calcularse: ¿qué recursos adicionales se necesitarán? El impacto en calidad debe considerarse: ¿el cambio
+                        mejora o potencialmente degrada la calidad? El impacto en riesgos debe evaluarse: ¿el cambio introduce nuevos riesgos
+                        o mitiga riesgos existentes?
+                    </p>
+
+                    <p>
+                        El Comité de Control de Cambios (Change Control Board - CCB) revisa las solicitudes de cambio junto con el análisis
+                        de impacto y toma decisiones sobre aprobación, rechazo o diferimiento. El CCB típicamente incluye representantes de
+                        stakeholders clave: sponsor del proyecto, gerente del proyecto, arquitecto técnico principal, representantes de usuarios,
+                        y posiblemente gerencia de calidad, operaciones o compliance según el contexto. El CCB evalúa si el cambio proporciona
+                        valor suficiente para justificar sus costos e impactos, si se alinea con objetivos estratégicos del proyecto, si los
+                        recursos necesarios están disponibles, y si los riesgos introducidos son aceptables.
+                    </p>
+
+                    <p>
+                        Las decisiones pueden ser: aprobar el cambio para implementación inmediata, aprobar con condiciones o modificaciones,
+                        rechazar el cambio si los costos exceden beneficios o si no se alinea con objetivos del proyecto, o diferir el cambio
+                        para consideración en fase posterior o proyecto subsiguiente. Cada decisión debe documentarse con justificación clara.
+                        Los cambios aprobados deben incorporarse formalmente al plan de dirección del proyecto, actualizando el enunciado del
+                        alcance, WBS, cronograma, presupuesto, y otros documentos del proyecto según corresponda. La línea base (baseline) del
+                        proyecto se actualiza para reflejar el nuevo alcance aprobado.
+                    </p>
+
+                    <p>
+                        La comunicación de decisiones de cambio resulta esencial. Todos los stakeholders afectados deben ser informados sobre
+                        cambios aprobados, incluyendo qué cambió, por qué cambió, cuándo se implementará el cambio, y cómo les afecta. La falta
+                        de comunicación efectiva genera confusión, expectativas desalineadas, y potencialmente trabajo duplicado o contradictorio.
+                        El registro de cambios (change log) mantiene historial comprehensivo de todas las solicitudes, análisis, decisiones e
+                        implementaciones, proporcionando trazabilidad completa y facilitando lecciones aprendidas para proyectos futuros.
+                    </p>
+
+                    <p>
+                        En contextos ágiles, el control de cambios opera de manera más fluida pero igualmente disciplinada. El Product Backlog
+                        representa el alcance dinámico del producto; agregar, modificar o eliminar ítems del backlog constituye el mecanismo
+                        de control de cambios. El Product Owner tiene autoridad para gestionar el backlog, pero decisiones sobre priorización
+                        deben considerar capacidad del equipo, impactos en cronograma y objetivos de release. Los cambios dentro de un Sprint
+                        en progreso se gestionan más restrictivamente; cambios significativos típicamente se difieren hasta el próximo Sprint,
+                        preservando la estabilidad del trabajo del Sprint actual. Este enfoque balancea flexibilidad con predictibilidad.
+                    </p>
+
+                    <div class="mermaid">
+                    graph TD
+                        A[Solicitud de Cambio] --> B[Documentación Formal]
+                        B --> C[Análisis de Impacto]
+                        C --> C1[Impacto en Alcance]
+                        C --> C2[Impacto en Cronograma]
+                        C --> C3[Impacto en Costos]
+                        C --> C4[Impacto en Riesgos]
+                        C --> C5[Impacto en Calidad]
+
+                        C --> D{Revisión por CCB}
+                        D -->|Aprobar| E[Actualizar Plan de Proyecto]
+                        D -->|Rechazar| F[Documentar Razones]
+                        D -->|Diferir| G[Agregar a Backlog Futuro]
+
+                        E --> H[Actualizar Baseline]
+                        E --> I[Comunicar a Stakeholders]
+                        E --> J[Implementar Cambio]
+
+                        F --> K[Registro de Cambios]
+                        G --> K
+                        J --> K
+
+                        style A fill:#e1f5ff
+                        style C fill:#fff4e1
+                        style D fill:#ffe1e1
+                        style E fill:#e1ffe1
+                        style K fill:#f0e1ff
+                    </mermaid>
+                </section>
+
+                <section>
+                    <h2>5.5 Scope Creep y Gold Plating</h2>
+
+                    <p>
+                        El scope creep (expansión no controlada del alcance) y el gold plating (agregado de funcionalidad no solicitada)
+                        representan dos fenómenos relacionados pero distintos que amenazan el éxito de proyectos de tecnología informática.
+                        Ambos resultan en trabajo adicional no autorizado, consumo de recursos no planificados, extensión de cronogramas, y
+                        potencialmente compromiso de calidad o abandono de funcionalidades críticas. Comprender las causas, manifestaciones
+                        y estrategias de prevención de estos fenómenos resulta esencial para directores de proyectos efectivos.
+                    </p>
+
+                    <p>
+                        El scope creep se refiere a la expansión gradual y no controlada del alcance del proyecto sin ajustes correspondientes
+                        en tiempo, costo y recursos. Típicamente ocurre cuando se agregan pequeños cambios o funcionalidades adicionales sin
+                        pasar por el proceso formal de control de cambios, bajo la racionalización de que son "pequeños" o "rápidos". Sin
+                        embargo, la acumulación de múltiples cambios pequeños puede resultar en expansión significativa del alcance. El scope
+                        creep frecuentemente es impulsado por stakeholders que identifican continuamente nuevas necesidades o "mejoras" a
+                        medida que ven el sistema evolucionar, o por el equipo de desarrollo que agrega funcionalidad no solicitada pensando
+                        que mejorará el producto.
+                    </p>
+
+                    <p>
+                        Las causas fundamentales del scope creep incluyen: definición inicial del alcance pobre o ambigua, permitiendo múltiples
+                        interpretaciones y expectativas desalineadas; ausencia de proceso formal de control de cambios o aplicación inconsistente
+                        del proceso existente; presión de stakeholders poderosos que solicitan "solo una cosa más" sin apreciar el impacto
+                        acumulativo; equipos de proyecto que dicen "sí" a todo para mantener satisfechos a stakeholders sin considerar
+                        restricciones de recursos; falta de involucramiento continuo de stakeholders clave, resultando en descubrimiento tardío
+                        de requisitos realmente importantes; y cultura organizacional que valora complacer a clientes por sobre gestión
+                        disciplinada de proyectos.
+                    </p>
+
+                    <p>
+                        El gold plating, por su parte, ocurre cuando el equipo del proyecto agrega funcionalidad, características o nivel de
+                        calidad más allá de lo especificado en los requisitos, sin autorización o solicitud del cliente o sponsor. Esto
+                        típicamente se origina de buenas intenciones; desarrolladores quieren crear el mejor producto posible, agregan
+                        características que consideran valiosas, o implementan soluciones más elaboradas que lo requerido. Sin embargo, el
+                        gold plating consume recursos que deberían aplicarse a requisitos realmente prioritarios, introduce complejidad
+                        innecesaria, extiende cronogramas, y frecuentemente resulta en características que los usuarios no valoran o utilizan.
+                    </p>
+
+                    <p>
+                        Las manifestaciones del gold plating incluyen: implementar funcionalidad no solicitada porque "sería bueno tenerla" o
+                        "podría necesitarse en el futuro"; aplicar tecnologías más complejas o sofisticadas que lo necesario para satisfacer
+                        requisitos; exceder estándares de desempeño especificados (por ejemplo, optimizando para responder en 100ms cuando el
+                        requisito especifica 500ms); producir documentación más exhaustiva que lo requerido; o implementar opciones de
+                        configuración extensas cuando usuarios desean simplicidad. Si bien estas actividades frecuentemente se originan de
+                        orgullo profesional y deseo de excelencia, desvían recursos de prioridades acordadas.
+                    </p>
+
+                    <p>
+                        Las estrategias de prevención comienzan con definición clara y comprehensiva del alcance al inicio del proyecto,
+                        involucrando stakeholders clave en validación de requisitos y estableciendo criterios de aceptación específicos y
+                        medibles. El establecimiento y aplicación rigurosa de proceso formal de control de cambios resulta crítico; todos los
+                        cambios propuestos, sin importar cuán pequeños parezcan, deben pasar por análisis de impacto y aprobación formal. La
+                        educación de stakeholders sobre el impacto de cambios y la realidad de restricciones de recursos ayuda a gestionar
+                        expectativas y reduce solicitudes frívolas.
+                    </p>
+
+                    <p>
+                        Para prevenir gold plating, el director del proyecto debe enfatizar que el objetivo es satisfacer requisitos acordados,
+                        no excederlos arbitrariamente. La revisión regular del trabajo en progreso contra especificaciones ayuda a identificar
+                        tempranamente desviaciones. Fomentar cultura donde el equipo se siente cómodo diciendo "esto no estaba en los requisitos,
+                        ¿deberíamos proponerlo como cambio formal?" previene gold plating bien intencionado. Las retrospectivas pueden explorar
+                        si el equipo está agregando trabajo innecesario, identificando causas raíz y estrategias de prevención. El liderazgo
+                        debe modelar disciplina, reconociendo que la excelencia profesional incluye entregar lo acordado dentro de restricciones,
+                        no simplemente la complejidad técnica de la solución.
+                    </p>
+
+                    <div class="important-box">
+                        <h4>Diferenciando Scope Creep de Gold Plating</h4>
+                        <p><strong>Scope Creep:</strong></p>
+                        <ul>
+                            <li>Originado por stakeholders externos al equipo de desarrollo</li>
+                            <li>Cambios solicitados o demandados por clientes o usuarios</li>
+                            <li>Típicamente visible y conocido por stakeholders</li>
+                            <li>Puede justificarse si agrega valor real y se gestiona formalmente</li>
+                        </ul>
+                        <p style="margin-top: 15px;"><strong>Gold Plating:</strong></p>
+                        <ul>
+                            <li>Originado por el equipo del proyecto (desarrolladores, diseñadores)</li>
+                            <li>Funcionalidad agregada sin solicitud o autorización</li>
+                            <li>Frecuentemente invisible a stakeholders hasta entrega</li>
+                            <li>Raramente justificable; desvía recursos de prioridades acordadas</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>5.6 Herramientas de Planificación del Alcance</h2>
+
+                    <p>
+                        Las herramientas de planificación del alcance facilitan la captura, organización, análisis y gestión de los requisitos
+                        y el alcance del proyecto. Estas herramientas van desde simples documentos y hojas de cálculo hasta plataformas
+                        sofisticadas de gestión de requisitos con capacidades de trazabilidad, versionado, colaboración y análisis. La selección
+                        de herramientas apropiadas depende del tamaño y complejidad del proyecto, requisitos regulatorios, cultura organizacional,
+                        madurez del equipo, y presupuesto disponible. Esta sección explora las principales categorías de herramientas y sus
+                        aplicaciones en gestión del alcance de proyectos de TI.
+                    </p>
+
+                    <p>
+                        Las herramientas de gestión de requisitos especializadas como IBM DOORS (Dynamic Object-Oriented Requirements System),
+                        Jama Connect, Polarion Requirements, o Helix RM proporcionan capacidades comprehensivas para captura, organización,
+                        trazabilidad y gestión de cambios de requisitos. Estas herramientas permiten definir requisitos con estructura rica
+                        (atributos personalizables, categorización, priorización), establecer relaciones y dependencias entre requisitos,
+                        vincular requisitos a elementos de diseño, casos de prueba y defectos (trazabilidad bidireccional), gestionar baselines
+                        y versiones de requisitos, analizar impacto de cambios, y generar reportes de cobertura y cumplimiento.
+                    </p>
+
+                    <p>
+                        Estas herramientas resultan particularmente valiosas en proyectos grandes o complejos, proyectos con requisitos
+                        regulatorios estrictos que demandan trazabilidad completa, proyectos con múltiples releases donde la gestión de
+                        baselines resulta crítica, o contextos donde múltiples equipos trabajan concurrentemente en componentes interrelacionados.
+                        Sin embargo, representan inversión significativa no solo en licencias sino también en capacitación, configuración y
+                        overhead de proceso. Para proyectos pequeños o medianos, herramientas más ligeras pueden resultar más apropiadas.
+                    </p>
+
+                    <p>
+                        Las plataformas de gestión de proyectos con capacidades de alcance como Microsoft Project, Jira, Azure DevOps, o
+                        Asana proporcionan funcionalidad integrada para definir y rastrear el alcance del proyecto junto con cronogramas,
+                        recursos y costos. Estas herramientas típicamente permiten crear WBS jerárquicos, definir paquetes de trabajo con
+                        descripciones y criterios de aceptación, asignar responsables y recursos, vincular trabajo a cronogramas y presupuestos,
+                        rastrear progreso contra plan, y gestionar cambios de alcance mediante workflows configurables. La ventaja principal
+                        es la integración; el alcance, cronograma, costos y recursos se gestionan en plataforma unificada, facilitando análisis
+                        de impacto y mantenimiento de consistencia.
+                    </p>
+
+                    <p>
+                        Las herramientas de colaboración y documentación como Confluence, SharePoint, Google Workspace, o Notion sirven como
+                        repositorios centralizados para documentación del alcance del proyecto. Estas plataformas permiten crear y mantener
+                        enunciados de alcance, especificaciones de requisitos, WBS con diccionarios, matrices de trazabilidad de requisitos,
+                        y documentación de cambios en formato estructurado y fácilmente accesible. Las capacidades de versionado, comentarios,
+                        notificaciones y búsqueda facilitan la colaboración y aseguran que stakeholders trabajen con información actualizada.
+                        Para muchos proyectos, estas herramientas proporcionan equilibrio apropiado entre funcionalidad y simplicidad.
+                    </p>
+
+                    <p>
+                        Las herramientas de modelado visual como Lucidchart, Draw.io, Visio, o Visual Paradigm facilitan la creación de
+                        representaciones visuales del alcance del proyecto. Diagramas WBS visuales resultan frecuentemente más comprensibles
+                        que listados tabulares, particularmente para comunicación con stakeholders no técnicos. Modelos de contexto del sistema
+                        (diagramas que muestran el sistema y sus interfaces con sistemas externos y usuarios) ayudan a establecer límites del
+                        alcance. Diagramas de casos de uso visualizan la funcionalidad del sistema desde la perspectiva de usuarios. Mapas
+                        conceptuales ayudan a organizar y relacionar requisitos complejos. La visualización facilita comprensión compartida y
+                        identificación de lagunas o inconsistencias.
+                    </p>
+
+                    <p>
+                        Las herramientas ágiles especializadas como Jira, Rally, VersionOne, o Azure DevOps proporcionan gestión del alcance
+                        adaptada a contextos ágiles. El Product Backlog constituye el repositorio central del alcance, con historias de usuario,
+                        épicas y features organizados, priorizados y estimados. Estas herramientas facilitan refinamiento continuo del backlog,
+                        planificación de sprints o releases, visualización mediante tableros Kanban o Scrum, seguimiento de velocity y burndown,
+                        y gestión de dependencias entre equipos. La integración con herramientas de desarrollo (repositorios de código,
+                        pipelines CI/CD) proporciona trazabilidad de requisitos a implementación.
+                    </p>
+
+                    <p>
+                        Para la selección de herramientas apropiadas, considerar factores como: complejidad del proyecto (proyectos simples
+                        pueden gestionarse con herramientas básicas; proyectos complejos justifican plataformas sofisticadas); requisitos
+                        regulatorios (industrias reguladas pueden requerir herramientas con capacidades específicas de trazabilidad y auditoría);
+                        tamaño del equipo y distribución geográfica (equipos grandes o distribuidos se benefician más de plataformas
+                        colaborativas centralizadas); integración con otras herramientas organizacionales (compatibilidad con ecosistema
+                        existente reduce fricción); curva de aprendizaje y disponibilidad de capacitación; costo total de propiedad (licencias,
+                        implementación, capacitación, mantenimiento); y escalabilidad (capacidad de la herramienta de crecer con las necesidades
+                        organizacionales).
+                    </p>
+
+                    <div class="mermaid">
+                    mindmap
+                        root((Herramientas de<br/>Planificación del Alcance))
+                            Gestión de Requisitos
+                                IBM DOORS
+                                Jama Connect
+                                Polarion
+                                Helix RM
+                            Gestión de Proyectos
+                                Microsoft Project
+                                Jira
+                                Azure DevOps
+                                Asana
+                            Colaboración y Docs
+                                Confluence
+                                SharePoint
+                                Google Workspace
+                                Notion
+                            Modelado Visual
+                                Lucidchart
+                                Draw.io
+                                Visio
+                                Visual Paradigm
+                            Herramientas Ágiles
+                                Jira Software
+                                Rally
+                                VersionOne
+                                Azure Boards
+                    </mindmap>
+                </section>
+
+                <div class="class-navigation">
+                    <a href="clase-04.html" class="nav-button prev">Clase Anterior</a>
+                    <a href="clase-06.html" class="nav-button next">Siguiente Clase</a>
+                </div>
+            </article>
+        </main>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Universidad Abierta Interamericana - Especialización en Dirección de Proyectos de Tecnología Informática</p>
+        <p>Dictamen CONEAU Sesión N° 619 - RCS 6350/23</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase 11: Calidad del Software y Estándares Internacionales - UAI</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true, theme: 'default' });
+    </script>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <h1>UAI - Especialización en Dirección de Proyectos TI</h1>
+            </div>
+            <nav class="main-nav">
+                <a href="index.html">Inicio</a>
+                <a href="index.html#about">Sobre la Carrera</a>
+                <a href="index.html#contact">Contacto</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <aside class="sidebar">
+            <h2>Contenido del Curso</h2>
+            <nav class="chapters-nav">
+                <ul>
+                    <li><a href="clase-01.html">Clase 1: Introducción a la Dirección de Proyectos TI</a></li>
+                    <li><a href="clase-02.html">Clase 2: Fundamentos de la Gestión de Proyectos</a></li>
+                    <li><a href="clase-03.html">Clase 3: Metodologías Tradicionales</a></li>
+                    <li><a href="clase-04.html">Clase 4: Metodologías Ágiles</a></li>
+                    <li><a href="clase-05.html">Clase 5: Planificación y Gestión del Alcance</a></li>
+                    <li><a href="clase-06.html">Clase 6: Gestión del Tiempo y Cronogramas</a></li>
+                    <li><a href="clase-07.html">Clase 7: Gestión de Costos y Presupuestos</a></li>
+                    <li><a href="clase-08.html">Clase 8: Gestión de Riesgos</a></li>
+                    <li><a href="clase-09.html">Clase 9: Ingeniería de Requerimientos</a></li>
+                    <li><a href="clase-10.html">Clase 10: Métricas de Software</a></li>
+                    <li><a href="clase-11.html" class="active">Clase 11: Calidad del Software y Estándares</a></li>
+                    <li><a href="clase-12.html">Clase 12: Gestión del Capital Humano</a></li>
+                    <li><a href="clase-13.html">Clase 13: Arquitectura y Diseño de Software</a></li>
+                    <li><a href="clase-14.html">Clase 14: Testing y Aseguramiento de Calidad</a></li>
+                    <li><a href="clase-15.html">Clase 15: DevOps y Entrega Continua</a></li>
+                    <li><a href="clase-16.html">Clase 16: Tendencias Emergentes</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <article>
+                <h1>Clase 11: Calidad del Software y Estándares Internacionales</h1>
+
+                <section>
+                    <h2>1. Conceptos Fundamentales de Calidad de Software</h2>
+
+                    <p>
+                        La calidad del software constituye uno de los pilares fundamentales en la dirección de proyectos de tecnología
+                        informática, representando no solo la conformidad con requisitos especificados, sino también la capacidad del
+                        producto de satisfacer las necesidades explícitas e implícitas de los usuarios finales. Desde la perspectiva
+                        académica, la calidad del software se define como el grado en que un sistema, componente o proceso cumple con
+                        los requisitos especificados y las expectativas y necesidades del cliente o usuario.
+                    </p>
+
+                    <p>
+                        La evolución del concepto de calidad en el software ha transitado por múltiples etapas. En los primeros años
+                        de la ingeniería de software, la calidad se asociaba principalmente con la ausencia de defectos y errores de
+                        programación. Sin embargo, esta visión reduccionista fue progresivamente expandida para incorporar dimensiones
+                        más amplias como la usabilidad, el rendimiento, la mantenibilidad y la portabilidad. El trabajo seminal de
+                        Philip Crosby, quien definió la calidad como "conformidad con los requisitos", estableció fundamentos que
+                        continúan siendo relevantes en el contexto contemporáneo.
+                    </p>
+
+                    <p>
+                        La calidad del software presenta características distintivas que la diferencian de la calidad en productos
+                        manufacturados tradicionales. A diferencia de bienes físicos, el software no se desgasta con el uso ni se
+                        deteriora con el tiempo de la misma manera. Los defectos en software son errores de diseño e implementación,
+                        no fallas en el proceso de fabricación. Esta naturaleza intrínseca del software requiere enfoques específicos
+                        para su aseguramiento y control de calidad.
+                    </p>
+
+                    <p>
+                        El modelo de McCall, uno de los primeros intentos sistemáticos de caracterizar la calidad del software,
+                        propuso una jerarquía de factores de calidad organizados en tres categorías principales: operación del producto
+                        (corrección, confiabilidad, eficiencia, integridad, usabilidad), revisión del producto (mantenibilidad,
+                        flexibilidad, testabilidad) y transición del producto (portabilidad, reusabilidad, interoperabilidad).
+                        Aunque posteriores modelos han refinado estas taxonomías, los conceptos fundamentales permanecen vigentes.
+                    </p>
+
+                    <p>
+                        La perspectiva multidimensional de la calidad reconoce que diferentes stakeholders pueden tener percepciones
+                        distintas sobre qué constituye un producto de software de calidad. Para el usuario final, la calidad puede
+                        centrarse en usabilidad y confiabilidad; para el desarrollador, en mantenibilidad y modularidad; para el
+                        cliente, en cumplimiento de especificaciones y entrega a tiempo. La gestión efectiva de la calidad requiere
+                        balancear y armonizar estas perspectivas frecuentemente divergentes.
+                    </p>
+
+                    <div class="info-box">
+                        <h4>Dimensiones de la Calidad del Software</h4>
+                        <ul>
+                            <li><strong>Calidad Interna:</strong> Atributos relacionados con la estructura y arquitectura del código</li>
+                            <li><strong>Calidad Externa:</strong> Comportamiento del sistema durante su ejecución</li>
+                            <li><strong>Calidad en Uso:</strong> Experiencia del usuario en contextos específicos de utilización</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>2. ISO 9001 y su Aplicación en Proyectos TI</h2>
+
+                    <p>
+                        La norma ISO 9001, desarrollada por la Organización Internacional de Normalización (ISO), representa el
+                        estándar internacional más ampliamente adoptado para sistemas de gestión de calidad. Aunque no es específica
+                        del sector de tecnología informática, su aplicación en proyectos de software ha demostrado beneficios
+                        significativos en términos de mejora de procesos, satisfacción del cliente y eficiencia organizacional.
+                        La versión actual, ISO 9001:2015, incorpora un enfoque basado en procesos combinado con el ciclo PDCA
+                        (Plan-Do-Check-Act) y pensamiento basado en riesgos.
+                    </p>
+
+                    <p>
+                        Los principios fundamentales de la gestión de calidad establecidos por ISO 9001 tienen aplicabilidad directa
+                        en proyectos de tecnología informática. El enfoque al cliente se manifiesta en la comprensión profunda de
+                        requisitos funcionales y no funcionales. El liderazgo establece la visión y dirección para la calidad en el
+                        proyecto. El compromiso de las personas reconoce que los equipos de desarrollo constituyen el activo más
+                        valioso. El enfoque basado en procesos estructura las actividades de desarrollo de manera sistemática. La
+                        mejora continua impulsa la evolución progresiva de capacidades organizacionales.
+                    </p>
+
+                    <p>
+                        La implementación de ISO 9001 en contextos de desarrollo de software requiere adaptaciones específicas.
+                        Los procesos de desarrollo ágil, con sus iteraciones cortas y entregas incrementales, pueden parecer
+                        inicialmente en tensión con los requisitos de documentación de ISO 9001. Sin embargo, la versión 2015 del
+                        estándar reduce significativamente la prescripción de procedimientos documentados, permitiendo mayor
+                        flexibilidad en cómo las organizaciones demuestran conformidad con los requisitos.
+                    </p>
+
+                    <p>
+                        El concepto de contexto de la organización introducido en ISO 9001:2015 resulta particularmente relevante
+                        para proyectos de tecnología informática que operan en entornos de alta volatilidad. Las organizaciones deben
+                        identificar cuestiones externas e internas que pueden afectar la capacidad de lograr resultados previstos del
+                        sistema de gestión de calidad, incluyendo factores tecnológicos, competitivos, regulatorios y de mercado.
+                    </p>
+
+                    <p>
+                        La gestión de riesgos, ahora integrada como elemento central en ISO 9001:2015, alinea directamente con
+                        prácticas establecidas en dirección de proyectos TI. El pensamiento basado en riesgos requiere que las
+                        organizaciones determinen riesgos y oportunidades que necesitan ser abordados para asegurar que el sistema
+                        de gestión de calidad logre sus resultados previstos, prevenir efectos no deseados y lograr mejora continua.
+                    </p>
+
+                    <div class="mermaid">
+                    graph TD
+                        A[ISO 9001 en Proyectos TI] --> B[Contexto de la Organización]
+                        A --> C[Liderazgo]
+                        A --> D[Planificación]
+                        A --> E[Soporte]
+                        A --> F[Operación]
+                        A --> G[Evaluación del Desempeño]
+                        A --> H[Mejora]
+                        B --> B1[Factores Externos e Internos]
+                        B --> B2[Partes Interesadas]
+                        D --> D1[Gestión de Riesgos]
+                        D --> D2[Objetivos de Calidad]
+                        F --> F1[Planificación Operacional]
+                        F --> F2[Requisitos del Producto]
+                        G --> G1[Auditorías Internas]
+                        G --> G2[Revisión por Dirección]
+                    </div>
+                </section>
+
+                <section>
+                    <h2>3. ISO/IEC 25010: Modelo de Calidad de Software</h2>
+
+                    <p>
+                        ISO/IEC 25010 forma parte de la familia SQuaRE (Systems and Software Quality Requirements and Evaluation)
+                        y establece un modelo comprehensivo de calidad de software que reemplaza el anterior estándar ISO/IEC 9126.
+                        Este modelo proporciona un marco estructurado para la especificación, medición y evaluación de la calidad
+                        de productos de software, distinguiendo entre calidad en uso y calidad del producto. La comprensión profunda
+                        de este modelo resulta esencial para directores de proyectos que buscan establecer objetivos de calidad
+                        concretos y medibles.
+                    </p>
+
+                    <p>
+                        El modelo de calidad del producto definido en ISO/IEC 25010 identifica ocho características principales:
+                        adecuación funcional, eficiencia de desempeño, compatibilidad, usabilidad, fiabilidad, seguridad,
+                        mantenibilidad y portabilidad. Cada una de estas características se subdivide en subcaracterísticas más
+                        específicas, proporcionando un vocabulario común y preciso para discutir aspectos de calidad del software.
+                        Esta taxonomía facilita la comunicación entre stakeholders técnicos y no técnicos sobre expectativas de
+                        calidad.
+                    </p>
+
+                    <p>
+                        La adecuación funcional evalúa el grado en que el producto proporciona funciones que satisfacen necesidades
+                        declaradas e implícitas cuando se usa bajo condiciones especificadas. Esta característica incluye
+                        completitud funcional (grado en que el conjunto de funciones cubre todas las tareas especificadas),
+                        corrección funcional (grado en que el producto proporciona resultados correctos con precisión necesaria)
+                        y pertinencia funcional (grado en que las funciones facilitan la realización de tareas y objetivos específicos).
+                    </p>
+
+                    <p>
+                        La eficiencia de desempeño relaciona el nivel de rendimiento con la cantidad de recursos utilizados bajo
+                        condiciones establecidas. En la era de aplicaciones cloud y móviles, donde los recursos computacionales y
+                        el ancho de banda representan costos directos, la eficiencia de desempeño adquiere importancia crítica.
+                        Las subcaracterísticas incluyen comportamiento temporal (tiempos de respuesta, throughput), utilización
+                        de recursos (CPU, memoria, ancho de banda) y capacidad (límites máximos del sistema).
+                    </p>
+
+                    <p>
+                        La seguridad como característica de calidad ha ganado prominencia dramática en años recientes. ISO/IEC 25010
+                        la descompone en confidencialidad (protección contra acceso no autorizado), integridad (prevención de
+                        modificación no autorizada), no repudio (demostración de acciones o eventos), responsabilidad (trazabilidad
+                        de acciones a entidades) y autenticidad (demostración de identidad de sujeto o recurso). En el contexto de
+                        regulaciones como GDPR y crecientes amenazas de ciberseguridad, estos aspectos demandan atención prioritaria.
+                    </p>
+
+                    <div class="mermaid">
+                    mindmap
+                        root((ISO/IEC 25010<br/>Calidad del Producto))
+                            Adecuación Funcional
+                                Completitud Funcional
+                                Corrección Funcional
+                                Pertinencia Funcional
+                            Eficiencia de Desempeño
+                                Comportamiento Temporal
+                                Utilización de Recursos
+                                Capacidad
+                            Compatibilidad
+                                Coexistencia
+                                Interoperabilidad
+                            Usabilidad
+                                Reconocimiento de Adecuación
+                                Capacidad de Aprendizaje
+                                Operabilidad
+                                Protección contra Errores
+                                Estética UI
+                                Accesibilidad
+                            Fiabilidad
+                                Madurez
+                                Disponibilidad
+                                Tolerancia a Fallos
+                                Capacidad de Recuperación
+                            Seguridad
+                                Confidencialidad
+                                Integridad
+                                No Repudio
+                                Responsabilidad
+                                Autenticidad
+                            Mantenibilidad
+                                Modularidad
+                                Reusabilidad
+                                Analizabilidad
+                                Modificabilidad
+                                Testeabilidad
+                            Portabilidad
+                                Adaptabilidad
+                                Instalabilidad
+                                Reemplazabilidad
+                    </div>
+
+                    <div class="success-box">
+                        <h4>Aplicación Práctica de ISO/IEC 25010</h4>
+                        <p>Para implementar efectivamente este modelo en proyectos:</p>
+                        <ul class="checklist">
+                            <li>Seleccionar características relevantes según el contexto del proyecto</li>
+                            <li>Definir métricas específicas para cada característica seleccionada</li>
+                            <li>Establecer niveles objetivo de calidad para cada métrica</li>
+                            <li>Implementar procesos de medición durante el desarrollo</li>
+                            <li>Realizar evaluaciones periódicas de cumplimiento</li>
+                            <li>Documentar desviaciones y acciones correctivas</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>4. CMMI: Capability Maturity Model Integration</h2>
+
+                    <p>
+                        El Capability Maturity Model Integration (CMMI) constituye un marco de mejora de procesos desarrollado
+                        inicialmente por el Software Engineering Institute (SEI) de la Universidad Carnegie Mellon. CMMI proporciona
+                        un enfoque sistemático para la mejora de procesos organizacionales, ayudando a las empresas de tecnología
+                        a mejorar su capacidad para desarrollar y mantener productos y servicios de calidad. El modelo ha evolucionado
+                        desde su origen enfocado en desarrollo de software (SW-CMM) hacia un framework integrado que abarca desarrollo
+                        (CMMI-DEV), servicios (CMMI-SVC) y adquisiciones (CMMI-ACQ).
+                    </p>
+
+                    <p>
+                        CMMI define cinco niveles de madurez que caracterizan el grado de sofisticación y optimización de los procesos
+                        organizacionales. El Nivel 1 (Inicial) describe organizaciones con procesos impredecibles, reactivos y ad-hoc.
+                        El Nivel 2 (Gestionado) establece gestión de proyectos básica para rastrear costos, cronogramas y funcionalidad.
+                        El Nivel 3 (Definido) caracteriza organizaciones con procesos bien caracterizados, comprendidos y descritos
+                        en estándares, procedimientos, herramientas y métodos. El Nivel 4 (Gestionado Cuantitativamente) introduce
+                        medición y control estadístico de procesos. El Nivel 5 (Optimizado) enfoca la mejora continua de procesos.
+                    </p>
+
+                    <p>
+                        Las áreas de proceso de CMMI organizan prácticas relacionadas en categorías temáticas. En CMMI-DEV v2.0,
+                        estas áreas incluyen: Gestión de Configuración (CM), que establece y mantiene la integridad de productos de
+                        trabajo; Medición y Análisis (MA), que desarrolla y sostiene capacidad de medición; Aseguramiento de Calidad
+                        de Procesos y Productos (PPQA), que proporciona personal y gestión con visión objetiva de procesos y productos
+                        asociados; y múltiples áreas adicionales que cubren aspectos desde gestión de requisitos hasta análisis de
+                        decisiones y resolución.
+                    </p>
+
+                    <p>
+                        La implementación de CMMI en organizaciones de desarrollo de software típicamente sigue un enfoque escalonado
+                        o continuo. La representación escalonada proporciona una ruta de mejora predefinida de un nivel de madurez
+                        al siguiente, facilitando benchmarking entre organizaciones. La representación continua permite a las
+                        organizaciones seleccionar áreas de proceso específicas para mejora según prioridades de negocio, proporcionando
+                        mayor flexibilidad pero dificultando comparaciones externas.
+                    </p>
+
+                    <p>
+                        La adopción de CMMI ha demostrado beneficios cuantificables en múltiples dimensiones. Estudios del SEI
+                        documentan mejoras promedio de 34% en productividad, 50% en calidad (reducción de defectos) y 30% en
+                        cumplimiento de cronogramas en organizaciones que alcanzan niveles superiores de madurez. Sin embargo, la
+                        implementación requiere inversión significativa en recursos, tiempo y compromiso organizacional. Los críticos
+                        argumentan que CMMI puede introducir burocracia excesiva si se implementa dogmáticamente sin adaptación al
+                        contexto específico.
+                    </p>
+
+                    <p>
+                        En años recientes, la integración de CMMI con metodologías ágiles ha generado debates significativos.
+                        Aunque inicialmente percibidos como incompatibles, análisis más matizados reconocen que CMMI especifica
+                        qué resultados deben lograrse (el "qué") mientras que metodologías ágiles prescriben cómo trabajar (el "cómo").
+                        La versión 2.0 de CMMI incorpora explícitamente consideraciones de agilidad, facilitando implementaciones
+                        híbridas que combinan estructura de procesos con flexibilidad adaptativa.
+                    </p>
+
+                    <div class="mermaid">
+                    graph TD
+                        A[CMMI - Niveles de Madurez] --> B[Nivel 5: Optimizado]
+                        B --> C[Nivel 4: Gestionado Cuantitativamente]
+                        C --> D[Nivel 3: Definido]
+                        D --> E[Nivel 2: Gestionado]
+                        E --> F[Nivel 1: Inicial]
+                        B --> B1[Mejora Continua]
+                        B --> B2[Innovación y Despliegue]
+                        C --> C1[Gestión Cuantitativa de Proyectos]
+                        C --> C2[Gestión de Rendimiento Organizacional]
+                        D --> D1[Procesos Estándar Definidos]
+                        D --> D2[Formación Organizacional]
+                        D --> D3[Integración de Equipos]
+                        E --> E1[Gestión de Requisitos]
+                        E --> E2[Planificación de Proyectos]
+                        E --> E3[Gestión de Configuración]
+                        E --> E4[PPQA]
+                        F --> F1[Procesos Ad-hoc]
+                        F --> F2[Impredecibles]
+                        F --> F3[Reactivos]
+                    </div>
+                </section>
+
+                <section>
+                    <h2>5. Planificación y Aseguramiento de la Calidad (QA)</h2>
+
+                    <p>
+                        La planificación de la calidad constituye un proceso proactivo y estratégico que establece los estándares
+                        de calidad relevantes para el proyecto y determina cómo satisfacerlos. A diferencia del control de calidad,
+                        que es reactivo y se enfoca en detectar defectos en entregables específicos, el aseguramiento de calidad
+                        (QA) es preventivo y se centra en los procesos utilizados para crear los entregables. Esta distinción
+                        fundamental orienta diferentes actividades, responsabilidades y puntos de intervención en el ciclo de vida
+                        del proyecto.
+                    </p>
+
+                    <p>
+                        El Plan de Gestión de Calidad constituye el documento fundamental que describe cómo el equipo de proyecto
+                        implementará la política de calidad de la organización ejecutante. Este plan debe abordar múltiples dimensiones:
+                        estándares de calidad aplicables (ISO, IEEE, estándares corporativos), métricas de calidad a monitorear,
+                        procedimientos de aseguramiento de calidad, actividades de control de calidad, roles y responsabilidades
+                        de calidad, criterios de aceptación para entregables y procesos de mejora continua. En proyectos ágiles,
+                        este plan puede ser menos formal pero debe abordar los mismos elementos fundamentales.
+                    </p>
+
+                    <p>
+                        La definición de métricas de calidad requiere balance entre comprehensividad y pragmatismo. Métricas
+                        excesivamente numerosas o complejas pueden generar overhead administrativo que supera el valor agregado.
+                        Las métricas efectivas deben ser SMART: Específicas, Medibles, Alcanzables, Relevantes y Temporalmente
+                        definidas. Ejemplos incluyen densidad de defectos (defectos por línea de código), cobertura de pruebas
+                        (porcentaje de código cubierto por tests automatizados), disponibilidad del sistema (uptime porcentual),
+                        tiempo medio entre fallos (MTBF) y tiempo medio de recuperación (MTTR).
+                    </p>
+
+                    <p>
+                        Las auditorías de calidad constituyen una herramienta central del aseguramiento de calidad. Estas revisiones
+                        estructuradas e independientes determinan si las actividades del proyecto cumplen con políticas, procesos
+                        y procedimientos organizacionales y del proyecto. Las auditorías pueden ser internas (conducidas por la
+                        organización ejecutante) o externas (conducidas por auditores independientes o el cliente). La frecuencia
+                        típicamente varía según el tamaño, riesgo y duración del proyecto, desde auditorías mensuales en proyectos
+                        críticos hasta trimestrales en proyectos de menor riesgo.
+                    </p>
+
+                    <p>
+                        El aseguramiento de calidad también incluye la gestión de la mejora de procesos. El análisis de causa raíz
+                        de defectos identificados permite no solo corregir problemas específicos sino también mejorar procesos
+                        subyacentes para prevenir recurrencias. Las técnicas como el diagrama de Ishikawa (espina de pescado),
+                        análisis de Pareto (identificando el 20% de causas que generan 80% de problemas) y los cinco porqués
+                        (interrogación recursiva para alcanzar causas fundamentales) facilitan este análisis sistemático.
+                    </p>
+
+                    <div class="warning-box">
+                        <h4>Errores Comunes en QA de Proyectos TI</h4>
+                        <ul>
+                            <li><strong>Planificación tardía:</strong> Incorporar QA tarde en el proyecto en lugar de desde el inicio</li>
+                            <li><strong>Confundir QA con QC:</strong> Enfocarse solo en detección de defectos sin abordar procesos</li>
+                            <li><strong>Métricas vanidosas:</strong> Medir aspectos fáciles de medir en lugar de relevantes</li>
+                            <li><strong>Independencia insuficiente:</strong> Equipos QA sin autoridad o reportando a desarrollo</li>
+                            <li><strong>Documentación excesiva:</strong> Generar documentación que nadie usa ni mantiene</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>6. Control de Calidad (QC) y Mejora Continua</h2>
+
+                    <p>
+                        El Control de Calidad (QC) comprende el conjunto de actividades operacionales utilizadas para cumplir con
+                        los requisitos de calidad. Mientras que QA se enfoca en la prevención de defectos mediante procesos adecuados,
+                        QC se centra en la identificación de defectos en entregables específicos. Esta función reactiva pero esencial
+                        utiliza inspecciones, revisiones, pruebas y otras técnicas para verificar que los productos cumplan con
+                        criterios de aceptación establecidos antes de su liberación o transición a fases subsecuentes.
+                    </p>
+
+                    <p>
+                        Las revisiones técnicas constituyen una técnica fundamental de control de calidad. Las revisiones de código
+                        (code reviews) involucran la examinación sistemática de código fuente por parte de pares para identificar
+                        defectos, verificar adherencia a estándares de codificación y compartir conocimiento. Las revisiones pueden
+                        ser formales (como inspecciones de Fagan con roles definidos, reuniones estructuradas y métricas detalladas)
+                        o informales (como revisiones en pareja o walkthroughs). Investigaciones empíricas consistentemente demuestran
+                        que las revisiones de código detectan entre 60-90% de defectos a un costo significativamente menor que la
+                        detección mediante pruebas.
+                    </p>
+
+                    <p>
+                        Las pruebas de software representan la técnica de control de calidad más ampliamente utilizada. El testing
+                        abarca múltiples niveles (unitario, integración, sistema, aceptación) y tipos (funcional, rendimiento,
+                        seguridad, usabilidad). La estrategia de testing debe definirse en la planificación de calidad, especificando
+                        alcance, enfoque, recursos y cronograma de actividades de prueba. La automatización de pruebas, particularmente
+                        de pruebas de regresión, ha emergido como práctica esencial en contextos de desarrollo ágil y DevOps donde
+                        las entregas frecuentes demandan verificación rápida y confiable.
+                    </p>
+
+                    <p>
+                        El análisis estadístico de datos de calidad proporciona insights valiosos para la toma de decisiones.
+                        Las cartas de control, técnica heredada del control de calidad manufacturero y adaptada al software,
+                        permiten distinguir entre variación normal (causa común) y variación excepcional (causa especial) en
+                        procesos. Los histogramas revelan la distribución de defectos o métricas de rendimiento. Los diagramas
+                        de dispersión identifican correlaciones entre variables. Estas herramientas de la calidad total (TQM)
+                        mantienen relevancia en el contexto de proyectos de software modernos.
+                    </p>
+
+                    <p>
+                        La mejora continua, principio fundamental de enfoques como Kaizen, Six Sigma y Lean, se basa en la premisa
+                        de que siempre existen oportunidades de mejora en procesos, productos y servicios. El ciclo PDCA (Plan-Do-Check-Act),
+                        también conocido como ciclo de Deming, proporciona un marco iterativo para la mejora: Planificar el cambio
+                        basado en análisis de datos, Implementar el cambio en pequeña escala, Verificar resultados y efectos secundarios,
+                        y Actuar adoptando el cambio ampliamente si es exitoso o intentando alternativa si no lo es. Este ciclo
+                        debe institucionalizarse como práctica regular en proyectos de tecnología informática.
+                    </p>
+
+                    <p>
+                        La retrospectiva, práctica central en metodologías ágiles, ejemplifica la mejora continua aplicada al nivel
+                        de equipo. Al final de cada iteración, el equipo reflexiona sobre qué funcionó bien, qué no funcionó bien
+                        y qué mejoras implementar en la siguiente iteración. Esta cadencia regular de reflexión y adaptación
+                        constituye un mecanismo poderoso de aprendizaje organizacional y mejora de procesos. La efectividad de las
+                        retrospectivas depende críticamente de crear un ambiente psicológicamente seguro donde los miembros del
+                        equipo puedan expresar abiertamente preocupaciones sin temor a repercusiones.
+                    </p>
+
+                    <div class="mermaid">
+                    graph LR
+                        A[QA/QC y Mejora Continua] --> B[Planificación de Calidad]
+                        A --> C[Aseguramiento de Calidad]
+                        A --> D[Control de Calidad]
+                        A --> E[Mejora Continua]
+                        B --> B1[Plan de Calidad]
+                        B --> B2[Métricas]
+                        B --> B3[Estándares]
+                        C --> C1[Auditorías]
+                        C --> C2[Análisis de Procesos]
+                        C --> C3[Prevención]
+                        D --> D1[Revisiones]
+                        D --> D2[Pruebas]
+                        D --> D3[Inspecciones]
+                        E --> E1[Ciclo PDCA]
+                        E --> E2[Retrospectivas]
+                        E --> E3[Lecciones Aprendidas]
+                    </div>
+
+                    <div class="important-box">
+                        <h4>Reflexión: Calidad como Inversión Estratégica</h4>
+                        <p>
+                            La calidad del software no debe conceptualizarse como un costo sino como una inversión estratégica
+                            que genera retornos tangibles e intangibles. Los defectos detectados y corregidos temprano en el
+                            ciclo de vida resultan exponencialmente menos costosos que aquellos detectados en producción. Más
+                            allá de las métricas financieras, la calidad impacta la reputación organizacional, la satisfacción
+                            del cliente, la moral del equipo y la sostenibilidad a largo plazo del producto. Los directores de
+                            proyectos efectivos reconocen que las decisiones de calidad tienen implicaciones estratégicas que
+                            trascienden consideraciones técnicas inmediatas.
+                        </p>
+                    </div>
+                </section>
+
+                <div class="class-navigation">
+                    <a href="clase-10.html" class="nav-button prev">Clase Anterior</a>
+                    <a href="clase-12.html" class="nav-button next">Siguiente Clase</a>
+                </div>
+            </article>
+        </main>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Universidad Abierta Interamericana - Especialización en Dirección de Proyectos de Tecnología Informática</p>
+        <p>Dictamen CONEAU Sesión N° 619 - RCS 6350/23</p>
+    </footer>
+</body>
+</html>

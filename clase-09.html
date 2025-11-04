@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase 9: Ingeniería de Requerimientos en Proyectos de Software - UAI</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true, theme: 'default' });
+    </script>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <h1>UAI - Especialización en Dirección de Proyectos TI</h1>
+            </div>
+            <nav class="main-nav">
+                <a href="index.html">Inicio</a>
+                <a href="index.html#about">Sobre la Carrera</a>
+                <a href="index.html#contact">Contacto</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <aside class="sidebar">
+            <h2>Contenido del Curso</h2>
+            <nav class="chapters-nav">
+                <ul>
+                    <li><a href="clase-01.html">Clase 1: Introducción a la Dirección de Proyectos TI</a></li>
+                    <li><a href="clase-02.html">Clase 2: Fundamentos de la Gestión de Proyectos</a></li>
+                    <li><a href="clase-03.html">Clase 3: Metodologías Tradicionales</a></li>
+                    <li><a href="clase-04.html">Clase 4: Metodologías Ágiles</a></li>
+                    <li><a href="clase-05.html">Clase 5: Planificación y Gestión del Alcance</a></li>
+                    <li><a href="clase-06.html">Clase 6: Gestión del Tiempo y Cronogramas</a></li>
+                    <li><a href="clase-07.html">Clase 7: Gestión de Costos y Presupuestos</a></li>
+                    <li><a href="clase-08.html">Clase 8: Gestión de Riesgos</a></li>
+                    <li><a href="clase-09.html" class="active">Clase 9: Ingeniería de Requerimientos</a></li>
+                    <li><a href="clase-10.html">Clase 10: Métricas de Software</a></li>
+                    <li><a href="clase-11.html">Clase 11: Calidad del Software y Estándares</a></li>
+                    <li><a href="clase-12.html">Clase 12: Gestión del Capital Humano</a></li>
+                    <li><a href="clase-13.html">Clase 13: Arquitectura y Diseño de Software</a></li>
+                    <li><a href="clase-14.html">Clase 14: Testing y Aseguramiento de Calidad</a></li>
+                    <li><a href="clase-15.html">Clase 15: DevOps y Entrega Continua</a></li>
+                    <li><a href="clase-16.html">Clase 16: Tendencias Emergentes</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <article>
+                <h1>Clase 9: Ingeniería de Requerimientos en Proyectos de Software</h1>
+
+                <section>
+                    <h2>9.1 Elicitación de Requerimientos: Técnicas de Captura</h2>
+
+                    <p>
+                        La elicitación de requerimientos constituye el proceso sistemático de descubrir, comprender y documentar
+                        las necesidades de stakeholders para un sistema de software. Este proceso trasciende la simple recopilación
+                        de listas de deseos para convertirse en una actividad analítica compleja que requiere habilidades de
+                        comunicación excepcionales, comprensión profunda del dominio de negocio, y capacidad de sintetizar información
+                        frecuentemente fragmentada, contradictoria y tácita en especificaciones coherentes y completas. La calidad
+                        de la elicitación de requerimientos establece los fundamentos para el éxito del proyecto, ya que errores
+                        o deficiencias en esta fase se propagan y amplifican a través de todas las fases subsecuentes.
+                    </p>
+
+                    <p>
+                        Las entrevistas representan una de las técnicas de elicitación más fundamentales y ampliamente utilizadas.
+                        En entrevistas estructuradas, el analista prepara un conjunto predefinido de preguntas diseñadas para cubrir
+                        áreas específicas de funcionalidad o requerimientos no funcionales. Este enfoque asegura cobertura completa
+                        pero puede limitar el descubrimiento de requerimientos inesperados. Las entrevistas semi-estructuradas
+                        combinan preguntas preparadas con flexibilidad para explorar áreas emergentes de interés. Las entrevistas
+                        no estructuradas son conversaciones abiertas que permiten a stakeholders expresar libremente sus necesidades,
+                        particularmente valiosas en fases exploratorias cuando el alcance del sistema no está bien definido.
+                    </p>
+
+                    <p>
+                        La efectividad de las entrevistas depende críticamente de la habilidad del analista para hacer preguntas
+                        apropiadas. Las preguntas abiertas ("¿Cómo maneja actualmente este proceso?") fomentan respuestas detalladas
+                        y descubren información contextual rica. Las preguntas cerradas ("¿El sistema necesita generar informes en
+                        PDF?") obtienen confirmaciones específicas pero pueden inhibir elaboración. Las preguntas de sondeo
+                        ("¿Puede darme un ejemplo de cuándo esto sería problemático?") profundizan en respuestas superficiales
+                        iniciales. Escucha activa, toma de notas estructurada, y validación de comprensión mediante parafraseo son
+                        habilidades esenciales del entrevistador competente.
+                    </p>
+
+                    <p>
+                        Los talleres facilitados (workshops) reúnen stakeholders con perspectivas diversas en sesiones intensivas
+                        diseñadas para alcanzar consenso sobre requerimientos. Técnicas como Joint Application Development (JAD)
+                        estructuran estos talleres con roles definidos: facilitador neutral, escriba que documenta decisiones,
+                        stakeholders de negocio que articulan necesidades, y expertos técnicos que evalúan viabilidad. Los talleres
+                        son particularmente efectivos para resolver conflictos entre requerimientos de diferentes stakeholders,
+                        priorizar funcionalidades cuando recursos son limitados, y desarrollar comprensión compartida del sistema
+                        entre grupos que típicamente operan en silos organizacionales.
+                    </p>
+
+                    <p>
+                        La observación directa de usuarios realizando sus tareas actuales proporciona insights que las entrevistas
+                        frecuentemente pierden. Los usuarios pueden tener dificultad articulando cómo trabajan o pueden reportar
+                        procesos idealizados que difieren del comportamiento real. La observación etnográfica permite al analista
+                        identificar workarounds que usuarios desarrollan para limitaciones de sistemas actuales, interrupciones y
+                        contextos de trabajo que afectan requerimientos, y necesidades tácitas que usuarios consideran tan obvias
+                        que no las mencionan explícitamente. La técnica de "shadowing" involucra al analista siguiendo a un usuario
+                        durante un día completo de trabajo, proporcionando comprensión holística del contexto laboral.
+                    </p>
+
+                    <div class="info-box">
+                        <h4>Técnicas Principales de Elicitación de Requerimientos</h4>
+                        <ul>
+                            <li><strong>Entrevistas:</strong> Conversaciones estructuradas o abiertas con stakeholders individuales</li>
+                            <li><strong>Talleres facilitados:</strong> Sesiones grupales para construir consenso (JAD, QFD)</li>
+                            <li><strong>Observación:</strong> Análisis directo de procesos y comportamientos de usuarios</li>
+                            <li><strong>Cuestionarios:</strong> Recopilación escalable de información de grandes poblaciones</li>
+                            <li><strong>Análisis de documentos:</strong> Revisión de procedimientos, regulaciones, sistemas existentes</li>
+                            <li><strong>Prototipos:</strong> Artefactos visuales para provocar feedback y refinar requerimientos</li>
+                        </ul>
+                    </div>
+
+                    <p>
+                        Los prototipos evolutivos representan artefactos tangibles que estimulan retroalimentación más concreta que
+                        especificaciones abstractas en documentos. Un prototipo de baja fidelidad puede ser wireframes dibujados a
+                        mano o mockups en herramientas como Balsamiq que representan diseño de interfaz sin funcionalidad. Los
+                        prototipos de alta fidelidad son aplicaciones funcionantes con interfaz refinada pero funcionalidad backend
+                        limitada. Los prototipos desechables se desarrollan rápidamente para explorar alternativas de diseño y
+                        luego se descartán; los prototipos evolutivos se refinan iterativamente hasta convertirse en el sistema
+                        final. Presentar prototipos a usuarios desencadena reacciones inmediatas ("No, el botón de guardar debería
+                        estar aquí") que son difíciles de obtener mediante descripciones verbales.
+                    </p>
+
+                    <p>
+                        El análisis de sistemas existentes (legacy systems) proporciona comprensión de funcionalidad actual,
+                        integraciones, reportes generados, y reglas de negocio codificadas. Aunque el nuevo sistema frecuentemente
+                        busca mejorar o reemplazar sistemas existentes, estos sistemas representan conocimiento acumulado sobre el
+                        dominio. La arqueología de software, examinando código fuente y bases de datos de sistemas legacy, puede
+                        descubrir lógica de negocio compleja que no está documentada en ningún otro lugar y que usuarios actuales
+                        pueden dar por sentada.
+                    </p>
+
+                    <div class="mermaid">
+                    graph TD
+                        A[Elicitación de Requerimientos] --> B[Técnicas de Captura]
+
+                        B --> C[Entrevistas]
+                        C --> C1[Estructuradas]
+                        C --> C2[Semi-estructuradas]
+                        C --> C3[No estructuradas]
+
+                        B --> D[Talleres JAD]
+                        D --> D1[Facilitador]
+                        D --> D2[Stakeholders]
+                        D --> D3[Expertos Técnicos]
+
+                        B --> E[Observación]
+                        E --> E1[Shadowing]
+                        E --> E2[Etnografía]
+
+                        B --> F[Prototipos]
+                        F --> F1[Baja Fidelidad]
+                        F --> F2[Alta Fidelidad]
+
+                        C --> G[Requerimientos Brutos]
+                        D --> G
+                        E --> G
+                        F --> G
+
+                        G --> H[Análisis y Refinamiento]
+
+                        style H fill:#FFE4B5
+                    </div>
+                </section>
+
+                <section>
+                    <h2>9.2 Análisis y Especificación de Requerimientos</h2>
+
+                    <p>
+                        El análisis de requerimientos transforma la información bruta capturada durante la elicitación en
+                        especificaciones precisas, completas, consistentes y verificables. Este proceso analítico identifica
+                        conflictos entre requerimientos de diferentes stakeholders, descubre requerimientos implícitos que no fueron
+                        articulados explícitamente, descompone requerimientos de alto nivel en componentes más detallados, y
+                        establece relaciones de dependencia y prioridad entre requerimientos. El análisis requiere pensamiento
+                        crítico, atención al detalle, y capacidad de abstraer esencias de funcionalidad desde descripciones
+                        específicas de stakeholders.
+                    </p>
+
+                    <p>
+                        La clasificación de requerimientos organiza requerimientos en categorías coherentes que facilitan gestión,
+                        trazabilidad y comunicación. Los esquemas de clasificación típicamente incluyen dimensiones como funcional
+                        versus no funcional, esencial versus deseable, y por dominio funcional (gestión de usuarios, procesamiento
+                        de transacciones, reportería). La clasificación MoSCoW (Must have, Should have, Could have, Won't have)
+                        proporciona un framework simple pero efectivo para priorización, distinguiendo requerimientos absolutamente
+                        esenciales de características deseables que podrían diferirse a releases posteriores si el cronograma o
+                        presupuesto se comprimen.
+                    </p>
+
+                    <p>
+                        El modelado conceptual desarrolla representaciones abstractas del dominio del problema que capturan entidades
+                        fundamentales, sus atributos y relaciones. Los modelos de entidad-relación (ER) representan estructuras de
+                        datos, identificando entidades principales del dominio (Cliente, Pedido, Producto), sus atributos (Cliente
+                        tiene nombre, email, dirección), y relaciones entre ellas (un Cliente realiza múltiples Pedidos, un Pedido
+                        contiene múltiples Productos). Los diagramas de clases UML extienden modelos ER incorporando comportamientos
+                        (métodos) además de datos (atributos), proporcionando una transición más directa al diseño orientado a objetos.
+                    </p>
+
+                    <p>
+                        Los modelos de proceso capturan flujos de trabajo y secuencias de actividades que el sistema debe soportar.
+                        Los diagramas de flujo de datos (DFD) muestran cómo la información fluye a través del sistema, identificando
+                        procesos que transforman datos, almacenes de datos donde la información persiste, y flujos de datos entre
+                        componentes. Los diagramas de actividad UML representan flujos de trabajo con capacidad de modelar
+                        paralelismo, decisiones condicionales y sincronización. Los mapas de procesos de negocio (BPMN) proporcionan
+                        notación estandarizada específicamente diseñada para modelar procesos de negocio complejos que span múltiples
+                        sistemas y actores organizacionales.
+                    </p>
+
+                    <p>
+                        La especificación de requerimientos documenta formalmente los requerimientos en un formato estructurado y
+                        detallado. El estándar IEEE 830-1998 (ahora incorporado en ISO/IEC/IEEE 29148) proporciona un template
+                        ampliamente reconocido para Especificaciones de Requerimientos de Software (SRS), incluyendo secciones para
+                        introducción, descripción general del sistema, requerimientos específicos (funcionales y no funcionales),
+                        interfaces externas, y apéndices. Cada requerimiento individual debe tener un identificador único para
+                        trazabilidad, una descripción precisa, criterios de aceptación verificables, prioridad, y atributos adicionales
+                        como complejidad estimada o componentes afectados.
+                    </p>
+
+                    <p>
+                        Las características de requerimientos bien especificados están codificadas en el acrónimo SMART: Specific
+                        (específicos, no ambiguos), Measurable (medibles con criterios objetivos de satisfacción), Achievable
+                        (técnicamente viables con recursos disponibles), Relevant (alineados con objetivos del negocio), y
+                        Time-bounded (con expectativas temporales claras). Adicionalmente, los requerimientos deben ser completos
+                        (toda la información necesaria está presente), consistentes (sin contradicciones con otros requerimientos),
+                        y trazables (vinculados a necesidades de negocio y artefactos de diseño/prueba subsecuentes).
+                    </p>
+
+                    <div class="warning-box">
+                        <h4>Errores Comunes en Especificación de Requerimientos</h4>
+                        <ul>
+                            <li><strong>Ambigüedad:</strong> Lenguaje vago o interpretable de múltiples maneras</li>
+                            <li><strong>Incompletitud:</strong> Omisión de casos excepcionales, condiciones de error, o requerimientos no funcionales</li>
+                            <li><strong>Inconsistencia:</strong> Requerimientos que se contradicen entre sí</li>
+                            <li><strong>Mezcla de niveles:</strong> Confundir requerimientos de negocio con especificaciones de diseño</li>
+                            <li><strong>No verificabilidad:</strong> Imposibilidad de determinar objetivamente si el requerimiento está satisfecho</li>
+                        </ul>
+                    </div>
+
+                    <p>
+                        En contextos ágiles, la especificación formal de requerimientos en documentos voluminosos se reemplaza por
+                        artefactos más ligeros y evolutivos. Las historias de usuario capturan requerimientos en formato narrativo
+                        simple: "Como [rol de usuario], quiero [funcionalidad] para [beneficio de negocio]". Las historias se
+                        complementan con criterios de aceptación en formato Given-When-Then que especifican comportamientos verificables.
+                        El Product Backlog funciona como la especificación evolutiva, priorizando historias según valor de negocio
+                        y refinándose continuamente mediante grooming sessions. Este enfoque favorece conversaciones sobre documentación,
+                        pero aún requiere captura rigurosa de requerimientos, simplemente en formatos diferentes.
+                    </p>
+                </section>
+
+                <section>
+                    <h2>9.3 Validación y Verificación de Requerimientos</h2>
+
+                    <p>
+                        La validación y verificación de requerimientos constituyen actividades críticas de aseguramiento de calidad
+                        que determinan si los requerimientos capturados son correctos y completos. La validación responde a la
+                        pregunta "¿Estamos construyendo el producto correcto?" confirmando que los requerimientos especificados
+                        realmente reflejan las necesidades de stakeholders y agregarán valor al negocio. La verificación responde a
+                        "¿Estamos construyendo el producto correctamente?" asegurando que los requerimientos cumplen estándares de
+                        calidad como completitud, consistencia, no ambigüedad y verificabilidad. Ambas actividades son esenciales;
+                        requerimientos perfectamente verificados que no satisfacen necesidades reales del negocio resultan en
+                        proyectos técnicamente exitosos pero funcionalmente irrelevantes.
+                    </p>
+
+                    <p>
+                        Las revisiones formales de requerimientos reúnen stakeholders, analistas de negocio, arquitectos, diseñadores
+                        y representantes de testing para examinar críticamente especificaciones de requerimientos. Las inspecciones
+                        Fagan, una técnica rigurosa desarrollada por Michael Fagan en IBM, estructuran las revisiones en roles
+                        definidos (moderador, autor, revisores, escriba) y fases secuenciales (planificación, overview, preparación
+                        individual, reunión de inspección, reelaboración, seguimiento). Las inspecciones han demostrado
+                        consistentemente identificar más defectos por hora de esfuerzo que cualquier otra técnica de aseguramiento
+                        de calidad, con investigaciones reportando descubrimiento de 60-90% de defectos en especificaciones de
+                        requerimientos.
+                    </p>
+
+                    <p>
+                        Los walkthroughs son revisiones menos formales donde el autor de los requerimientos presenta las
+                        especificaciones al equipo, explicando la lógica y solicitando feedback. Aunque menos rigurosos que
+                        inspecciones formales, los walkthroughs son más accesibles para equipos sin entrenamiento específico en
+                        técnicas de inspección y son efectivos para identificar problemas mayores de comprensión, omisiones
+                        significativas, y desalineación con objetivos de negocio. La efectividad de walkthroughs mejora
+                        significativamente cuando los participantes reciben materiales con anticipación para revisión individual
+                        antes de la sesión grupal.
+                    </p>
+
+                    <p>
+                        Las listas de verificación (checklists) de calidad de requerimientos proporcionan criterios estructurados
+                        para evaluar especificaciones. Estas listas típicamente incluyen preguntas como: ¿Cada requerimiento tiene
+                        un identificador único? ¿Los requerimientos están libres de jerga técnica inapropiada? ¿Se especifican
+                        todas las condiciones de error y excepciones? ¿Los requerimientos no funcionales tienen métricas cuantificables?
+                        ¿Existen conflictos o contradicciones entre requerimientos? ¿Todos los actores externos y sistemas están
+                        identificados? El uso disciplinado de checklists asegura que aspectos críticos de calidad no sean inadvertidamente
+                        omitidos durante revisiones.
+                    </p>
+
+                    <div class="mermaid">
+                    graph TD
+                        A[Validación y Verificación] --> B[Validación:<br/>Producto Correcto]
+                        A --> C[Verificación:<br/>Construido Correctamente]
+
+                        B --> D[Técnicas de Validación]
+                        D --> D1[Revisiones con Stakeholders]
+                        D --> D2[Prototipos Validados]
+                        D --> D3[Casos de Prueba de Aceptación]
+                        D --> D4[Modelado de Procesos]
+
+                        C --> E[Técnicas de Verificación]
+                        E --> E1[Inspecciones Formales]
+                        E --> E2[Checklists de Calidad]
+                        E --> E3[Análisis de Consistencia]
+                        E --> E4[Trazabilidad]
+
+                        D1 --> F[Requerimientos Validados]
+                        D2 --> F
+                        D3 --> F
+                        E1 --> F
+                        E2 --> F
+                        E3 --> F
+
+                        F --> G[Línea Base de Requerimientos]
+
+                        style G fill:#90EE90
+                    </div>
+
+                    <p>
+                        La prototipación como técnica de validación permite a stakeholders interactuar con representaciones tangibles
+                        del sistema propuesto, provocando feedback que es difícil de obtener mediante revisión de documentos textuales.
+                        Presentar un prototipo funcional de una interfaz de usuario frecuentemente desencadena reacciones inmediatas
+                        sobre flujos de trabajo, terminología, o funcionalidad faltante que usuarios no mencionaron durante entrevistas
+                        iniciales. Los prototipos evolutivos que se refinan iterativamente basándose en feedback de usuarios
+                        proporcionan validación continua, reduciendo el riesgo de descubrir desalineación masiva entre sistema
+                        entregado y expectativas de usuarios solo al final del proyecto.
+                    </p>
+
+                    <p>
+                        El desarrollo de casos de prueba de aceptación tempranamente en el ciclo de vida proporciona validación
+                        proactiva de requerimientos. Si un requerimiento no puede traducirse en casos de prueba con criterios de
+                        aceptación objetivos, esto señala que el requerimiento es demasiado vago o ambiguo. Especificar cómo se
+                        verificará un requerimiento antes de implementarlo fuerza claridad y precisión en la especificación. En
+                        metodologías como Behavior-Driven Development (BDD), los criterios de aceptación en formato Given-When-Then
+                        se escriben colaborativamente entre stakeholders de negocio, desarrolladores y testers, sirviendo
+                        simultáneamente como especificación ejecutable y pruebas automatizadas.
+                    </p>
+
+                    <p>
+                        El análisis de trazabilidad verifica que cada requerimiento pueda rastrearse hacia atrás a objetivos de
+                        negocio o necesidades de stakeholders (justificando por qué el requerimiento existe) y hacia adelante a
+                        elementos de diseño y casos de prueba (asegurando que el requerimiento será implementado y verificado). Las
+                        matrices de trazabilidad capturan estas relaciones, facilitando análisis de impacto cuando requerimientos
+                        cambian: si un requerimiento debe modificarse, la matriz identifica qué componentes de diseño, código y
+                        pruebas están afectados y deben actualizarse consistentemente.
+                    </p>
+
+                    <div class="success-box">
+                        <h4>Beneficios de Validación y Verificación Rigurosas</h4>
+                        <ul class="checklist">
+                            <li>Detección temprana de defectos cuando corrección es más económica</li>
+                            <li>Reducción de retrabajo en fases de desarrollo y testing</li>
+                            <li>Mejora en satisfacción de stakeholders con producto final</li>
+                            <li>Disminución de conflictos y cambios durante implementación</li>
+                            <li>Base sólida para estimación de esfuerzo y planificación</li>
+                            <li>Documentación que facilita mantenimiento y evolución futura</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>9.4 Gestión de Cambios en Requerimientos</h2>
+
+                    <p>
+                        La gestión de cambios en requerimientos reconoce que los requerimientos inevitablemente evolucionarán durante
+                        el ciclo de vida del proyecto debido a mejor comprensión del problema por stakeholders, cambios en el entorno
+                        de negocio, identificación de soluciones técnicas superiores, o descubrimiento de requerimientos omitidos
+                        inicialmente. Mientras que las metodologías ágiles abrazan y facilitan el cambio, incluso en contextos
+                        tradicionales el cambio es inevitable y debe gestionarse sistemáticamente en lugar de resistirse rígidamente.
+                        La ausencia de procesos formales de gestión de cambios resulta en scope creep incontrolado, deterioro de
+                        arquitectura mediante adiciones ad-hoc, y frustración tanto de equipos de desarrollo como de stakeholders.
+                    </p>
+
+                    <p>
+                        El proceso de control de cambios establece procedimientos formales para proponer, evaluar, aprobar o rechazar,
+                        e implementar modificaciones a requerimientos. Una solicitud de cambio típicamente documenta el requerimiento
+                        actual, el cambio propuesto, la justificación de negocio del cambio, los impactos estimados en cronograma
+                        y costo, los componentes afectados del sistema, y alternativas consideradas. Esta documentación asegura que
+                        cambios sean evaluados holísticamente en lugar de aprobarse impulsivamente basándose solo en el beneficio
+                        aparente sin considerar costos y riesgos.
+                    </p>
+
+                    <p>
+                        El Change Control Board (CCB) o Comité de Control de Cambios es el órgano responsable de revisar solicitudes
+                        de cambio y tomar decisiones de aprobación. La composición del CCB típicamente incluye representantes de
+                        stakeholders de negocio (que evalúan valor), arquitectos técnicos (que evalúan viabilidad y impacto técnico),
+                        directores de proyecto (que evalúan impacto en cronograma y presupuesto), y representantes de testing y
+                        calidad. Para cambios menores, el director del proyecto puede tener autoridad delegada; cambios significativos
+                        requieren escalación al CCB completo o incluso a sponsors ejecutivos.
+                    </p>
+
+                    <p>
+                        El análisis de impacto evalúa las consecuencias de implementar un cambio propuesto. Este análisis examina
+                        múltiples dimensiones: impacto técnico (qué componentes de diseño, código y base de datos requieren
+                        modificación), impacto en cronograma (cuánto tiempo tomará implementar el cambio), impacto en costo (esfuerzo
+                        de desarrollo, testing y documentación), impacto en riesgos (nuevos riesgos introducidos o riesgos existentes
+                        exacerbados), e impacto en otros requerimientos (dependencias o conflictos con funcionalidad existente o
+                        planificada). Las matrices de trazabilidad facilitan significativamente el análisis de impacto, identificando
+                        rápidamente todos los artefactos vinculados al requerimiento que cambia.
+                    </p>
+
+                    <div class="mermaid">
+                    graph LR
+                        A[Solicitud de Cambio] --> B[Registro Formal]
+                        B --> C[Análisis de Impacto]
+                        C --> D{Evaluación por CCB}
+
+                        D -->|Aprobado| E[Actualización de Requerimientos]
+                        D -->|Rechazado| F[Comunicación a Solicitante]
+                        D -->|Diferido| G[Backlog para Release Futuro]
+
+                        E --> H[Actualización de Diseño]
+                        H --> I[Implementación]
+                        I --> J[Testing]
+                        J --> K[Verificación de Cambio]
+
+                        F --> L[Fin del Proceso]
+                        G --> L
+                        K --> L
+
+                        style D fill:#FFE4B5
+                        style E fill:#90EE90
+                        style F fill:#FFB6C1
+                    </div>
+
+                    <p>
+                        La priorización de cambios reconoce que no todos los cambios solicitados pueden o deben implementarse
+                        inmediatamente. Los criterios de priorización típicamente incluyen valor de negocio del cambio, urgencia
+                        (qué tan rápido se necesita), costo y complejidad de implementación, alineación estratégica con objetivos
+                        del proyecto, y disponibilidad de recursos. La técnica MoSCoW puede aplicarse a cambios: Must change (esencial,
+                        bloqueante para release), Should change (importante pero no bloqueante), Could change (deseable si hay
+                        capacidad), Won't change (diferido a releases futuras). Esta priorización permite gestión racional de la
+                        demanda de cambios dentro de restricciones realistas de cronograma y presupuesto.
+                    </p>
+
+                    <p>
+                        En metodologías ágiles, la gestión de cambios se integra en el flujo normal de trabajo en lugar de requerir
+                        procesos excepcionales. Cambios en requerimientos se manifiestan como nuevas historias de usuario añadidas
+                        al Product Backlog, modificaciones a historias existentes, o re-priorización del backlog. El Product Owner
+                        es responsable de estas decisiones, balanceando solicitudes de stakeholders contra capacidad del equipo y
+                        objetivos de release. La planificación de Sprint proporciona puntos naturales de sincronización donde cambios
+                        se incorporan, evitando interrupciones constantes al trabajo en progreso. Sin embargo, incluso en Agile,
+                        cambios significativos que afectan arquitectura fundamental o contratos con clientes requieren evaluación
+                        más formal.
+                    </p>
+
+                    <p>
+                        La gestión de versiones y configuración de requerimientos asegura que diferentes stakeholders trabajen con
+                        versiones consistentes de especificaciones. A medida que requerimientos cambian, versiones anteriores deben
+                        preservarse para trazabilidad histórica, entendimiento de por qué decisiones previas se tomaron, y potencial
+                        rollback si cambios resultan problemáticos. Herramientas de gestión de requerimientos como JIRA, Azure DevOps
+                        Requirements Management, o IBM DOORS proporcionan capacidades de versionamiento, ramificación y fusión
+                        similares a sistemas de control de código fuente, pero optimizadas para artefactos de requerimientos.
+                    </p>
+
+                    <div class="important-box">
+                        <h4>Principios de Gestión Efectiva de Cambios</h4>
+                        <p>
+                            Los cambios son inevitables y deben anticiparse, no resistirse. Sin embargo, el cambio incontrolado
+                            destruye proyectos. La gestión efectiva de cambios balancea flexibilidad con estabilidad mediante
+                            procesos claros, criterios objetivos de evaluación, y transparencia sobre impactos. Cada cambio aprobado
+                            debe tener un business case que justifique su costo. La comunicación proactiva con stakeholders sobre
+                            consecuencias de cambios (no solo beneficios) facilita decisiones informadas. Finalmente, la captura
+                            de lecciones aprendidas sobre cambios frecuentes señala áreas donde la elicitación inicial de requerimientos
+                            requiere mejora en proyectos futuros.
+                        </p>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>9.5 Requerimientos Funcionales vs No Funcionales</h2>
+
+                    <p>
+                        La distinción entre requerimientos funcionales y no funcionales constituye una dicotomía fundamental en
+                        ingeniería de requerimientos. Los requerimientos funcionales especifican qué debe hacer el sistema, describiendo
+                        comportamientos, funcionalidades y servicios que el sistema proporciona a usuarios. Los requerimientos no
+                        funcionales especifican cómo el sistema debe realizar sus funciones, definiendo cualidades, atributos y
+                        restricciones que afectan la arquitectura y diseño. Mientras que los requerimientos funcionales tienden a
+                        recibir atención primaria de stakeholders de negocio, los requerimientos no funcionales frecuentemente
+                        determinan la viabilidad técnica, la experiencia de usuario, y el éxito a largo plazo del sistema.
+                    </p>
+
+                    <p>
+                        Los requerimientos funcionales típicamente se expresan como capacidades del sistema: "El sistema debe permitir
+                        a usuarios registrados crear nuevas cuentas", "El sistema debe calcular el impuesto aplicable basándose en
+                        la ubicación del comprador", "El sistema debe generar reportes mensuales de ventas en formato PDF". Estos
+                        requerimientos frecuentemente se organizan por casos de uso o historias de usuario, agrupando funcionalidades
+                        relacionadas. La completitud de requerimientos funcionales se evalúa preguntando si todas las interacciones
+                        necesarias entre usuarios y sistema están especificadas, si todos los procesos de negocio críticos están
+                        soportados, y si todas las reglas de negocio están capturadas.
+                    </p>
+
+                    <p>
+                        Los requerimientos no funcionales abarcan múltiples categorías de atributos de calidad. Los requerimientos
+                        de desempeño especifican tiempos de respuesta, throughput, utilización de recursos: "El sistema debe responder
+                        a búsquedas de productos en menos de 2 segundos para el 95% de las consultas", "El sistema debe soportar
+                        1000 usuarios concurrentes sin degradación de rendimiento". Los requerimientos de escalabilidad abordan
+                        capacidad de crecimiento: "La arquitectura debe permitir escalar horizontalmente a 10x el volumen actual de
+                        transacciones mediante adición de servidores". Los requerimientos de disponibilidad especifican uptime:
+                        "El sistema debe tener disponibilidad de 99.9% medida mensualmente".
+                    </p>
+
+                    <p>
+                        Los requerimientos de seguridad definen protecciones necesarias contra amenazas: "Todas las contraseñas deben
+                        almacenarse hasheadas usando bcrypt con factor de costo 12", "El sistema debe implementar autenticación
+                        multi-factor para acceso a datos sensibles", "Todas las comunicaciones entre cliente y servidor deben
+                        cifrarse usando TLS 1.3". Los requerimientos de usabilidad especifican expectativas de experiencia de usuario:
+                        "Usuarios sin entrenamiento previo deben poder completar una compra en menos de 5 minutos", "El sistema debe
+                        ser accesible según estándares WCAG 2.1 nivel AA". Los requerimientos de mantenibilidad abordan facilidad
+                        de modificación: "El sistema debe estructurarse modularmente permitiendo actualización de componentes
+                        individuales sin afectar otros módulos".
+                    </p>
+
+                    <div class="info-box">
+                        <h4>Categorías Principales de Requerimientos No Funcionales</h4>
+                        <ul>
+                            <li><strong>Desempeño:</strong> Tiempos de respuesta, throughput, latencia, utilización de recursos</li>
+                            <li><strong>Escalabilidad:</strong> Capacidad de manejar crecimiento en usuarios, datos, transacciones</li>
+                            <li><strong>Disponibilidad:</strong> Uptime, recuperación ante fallas, tolerancia a fallas</li>
+                            <li><strong>Seguridad:</strong> Autenticación, autorización, cifrado, auditoría, protección de datos</li>
+                            <li><strong>Usabilidad:</strong> Facilidad de aprendizaje, eficiencia de uso, accesibilidad</li>
+                            <li><strong>Mantenibilidad:</strong> Modularidad, documentación, testeabilidad, extensibilidad</li>
+                            <li><strong>Portabilidad:</strong> Independencia de plataforma, adaptabilidad a diferentes entornos</li>
+                            <li><strong>Cumplimiento:</strong> Adherencia a regulaciones, estándares, políticas organizacionales</li>
+                        </ul>
+                    </div>
+
+                    <p>
+                        Un desafío significativo con requerimientos no funcionales es su especificación verificable. Requerimientos
+                        vagos como "El sistema debe ser rápido" o "El sistema debe ser seguro" no proporcionan criterios objetivos
+                        para evaluación. Los requerimientos no funcionales efectivos deben cuantificarse: en lugar de "rápido",
+                        especificar "tiempo de respuesta < 2 segundos para el 95th percentil de transacciones"; en lugar de "seguro",
+                        especificar "cumplimiento con OWASP Top 10, auditorías de seguridad trimestrales, penetration testing anual".
+                        Las métricas deben incluir no solo el valor objetivo sino también el método de medición y las condiciones
+                        bajo las cuales se mide.
+                    </p>
+
+                    <p>
+                        Los requerimientos no funcionales frecuentemente tienen interdependencias y trade-offs. Mejorar seguridad
+                        puede degradar desempeño (cifrado adicional consume recursos). Maximizar disponibilidad puede incrementar
+                        costos (redundancia requiere infraestructura duplicada). Optimizar usabilidad puede comprometer seguridad
+                        (autenticación de un solo clic es conveniente pero menos segura). Estos trade-offs requieren negociación
+                        con stakeholders para establecer prioridades y balances apropiados al contexto específico del sistema. Las
+                        arquitecturas de software se diseñan fundamentalmente para satisfacer requerimientos no funcionales críticos,
+                        haciendo esencial su identificación y especificación temprana.
+                    </p>
+
+                    <div class="mermaid">
+                    graph TD
+                        A[Requerimientos del Sistema] --> B[Requerimientos Funcionales]
+                        A --> C[Requerimientos No Funcionales]
+
+                        B --> B1[Casos de Uso]
+                        B --> B2[Historias de Usuario]
+                        B --> B3[Reglas de Negocio]
+                        B --> B4[Procesos]
+
+                        C --> C1[Atributos de Calidad]
+                        C1 --> C11[Desempeño]
+                        C1 --> C12[Seguridad]
+                        C1 --> C13[Usabilidad]
+                        C1 --> C14[Escalabilidad]
+
+                        C --> C2[Restricciones]
+                        C2 --> C21[Tecnológicas]
+                        C2 --> C22[Regulatorias]
+                        C2 --> C23[Organizacionales]
+
+                        B --> D[Diseño Detallado]
+                        C --> E[Arquitectura del Sistema]
+
+                        style E fill:#FFE4B5
+                    </div>
+                </section>
+
+                <section>
+                    <h2>9.6 Documentación: Casos de Uso e Historias de Usuario</h2>
+
+                    <p>
+                        La documentación de requerimientos mediante casos de uso e historias de usuario proporciona formatos
+                        estructurados para capturar funcionalidad del sistema desde la perspectiva de usuarios y otros actores
+                        externos. Mientras que los casos de uso emergen de la ingeniería de software orientada a objetos y son
+                        característicos de metodologías tradicionales, las historias de usuario son el artefacto primario en
+                        metodologías ágiles. Ambos enfoques comparten el objetivo fundamental de describir interacciones entre
+                        usuarios y sistema en lenguaje centrado en el negocio en lugar de jerga técnica, facilitando comunicación
+                        entre stakeholders de negocio y equipos de desarrollo.
+                    </p>
+
+                    <p>
+                        Un caso de uso describe una secuencia de interacciones entre un actor (usuario o sistema externo) y el
+                        sistema para lograr un objetivo específico de negocio. La estructura típica de un caso de uso incluye: nombre
+                        descriptivo que capture el objetivo (ej: "Procesar Pedido de Cliente"), actor primario que inicia el caso
+                        de uso, precondiciones que deben cumplirse antes de iniciar, flujo básico que describe la secuencia de pasos
+                        en el escenario exitoso, flujos alternativos que describen variaciones del flujo básico, flujos de excepción
+                        que manejan condiciones de error, y postcondiciones que describen el estado del sistema después de completar
+                        exitosamente el caso de uso.
+                    </p>
+
+                    <p>
+                        El flujo básico de un caso de uso se documenta como secuencia numerada de pasos que alternan entre acciones
+                        del actor y respuestas del sistema. Por ejemplo, en el caso de uso "Procesar Pedido": 1) Cliente selecciona
+                        productos para comprar, 2) Sistema muestra productos seleccionados y precio total, 3) Cliente proporciona
+                        información de envío, 4) Sistema valida dirección de envío, 5) Cliente proporciona información de pago,
+                        6) Sistema procesa pago con proveedor de pagos, 7) Sistema confirma pedido y envía notificación por email.
+                        Esta narrativa procedimental captura no solo qué hace el sistema sino también el contexto de interacción
+                        con el usuario.
+                    </p>
+
+                    <p>
+                        Los flujos alternativos y de excepción capturan variaciones y manejo de errores que frecuentemente se omiten
+                        en descripciones de alto nivel pero son esenciales para implementación completa. Un flujo alternativo podría
+                        ser: "En paso 3, si cliente es usuario registrado, sistema precarga dirección de envío desde perfil". Un
+                        flujo de excepción podría ser: "En paso 6, si procesamiento de pago falla, sistema notifica al cliente,
+                        sugiere métodos alternativos de pago, y retiene productos en carrito por 30 minutos". La completitud de
+                        casos de uso se mejora significativamente mediante exploración sistemática de "qué pasa si" para cada paso.
+                    </p>
+
+                    <div class="mermaid">
+                    graph TB
+                        A[Caso de Uso: Procesar Pedido de Cliente] --> B[Precondiciones:<br/>Cliente autenticado<br/>Productos en inventario]
+                        B --> C[Flujo Básico]
+                        C --> D[1. Cliente selecciona productos]
+                        D --> E[2. Sistema calcula total]
+                        E --> F[3. Cliente proporciona datos envío]
+                        F --> G[4. Sistema valida dirección]
+                        G --> H[5. Cliente proporciona pago]
+                        H --> I[6. Sistema procesa transacción]
+                        I --> J[7. Sistema confirma pedido]
+
+                        G -.->|Dirección inválida| K[Excepción: Solicitar corrección]
+                        I -.->|Pago rechazado| L[Excepción: Método alternativo]
+
+                        J --> M[Postcondiciones:<br/>Pedido creado<br/>Inventario actualizado<br/>Email enviado]
+
+                        style A fill:#FFE4B5
+                        style M fill:#90EE90
+                    </mermaid>
+
+                    <p>
+                        Las historias de usuario adoptan un formato más ligero y conversacional: "Como [tipo de usuario], quiero
+                        [realizar alguna acción] para [lograr algún beneficio]". Por ejemplo: "Como cliente registrado, quiero
+                        guardar múltiples direcciones de envío en mi perfil para poder seleccionar rápidamente la dirección apropiada
+                        durante el checkout". Esta estructura enfatiza el rol del usuario (quién), la funcionalidad deseada (qué),
+                        y la motivación de negocio (por qué), proporcionando contexto que ayuda a desarrolladores a tomar decisiones
+                        de diseño apropiadas cuando los detalles no están especificados explícitamente.
+                    </p>
+
+                    <p>
+                        Las historias de usuario se complementan con criterios de aceptación que especifican condiciones verificables
+                        que deben satisfacerse para considerar la historia completa. El formato Given-When-Then proporciona estructura:
+                        "Given [contexto inicial], When [acción o evento], Then [resultado esperado]". Para la historia anterior,
+                        criterios podrían incluir: "Given estoy en la página de perfil, When agrego una nueva dirección, Then la
+                        dirección debe validarse contra servicio de validación de direcciones", "Given tengo múltiples direcciones
+                        guardadas, When inicio checkout, Then debo poder seleccionar de mis direcciones guardadas o ingresar una
+                        nueva". Estos criterios funcionan como especificación ejecutable que guía desarrollo y testing.
+                    </p>
+
+                    <p>
+                        La granularidad apropiada de historias de usuario es crítica. Historias demasiado grandes (épicas) deben
+                        descomponerse en historias más pequeñas que puedan completarse en un solo Sprint. La técnica INVEST proporciona
+                        criterios de calidad para historias: Independent (independiente de otras historias tanto como sea posible),
+                        Negotiable (detalles se negocian entre Product Owner y equipo), Valuable (aporta valor de negocio claro),
+                        Estimable (el equipo puede estimar el esfuerzo), Small (suficientemente pequeña para completar en un Sprint),
+                        Testable (con criterios de aceptación verificables). Historias que no cumplen estos criterios requieren
+                        refinamiento antes de incluirse en planificación de Sprint.
+                    </p>
+
+                    <div class="success-box">
+                        <h4>Casos de Uso vs Historias de Usuario: Complementariedad</h4>
+                        <ul class="checklist">
+                            <li>Casos de uso: Apropiados para documentar procesos complejos con múltiples variaciones</li>
+                            <li>Historias de usuario: Efectivas para capturar funcionalidades discretas con valor de negocio claro</li>
+                            <li>Casos de uso: Documentación más formal, útil para sistemas con requerimientos regulatorios</li>
+                            <li>Historias de usuario: Documentación ligera, agiliza flujo de trabajo en equipos ágiles</li>
+                            <li>Enfoque híbrido: Usar épicas y casos de uso para funcionalidad compleja, historias para detalles</li>
+                            <li>Ambos enfoques: Facilitan conversaciones entre negocio y tecnología, que es el objetivo fundamental</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <div class="class-navigation">
+                    <a href="clase-08.html" class="nav-button prev">Clase Anterior</a>
+                    <a href="clase-10.html" class="nav-button next">Siguiente Clase</a>
+                </div>
+            </article>
+        </main>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Universidad Abierta Interamericana - Especialización en Dirección de Proyectos de Tecnología Informática</p>
+        <p>Dictamen CONEAU Sesión N° 619 - RCS 6350/23</p>
+    </footer>
+</body>
+</html>

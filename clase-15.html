@@ -1,0 +1,520 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Clase 15: DevOps y Entrega Continua en Proyectos de Software - UAI</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+    <script>
+        mermaid.initialize({ startOnLoad: true, theme: 'default' });
+    </script>
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <div class="logo">
+                <h1>UAI - Especialización en Dirección de Proyectos TI</h1>
+            </div>
+            <nav class="main-nav">
+                <a href="index.html">Inicio</a>
+                <a href="index.html#about">Sobre la Carrera</a>
+                <a href="index.html#contact">Contacto</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container">
+        <aside class="sidebar">
+            <h2>Contenido del Curso</h2>
+            <nav class="chapters-nav">
+                <ul>
+                    <li><a href="clase-01.html">Clase 1: Introducción a la Dirección de Proyectos TI</a></li>
+                    <li><a href="clase-02.html">Clase 2: Fundamentos de la Gestión de Proyectos</a></li>
+                    <li><a href="clase-03.html">Clase 3: Metodologías Tradicionales</a></li>
+                    <li><a href="clase-04.html">Clase 4: Metodologías Ágiles</a></li>
+                    <li><a href="clase-05.html">Clase 5: Planificación y Gestión del Alcance</a></li>
+                    <li><a href="clase-06.html">Clase 6: Gestión del Tiempo y Cronogramas</a></li>
+                    <li><a href="clase-07.html">Clase 7: Gestión de Costos y Presupuestos</a></li>
+                    <li><a href="clase-08.html">Clase 8: Gestión de Riesgos</a></li>
+                    <li><a href="clase-09.html">Clase 9: Ingeniería de Requerimientos</a></li>
+                    <li><a href="clase-10.html">Clase 10: Métricas de Software</a></li>
+                    <li><a href="clase-11.html">Clase 11: Calidad del Software y Estándares</a></li>
+                    <li><a href="clase-12.html">Clase 12: Gestión del Capital Humano</a></li>
+                    <li><a href="clase-13.html">Clase 13: Arquitectura y Diseño de Software</a></li>
+                    <li><a href="clase-14.html">Clase 14: Testing y Aseguramiento de Calidad</a></li>
+                    <li><a href="clase-15.html" class="active">Clase 15: DevOps y Entrega Continua</a></li>
+                    <li><a href="clase-16.html">Clase 16: Tendencias Emergentes</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <main class="main-content">
+            <article>
+                <h1>Clase 15: DevOps y Entrega Continua en Proyectos de Software</h1>
+
+                <section>
+                    <h2>1. Cultura DevOps: Principios y Prácticas</h2>
+
+                    <p>
+                        DevOps representa un movimiento cultural y filosofía de trabajo que enfatiza la colaboración entre equipos
+                        de desarrollo (Dev) y operaciones (Ops), tradicionalmente separados en silos organizacionales con objetivos
+                        frecuentemente en tensión. Los desarrolladores priorizan velocidad de cambio y nuevas funcionalidades;
+                        operaciones prioriza estabilidad y confiabilidad. DevOps busca trascender esta dicotomía mediante cultura
+                        de responsabilidad compartida, automatización extensiva, feedback continuo y mejora iterativa, permitiendo
+                        que las organizaciones entreguen software de alta calidad con mayor velocidad y confiabilidad.
+                    </p>
+
+                    <p>
+                        Los principios fundamentales de DevOps, articulados en "The DevOps Handbook" por Gene Kim, incluyen:
+                        Flujo - optimizar el flujo de trabajo desde desarrollo hasta producción mediante eliminación de cuellos
+                        de botella, automatización de procesos manuales y reducción de tamaños de batch; Feedback - amplificar
+                        loops de retroalimentación para detectar y resolver problemas rápidamente mediante monitoreo, alertas y
+                        telemetría comprehensiva; Aprendizaje Continuo - crear cultura de experimentación científica donde fallos
+                        se tratan como oportunidades de aprendizaje en lugar de culpabilización individual.
+                    </p>
+
+                    <p>
+                        El modelo CALMS proporciona un framework para evaluar madurez DevOps organizacional. Culture enfatiza
+                        colaboración, confianza y responsabilidad compartida entre desarrollo, operaciones, QA y seguridad,
+                        trascendiendo silos tradicionales. Automation se refiere a automatización de procesos repetibles incluyendo
+                        testing, builds, despliegues y configuración de infraestructura. Lean aplica principios lean manufacturing
+                        a entrega de software, eliminando desperdicios, optimizando flujo de valor y minimizando work-in-progress.
+                        Measurement implica instrumentación comprehensiva para obtener visibilidad sobre rendimiento de aplicaciones
+                        y sistemas. Sharing fomenta transparencia y comunicación abierta de conocimiento, éxitos y fracasos.
+                    </p>
+
+                    <p>
+                        La adopción de DevOps requiere transformación organizacional profunda, no meramente adopción de herramientas.
+                        Las estructuras de equipos tradicionales donde desarrollo "lanza código sobre el muro" a operaciones deben
+                        evolucionar hacia equipos multifuncionales con responsabilidad end-to-end. El modelo de "you build it, you
+                        run it" hace que equipos de desarrollo sean responsables de operar los servicios que construyen, alineando
+                        incentivos y promoviendo diseño para operabilidad. Sin embargo, este modelo requiere upskilling significativo
+                        de desarrolladores en aspectos operacionales y disponibilidad para on-call rotation.
+                    </p>
+
+                    <p>
+                        Las métricas DORA (DevOps Research and Assessment), identificadas mediante investigación empírica multi-año
+                        sobre prácticas DevOps de alto desempeño, incluyen cuatro indicadores clave: Frecuencia de Despliegue (qué
+                        tan frecuentemente la organización despliega código a producción), Lead Time para Cambios (tiempo desde
+                        commit hasta despliegue en producción), Tiempo Medio de Recuperación (MTTR - tiempo para restaurar servicio
+                        después de incidente), y Tasa de Fallo de Cambios (porcentaje de despliegues que resultan en degradación
+                        de servicio). Las organizaciones de élite despliegan múltiples veces al día, con lead times de menos de
+                        una hora, MTTR de menos de una hora, y tasa de fallo inferior a 15%.
+                    </p>
+
+                    <p>
+                        La resistencia cultural constituye el obstáculo más significativo para adopción DevOps. Los temores incluyen:
+                        pérdida de control por parte de operaciones, incremento de responsabilidades para desarrolladores sin
+                        aumento correspondiente en recursos, resistencia de management a cambios organizacionales profundos, y
+                        presión de entregar más rápido sin deterioro de calidad. La transformación DevOps exitosa requiere
+                        sponsorship ejecutivo, inversión en capacitación, celebración de early wins, y paciencia para evolución
+                        cultural que típicamente requiere años en lugar de meses. Los directores de proyectos actúan como agentes
+                        de cambio, facilitando colaboración cross-funcional y modelando comportamientos DevOps.
+                    </p>
+
+                    <div class="info-box">
+                        <h4>The Three Ways de DevOps</h4>
+                        <ul>
+                            <li><strong>First Way - Flow:</strong> Optimizar flujo de trabajo de izquierda a derecha (Dev → Ops → Cliente)</li>
+                            <li><strong>Second Way - Feedback:</strong> Amplificar retroalimentación de derecha a izquierda para detección temprana</li>
+                            <li><strong>Third Way - Continuous Learning:</strong> Cultura de experimentación continua y aprendizaje de fallos</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>2. Integración Continua (CI): Conceptos y Herramientas</h2>
+
+                    <p>
+                        La Integración Continua (CI) representa una práctica de desarrollo donde los miembros del equipo integran
+                        su trabajo frecuentemente, típicamente múltiples veces al día. Cada integración es verificada por un build
+                        automatizado (incluyendo tests) para detectar errores de integración tan pronto como sea posible. Martin
+                        Fowler identificó CI como práctica fundamental de Extreme Programming que, cuando se implementa rigurosamente,
+                        reduce dramáticamente problemas de integración y permite desarrollar software cohesivo más rápidamente.
+                    </p>
+
+                    <p>
+                        Las prácticas fundamentales de CI incluyen: mantener un repositorio único de código fuente con sistema de
+                        control de versiones; automatizar el build para que cualquiera pueda construir el sistema desde código
+                        fuente con un solo comando; hacer el build auto-testeable incorporando tests automatizados que se ejecutan
+                        como parte del proceso; comprometerse a que todos comitan al mainline diariamente; construir cada commit
+                        en una máquina de integración; mantener el build rápido (menos de 10 minutos idealmente); testear en clone
+                        del ambiente de producción; hacer fácil obtener el último ejecutable; y hacer visible para todos lo que está
+                        pasando mediante dashboards de estado de builds.
+                    </p>
+
+                    <p>
+                        Los servidores CI orquestan el proceso de integración continua. Jenkins, uno de los servidores CI más
+                        ampliamente adoptados, proporciona flexibilidad extensiva mediante ecosistema rico de plugins que soportan
+                        prácticamente cualquier herramienta de desarrollo. GitLab CI/CD integra CI directamente en la plataforma
+                        de control de versiones con configuración mediante archivos .gitlab-ci.yml. GitHub Actions proporciona
+                        workflows automatizados directamente en GitHub. CircleCI y Travis CI ofrecen soluciones cloud-native con
+                        configuración mínima. Azure DevOps proporciona pipelines comprehensivos integrados con ecosistema Microsoft.
+                    </p>
+
+                    <p>
+                        Un pipeline CI típico incluye múltiples etapas ejecutadas secuencialmente. La etapa de checkout obtiene
+                        código del repositorio. La etapa de build compila código y resuelve dependencias. La etapa de tests unitarios
+                        ejecuta suite rápida de unit tests. La etapa de análisis estático ejecuta linters, formatters y herramientas
+                        de análisis de código como SonarQube. La etapa de tests de integración ejecuta tests que verifican
+                        interacciones entre componentes. La etapa de empaquetado genera artefactos desplegables. Finalmente, la
+                        etapa de publicación almacena artefactos en repositorio (Artifactory, Nexus) para despliegue posterior.
+                    </p>
+
+                    <p>
+                        La gestión de branches impacta significativamente efectividad de CI. El trunk-based development mantiene
+                        una branch principal donde todos desarrollan, con integración continua verdadera. Las feature branches
+                        temporales de vida corta (menos de un día) minimizan drift de integración. Git Flow con múltiples branches
+                        de larga vida (develop, release, hotfix) dificulta integración continua verdadera y frecuentemente resulta
+                        en "integration hell" cuando branches finalmente se mergen. El debate trunk-based vs feature branches
+                        continúa, pero evidencia empírica sugiere que trunk-based development correlaciona con mayor throughput
+                        de entrega y estabilidad.
+                    </p>
+
+                    <p>
+                        Los builds rotos representan impedimento crítico que debe resolverse inmediatamente. La disciplina de "no
+                        comitear a build roto" y "arreglar builds rotos inmediatamente antes de nuevo trabajo" resulta esencial.
+                        Algunas organizaciones implementan prácticas como "token físico" que solo el desarrollador que rompió el
+                        build puede sostener hasta que lo arregle, o "build radiator" - pantalla grande visible que muestra estado
+                        de builds en rojo cuando están rotos. Estas prácticas, aunque puedan parecer infantiles, refuerzan la
+                        importancia cultural de mantener builds verdes. Los builds rotos frecuentes o persistentes indican problemas
+                        subyacentes: tests flaky, builds no determinísticos, falta de disciplina del equipo, o complejidad técnica
+                        que requiere inversión de remediación.
+                    </p>
+
+                    <div class="mermaid">
+                    graph LR
+                        A[Developer Commit] --> B[CI Server Detecta Cambio]
+                        B --> C[Checkout Código]
+                        C --> D[Build & Compile]
+                        D --> E[Unit Tests]
+                        E --> F[Static Analysis]
+                        F --> G[Integration Tests]
+                        G --> H{Tests<br/>Pasan?}
+                        H -->|Sí| I[Package Artifacts]
+                        H -->|No| J[Notificar Fallo]
+                        I --> K[Publish to Repository]
+                        K --> L[Deploy to Dev/Test]
+                        J --> M[Desarrollador Arregla]
+                        M --> A
+                    </div>
+                </section>
+
+                <section>
+                    <h2>3. Entrega Continua (CD) y Despliegue Continuo</h2>
+
+                    <p>
+                        La Entrega Continua (Continuous Delivery) extiende Integración Continua asegurando que el software pueda
+                        ser liberado a producción en cualquier momento mediante automatización comprehensiva del proceso de release.
+                        Jez Humble y David Farley, en su obra seminal "Continuous Delivery", definen la práctica como "la capacidad
+                        de obtener cambios de todo tipo - incluyendo nuevas funcionalidades, cambios de configuración, corrección
+                        de bugs y experimentos - en producción o en manos de usuarios de manera segura, rápida y sostenible." La
+                        distinción crítica con Despliegue Continuo es que Entrega Continua mantiene decisión humana sobre cuándo
+                        liberar a producción, mientras Despliegue Continuo automatiza completamente el camino a producción.
+                    </p>
+
+                    <p>
+                        El deployment pipeline constituye la manifestación de proceso de Entrega Continua, modelando el flujo de
+                        valor desde commit hasta producción. Cada etapa del pipeline proporciona nivel creciente de confianza sobre
+                        readiness del software para producción mientras minimiza feedback time. La etapa de commit ejecuta
+                        verificaciones rápidas (unit tests, linters). La etapa de acceptance testing ejecuta tests funcionales
+                        automatizados. La etapa de capacity testing verifica rendimiento bajo carga. La etapa de exploratory testing
+                        permite testing manual en ambiente staging-like. Finalmente, la etapa de production release despliega a
+                        ambientes de producción.
+                    </p>
+
+                    <p>
+                        Las estrategias de despliegue gestionan el riesgo inherente en liberación de cambios a producción. El
+                        despliegue blue-green mantiene dos ambientes de producción idénticos. En cualquier momento, uno (blue)
+                        sirve tráfico de producción mientras el otro (green) está idle. La nueva versión se despliega a green,
+                        se verifica, y luego el router cambia tráfico de blue a green. Si surgen problemas, rollback es
+                        instantáneo mediante reversión del router. Esta estrategia minimiza downtime y riesgo pero requiere doble
+                        infraestructura.
+                    </p>
+
+                    <p>
+                        Los canary releases despliegan nueva versión a subconjunto pequeño de usuarios (canaries) mientras la
+                        mayoría continúa usando versión actual. Si métricas de canaries son saludables (tasas de error, latencia,
+                        conversión), el despliegue se expande progresivamente a más usuarios hasta alcanzar 100%. Si métricas
+                        degradan, el canary se revierte inmediatamente. Esta estrategia detecta problemas con impacto limitado a
+                        usuarios pero requiere infraestructura para routing granular de tráfico y monitoreo sofisticado para
+                        comparar cohortes.
+                    </p>
+
+                    <p>
+                        Los feature toggles (feature flags) desacoplan despliegue de release mediante flags de configuración que
+                        habilitan o deshabilitan funcionalidad en runtime. Los desarrolladores pueden desplegar código de features
+                        incompletos a producción con toggle deshabilitado, continuando desarrollo incremental sin bloquear otros
+                        despliegues. Cuando la feature está completa y testeada, el toggle se habilita mediante cambio de
+                        configuración sin redespliegue. Los toggles también facilitan canary releases granulares, A/B testing y
+                        kill switches para deshabilitar rápidamente features problemáticas. Sin embargo, los toggles acumulan
+                        deuda técnica; deben ser removidos una vez que features están estables y habilitadas universalmente.
+                    </p>
+
+                    <p>
+                        El Despliegue Continuo (Continuous Deployment) automatiza completamente el camino a producción: cada
+                        commit que pasa todos los stages del pipeline se despliega automáticamente a producción sin intervención
+                        humana. Esta práctica representa el endpoint lógico de DevOps, requiriendo confianza extrema en testing
+                        automatizado, monitoreo comprehensivo y capacidad de rollback rápido. Pocas organizaciones alcanzan
+                        Despliegue Continuo verdadero; la mayoría practica Entrega Continua con decisión humana de release. Sin
+                        embargo, el objetivo de hacer release un "no-evento" - algo rutinario y de bajo riesgo que puede ocurrir
+                        cualquier día - representa aspiración compartida.
+                    </p>
+
+                    <div class="success-box">
+                        <h4>Principios de Entrega Continua</h4>
+                        <ul class="checklist">
+                            <li>Crear un proceso de release repetible y confiable</li>
+                            <li>Automatizar casi todo el proceso de release</li>
+                            <li>Mantener todo en control de versiones</li>
+                            <li>Si duele, hacerlo más frecuentemente y traer el dolor adelante</li>
+                            <li>Build quality in - no inspeccionar calidad al final</li>
+                            <li>Done significa released - no solo desarrollado</li>
+                            <li>Todos son responsables del proceso de entrega</li>
+                            <li>Mejora continua del proceso de delivery</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>4. Infraestructura como Código (IaC)</h2>
+
+                    <p>
+                        Infraestructura como Código (IaC) representa la gestión y provisión de infraestructura mediante archivos
+                        de definición legibles por máquina en lugar de configuración manual interactiva o herramientas gráficas.
+                        Este enfoque trae disciplina de desarrollo de software a gestión de infraestructura: control de versiones,
+                        code reviews, testing automatizado, reutilización mediante modularización y documentación como código.
+                        IaC constituye enabler fundamental de DevOps, facilitando ambientes reproducibles, despliegues consistentes
+                        y recuperación rápida ante desastres.
+                    </p>
+
+                    <p>
+                        Los enfoques de IaC se categorizan como imperativos o declarativos. El enfoque imperativo especifica
+                        secuencia exacta de comandos para alcanzar estado deseado (shell scripts, procedimientos de configuración).
+                        El enfoque declarativo especifica estado deseado del sistema y la herramienta determina cómo alcanzarlo
+                        (Terraform, CloudFormation, Ansible con state management). Los enfoques declarativos típicamente resultan
+                        más mantenibles ya que son idempotentes (ejecutar múltiples veces produce mismo resultado) y auto-documentan
+                        estado deseado sin necesidad de rastrear secuencia de operaciones.
+                    </p>
+
+                    <p>
+                        Terraform de HashiCorp domina el espacio de IaC multi-cloud mediante lenguaje de configuración HCL
+                        (HashiCorp Configuration Language) y modelo de providers que abstracta APIs de múltiples proveedores cloud.
+                        Los archivos Terraform declaran recursos deseados (VMs, redes, databases, load balancers). El comando
+                        "terraform plan" muestra cambios que se aplicarán. "Terraform apply" ejecuta cambios para alcanzar estado
+                        deseado. El state file rastrea correspondencia entre configuración declarada e infraestructura real,
+                        facilitando actualizaciones incrementales. El state management distribuido mediante backends remotos
+                        (S3, Terraform Cloud) permite colaboración de equipos.
+                    </p>
+
+                    <p>
+                        AWS CloudFormation proporciona IaC nativa para Amazon Web Services mediante templates JSON o YAML que
+                        describen recursos AWS. CloudFormation gestiona dependencias entre recursos y provisiona en orden correcto.
+                        Los stacks agrupan recursos relacionados como unidad gestionable. Los change sets permiten preview de
+                        cambios antes de aplicar. CloudFormation ofrece integración profunda con servicios AWS pero lock-in a
+                        plataforma AWS. Azure Resource Manager (ARM) y Google Cloud Deployment Manager proporcionan capacidades
+                        análogas para sus respectivas plataformas.
+                    </p>
+
+                    <p>
+                        Ansible adopta enfoque de gestión de configuración push-based mediante playbooks YAML que describen estado
+                        deseado de sistemas. Ansible se conecta a hosts remotos via SSH y ejecuta tasks idempotentes para alcanzar
+                        estado declarado. La ausencia de agentes en hosts gestionados simplifica arquitectura. Los roles Ansible
+                        encapsulan configuraciones reutilizables. Ansible Galaxy proporciona repositorio de roles compartidos por
+                        comunidad. Chef y Puppet representan alternativas basadas en agentes con lenguajes DSL más complejos pero
+                        potentes para infraestructura de gran escala.
+                    </p>
+
+                    <p>
+                        La adopción de IaC introduce desafíos que requieren gobernanza apropiada. Los secretos (passwords, API keys,
+                        certificados) no deben almacenarse en código; herramientas como HashiCorp Vault, AWS Secrets Manager o
+                        Azure Key Vault proporcionan gestión segura de secretos. El drift - divergencia entre infraestructura real
+                        y código declarado debido a cambios manuales - debe prevenirse mediante políticas que prohíben cambios
+                        manuales y detección automatizada de drift. El testing de infraestructura mediante herramientas como
+                        Terratest, Kitchen-Terraform o InSpec valida que infraestructura provisionada cumple especificaciones. Los
+                        directores de proyectos deben asegurar que IaC se trata con misma rigurosidad que código de aplicación:
+                        reviews, tests, documentación y versionamiento disciplinado.
+                    </p>
+
+                    <div class="mermaid">
+                    graph TD
+                        A[Infraestructura como Código] --> B[Definir Estado Deseado]
+                        B --> C[Almacenar en VCS]
+                        C --> D[Code Review]
+                        D --> E[Automatización CI/CD]
+                        E --> F[Testing de IaC]
+                        F --> G[Plan/Preview Cambios]
+                        G --> H[Aplicar Cambios]
+                        H --> I[Validar Estado]
+                        I --> J[Monitoreo Continuo]
+                        J --> K{Drift<br/>Detectado?}
+                        K -->|Sí| L[Reconciliar o Alertar]
+                        K -->|No| J
+                        L --> B
+                    </div>
+                </section>
+
+                <section>
+                    <h2>5. Containerización con Docker y Orquestación con Kubernetes</h2>
+
+                    <p>
+                        Los containers representan una abstracción de empaquetado de software que encapsula código de aplicación
+                        junto con todas sus dependencias (libraries, runtime, configuración) en una unidad portable y auto-contenida.
+                        Docker popularizó esta tecnología mediante herramientas accesibles construidas sobre primitivas de
+                        containerización de Linux (namespaces, cgroups). Los containers comparten kernel del sistema operativo host
+                        pero mantienen filesystems, procesos y networks aislados. Esto proporciona aislamiento similar a máquinas
+                        virtuales pero con overhead dramáticamente menor, permitiendo densidad mucho mayor de aplicaciones por host.
+                    </p>
+
+                    <p>
+                        Un Dockerfile define cómo construir una imagen de container mediante instrucciones declarativas. FROM
+                        especifica imagen base (típicamente distribución Linux mínima como Alpine). COPY añade archivos de aplicación.
+                        RUN ejecuta comandos durante build (instalar dependencias, compilar código). ENV establece variables de
+                        ambiente. EXPOSE declara puertos de red. CMD o ENTRYPOINT especifica comando a ejecutar cuando container
+                        inicia. Las imágenes se construyen en capas inmutables; solo las capas modificadas necesitan rebuilding,
+                        acelerando builds incrementales y distribución de imágenes.
+                    </p>
+
+                    <p>
+                        Los registros de containers almacenan y distribuyen imágenes. Docker Hub proporciona registro público con
+                        millones de imágenes de terceros. Los registros privados (Amazon ECR, Azure Container Registry, Google
+                        Container Registry, Harbor) almacenan imágenes organizacionales. Las imágenes se versionan mediante tags;
+                        la convención best-practice usa semantic versioning en lugar del anti-pattern "latest" tag que dificulta
+                        rastreo de qué versión está desplegada. Los scanners de vulnerabilidades (Clair, Trivy, Snyk) analizan
+                        imágenes para identificar vulnerabilidades conocidas en dependencias, facilitando seguridad proactiva.
+                    </p>
+
+                    <p>
+                        Docker Compose orquesta aplicaciones multi-container en host único mediante archivo docker-compose.yml que
+                        declara servicios, redes y volúmenes. Compose facilita ambientes de desarrollo locales que replican
+                        producción fielmente. Sin embargo, para despliegues de producción distribuidos que requieren alta
+                        disponibilidad, auto-scaling, service discovery, load balancing y self-healing, se requiere orquestador
+                        de containers más sofisticado. Kubernetes emergió como estándar de facto para orquestación de containers
+                        a escala empresarial.
+                    </p>
+
+                    <p>
+                        Kubernetes (K8s) proporciona plataforma para automatizar despliegue, scaling y gestión de aplicaciones
+                        containerizadas. La arquitectura K8s incluye: control plane (API server, scheduler, controller manager,
+                        etcd key-value store) que gestiona estado del cluster; y worker nodes donde pods (grupos de containers
+                        co-localizados) ejecutan. Los objetos K8s fundamentales incluyen: Pods (unidad básica de despliegue),
+                        Services (abstracción para acceso a conjunto de Pods), Deployments (gestión declarativa de Pods replicados),
+                        ConfigMaps y Secrets (gestión de configuración), y Persistent Volumes (storage duradero).
+                    </p>
+
+                    <p>
+                        Kubernetes facilita patrones operacionales sofisticados. El auto-scaling horizontal ajusta número de pod
+                        replicas basado en utilización de CPU/memoria o métricas custom. Los rolling updates despliegan nuevas
+                        versiones progresivamente, reemplazando pods old con new manteniendo disponibilidad. Los health checks
+                        (liveness, readiness probes) detectan containers fallidos y los reinician automáticamente. El service
+                        discovery basado en DNS facilita comunicación entre servicios sin acoplar a IPs específicas. Sin embargo,
+                        Kubernetes introduce complejidad operacional significativa; la decisión de adoptarlo debe balancear beneficios
+                        de escala, resiliencia y portabilidad contra costos de complejidad, curva de aprendizaje y overhead operacional.
+                    </p>
+
+                    <div class="warning-box">
+                        <h4>Consideraciones para Adopción de Kubernetes</h4>
+                        <ul>
+                            <li><strong>Complejidad:</strong> K8s tiene curva de aprendizaje empinada; considerar managed services (EKS, AKS, GKE)</li>
+                            <li><strong>Overhead:</strong> Para aplicaciones simples, el overhead puede superar beneficios</li>
+                            <li><strong>Seguridad:</strong> Configuración incorrecta puede exponer vulnerabilidades significativas</li>
+                            <li><strong>Costo:</strong> Infraestructura de control plane y expertise especializado representan inversión sustancial</li>
+                            <li><strong>Madurez organizacional:</strong> Requiere cultura DevOps madura y competencias en containers</li>
+                        </ul>
+                    </div>
+                </section>
+
+                <section>
+                    <h2>6. Monitoreo, Observabilidad y Site Reliability Engineering</h2>
+
+                    <p>
+                        El monitoreo tradicional se enfoca en recolectar métricas predefinidas sobre comportamiento conocido del
+                        sistema: utilización de CPU, memoria, disco, latencia de requests, tasa de errores. Sin embargo, en sistemas
+                        distribuidos modernos con complejidad emergente, es imposible anticipar todos los modos de falla posibles.
+                        La observabilidad representa evolución conceptual: la capacidad de entender el estado interno de un sistema
+                        basado en conocimiento de sus outputs externos (logs, métricas, traces). Un sistema observable permite a
+                        ingenieros hacer preguntas arbitrarias sobre comportamiento del sistema sin necesidad de haber instrumentado
+                        específicamente para esas preguntas previamente.
+                    </p>
+
+                    <p>
+                        Los tres pilares de observabilidad - métricas, logs y traces distribuidos - proporcionan perspectivas
+                        complementarias. Las métricas son representaciones numéricas agregadas de datos medidos en intervalos de
+                        tiempo (counters, gauges, histograms). Los logs son registros inmutables de eventos discretos con timestamp.
+                        Los traces distribuidos rastrean requests individuales a través de múltiples servicios, proporcionando
+                        visibilidad end-to-end sobre latencia y dependencias. La correlación entre estos tres pilares - por ejemplo,
+                        asociar spike en tasa de error (métrica) con logs específicos y trace de request fallido - facilita
+                        debugging efectivo de sistemas distribuidos complejos.
+                    </p>
+
+                    <p>
+                        El stack de observabilidad típicamente incluye múltiples herramientas especializadas. Prometheus domina
+                        recolección y almacenamiento de métricas con modelo pull-based y lenguaje de consulta PromQL. Grafana
+                        proporciona visualización rica de métricas desde múltiples fuentes. La stack ELK (Elasticsearch, Logstash,
+                        Kibana) o su variante EFK (reemplazando Logstash con Fluentd) gestiona logs centralizados a escala.
+                        Jaeger y Zipkin implementan tracing distribuido basado en OpenTracing. Las plataformas de observabilidad
+                        comprehensivas como Datadog, New Relic, Dynatrace o Honeycomb integran métricas, logs y traces en
+                        experiencia unificada.
+                    </p>
+
+                    <p>
+                        Site Reliability Engineering (SRE) representa la aplicación de principios de ingeniería de software a
+                        problemas de operaciones, con objetivo de crear sistemas de software escalables y altamente confiables.
+                        Originado en Google y popularizado mediante libro "Site Reliability Engineering", SRE introduce conceptos
+                        fundamentales: Service Level Indicators (SLIs) - métricas cuantitativas de aspecto de nivel de servicio
+                        (latencia, availability, throughput); Service Level Objectives (SLOs) - targets para SLIs (99.9% availability,
+                        latencia p99 < 200ms); Service Level Agreements (SLAs) - compromisos contractuales con consecuencias si se
+                        violan; Error Budgets - cantidad aceptable de unreliability, calculada como (100% - SLO).
+                    </p>
+
+                    <p>
+                        El concepto de error budget reconcilia tensión entre velocidad (desarrollo de features) y confiabilidad
+                        (estabilidad operacional). Si el servicio cumple SLOs con margen (error budget sobrante), el equipo puede
+                        invertir en features nuevos asumiendo más riesgo. Si el error budget se agota (SLOs violados), inversión
+                        shift hacia trabajo de confiabilidad (corrección de bugs, mejora de monitoring, automation) hasta que
+                        confiabilidad se restaure. Este framework proporciona mecanismo objetivo para balancear prioridades
+                        competitivas sin debates interminables sobre velocidad vs estabilidad.
+                    </p>
+
+                    <p>
+                        La gestión de incidentes constituye competencia crítica SRE. El proceso incluye: detección mediante alertas
+                        automatizadas; respuesta mediante on-call engineers con playbooks de troubleshooting; mitigación para
+                        restaurar servicio rápidamente (no necesariamente resolver causa raíz); comunicación a stakeholders sobre
+                        estado y progreso; y post-mortem blameless posterior al incidente para identificar causas raíz y acciones
+                        preventivas. Los post-mortems efectivos cultivan cultura de aprendizaje en lugar de culpabilización,
+                        reconociendo que incidents típicamente resultan de fallas sistémicas en lugar de errores individuales. Los
+                        directores de proyectos facilitan esta cultura psicológicamente segura donde discusión abierta de fallos
+                        conduce a mejora continua.
+                    </p>
+
+                    <div class="important-box">
+                        <h4>Reflexión: DevOps como Habilitador de Excelencia en Entrega</h4>
+                        <p>
+                            DevOps representa más que conjunto de herramientas o prácticas técnicas; constituye transformación
+                            cultural profunda en cómo las organizaciones desarrollan, despliegan y operan software. La convergencia
+                            de desarrollo ágil, integración/entrega continua, infraestructura como código, containerización y
+                            observabilidad facilita que organizaciones entreguen valor a clientes con velocidad, calidad y
+                            confiabilidad sin precedentes. Los directores de proyectos en esta era DevOps deben trascender gestión
+                            tradicional de cronogramas y recursos para convertirse en facilitadores de colaboración cross-funcional,
+                            agentes de cambio cultural y arquitectos de sistemas de entrega de valor. La excelencia en dirección de
+                            proyectos TI contemporáneos requiere abrazar principios DevOps no como moda pasajera sino como evolución
+                            fundamental en madurez de ingeniería de software organizacional.
+                        </p>
+                    </div>
+                </section>
+
+                <div class="class-navigation">
+                    <a href="clase-14.html" class="nav-button prev">Clase Anterior</a>
+                    <a href="clase-16.html" class="nav-button next">Siguiente Clase</a>
+                </div>
+            </article>
+        </main>
+    </div>
+
+    <footer>
+        <p>&copy; 2025 Universidad Abierta Interamericana - Especialización en Dirección de Proyectos de Tecnología Informática</p>
+        <p>Dictamen CONEAU Sesión N° 619 - RCS 6350/23</p>
+    </footer>
+</body>
+</html>
