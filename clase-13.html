@@ -64,14 +64,49 @@
                         con arquitectos y desarrolladores, facilitando discusiones estratégicas sobre dirección técnica del proyecto.
                     </p>
 
+                    <h3>1.1 Arquitectura en Capas (Layered Architecture)</h3>
+
                     <p>
                         La arquitectura en capas (layered architecture) representa uno de los patrones más fundamentales y
-                        ampliamente adoptados. Este patrón organiza el sistema en capas horizontales, donde cada capa proporciona
-                        servicios a la capa superior y consume servicios de la capa inferior. La arquitectura clásica de tres
-                        capas distingue: capa de presentación (interfaz de usuario), capa de lógica de negocio (procesamiento de
-                        reglas de negocio) y capa de datos (acceso a persistencia). Este patrón facilita separación de
-                        preocupaciones, permitiendo que equipos especializados trabajen en capas específicas con mínima interferencia.
+                        ampliamente adoptados en sistemas empresariales. Este patrón organiza el sistema en capas horizontales,
+                        donde cada capa proporciona servicios a la capa superior y consume servicios de la capa inferior. La
+                        arquitectura clásica de tres capas distingue: capa de presentación (interfaz de usuario), capa de lógica
+                        de negocio (procesamiento de reglas de negocio) y capa de datos (acceso a persistencia). Este patrón
+                        facilita separación de preocupaciones, permitiendo que equipos especializados trabajen en capas específicas
+                        con mínima interferencia.
                     </p>
+
+                    <p>
+                        La capa de presentación concentra toda la lógica relacionada con la interfaz de usuario, incluyendo
+                        renderizado de vistas, manejo de eventos de usuario, validación de entrada y formateo de datos. Esta capa
+                        debe ser lo más delgada posible, delegando procesamiento complejo a capas inferiores. En aplicaciones web
+                        modernas, esta capa puede implementarse con frameworks como React, Angular o Vue.js para frontend, y
+                        controladores REST para backend que sirven datos JSON. La separación estricta entre presentación y lógica
+                        de negocio facilita soporte de múltiples canales (web, móvil, APIs) sin duplicación de lógica de negocio.
+                    </p>
+
+                    <p>
+                        La capa de lógica de negocio (business logic layer) encapsula las reglas de negocio, validaciones complejas,
+                        cálculos y flujos de trabajo que constituyen el corazón del sistema. Esta capa debe ser independiente de
+                        detalles de persistencia y presentación, facilitando testabilidad mediante tests unitarios que no requieren
+                        bases de datos o interfaces de usuario. Los patrones como Transaction Script (procedimientos que implementan
+                        transacciones de negocio) y Domain Model (modelo orientado a objetos rico que representa conceptos de
+                        negocio) constituyen enfoques alternativos para organizar esta capa. La clave es mantener alta cohesión
+                        dentro de la capa y bajo acoplamiento con capas adyacentes mediante interfaces bien definidas.
+                    </p>
+
+                    <p>
+                        La capa de acceso a datos (data access layer) abstrae interacciones con mecanismos de persistencia,
+                        proporcionando API de alto nivel para almacenamiento y recuperación de datos sin exponer detalles de
+                        implementación (SQL, NoSQL, APIs externas). Los patrones como Repository (colecciones en memoria de objetos
+                        de dominio con persistencia transparente), Data Mapper (separación completa entre objetos de negocio y
+                        esquema de base de datos) y Active Record (objetos que conocen cómo persistirse) representan enfoques
+                        alternativos. Los ORMs (Object-Relational Mappers) como Hibernate, Entity Framework o SQLAlchemy facilitan
+                        implementación de esta capa, aunque introducen complejidades propias de impedance mismatch entre paradigmas
+                        orientado a objetos y relacional.
+                    </p>
+
+                    <h3>1.2 Arquitectura Cliente-Servidor y N-Tier</h3>
 
                     <p>
                         La arquitectura cliente-servidor, fundamental en sistemas distribuidos, separa clientes que solicitan
@@ -83,6 +118,17 @@
                     </p>
 
                     <p>
+                        En arquitecturas n-tier, la separación física de capas en diferentes máquinas o containers facilita
+                        escalamiento independiente de cada tier según sus demandas específicas de recursos. Por ejemplo, la capa
+                        de presentación (web servers) puede escalar horizontalmente para manejar picos de tráfico mediante balanceadores
+                        de carga que distribuyen requests entre múltiples instancias. La capa de aplicación (application servers)
+                        ejecuta lógica de negocio y puede escalar independientemente. La capa de datos (database servers) gestiona
+                        persistencia con estrategias como replicación maestro-esclavo, sharding o clustering de bases de datos.
+                    </p>
+
+                    <h3>1.3 Arquitectura Orientada a Eventos</h3>
+
+                    <p>
                         La arquitectura orientada a eventos (event-driven architecture) organiza el sistema alrededor de la
                         producción, detección y reacción a eventos. Los componentes emiten eventos cuando ocurren cambios de estado
                         significativos; otros componentes suscritos a estos eventos reaccionan correspondientemente. Este patrón
@@ -92,12 +138,24 @@
                     </p>
 
                     <p>
+                        Los brokers de mensajes como Apache Kafka, RabbitMQ o AWS SNS/SQS facilitan implementación de arquitecturas
+                        orientadas a eventos, proporcionando pub/sub confiable, persistencia de eventos, ordenamiento garantizado
+                        dentro de particiones y procesamiento de streams en tiempo real. Event sourcing representa un patrón
+                        complementario donde el estado del sistema se deriva de secuencia completa de eventos almacenados, en
+                        lugar de mantener solo estado actual. Esto facilita auditoría completa, capacidad de replay para debugging
+                        y derivación de múltiples vistas materializadas del mismo stream de eventos (CQRS - Command Query Responsibility
+                        Segregation).
+                    </p>
+
+                    <h3>1.4 Arquitectura de Microkernel y Arquitectura Basada en Espacio</h3>
+
+                    <p>
                         La arquitectura de microkernel (plug-in architecture) define un núcleo mínimo de funcionalidad con
                         extensiones que se conectan mediante interfaces bien definidas. Este patrón resulta efectivo para productos
                         que requieren personalización significativa o funcionalidad opcional. Los sistemas operativos, IDEs de
-                        desarrollo y navegadores web ejemplifican esta arquitectura. La ventaja principal es la extensibilidad;
-                        el desafío radica en definir interfaces de plug-in suficientemente abstractas para acomodar extensiones
-                        no anticipadas.
+                        desarrollo como Eclipse o Visual Studio Code, y navegadores web con extensiones ejemplifican esta arquitectura.
+                        La ventaja principal es la extensibilidad; el desafío radica en definir interfaces de plug-in suficientemente
+                        abstractas para acomodar extensiones no anticipadas.
                     </p>
 
                     <p>
@@ -106,7 +164,8 @@
                         Los datos se replican y particionan en memoria a través de múltiples unidades de procesamiento. Este
                         patrón facilita escalabilidad extrema mediante adición horizontal de unidades de procesamiento. Sin
                         embargo, introduce complejidad significativa en gestión de consistencia de datos y sincronización entre
-                        unidades replicadas.
+                        unidades replicadas. Los grids de datos in-memory como Hazelcast, Apache Ignite o GigaSpaces implementan
+                        este patrón, proporcionando caching distribuido, procesamiento en memoria y replicación automática.
                     </p>
 
                     <div class="mermaid">
@@ -142,6 +201,8 @@
                 <section>
                     <h2>2. Arquitectura de Microservicios vs Monolítica</h2>
 
+                    <h3>2.1 Arquitectura Monolítica: Fortalezas y Limitaciones</h3>
+
                     <p>
                         La arquitectura monolítica tradicional organiza toda la funcionalidad de la aplicación en una única
                         unidad desplegable. Todos los componentes (interfaz de usuario, lógica de negocio, acceso a datos) se
@@ -152,13 +213,27 @@
                     </p>
 
                     <p>
+                        Los monolitos bien diseñados pueden ser altamente efectivos. Un "monolito modular" organiza el código
+                        en módulos bien definidos con interfaces claras y bajo acoplamiento, manteniendo beneficios de simplicidad
+                        de despliegue mientras prepara para potencial descomposición futura. Los frameworks como Spring Boot para
+                        Java, Rails para Ruby o Django para Python facilitan desarrollo rápido de monolitos bien estructurados.
+                        La comunicación entre componentes es mediante llamadas de función in-process, evitando latencia y complejidad
+                        de comunicación de red. Las transacciones ACID de bases de datos relacionales garantizan consistencia sin
+                        complejidad de transacciones distribuidas.
+                    </p>
+
+                    <p>
                         Sin embargo, a medida que las aplicaciones crecen en tamaño y complejidad, las limitaciones de los
                         monolitos se vuelven evidentes. El acoplamiento entre componentes dificulta el cambio: modificaciones
                         en un área pueden tener efectos en cascada impredecibles. El despliegue requiere redesplegar la aplicación
-                        completa incluso para cambios menores. El escalamiento debe ser uniforme: no se puede escalar
-                        independientemente componentes con diferentes demandas de recursos. La adopción de nuevas tecnologías
-                        requiere migrar toda la aplicación simultáneamente, un proceso de alto riesgo.
+                        completa incluso para cambios menores, introduciendo riesgo en cada release. El escalamiento debe ser
+                        uniforme: no se puede escalar independientemente componentes con diferentes demandas de recursos, resultando
+                        en sobre-provisión costosa. La adopción de nuevas tecnologías requiere migrar toda la aplicación simultáneamente,
+                        un proceso de alto riesgo. El tiempo de startup aumenta con tamaño de aplicación, ralentizando ciclos de
+                        desarrollo y dificultando prácticas de integración continua.
                     </p>
+
+                    <h3>2.2 Arquitectura de Microservicios: Beneficios y Desafíos</h3>
 
                     <p>
                         La arquitectura de microservicios descompone la aplicación en servicios pequeños, independientes y
@@ -170,13 +245,26 @@
                     </p>
 
                     <p>
+                        Domain-Driven Design (DDD) proporciona metodología para identificar límites apropiados de microservicios
+                        mediante análisis del dominio de negocio. Los "bounded contexts" representan límites conceptuales donde
+                        términos y conceptos tienen significado específico. Cada microservicio típicamente corresponde a un bounded
+                        context, manteniendo cohesión interna alta y acoplamiento externo bajo. Los patrones estratégicos de DDD
+                        como Context Mapping documentan relaciones entre bounded contexts: Shared Kernel (núcleo compartido),
+                        Customer-Supplier (cliente-proveedor), Conformist (conformista), Anticorruption Layer (capa anticorrupción).
+                        Esta metodología facilita descomposición racional en lugar de arbitraria del dominio.
+                    </p>
+
+                    <p>
                         Las ventajas de microservicios son sustanciales pero no vienen sin costos. La complejidad operacional
                         aumenta dramáticamente: en lugar de gestionar una aplicación, ahora se gestionan docenas o cientos de
                         servicios. La comunicación entre servicios introduce latencia y puntos de falla adicionales. Las
                         transacciones distribuidas y consistencia de datos se vuelven significativamente más complejas. El
                         testing de integración requiere orquestar múltiples servicios. El monitoreo y debugging distribuido
-                        demandan herramientas especializadas y estrategias sofisticadas.
+                        demandan herramientas especializadas y estrategias sofisticadas como distributed tracing (Jaeger, Zipkin),
+                        logging centralizado (ELK stack) y service mesh (Istio, Linkerd) para gestionar comunicación entre servicios.
                     </p>
+
+                    <h3>2.3 Estrategias de Migración y Patrones Híbridos</h3>
 
                     <p>
                         La decisión entre arquitecturas monolíticas y microservicios no debe formularse como binaria. Muchas
@@ -184,6 +272,15 @@
                         y descomponer selectivamente en microservicios cuando surgen presiones específicas (escalamiento diferencial,
                         autonomía de equipos, aislamiento de riesgos). Esta estrategia evolutiva permite cosechar beneficios de
                         simplicidad monolítica mientras se prepara para transición futura cuando la complejidad y escala lo justifiquen.
+                    </p>
+
+                    <p>
+                        El patrón Strangler Fig, inspirado en plantas que gradualmente envuelven árboles hospederos, proporciona
+                        estrategia para migración incremental. Nuevas funcionalidades se implementan como microservicios. Funcionalidad
+                        existente se extrae progresivamente del monolito en servicios separados. Un facade layer rutea solicitudes
+                        a monolito o microservicios según corresponda. Eventualmente, el monolito se reduce hasta desaparecer
+                        completamente, reemplazado por ecosistema de microservicios. Esta aproximación minimiza riesgo comparado
+                        con reescritura big-bang y permite validar beneficios de microservicios incrementalmente.
                     </p>
 
                     <p>
@@ -238,6 +335,8 @@
                         evaluar calidad de diseño y participar significativamente en revisiones arquitectónicas.
                     </p>
 
+                    <h3>3.1 Single Responsibility Principle (SRP)</h3>
+
                     <p>
                         El principio de Responsabilidad Única (Single Responsibility Principle - SRP) establece que una clase
                         debe tener una, y solo una, razón para cambiar. En otras palabras, cada clase debe tener una responsabilidad
@@ -246,6 +345,76 @@
                         entender, probar y modificar. La aplicación de SRP típicamente resulta en clases más pequeñas y focalizadas,
                         facilitando comprensión y mantenimiento.
                     </p>
+
+                    <p>
+                        Considere un ejemplo de violación de SRP: una clase Employee que maneja lógica de negocio de empleados,
+                        persistencia en base de datos y generación de reportes. Esta clase tiene tres razones para cambiar: cambios
+                        en reglas de negocio, cambios en esquema de base de datos, y cambios en formato de reportes. La refactorización
+                        adherente a SRP crearía clases separadas: Employee (modelo de dominio), EmployeeRepository (persistencia),
+                        y EmployeeReportGenerator (reportes). Cada clase ahora tiene una responsabilidad única y cohesiva.
+                    </p>
+
+                    <div class="code-box">
+                        <h4>Ejemplo de SRP - Violación:</h4>
+                        <pre><code>// VIOLACIÓN de SRP - Múltiples responsabilidades
+class Employee {
+    private String name;
+    private BigDecimal salary;
+
+    // Responsabilidad 1: Lógica de negocio
+    public BigDecimal calculateBonus() {
+        return salary.multiply(new BigDecimal("0.10"));
+    }
+
+    // Responsabilidad 2: Persistencia
+    public void save() {
+        // Código SQL para guardar en base de datos
+        Connection conn = DriverManager.getConnection(...);
+        PreparedStatement stmt = conn.prepareStatement("INSERT INTO...");
+        // ...
+    }
+
+    // Responsabilidad 3: Generación de reportes
+    public String generateReport() {
+        return "Employee Report: " + name + ", Salary: " + salary;
+    }
+}</code></pre>
+
+                        <h4>Ejemplo de SRP - Correcto:</h4>
+                        <pre><code>// ADHERENCIA a SRP - Una responsabilidad por clase
+class Employee {
+    private String name;
+    private BigDecimal salary;
+
+    public BigDecimal calculateBonus() {
+        return salary.multiply(new BigDecimal("0.10"));
+    }
+
+    // Getters y setters
+}
+
+class EmployeeRepository {
+    public void save(Employee employee) {
+        // Lógica de persistencia
+        Connection conn = DriverManager.getConnection(...);
+        PreparedStatement stmt = conn.prepareStatement("INSERT INTO...");
+        // ...
+    }
+
+    public Employee findById(Long id) {
+        // Lógica de recuperación
+    }
+}
+
+class EmployeeReportGenerator {
+    public String generate(Employee employee) {
+        return "Employee Report: " + employee.getName() +
+               ", Salary: " + employee.getSalary();
+    }
+}</code></pre>
+                    </div>
+
+                    <h3>3.2 Open/Closed Principle (OCP)</h3>
 
                     <p>
                         El principio Abierto/Cerrado (Open/Closed Principle - OCP) propone que las entidades de software deben
@@ -307,6 +476,21 @@
                                 Depender de abstracciones
                                 Inversión de control
                                 Desacoplamiento
+                    </div>
+
+                    <div class="mermaid">
+                    graph TD
+                        A[Aplicación de SOLID] --> B[Análisis de Requisitos]
+                        B --> C[Identificar Responsabilidades - SRP]
+                        C --> D[Diseñar Abstracciones - OCP/DIP]
+                        D --> E[Definir Contratos - LSP]
+                        E --> F[Segregar Interfaces - ISP]
+                        F --> G[Implementación]
+                        G --> H[Testing Unitario]
+                        H --> I{Cumple<br/>SOLID?}
+                        I -->|No| J[Refactorizar]
+                        J --> C
+                        I -->|Sí| K[Código Mantenible]
                     </div>
                 </section>
 
@@ -387,6 +571,22 @@
                             <li>Observer, State, Strategy, Template Method, Visitor, Interpreter</li>
                         </ul>
                     </div>
+
+                    <div class="mermaid">
+                    graph TD
+                        A[Patrones GoF] --> B[Creacionales]
+                        A --> C[Estructurales]
+                        A --> D[Comportamiento]
+                        B --> B1[Singleton: Una instancia]
+                        B --> B2[Factory: Creación delegada]
+                        B --> B3[Builder: Construcción paso a paso]
+                        C --> C1[Adapter: Compatibilidad interfaces]
+                        C --> C2[Decorator: Añadir funcionalidad]
+                        C --> C3[Facade: Simplificar subsistema]
+                        D --> D1[Observer: Notificaciones]
+                        D --> D2[Strategy: Algoritmos intercambiables]
+                        D --> D3[Template Method: Esqueleto algoritmo]
+                    </div>
                 </section>
 
                 <section>
@@ -400,6 +600,8 @@
                         gestión o interacción con el proveedor. Esta definición captura características esenciales: autoservicio
                         bajo demanda, acceso amplio a la red, pooling de recursos, elasticidad rápida y servicio medido.
                     </p>
+
+                    <h3>5.1 Modelos de Servicio Cloud</h3>
 
                     <p>
                         Los modelos de servicio de nube se categorizan según el nivel de abstracción y responsabilidad compartida
@@ -449,6 +651,22 @@
                     </p>
 
                     <div class="mermaid">
+                    graph LR
+                        A[Cloud-Native Architecture] --> B[Microservicios]
+                        A --> C[Containers]
+                        A --> D[DevOps]
+                        A --> E[CI/CD]
+                        B --> B1[Servicios Independientes]
+                        B --> B2[API-First]
+                        C --> C1[Docker]
+                        C --> C2[Kubernetes]
+                        D --> D1[Colaboración Dev-Ops]
+                        D --> D2[Automatización]
+                        E --> E1[Despliegues Frecuentes]
+                        E --> E2[Testing Automatizado]
+                    </div>
+
+                    <div class="mermaid">
                     graph TD
                         A[Modelos de Servicio Cloud] --> B[SaaS - Software as a Service]
                         A --> C[PaaS - Platform as a Service]
@@ -495,6 +713,22 @@
                         red inevitables, los diseñadores deben elegir entre consistencia y disponibilidad, resultando en sistemas
                         CP (como bases de datos relacionales tradicionales) o AP (como muchos sistemas NoSQL).
                     </p>
+
+                    <div class="mermaid">
+                    graph TD
+                        A[Teorema CAP] --> B[Consistency]
+                        A --> C[Availability]
+                        A --> D[Partition Tolerance]
+                        B --> E[Todos los nodos<br/>ven mismos datos]
+                        C --> F[Toda solicitud<br/>recibe respuesta]
+                        D --> G[Sistema opera<br/>con fallos de red]
+                        E --> H[Sistemas CP]
+                        F --> I[Sistemas AP]
+                        G --> J[Sistemas CA<br/>No Distribuidos]
+                        H --> K[PostgreSQL, MySQL<br/>MongoDB Strict]
+                        I --> L[Cassandra, DynamoDB<br/>Eventual Consistency]
+                        J --> M[Bases de Datos<br/>Single Node]
+                    </div>
 
                     <p>
                         El triángulo de Atributos de Calidad ilustra trade-offs entre rendimiento, escalabilidad, disponibilidad,

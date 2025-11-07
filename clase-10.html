@@ -87,6 +87,88 @@
                         candidatos prioritarios para refactorización.
                     </p>
 
+                    <h3>Fórmulas y Cálculos Detallados de Métricas de Producto</h3>
+
+                    <p>
+                        La densidad de defectos proporciona una medida normalizada de calidad que permite comparaciones entre proyectos
+                        de diferentes tamaños. Se calcula como: <strong>Densidad de Defectos = (Número de Defectos / Tamaño del Software) × 1000</strong>,
+                        donde el tamaño puede expresarse en KLOC (miles de líneas de código) o FP (puntos de función). Por ejemplo,
+                        si un sistema de 50 KLOC tiene 125 defectos conocidos, la densidad es (125/50) × 1000 = 2500 defectos por
+                        millón de líneas, o 2.5 defectos por KLOC. La industria típicamente observa densidades entre 1-5 defectos/KLOC
+                        para software comercial de calidad, aunque sistemas críticos de seguridad pueden alcanzar < 0.1 defectos/KLOC
+                        mediante procesos rigurosos.
+                    </p>
+
+                    <p>
+                        El índice de mantenibilidad (Maintainability Index, MI) combina múltiples métricas en un valor único mediante
+                        la fórmula de Microsoft: <strong>MI = MAX(0, (171 - 5.2 × ln(Halstead Volume) - 0.23 × Complejidad Ciclomática -
+                        16.2 × ln(LOC)) × 100 / 171)</strong>. El Halstead Volume mide complejidad algorítmica basándose en operadores
+                        y operandos. El resultado MI varía de 0 (peor mantenibilidad) a 100 (mejor mantenibilidad). Valores > 85
+                        indican buena mantenibilidad, 65-85 mantenibilidad moderada, y < 65 baja mantenibilidad que requiere atención.
+                        Visual Studio Code Metrics y herramientas similares calculan MI automáticamente, identificando módulos
+                        problemáticos que son candidatos prioritarios para refactorización.
+                    </p>
+
+                    <p>
+                        Las métricas de cobertura de código cuantifican qué porcentaje del código es ejercitado por pruebas automatizadas.
+                        <strong>Cobertura de Líneas = (Líneas Ejecutadas por Tests / Total de Líneas Ejecutables) × 100</strong>.
+                        <strong>Cobertura de Ramas = (Ramas Ejecutadas / Total de Ramas) × 100</strong>. Por ejemplo, una función con
+                        estructura if-else tiene 2 ramas; si las pruebas solo ejercitan el caso verdadero, la cobertura de ramas es
+                        50%. La cobertura de funciones mide qué porcentaje de funciones son invocadas por al menos un test. La cobertura
+                        de condiciones evalúa si las sub-condiciones booleanas individuales se evalúan a true y false. El objetivo
+                        típico es 80%+ de cobertura de líneas y ramas, aunque cobertura 100% no garantiza ausencia de defectos si las
+                        aserciones son débiles.
+                    </p>
+
+                    <div class="info-box">
+                        <h4>Interpretación de Complejidad Ciclomática</h4>
+                        <table>
+                            <tr>
+                                <th>Valor CC</th>
+                                <th>Complejidad</th>
+                                <th>Riesgo</th>
+                                <th>Recomendación</th>
+                            </tr>
+                            <tr>
+                                <td>1-10</td>
+                                <td>Simple</td>
+                                <td>Bajo</td>
+                                <td>Código fácil de probar y mantener</td>
+                            </tr>
+                            <tr>
+                                <td>11-20</td>
+                                <td>Moderada</td>
+                                <td>Medio</td>
+                                <td>Considerar simplificación si es posible</td>
+                            </tr>
+                            <tr>
+                                <td>21-50</td>
+                                <td>Alta</td>
+                                <td>Alto</td>
+                                <td>Refactorizar dividiendo en funciones más pequeñas</td>
+                            </tr>
+                            <tr>
+                                <td>>50</td>
+                                <td>Muy Alta</td>
+                                <td>Crítico</td>
+                                <td>Rediseño urgente, código no mantenible</td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div class="mermaid">
+                    %%{init: {'theme':'base'}}%%
+                    xychart-beta
+                        title "Ejemplo: Evolución de Métricas de Calidad en 6 Sprints"
+                        x-axis [Sprint 1, Sprint 2, Sprint 3, Sprint 4, Sprint 5, Sprint 6]
+                        y-axis "Valores" 0 --> 100
+                        line "Cobertura Tests (%)" [45, 58, 67, 73, 81, 85]
+                        line "Índice Mantenibilidad" [72, 75, 78, 80, 82, 84]
+                        line "% Código Sin Code Smells" [55, 62, 68, 75, 82, 87]
+                        line "Objetivo (80%)" [80, 80, 80, 80, 80, 80]
+                    </xychart-beta>
+                    </div>
+
                     <p>
                         Las métricas de acoplamiento (coupling) miden el grado de interdependencia entre módulos de software. El
                         acoplamiento alto indica que cambios en un módulo probablemente requerirán cambios en otros módulos,
@@ -476,6 +558,62 @@
                         de trabajo, la proyección es aproximadamente 5 Sprints para completar ese trabajo.
                     </p>
 
+                    <h3>Ejemplo de Cálculo de Velocidad y Proyección</h3>
+
+                    <p>
+                        Considérese un equipo Scrum con los siguientes resultados en los últimos 6 Sprints de 2 semanas: Sprint 1
+                        completó 28 story points, Sprint 2 completó 32 points, Sprint 3 completó 35 points, Sprint 4 completó 38
+                        points, Sprint 5 completó 40 points, Sprint 6 completó 42 points. La velocidad promedio se calcula como:
+                        <strong>Velocidad = (28 + 32 + 35 + 38 + 40 + 42) / 6 = 215 / 6 = 35.8 story points por Sprint</strong>.
+                        Para mayor precisión en proyecciones, muchos equipos utilizan la velocidad promedio de los últimos 3 Sprints
+                        (excluyendo Sprints muy tempranos o atípicos): (38 + 40 + 42) / 3 = 40 points/Sprint.
+                    </p>
+
+                    <p>
+                        Con una velocidad estabilizada de 40 points/Sprint, el equipo puede proyectar fechas de entrega. Si el Product
+                        Backlog para el próximo release contiene 280 story points prioritarios, el número de Sprints requeridos es:
+                        <strong>Sprints Necesarios = Total Story Points / Velocidad = 280 / 40 = 7 Sprints</strong>. Con Sprints
+                        de 2 semanas, esto proyecta 14 semanas calendario hasta el release. Sin embargo, las proyecciones prudentes
+                        incluyen buffer para incertidumbre: utilizando el percentil 75 de velocidad histórica (35 points) en lugar
+                        del promedio proporciona estimación más conservadora: 280 / 35 = 8 Sprints (16 semanas).
+                    </p>
+
+                    <div class="success-box">
+                        <h4>Factores que Afectan la Velocidad del Equipo</h4>
+                        <ul class="checklist">
+                            <li><strong>Cambios en composición del equipo:</strong> Incorporación o salida de miembros reduce velocidad temporalmente</li>
+                            <li><strong>Deuda técnica:</strong> Deuda acumulada ralentiza desarrollo de nuevas features</li>
+                            <li><strong>Complejidad del dominio:</strong> Historias en áreas técnicas complejas o desconocidas reducen velocidad</li>
+                            <li><strong>Calidad de Definition of Done:</strong> DoD rigurosa puede reducir velocidad pero mejora calidad</li>
+                            <li><strong>Interrupciones externas:</strong> Soporte de producción, reuniones excesivas reducen capacidad</li>
+                            <li><strong>Madurez del equipo:</strong> Equipos nuevos incrementan velocidad al ganar experiencia</li>
+                        </ul>
+                    </div>
+
+                    <div class="mermaid">
+                    %%{init: {'theme':'base'}}%%
+                    xychart-beta
+                        title "Análisis de Velocidad: 10 Sprints con Tendencia y Promedio"
+                        x-axis [S1, S2, S3, S4, S5, S6, S7, S8, S9, S10]
+                        y-axis "Story Points" 0 --> 50
+                        bar "Velocidad por Sprint" [28, 32, 35, 38, 40, 42, 39, 41, 43, 45]
+                        line "Promedio Móvil (3 Sprints)" [28, 30, 31.7, 35, 37.7, 40, 40.3, 40.7, 41, 43]
+                        line "Velocidad Promedio General" [38.3, 38.3, 38.3, 38.3, 38.3, 38.3, 38.3, 38.3, 38.3, 38.3]
+                    </xychart-beta>
+                    </div>
+
+                    <div class="mermaid">
+                    %%{init: {'theme':'base'}}%%
+                    xychart-beta
+                        title "Release Burnup Chart - Proyecto E-Commerce (Sprints 1-12)"
+                        x-axis [S1, S2, S3, S4, S5, S6, S7, S8, S9, S10, S11, S12]
+                        y-axis "Story Points" 0 --> 300
+                        line "Scope Total" [250, 250, 260, 260, 270, 280, 280, 285, 285, 290, 290, 290]
+                        line "Work Completado" [35, 72, 110, 145, 185, 225, 260, 295, 295, 295, 295, 295]
+                        line "Proyección Inicial" [0, 40, 80, 120, 160, 200, 240, 280, 280, 280, 280, 280]
+                    </xychart-beta>
+                    </div>
+
                     <p>
                         Es crucial reconocer que la velocidad es una métrica de capacidad del equipo, no de productividad individual.
                         Comparar velocidades entre diferentes equipos es fundamentalmente inválido porque las estimaciones de story
@@ -680,6 +818,73 @@
                         en retrospectivas de release o revisiones trimestrales, asegura que continúen proporcionando valor y no se
                         conviertan en rituales sin significado.
                     </p>
+
+                    <h3>Dashboard Ejecutivo de Métricas: Ejemplo Práctico</h3>
+
+                    <p>
+                        Un dashboard ejecutivo efectivo presenta información crítica de manera visual, permitiendo identificación
+                        rápida de áreas que requieren atención. El dashboard típicamente incluye secciones para cronograma (SPI, fechas
+                        proyectadas vs comprometidas, hitos alcanzados), presupuesto (CPI, variación de costos, proyección EAC),
+                        alcance (features completadas vs planificadas, cambios aprobados), calidad (defectos abiertos por severidad,
+                        densidad de defectos, cobertura de tests), y riesgos (mapa de calor de riesgos, riesgos top-5, tendencias).
+                        La codificación por colores facilita identificación visual: verde indica métricas en rango objetivo, amarillo
+                        señala métricas que requieren monitoreo, rojo indica métricas críticas que demandan acción inmediata.
+                    </p>
+
+                    <p>
+                        Por ejemplo, un dashboard podría mostrar: <strong>Cronograma - SPI: 0.92 (amarillo)</strong> indicando retraso
+                        moderado del 8%; <strong>Costo - CPI: 1.05 (verde)</strong> indicando 5% bajo presupuesto; <strong>Calidad -
+                        Defectos Críticos Abiertos: 3 (rojo)</strong> indicando necesidad de atención inmediata; <strong>Velocidad -
+                        42 SP/Sprint (verde)</strong> dentro de rango esperado 38-45; <strong>Cobertura Tests: 83% (verde)</strong>
+                        superando objetivo de 80%. Este formato permite a stakeholders ejecutivos comprender estado del proyecto
+                        en minutos sin sumergirse en detalles técnicos, mientras que drill-down en cualquier métrica proporciona
+                        análisis más profundo para quienes lo necesiten.
+                    </p>
+
+                    <div class="mermaid">
+                    graph TD
+                        A[Dashboard Ejecutivo de Proyecto] --> B[Sección Cronograma]
+                        A --> C[Sección Costo]
+                        A --> D[Sección Calidad]
+                        A --> E[Sección Recursos]
+
+                        B --> B1[SPI: 0.92 🟡]
+                        B --> B2[Fecha Release: 15-Jun 🟢]
+                        B --> B3[Hitos: 7/10 🟡]
+
+                        C --> C1[CPI: 1.05 🟢]
+                        C --> C2[EAC: $2.1M 🟢]
+                        C --> C3[Burn Rate: $185K/mes 🟡]
+
+                        D --> D1[Defectos Críticos: 3 🔴]
+                        D --> D2[Cobertura Tests: 83% 🟢]
+                        D --> D3[Deuda Técnica: 45 días 🟡]
+
+                        E --> E1[Utilización: 78% 🟢]
+                        E --> E2[Rotación: 8% 🟡]
+                        E --> E3[Satisfacción: 4.2/5 🟢]
+
+                        B1 --> F[Acción: Revisión cronograma]
+                        C3 --> G[Acción: Control de gastos]
+                        D1 --> H[Acción: Priorizar fixes]
+                        E2 --> I[Acción: Retención de talento]
+
+                        style F fill:#FFFF99
+                        style H fill:#FFB6C1
+                    </graph>
+                    </div>
+
+                    <div class="warning-box">
+                        <h4>Antipatrones en Dashboards de Métricas</h4>
+                        <ul>
+                            <li><strong>Sobrecarga de información:</strong> Incluir demasiadas métricas que dificultan identificar lo crítico</li>
+                            <li><strong>Métricas desactualizadas:</strong> Datos que no se actualizan regularmente pierden valor</li>
+                            <li><strong>Falta de contexto:</strong> Números sin explicación de qué significan o por qué importan</li>
+                            <li><strong>Visualizaciones engañosas:</strong> Gráficos con escalas manipuladas que distorsionan realidad</li>
+                            <li><strong>Sin accionabilidad:</strong> Métricas que no sugieren qué acciones tomar</li>
+                            <li><strong>Métricas sin dueño:</strong> Nadie responsable de monitorear y actuar sobre desviaciones</li>
+                        </ul>
+                    </div>
                 </section>
 
                 <div class="class-navigation">

@@ -138,6 +138,74 @@
                         pueden dar por sentada.
                     </p>
 
+                    <h3>Técnicas Avanzadas de Elicitación</h3>
+
+                    <p>
+                        El análisis de tareas (Task Analysis) descompone sistemáticamente las actividades que usuarios realizan
+                        para lograr objetivos específicos. El Análisis Jerárquico de Tareas (HTA) representa tareas como jerarquía
+                        de objetivos, sub-objetivos y operaciones, identificando secuencias, decisiones y dependencias. Esta técnica
+                        resulta particularmente valiosa para sistemas que automatizan o soportan procesos complejos, permitiendo
+                        identificar oportunidades de simplificación, automatización o soporte contextual. El análisis cognitivo de
+                        tareas profundiza más, explorando procesos mentales, conocimiento requerido y toma de decisiones subyacentes.
+                    </p>
+
+                    <p>
+                        Las técnicas de creatividad grupal como brainstorming, brainwriting y técnica de grupo nominal facilitan
+                        generación de ideas innovadoras para sistemas nuevos o características disruptivas. El brainstorming clásico
+                        enfatiza generación de ideas sin evaluación crítica prematura, construyendo sobre sugerencias de otros y
+                        persiguiendo cantidad sobre calidad inicialmente. El brainwriting, donde participantes escriben ideas
+                        independientemente antes de compartir, mitiga el problema de personalidades dominantes que inhiben
+                        contribuciones de miembros más reservados. La técnica de grupo nominal estructura rigurosamente generación,
+                        discusión y priorización de ideas mediante votación.
+                    </p>
+
+                    <p>
+                        Las técnicas basadas en escenarios y storyboards narran cómo usuarios interactuarían con el sistema en
+                        contextos específicos de uso. Los escenarios describen situaciones típicas, actores involucrados, objetivos,
+                        acciones y resultados esperados en formato narrativo que stakeholders de negocio encuentran accesible. Los
+                        storyboards visualizan estos escenarios mediante secuencias de bocetos o capturas de pantalla que ilustran
+                        la experiencia del usuario paso a paso. Estas técnicas son particularmente efectivas para comunicar visión
+                        del producto y validar que requerimientos capturados realmente soportarán los flujos de trabajo críticos.
+                    </p>
+
+                    <div class="success-box">
+                        <h4>Selección de Técnicas de Elicitación: Factores Contextuales</h4>
+                        <ul class="checklist">
+                            <li>Tipo de proyecto: Sistemas nuevos favorecen prototipos y creatividad; reemplazos de sistemas legacy favorecen análisis de documentos</li>
+                            <li>Dispersión geográfica: Stakeholders distribuidos requieren cuestionarios o videoconferencias en lugar de talleres presenciales</li>
+                            <li>Disponibilidad de stakeholders: Ejecutivos ocupados pueden solo participar en entrevistas breves; usuarios operativos pueden permitir observación</li>
+                            <li>Cultura organizacional: Culturas jerárquicas pueden dificultar workshops participativos; culturas colaborativas los favorecen</li>
+                            <li>Claridad de requerimientos: Requerimientos bien entendidos permiten entrevistas estructuradas; dominios emergentes requieren exploración</li>
+                            <li>Complejidad del dominio: Dominios técnicos complejos requieren análisis de expertos y documentación técnica</li>
+                        </ul>
+                    </div>
+
+                    <div class="mermaid">
+                    flowchart TD
+                        A[Inicio Elicitación] --> B{¿Tipo de Sistema?}
+                        B -->|Sistema Nuevo| C[Prototipos + Brainstorming]
+                        B -->|Reemplazo Legacy| D[Análisis Documentos + Observación]
+                        B -->|Mejora Incremental| E[Entrevistas + Cuestionarios]
+
+                        C --> F{¿Stakeholders Disponibles?}
+                        D --> F
+                        E --> F
+
+                        F -->|Alta Disponibilidad| G[Talleres JAD]
+                        F -->|Baja Disponibilidad| H[Entrevistas Individuales]
+                        F -->|Muy Distribuidos| I[Cuestionarios + Videoconferencias]
+
+                        G --> J[Consolidación Requerimientos]
+                        H --> J
+                        I --> J
+
+                        J --> K[Validación con Prototipos]
+                        K --> L[Especificación Formal]
+
+                        style L fill:#90EE90
+                    </flowchart>
+                    </div>
+
                     <div class="mermaid">
                     graph TD
                         A[Elicitación de Requerimientos] --> B[Técnicas de Captura]
@@ -193,6 +261,112 @@
                         esenciales de características deseables que podrían diferirse a releases posteriores si el cronograma o
                         presupuesto se comprimen.
                     </p>
+
+                    <h3>Técnicas de Priorización: MoSCoW y Kano</h3>
+
+                    <p>
+                        La técnica MoSCoW, desarrollada por Dai Clegg para el método de desarrollo DSDM (Dynamic Systems Development
+                        Method), categoriza requerimientos en cuatro niveles de prioridad. Los requerimientos Must have son
+                        absolutamente críticos para el sistema; sin ellos, el producto no es viable ni puede entrar en producción.
+                        Típicamente representan funcionalidad fundamental del core business, regulaciones obligatorias o dependencias
+                        críticas de otros sistemas. Los requerimientos Should have son importantes y agregan valor significativo,
+                        pero el sistema puede funcionar sin ellos temporalmente. Frecuentemente se implementan en el MVP (Minimum
+                        Viable Product) pero podrían diferirse si el proyecto enfrenta restricciones severas.
+                    </p>
+
+                    <p>
+                        Los requerimientos Could have son deseables pero no necesarios; representan mejoras o refinamientos que
+                        se incluirían si hay tiempo y recursos disponibles después de completar Must y Should. Los Won't have
+                        (o Won't have this time) son características que stakeholders acordaron explícitamente no implementar en
+                        este release, aunque podrían considerarse para releases futuros. Esta categoría es crucial para gestionar
+                        expectativas y prevenir scope creep: establecer explícitamente qué no se hará es tan importante como
+                        definir qué se hará. Una regla empírica sugiere que en un proyecto bien balanceado, aproximadamente 60%
+                        de requerimientos son Must have, 20% Should have, y 20% Could have.
+                    </p>
+
+                    <p>
+                        El modelo Kano, desarrollado por el profesor Noriaki Kano en los años 1980, clasifica requerimientos según
+                        cómo afectan la satisfacción del cliente. Los requerimientos básicos o threshold son esperados por defecto;
+                        su ausencia causa insatisfacción significativa, pero su presencia no incrementa satisfacción (simplemente
+                        alcanza la línea base de expectativa). Por ejemplo, en un sitio de e-commerce, que el sistema permita
+                        visualizar productos es un requerimiento básico. Los requerimientos de desempeño o performance tienen
+                        relación lineal con satisfacción: cuanto mejor se implementen, mayor la satisfacción. La velocidad de
+                        carga de páginas es típicamente un requerimiento de desempeño.
+                    </p>
+
+                    <p>
+                        Los requerimientos de excitación o delighters son inesperados y pueden generar satisfacción
+                        desproporcionada cuando están presentes, pero su ausencia no causa insatisfacción porque los usuarios no
+                        los anticipaban. Amazon Prime's entrega en un día cuando se prometía dos días es ejemplo clásico de
+                        requerimiento de excitación. Los requerimientos indiferentes no afectan significativamente satisfacción
+                        independientemente de su presencia o ausencia, sugiriendo que recursos invertidos en ellos podrían dirigirse
+                        mejor a otras características. Los requerimientos reversos paradójicamente disminuyen satisfacción cuando
+                        están presentes, indicando características que algunos usuarios activamente no desean.
+                    </p>
+
+                    <p>
+                        La combinación de MoSCoW y Kano proporciona framework poderoso para priorización estratégica. Los
+                        requerimientos básicos de Kano típicamente corresponden a Must have en MoSCoW. Los requerimientos de
+                        desempeño se distribuyen entre Must, Should y Could según su importancia relativa. Los requerimientos de
+                        excitación son frecuentemente Could have, pero si se identifica un delighter de alto impacto, podría
+                        elevarse a Should. Esta priorización bidimensional ayuda a equilibrar cumplimiento de expectativas básicas
+                        con diferenciación competitiva mediante características innovadoras.
+                    </p>
+
+                    <div class="mermaid">
+                    %%{init: {'theme':'base'}}%%
+                    quadrantChart
+                        title Modelo Kano - Satisfacción del Cliente vs Implementación
+                        x-axis "Implementación Baja" --> "Implementación Alta"
+                        y-axis "Insatisfacción" --> "Satisfacción"
+                        quadrant-1 Requerimientos de Desempeño
+                        quadrant-2 Requerimientos de Excitación
+                        quadrant-3 Requerimientos Indiferentes
+                        quadrant-4 Requerimientos Básicos
+                        Seguridad del Sistema: [0.8, 0.3]
+                        Velocidad de Carga: [0.6, 0.5]
+                        Recomendaciones IA: [0.7, 0.8]
+                        Funcionalidad Core: [0.9, 0.2]
+                        Feature Decorativa: [0.3, 0.1]
+                        Innovación UX: [0.5, 0.9]
+                    </quadrantChart>
+                    </div>
+
+                    <div class="info-box">
+                        <h4>Priorización MoSCoW: Criterios de Clasificación</h4>
+                        <table>
+                            <tr>
+                                <th>Categoría</th>
+                                <th>Criterio</th>
+                                <th>% Recomendado</th>
+                                <th>Ejemplo</th>
+                            </tr>
+                            <tr>
+                                <td><strong>Must Have</strong></td>
+                                <td>Sin esto, el sistema no funciona o no cumple regulaciones</td>
+                                <td>~60%</td>
+                                <td>Autenticación de usuarios, procesamiento de pagos</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Should Have</strong></td>
+                                <td>Importante, pero existen workarounds temporales</td>
+                                <td>~20%</td>
+                                <td>Notificaciones por email, filtros avanzados</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Could Have</strong></td>
+                                <td>Deseable si hay recursos disponibles</td>
+                                <td>~20%</td>
+                                <td>Temas personalizables, exportación a Excel</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Won't Have</strong></td>
+                                <td>Explícitamente fuera de scope para este release</td>
+                                <td>N/A</td>
+                                <td>Integración con redes sociales, app móvil</td>
+                            </tr>
+                        </table>
+                    </div>
 
                     <p>
                         El modelado conceptual desarrolla representaciones abstractas del dominio del problema que capturan entidades
@@ -676,6 +850,131 @@
                         Testable (con criterios de aceptación verificables). Historias que no cumplen estos criterios requieren
                         refinamiento antes de incluirse en planificación de Sprint.
                     </p>
+
+                    <h3>Formato Detallado de User Stories según IEEE 29148</h3>
+
+                    <p>
+                        El estándar IEEE 29148:2018 (Systems and Software Engineering - Life Cycle Processes - Requirements Engineering)
+                        proporciona guías para documentar historias de usuario que trascienden el formato simple de tres líneas. Una
+                        historia de usuario completa debe incluir: identificador único para trazabilidad (ej: US-127), título descriptivo
+                        conciso, narrativa en formato "Como-Quiero-Para", prioridad de negocio (usando MoSCoW u otro framework),
+                        estimación de complejidad (story points), criterios de aceptación específicos y verificables, notas técnicas
+                        sobre implementación, dependencias con otras historias o sistemas, y supuestos o restricciones relevantes.
+                    </p>
+
+                    <p>
+                        Los criterios de aceptación constituyen el componente más crítico de una historia de usuario bien especificada.
+                        El formato Given-When-Then, originado en Behavior-Driven Development (BDD), estructura escenarios de prueba
+                        de manera que pueden automatizarse mediante frameworks como Cucumber o SpecFlow. "Given" establece el contexto
+                        o estado inicial del sistema. "When" describe la acción o evento que ocurre. "Then" especifica el resultado
+                        observable esperado. Por ejemplo: "Given que soy un usuario autenticado con rol de administrador, When accedo
+                        a la página de gestión de usuarios, Then debo ver la lista completa de usuarios con opciones para editar,
+                        desactivar y resetear contraseñas".
+                    </p>
+
+                    <p>
+                        Las historias de usuario frecuentemente requieren descomposición jerárquica. Las temáticas (themes) agrupan
+                        múltiples épicas relacionadas que contribuyen a un objetivo estratégico de alto nivel, como "Modernizar la
+                        experiencia de checkout". Las épicas representan funcionalidades grandes que requieren múltiples Sprints,
+                        como "Implementar checkout de un solo paso". Las historias de usuario son incrementos de funcionalidad
+                        implementables en un Sprint, como "Como comprador, quiero aplicar códigos de descuento durante checkout para
+                        aprovechar promociones". Las tareas son actividades técnicas específicas necesarias para completar una historia,
+                        como "Crear tabla de base de datos para códigos de descuento" o "Implementar validación de código expirado".
+                    </p>
+
+                    <p>
+                        El refinamiento continuo del Product Backlog (grooming) es esencial para mantener historias en estado
+                        "definition of ready". Durante sesiones de refinamiento, el equipo colabora con el Product Owner para:
+                        clarificar historias ambiguas mediante discusión y preguntas, descomponer épicas en historias más pequeñas,
+                        elaborar criterios de aceptación con ejemplos concretos, identificar dependencias técnicas o de negocio,
+                        estimar complejidad relativa mediante planning poker o técnicas similares, y priorizar historias según valor
+                        de negocio y dependencias. Equipos maduros típicamente invierten 10% de su capacidad de Sprint en refinamiento
+                        para asegurar que el backlog contenga historias bien especificadas listas para planificación.
+                    </p>
+
+                    <div class="mermaid">
+                    graph TB
+                        A[Jerarquía de Historias de Usuario] --> B[Temática: Modernizar E-commerce]
+
+                        B --> C[Épica: Mejorar Checkout]
+                        B --> D[Épica: Personalización]
+                        B --> E[Épica: Búsqueda Avanzada]
+
+                        C --> F[Historia: Checkout 1-Step]
+                        C --> G[Historia: Múltiples Pagos]
+                        C --> H[Historia: Guest Checkout]
+
+                        F --> F1[Tarea: UI Checkout]
+                        F --> F2[Tarea: API Payment]
+                        F --> F3[Tarea: Validación]
+                        F --> F4[Tarea: Testing E2E]
+
+                        G --> G1[Criterio: Split Payment]
+                        G --> G2[Criterio: Múltiples Tarjetas]
+                        G --> G3[Criterio: Wallet Digital]
+
+                        style A fill:#FFE4B5
+                        style B fill:#E6E6FA
+                        style C fill:#ADD8E6
+                        style F fill:#90EE90
+                        style F1 fill:#FFFFE0
+                    </graph>
+                    </div>
+
+                    <div class="important-box">
+                        <h4>Ejemplo Completo de User Story según IEEE 29148</h4>
+                        <p><strong>ID:</strong> US-245 | <strong>Prioridad:</strong> Must Have | <strong>Story Points:</strong> 5</p>
+                        <p><strong>Título:</strong> Aplicar Códigos de Descuento en Checkout</p>
+                        <p><strong>Narrativa:</strong> Como comprador registrado, quiero poder aplicar códigos de descuento durante
+                        el proceso de checkout para aprovechar promociones y reducir el costo total de mi compra.</p>
+                        <p><strong>Criterios de Aceptación:</strong></p>
+                        <ul>
+                            <li><strong>AC1:</strong> Given que estoy en la página de checkout, When ingreso un código de descuento válido
+                            y hago clic en "Aplicar", Then el descuento se refleja inmediatamente en el total antes de impuestos</li>
+                            <li><strong>AC2:</strong> Given que ingreso un código expirado, When hago clic en "Aplicar", Then el sistema
+                            muestra mensaje de error "Este código ha expirado el [fecha]"</li>
+                            <li><strong>AC3:</strong> Given que ya apliqué un código, When intento aplicar otro código, Then el sistema
+                            reemplaza el código anterior y muestra mensaje informativo</li>
+                            <li><strong>AC4:</strong> Given que el carrito contiene productos excluidos de la promoción, When aplico el código,
+                            Then el sistema calcula el descuento solo sobre productos elegibles y muestra desglose</li>
+                        </ul>
+                        <p><strong>Dependencias:</strong> Requiere implementación de tabla códigos_descuento (US-230) y servicio de
+                        validación de promociones (US-232)</p>
+                        <p><strong>Supuestos:</strong> Los códigos se crean y gestionan mediante herramienta de administración existente</p>
+                        <p><strong>Notas Técnicas:</strong> Implementar validación en backend para prevenir manipulación; usar caché
+                        Redis para validación rápida de códigos activos</p>
+                    </div>
+
+                    <div class="mermaid">
+                    sequenceDiagram
+                        participant U as Usuario
+                        participant UI as Frontend Checkout
+                        participant API as Backend API
+                        participant DB as Base de Datos
+                        participant Cache as Redis Cache
+
+                        U->>UI: Ingresa código "SUMMER2024"
+                        U->>UI: Click en "Aplicar Código"
+                        UI->>API: POST /api/coupons/validate
+                        API->>Cache: Buscar código en caché
+
+                        alt Código en Cache
+                            Cache-->>API: Código válido
+                        else Código no en Cache
+                            API->>DB: SELECT * FROM coupons WHERE code='SUMMER2024'
+                            DB-->>API: Datos del código
+                            API->>Cache: Almacenar en caché
+                        end
+
+                        API->>API: Validar fecha expiración
+                        API->>API: Calcular descuento aplicable
+                        API-->>UI: Respuesta con descuento calculado
+                        UI->>UI: Actualizar totales en pantalla
+                        UI-->>U: Muestra nuevo total con descuento
+
+                        Note over UI,U: Descuento aplicado exitosamente
+                    </sequenceDiagram>
+                    </div>
 
                     <div class="success-box">
                         <h4>Casos de Uso vs Historias de Usuario: Complementariedad</h4>

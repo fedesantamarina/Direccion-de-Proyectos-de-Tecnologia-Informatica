@@ -56,6 +56,8 @@
                 <section>
                     <h2>2.1 Conceptos Básicos: Proyectos, Programas y Portfolios</h2>
 
+                    <h3>2.1.1 Definición y Características de Proyectos</h3>
+
                     <p>
                         La comprensión precisa de la terminología fundamental constituye el punto de partida para cualquier
                         profesional en dirección de proyectos. Un proyecto se define como un esfuerzo temporal emprendido para
@@ -64,6 +66,99 @@
                         significa que, aunque puedan existir elementos repetitivos o estándar, cada proyecto produce un resultado
                         diferenciado y específico.
                     </p>
+
+                    <p>
+                        Esta definición, establecida por el PMBoK Guide y adoptada ampliamente, contiene dos características
+                        esenciales que merecen análisis detallado. La primera, temporalidad, no implica necesariamente corta
+                        duración; algunos proyectos de infraestructura pueden extenderse años. La temporalidad significa que
+                        existe un punto definido de inicio (cuando se autoriza el proyecto y se asignan recursos) y un punto
+                        definido de finalización (cuando se alcanzan los objetivos, se entregan los productos, o se determina
+                        que los objetivos no pueden alcanzarse y el proyecto se cancela). Esta característica distingue
+                        proyectos de operaciones, que son continuas y repetitivas sin punto final definido.
+                    </p>
+
+                    <p>
+                        La segunda característica esencial, unicidad, significa que el producto, servicio o resultado del
+                        proyecto difiere en alguna forma distintiva de otros productos o servicios similares. Por ejemplo,
+                        aunque una organización haya construido miles de edificios de oficinas, cada edificio individual
+                        constituye un proyecto único debido a diferentes ubicaciones, diseños, requisitos regulatorios,
+                        condiciones del terreno, y stakeholders involucrados. En el contexto de TI, aunque una empresa pueda
+                        implementar el mismo paquete ERP en múltiples subsidiarias, cada implementación constituye un proyecto
+                        único debido a diferentes procesos de negocio, requisitos de integración, datos legados, y culturas
+                        organizacionales.
+                    </p>
+
+                    <h3>2.1.2 Programas: Coordinación de Iniciativas Relacionadas</h3>
+
+                    <p>
+                        Un programa representa un grupo de proyectos, sub-programas y actividades de programa relacionados,
+                        gestionados de manera coordinada para obtener beneficios que no estarían disponibles si se gestionaran
+                        individualmente. Los programas no son simplemente colecciones de proyectos, sino esfuerzos estructurados
+                        que aprovechan interdependencias, comparten recursos, y alinean múltiples proyectos hacia objetivos
+                        estratégicos comunes más amplios que los objetivos de proyectos individuales.
+                    </p>
+
+                    <p>
+                        Por ejemplo, un programa de transformación digital en una institución financiera podría incluir proyectos
+                        de modernización de sistemas core banking, desarrollo de plataformas de banca móvil y web, implementación
+                        de analytics y business intelligence, migración a infraestructura cloud, actualización de sistemas de
+                        seguridad y cumplimiento regulatorio, y rediseño de procesos de negocio. Mientras cada proyecto individual
+                        entrega outputs específicos (sistema modernizado, app móvil funcional, plataforma de analytics), el
+                        programa como totalidad entrega el beneficio estratégico de transformación digital completa que habilita
+                        nuevas capacidades competitivas, reducción de costos operacionales, y mejor experiencia de cliente.
+                    </p>
+
+                    <h3>2.1.3 Portfolios: Optimización Estratégica de Inversiones</h3>
+
+                    <p>
+                        El portfolio de proyectos constituye el nivel más alto de agregación, abarcando proyectos, programas y
+                        otras iniciativas (operaciones, iniciativas estratégicas) gestionadas como grupo para alcanzar objetivos
+                        estratégicos organizacionales. La gestión de portfolios se centra en "hacer las cosas correctas", es
+                        decir, en seleccionar y priorizar las inversiones en proyectos y programas que mejor alineen con la
+                        estrategia corporativa, maximizando el valor global y optimizando la utilización de recursos limitados
+                        (capital, personas, tiempo, capacidad organizacional para absorber cambio).
+                    </p>
+
+                    <p>
+                        Las decisiones de portfolio consideran factores como retorno de inversión esperado, período de
+                        recuperación, valor presente neto, riesgos estratégicos, alineación con objetivos estratégicos,
+                        capacidad organizacional disponible, balance del portfolio (innovación vs. optimización, corto vs.
+                        largo plazo), y restricciones regulatorias. El portfolio management responde preguntas como: ¿En qué
+                        proyectos debemos invertir recursos limitados? ¿Qué proyectos debemos pausar o cancelar? ¿Cómo
+                        balanceamos inversiones en mantenimiento de sistemas existentes versus desarrollo de nuevas capacidades?
+                        ¿Cómo aseguramos que nuestras inversiones en proyectos colectivamente alcancen nuestros objetivos
+                        estratégicos?
+                    </p>
+
+                    <div class="mermaid">
+                    flowchart TD
+                        A[Estrategia<br/>Organizacional] --> B[Portfolio de TI]
+                        B --> C[Programa 1:<br/>Transformación Digital]
+                        B --> D[Programa 2:<br/>Modernización<br/>Infraestructura]
+                        B --> E[Proyectos<br/>Independientes]
+
+                        C --> C1[Proyecto: Core Banking]
+                        C --> C2[Proyecto: Mobile App]
+                        C --> C3[Proyecto: Analytics]
+                        C --> C4[Proyecto: Cloud Migration]
+
+                        D --> D1[Proyecto: Data Center]
+                        D --> D2[Proyecto: Network Upgrade]
+                        D --> D3[Proyecto: Security]
+
+                        E --> E1[Proyecto: Help Desk]
+                        E --> E2[Proyecto: BI Dashboard]
+
+                        F[Gobernanza y<br/>Decisiones] --> B
+                        F --> C
+                        F --> D
+
+                        style A fill:#ffe1e1
+                        style B fill:#e1f5ff
+                        style C fill:#fff4e1
+                        style D fill:#fff4e1
+                        style F fill:#f0e1ff
+                    </div>
 
                     <p>
                         En el contexto de tecnología informática, los proyectos típicamente involucran el desarrollo de software,
@@ -206,14 +301,28 @@
                 <section>
                     <h2>2.3 Áreas de Conocimiento según PMI</h2>
 
+                    <h3>2.3.1 Marco Integrado de Conocimientos</h3>
+
                     <p>
-                        El Project Management Institute (PMI), organización profesional líder en gestión de proyectos, ha
-                        sistematizado el conocimiento de la disciplina en áreas específicas que representan aspectos clave que
-                        deben ser gestionados para el éxito del proyecto. El PMBoK Guide (Project Management Body of Knowledge)
-                        identifica diez áreas de conocimiento que proporcionan un marco comprehensivo para la gestión de proyectos.
-                        La comprensión profunda de estas áreas constituye un requisito fundamental para cualquier director de
-                        proyectos profesional.
+                        El Project Management Institute (PMI), organización profesional líder en gestión de proyectos fundada
+                        en 1969, ha sistematizado el conocimiento de la disciplina en áreas específicas que representan aspectos
+                        clave que deben ser gestionados para el éxito del proyecto. El PMBoK Guide (Project Management Body of
+                        Knowledge) identifica diez áreas de conocimiento que proporcionan un marco comprehensivo para la gestión
+                        de proyectos. La comprensión profunda de estas áreas constituye un requisito fundamental para cualquier
+                        director de proyectos profesional, especialmente para quienes buscan la certificación PMP (Project
+                        Management Professional).
                     </p>
+
+                    <p>
+                        Estas áreas de conocimiento no operan en aislamiento sino que están altamente interrelacionadas. Por
+                        ejemplo, cambios en el alcance del proyecto típicamente impactan el cronograma, el presupuesto, la
+                        asignación de recursos, y potencialmente la calidad. Un riesgo materializado puede requerir cambios en
+                        el alcance, ajustes al cronograma, reasignación de recursos, y comunicaciones adicionales a stakeholders.
+                        El director de proyectos efectivo comprende estas interrelaciones y gestiona el proyecto holísticamente
+                        en lugar de tratar cada área aisladamente.
+                    </p>
+
+                    <h3>2.3.2 Las Diez Áreas de Conocimiento Explicadas</h3>
 
                     <p>
                         La Gestión de la Integración del Proyecto asegura que los diversos elementos del proyecto sean coordinados

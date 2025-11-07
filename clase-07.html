@@ -362,6 +362,205 @@
                             <li>Datos históricos para mejorar estimaciones en proyectos futuros</li>
                         </ul>
                     </div>
+
+                    <h3>7.4.1 Fórmulas Completas de EVM y Ejemplo Numérico</h3>
+                    <p>
+                        Para ilustrar la aplicación completa de EVM, consideremos un proyecto de desarrollo de sistema CRM con presupuesto
+                        total (BAC) de $500,000 y duración planificada de 10 meses. Al finalizar el mes 6:
+                    </p>
+
+                    <table style="width:100%; margin: 20px 0; border-collapse: collapse;">
+                        <thead>
+                            <tr style="background-color: #003366; color: white;">
+                                <th style="padding: 12px; text-align: left; border: 1px solid #ddd;">Métrica EVM</th>
+                                <th style="padding: 12px; text-align: left; border: 1px solid #ddd;">Fórmula</th>
+                                <th style="padding: 12px; text-align: center; border: 1px solid #ddd;">Valor</th>
+                                <th style="padding: 12px; text-align: left; border: 1px solid #ddd;">Interpretación</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr style="background-color: #f9f9f9;">
+                                <td style="padding: 10px; border: 1px solid #ddd;"><strong>BAC</strong><br/>(Budget at Completion)</td>
+                                <td style="padding: 10px; border: 1px solid #ddd;">Presupuesto total aprobado</td>
+                                <td style="padding: 10px; text-align: center; border: 1px solid #ddd;">$500,000</td>
+                                <td style="padding: 10px; border: 1px solid #ddd;">Presupuesto original del proyecto</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #ddd;"><strong>PV</strong><br/>(Planned Value)</td>
+                                <td style="padding: 10px; border: 1px solid #ddd;">Presupuesto del trabajo planificado</td>
+                                <td style="padding: 10px; text-align: center; border: 1px solid #ddd;">$300,000</td>
+                                <td style="padding: 10px; border: 1px solid #ddd;">Debería haberse gastado $300K al mes 6</td>
+                            </tr>
+                            <tr style="background-color: #f9f9f9;">
+                                <td style="padding: 10px; border: 1px solid #ddd;"><strong>EV</strong><br/>(Earned Value)</td>
+                                <td style="padding: 10px; border: 1px solid #ddd;">Valor presupuestado del trabajo realizado</td>
+                                <td style="padding: 10px; text-align: center; border: 1px solid #ddd;">$250,000</td>
+                                <td style="padding: 10px; border: 1px solid #ddd;">Trabajo completado equivale a $250K presupuestado</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #ddd;"><strong>AC</strong><br/>(Actual Cost)</td>
+                                <td style="padding: 10px; border: 1px solid #ddd;">Costo real del trabajo realizado</td>
+                                <td style="padding: 10px; text-align: center; border: 1px solid #ddd;">$280,000</td>
+                                <td style="padding: 10px; border: 1px solid #ddd;">Se han gastado realmente $280K</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h4>Variaciones Absolutas:</h4>
+                    <table style="width:100%; margin: 20px 0; border-collapse: collapse;">
+                        <tbody>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #ddd; width: 30%;"><strong>SV</strong> (Schedule Variance)</td>
+                                <td style="padding: 10px; border: 1px solid #ddd; width: 30%;">SV = EV - PV</td>
+                                <td style="padding: 10px; border: 1px solid #ddd; width: 20%;">$250K - $300K = <span style="color: red;"><strong>-$50K</strong></span></td>
+                                <td style="padding: 10px; border: 1px solid #ddd; width: 20%;">Proyecto retrasado</td>
+                            </tr>
+                            <tr style="background-color: #f9f9f9;">
+                                <td style="padding: 10px; border: 1px solid #ddd;"><strong>CV</strong> (Cost Variance)</td>
+                                <td style="padding: 10px; border: 1px solid #ddd;">CV = EV - AC</td>
+                                <td style="padding: 10px; border: 1px solid #ddd;">$250K - $280K = <span style="color: red;"><strong>-$30K</strong></span></td>
+                                <td style="padding: 10px; border: 1px solid #ddd;">Sobrecosto</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h4>Índices de Desempeño:</h4>
+                    <table style="width:100%; margin: 20px 0; border-collapse: collapse;">
+                        <tbody>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #ddd; width: 30%;"><strong>SPI</strong> (Schedule Performance Index)</td>
+                                <td style="padding: 10px; border: 1px solid #ddd; width: 30%;">SPI = EV / PV</td>
+                                <td style="padding: 10px; border: 1px solid #ddd; width: 20%;">$250K / $300K = <span style="color: red;"><strong>0.83</strong></span></td>
+                                <td style="padding: 10px; border: 1px solid #ddd; width: 20%;">83% eficiencia de cronograma</td>
+                            </tr>
+                            <tr style="background-color: #f9f9f9;">
+                                <td style="padding: 10px; border: 1px solid #ddd;"><strong>CPI</strong> (Cost Performance Index)</td>
+                                <td style="padding: 10px; border: 1px solid #ddd;">CPI = EV / AC</td>
+                                <td style="padding: 10px; border: 1px solid #ddd;">$250K / $280K = <span style="color: red;"><strong>0.89</strong></span></td>
+                                <td style="padding: 10px; border: 1px solid #ddd;">89% eficiencia de costos</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <h4>Proyecciones Futuras:</h4>
+                    <table style="width:100%; margin: 20px 0; border-collapse: collapse;">
+                        <tbody>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #ddd; width: 30%;"><strong>EAC</strong> (Estimate at Completion)</td>
+                                <td style="padding: 10px; border: 1px solid #ddd; width: 30%;">EAC = BAC / CPI</td>
+                                <td style="padding: 10px; border: 1px solid #ddd; width: 20%;">$500K / 0.89 = <span style="color: red;"><strong>$561,798</strong></span></td>
+                                <td style="padding: 10px; border: 1px solid #ddd; width: 20%;">Costo proyectado final</td>
+                            </tr>
+                            <tr style="background-color: #f9f9f9;">
+                                <td style="padding: 10px; border: 1px solid #ddd;"><strong>ETC</strong> (Estimate to Complete)</td>
+                                <td style="padding: 10px; border: 1px solid #ddd;">ETC = EAC - AC</td>
+                                <td style="padding: 10px; border: 1px solid #ddd;">$561,798 - $280K = <strong>$281,798</strong></td>
+                                <td style="padding: 10px; border: 1px solid #ddd;">Costo restante estimado</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #ddd;"><strong>VAC</strong> (Variance at Completion)</td>
+                                <td style="padding: 10px; border: 1px solid #ddd;">VAC = BAC - EAC</td>
+                                <td style="padding: 10px; border: 1px solid #ddd;">$500K - $561,798 = <span style="color: red;"><strong>-$61,798</strong></span></td>
+                                <td style="padding: 10px; border: 1px solid #ddd;">Déficit proyectado</td>
+                            </tr>
+                            <tr style="background-color: #f9f9f9;">
+                                <td style="padding: 10px; border: 1px solid #ddd;"><strong>TCPI</strong> (To-Complete Performance Index)</td>
+                                <td style="padding: 10px; border: 1px solid #ddd;">TCPI = (BAC - EV) / (BAC - AC)</td>
+                                <td style="padding: 10px; border: 1px solid #ddd;">($500K - $250K) / ($500K - $280K) = <strong>1.14</strong></td>
+                                <td style="padding: 10px; border: 1px solid #ddd;">Eficiencia requerida para cumplir presupuesto</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <p>
+                        <strong>Análisis e Interpretación:</strong>
+                    </p>
+                    <ul>
+                        <li><strong>SV = -$50,000 (negativo):</strong> El proyecto está retrasado. El trabajo completado representa $50K menos
+                        de lo planificado para este punto.</li>
+                        <li><strong>CV = -$30,000 (negativo):</strong> El proyecto está sobre presupuesto. Se ha gastado $30K más de lo que el
+                        trabajo completado debería haber costado.</li>
+                        <li><strong>SPI = 0.83:</strong> El proyecto progresa al 83% de la velocidad planificada. Se requeriría acelerar un 20%
+                        para recuperar el cronograma.</li>
+                        <li><strong>CPI = 0.89:</strong> Por cada dólar gastado, se obtiene solo $0.89 de valor. Esta ineficiencia de costos es
+                        preocupante.</li>
+                        <li><strong>EAC = $561,798:</strong> Si el desempeño continúa al ritmo actual (CPI=0.89), el proyecto costará $561,798,
+                        excediendo el presupuesto en 12.4%.</li>
+                        <li><strong>TCPI = 1.14:</strong> Para completar el proyecto dentro del presupuesto original de $500K, se requiere
+                        eficiencia de costos de 1.14 para el trabajo restante (mejorar de 0.89 a 1.14), lo cual es desafiante.</li>
+                    </ul>
+
+                    <div class="warning-box">
+                        <h4>Decisiones Basadas en Análisis EVM</h4>
+                        <p>
+                            Dado que CPI=0.89 (ineficiencia de costos) y SPI=0.83 (retraso), el gerente del proyecto debe tomar acciones
+                            correctivas inmediatas:
+                        </p>
+                        <ul>
+                            <li>Analizar causas raíz de la ineficiencia: ¿productividad del equipo? ¿subestimación de complejidad? ¿scope creep?</li>
+                            <li>Considerar descoping (reducir funcionalidades) para cumplir presupuesto y cronograma</li>
+                            <li>Solicitar fondos adicionales basándose en EAC proyectado de $561,798</li>
+                            <li>Implementar mejoras de proceso para incrementar CPI en trabajo restante</li>
+                            <li>Comunicar transparentemente a stakeholders sobre el estado real del proyecto</li>
+                        </ul>
+                    </div>
+
+                    <div class="mermaid">
+                    %%{init: {'theme':'base', 'themeVariables': {'primaryColor':'#d0f0ff'}}}%%
+                    graph TD
+                        A[Métricas EVM en Mes 6] --> B[Valores Medidos]
+                        B --> B1[PV: $300K]
+                        B --> B2[EV: $250K]
+                        B --> B3[AC: $280K]
+
+                        B1 --> C[Variaciones]
+                        B2 --> C
+                        B3 --> C
+
+                        C --> C1[SV = EV - PV = -$50K<br/>Proyecto Retrasado]
+                        C --> C2[CV = EV - AC = -$30K<br/>Sobre Presupuesto]
+
+                        C1 --> D[Índices]
+                        C2 --> D
+
+                        D --> D1[SPI = 0.83<br/>83% eficiencia cronograma]
+                        D --> D2[CPI = 0.89<br/>89% eficiencia costos]
+
+                        D1 --> E[Proyecciones]
+                        D2 --> E
+
+                        E --> E1[EAC = $561,798<br/>Sobrecosto proyectado: 12.4%]
+                        E --> E2[TCPI = 1.14<br/>Eficiencia requerida]
+
+                        E1 --> F[Decisión Gerencial]
+                        E2 --> F
+
+                        F --> G[Acciones Correctivas<br/>Inmediatas Requeridas]
+
+                        style C1 fill:#ffcccc
+                        style C2 fill:#ffcccc
+                        style D1 fill:#fff4cc
+                        style D2 fill:#fff4cc
+                        style E1 fill:#ffcccc
+                        style G fill:#ff9999
+                    </graph>
+                    </div>
+
+                    <h3>7.4.2 Curva S de EVM</h3>
+                    <p>
+                        La representación gráfica de EVM mediante la Curva S proporciona visualización intuitiva del desempeño del proyecto
+                        a lo largo del tiempo. La curva S muestra PV (valor planificado), EV (valor ganado) y AC (costo real) como funciones
+                        del tiempo. La separación vertical entre estas curvas revela inmediatamente el estado del proyecto: si EV está debajo
+                        de PV, el proyecto está retrasado; si AC está encima de EV, el proyecto está sobre presupuesto. La tendencia de estas
+                        curvas permite proyectar comportamiento futuro y detectar problemas antes de que se vuelvan críticos.
+                    </p>
+
+                    <p>
+                        En nuestro ejemplo, la curva S mostraría PV creciendo según plan hasta $300K en el mes 6 y proyectándose hasta $500K
+                        en el mes 10. EV estaría por debajo, mostrando solo $250K en el mes 6, indicando visualmente el retraso. AC estaría
+                        encima de EV en $280K, mostrando el sobrecosto. Si estas tendencias se mantienen, las proyecciones de la curva
+                        indican que el proyecto terminará tarde y sobre presupuesto, validando los cálculos de EAC y VAC.
+                    </p>
                 </section>
 
                 <section>

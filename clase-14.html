@@ -132,6 +132,33 @@
                         E --> E2[Rápidos y baratos]
                         E --> E3[Feedback inmediato]
                     </div>
+
+                    <div class="mermaid">
+                    graph LR
+                        A[Estrategia de Testing] --> B[Shift-Left Testing]
+                        A --> C[Testing Continuo]
+                        A --> D[Risk-Based Testing]
+                        B --> B1[Testing temprano en ciclo]
+                        B --> B2[Prevención vs Detección]
+                        C --> C1[Automatización en Pipeline]
+                        C --> C2[Feedback rápido]
+                        D --> D1[Priorizar por riesgo]
+                        D --> D2[Optimizar cobertura]
+                    </div>
+
+                    <div class="mermaid">
+                    graph TD
+                        A[Tipos de Cobertura de Testing] --> B[Cobertura de Código]
+                        A --> C[Cobertura Funcional]
+                        A --> D[Cobertura de Riesgos]
+                        B --> B1[Statement Coverage]
+                        B --> B2[Branch Coverage]
+                        B --> B3[Path Coverage]
+                        C --> C1[Requisitos Cubiertos]
+                        C --> C2[Casos de Uso Validados]
+                        D --> D1[Riesgos Mitigados]
+                        D --> D2[Escenarios Críticos]
+                    </div>
                 </section>
 
                 <section>
@@ -374,6 +401,8 @@
                 <section>
                     <h2>5. Test-Driven Development (TDD) y BDD</h2>
 
+                    <h3>5.1 El Ciclo Red-Green-Refactor</h3>
+
                     <p>
                         Test-Driven Development representa un enfoque disciplinado de desarrollo donde tests se escriben antes del
                         código de producción, invirtiendo la secuencia tradicional. El ciclo TDD, frecuentemente denominado
@@ -381,6 +410,120 @@
                         Green - escribir el código mínimo necesario para hacer que el test pase; Refactor - mejorar el código
                         manteniendo los tests pasando. Este ciclo repetido incrementalmente construye funcionalidad con cobertura
                         de tests comprehensiva y diseño emergente guiado por requisitos de testabilidad.
+                    </p>
+
+                    <p>
+                        La fase RED inicia con escribir un test que especifica comportamiento deseado que aún no existe. El test
+                        inevitablemente falla (se muestra en rojo en herramientas de testing) porque el código de producción no
+                        ha sido implementado. Este fallo inicial es crucial: confirma que el test efectivamente detecta ausencia
+                        de funcionalidad. Un test que nunca falla no proporciona valor. En esta fase, el desarrollador debe enfocarse
+                        en especificar "qué" el código debe hacer, no "cómo" lo hará. La escritura del test obliga a clarificar
+                        requisitos y pensar sobre API desde perspectiva del cliente (el test mismo).
+                    </p>
+
+                    <p>
+                        La fase GREEN implementa el código mínimo necesario para hacer que el test pase. El énfasis está en "mínimo":
+                        no sobre-ingeniería, no optimización prematura, no funcionalidad no especificada por tests. Puede incluir
+                        hardcoding de valores, duplicación y otros "code smells" que serán remediados en refactoring. El objetivo
+                        es alcanzar verde (test pasando) lo más rápido posible. Esta disciplina previene gold-plating y scope creep
+                        a nivel de implementación. Una vez que el test pasa, se tiene punto de referencia estable desde el cual
+                        refactorizar con confianza.
+                    </p>
+
+                    <p>
+                        La fase REFACTOR mejora la estructura del código sin cambiar su comportamiento externo, manteniendo todos
+                        los tests pasando. Esto incluye eliminar duplicación, mejorar nombres de variables y métodos, extraer
+                        métodos helper, aplicar patrones de diseño apropiados y simplificar lógica compleja. La suite de tests
+                        proporciona safety net: cualquier regresión introducida durante refactoring se detecta inmediatamente. Esta
+                        separación entre "hacer que funcione" (GREEN) y "hacerlo bien" (REFACTOR) reduce carga cognitiva al permitir
+                        enfocarse en un aspecto a la vez.
+                    </p>
+
+                    <div class="code-box">
+                        <h4>Ejemplo TDD - Calculator con JUnit</h4>
+                        <pre><code>// FASE RED: Escribir test que falla
+@Test
+public void testAddition() {
+    Calculator calc = new Calculator();
+    int result = calc.add(2, 3);
+    assertEquals(5, result);
+}
+// Este test falla porque Calculator y método add() no existen
+
+// FASE GREEN: Implementación mínima
+public class Calculator {
+    public int add(int a, int b) {
+        return 5;  // Hardcoded - mínimo para pasar test
+    }
+}
+// Test pasa, pero implementación es simplista
+
+// Escribir más tests para forzar generalización
+@Test
+public void testAdditionWithDifferentNumbers() {
+    Calculator calc = new Calculator();
+    assertEquals(7, calc.add(3, 4));
+    assertEquals(10, calc.add(6, 4));
+}
+
+// FASE GREEN: Implementación real
+public class Calculator {
+    public int add(int a, int b) {
+        return a + b;  // Generalización necesaria
+    }
+}
+
+// FASE REFACTOR: Extraer constantes, mejorar nombres, etc.
+public class Calculator {
+    public int add(int firstOperand, int secondOperand) {
+        return firstOperand + secondOperand;
+    }
+
+    public int subtract(int minuend, int subtrahend) {
+        return minuend - subtrahend;
+    }
+}</code></pre>
+                    </div>
+
+                    <div class="mermaid">
+                    graph LR
+                        A[Red: Escribir Test Fallido] --> B[Green: Implementar Mínimo]
+                        B --> C[Refactor: Mejorar Diseño]
+                        C --> D{Más<br/>Funcionalidad?}
+                        D -->|Sí| A
+                        D -->|No| E[Funcionalidad Completa]
+                        style A fill:#ffcccc
+                        style B fill:#ccffcc
+                        style C fill:#cce5ff
+                    </div>
+
+                    <h3>5.2 Frameworks de Testing Unitario</h3>
+
+                    <p>
+                        Los frameworks de testing unitario proporcionan infraestructura robusta para escribir y ejecutar tests.
+                        JUnit (Java) ha establecido convenciones adoptadas por frameworks en otros lenguajes: anotaciones como @Test
+                        marcan métodos de test, @Before/@BeforeEach ejecuta setup antes de cada test, @After/@AfterEach ejecuta
+                        cleanup, y assertions como assertEquals, assertTrue, assertThrows verifican comportamiento esperado. JUnit 5
+                        introduce arquitectura modular, soporte mejorado para tests parametrizados, y mejor integración con lambdas
+                        de Java 8+.
+                    </p>
+
+                    <p>
+                        PyTest (Python) enfatiza simplicidad mediante uso de assertions nativas de Python en lugar de métodos
+                        assertion especializados. Los fixtures proporcionan setup y teardown elegantes mediante decoradores @pytest.fixture.
+                        Los tests parametrizados permiten ejecutar mismo test con múltiples inputs mediante @pytest.mark.parametrize.
+                        La recolección automática de tests basada en convenciones de nombres (archivos test_*.py, funciones test_*)
+                        minimiza configuración. El rich assertion introspection proporciona mensajes de error informativos mostrando
+                        valores intermedios de expresiones complejas.
+                    </p>
+
+                    <p>
+                        Jest (JavaScript/TypeScript) proporciona testing framework all-in-one con runner, assertions, mocks y
+                        cobertura integrados. El snapshot testing permite capturar output de componentes React y detectar cambios
+                        no intencionales. El mocking automático de módulos facilita aislar código bajo test. La ejecución paralela
+                        de tests acelera feedback. La integración con ecosistema JavaScript moderno (Babel, TypeScript, webpack)
+                        resulta seamless. Jest ha reemplazado combinaciones fragmentadas de Mocha+Chai+Sinon como standard de facto
+                        en comunidad JavaScript.
                     </p>
 
                     <p>
@@ -402,6 +545,8 @@
                         circunstancias específicas.
                     </p>
 
+                    <h3>5.3 Behavior-Driven Development (BDD)</h3>
+
                     <p>
                         Behavior-Driven Development extiende TDD hacia especificación de comportamiento del sistema usando lenguaje
                         natural comprensible por stakeholders no técnicos. BDD emplea el formato Given-When-Then para describir
@@ -409,6 +554,46 @@
                         Then especifica resultado esperado. Este formato estructura conversaciones sobre comportamiento esperado
                         entre analistas de negocio, desarrolladores y testers, facilitando entendimiento compartido de requisitos.
                     </p>
+
+                    <div class="code-box">
+                        <h4>Ejemplo BDD con Cucumber (Gherkin)</h4>
+                        <pre><code>Feature: User Authentication
+  As a registered user
+  I want to log into the system
+  So that I can access my account
+
+  Scenario: Successful login with valid credentials
+    Given a user exists with email "user@example.com" and password "SecurePass123"
+    And the user is on the login page
+    When the user enters email "user@example.com"
+    And the user enters password "SecurePass123"
+    And the user clicks the "Login" button
+    Then the user should be redirected to the dashboard
+    And a welcome message should display "Welcome back!"
+
+  Scenario: Failed login with invalid password
+    Given a user exists with email "user@example.com" and password "SecurePass123"
+    And the user is on the login page
+    When the user enters email "user@example.com"
+    And the user enters password "WrongPassword"
+    And the user clicks the "Login" button
+    Then an error message should display "Invalid credentials"
+    And the user should remain on the login page</code></pre>
+                    </div>
+
+                    <div class="mermaid">
+                    graph TD
+                        A[BDD Process] --> B[Discovery Workshop]
+                        B --> C[Three Amigos Session]
+                        C --> D[Example Mapping]
+                        D --> E[Escribir Escenarios Gherkin]
+                        E --> F[Implementar Step Definitions]
+                        F --> G[Ejecutar Tests Automatizados]
+                        G --> H{Tests<br/>Pasan?}
+                        H -->|No| I[Implementar/Corregir Código]
+                        I --> G
+                        H -->|Sí| J[Especificación Validada]
+                    </div>
 
                     <p>
                         Los frameworks BDD como Cucumber, SpecFlow y Behave permiten escribir especificaciones en lenguaje natural

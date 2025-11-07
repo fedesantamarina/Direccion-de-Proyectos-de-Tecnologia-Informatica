@@ -215,6 +215,163 @@
                         regulaciones como GDPR y crecientes amenazas de ciberseguridad, estos aspectos demandan atención prioritaria.
                     </p>
 
+                    <h3>Características de Calidad ISO 25010: Análisis Detallado</h3>
+
+                    <p>
+                        La <strong>fiabilidad</strong> representa la capacidad del sistema de realizar funciones especificadas bajo
+                        condiciones determinadas durante un período de tiempo establecido. Se subdivide en: (1) Madurez - frecuencia
+                        de fallas debido a defectos en el software; (2) Disponibilidad - grado en que el sistema está operacional y
+                        accesible cuando se requiere su uso, típicamente medido como porcentaje de uptime (ej: 99.9% = 8.76 horas
+                        de downtime anual); (3) Tolerancia a fallos - capacidad de operar adecuadamente incluso en presencia de
+                        fallas hardware o software mediante técnicas como redundancia y graceful degradation; (4) Capacidad de
+                        recuperación - capacidad de recuperar datos afectados y restablecer el estado deseado del sistema después
+                        de una interrupción o falla, medido mediante métricas como RTO (Recovery Time Objective) y RPO (Recovery Point Objective).
+                    </p>
+
+                    <p>
+                        La <strong>mantenibilidad</strong> cuantifica el esfuerzo requerido para realizar modificaciones al software,
+                        ya sean correctivas, adaptativas, perfectivas o preventivas. Sus subcaracterísticas incluyen: (1) Modularidad -
+                        grado en que el sistema se compone de componentes discretos de manera que cambios en un componente tienen
+                        impacto mínimo en otros componentes; (2) Reusabilidad - capacidad de utilizar componentes en más de un sistema
+                        o en la construcción de otros componentes; (3) Analizabilidad - facilidad con la cual el impacto de cambios
+                        propuestos puede ser evaluado, defectos diagnosticados y causas de fallas identificadas; (4) Modificabilidad -
+                        capacidad de ser modificado efectiva y eficientemente sin introducir defectos o degradar calidad; (5) Testeabilidad -
+                        facilidad con la cual criterios de test pueden establecerse y pruebas realizarse para determinar si se cumplen dichos criterios.
+                    </p>
+
+                    <p>
+                        La <strong>usabilidad</strong> evalúa la facilidad con la que usuarios pueden utilizar el sistema para lograr
+                        objetivos específicos con efectividad, eficiencia y satisfacción. Comprende: (1) Reconocimiento de adecuación -
+                        capacidad de usuarios de reconocer si el software es apropiado para sus necesidades; (2) Capacidad de aprendizaje -
+                        facilidad con la cual usuarios pueden aprender a utilizar el sistema; (3) Operabilidad - facilidad de operar
+                        y controlar el sistema; (4) Protección contra errores de usuario - capacidad de proteger a usuarios de cometer
+                        errores mediante validaciones, confirmaciones y prevención de acciones inválidas; (5) Estética de la interfaz
+                        de usuario - capacidad de la interfaz de proporcionar interacción agradable y satisfactoria; (6) Accesibilidad -
+                        grado en que el producto puede ser usado por personas con la más amplia gama de características y capacidades
+                        para lograr objetivos específicos, incluyendo personas con discapacidades según WCAG (Web Content Accessibility Guidelines).
+                    </p>
+
+                    <p>
+                        La <strong>portabilidad</strong> mide la facilidad con la cual el sistema puede transferirse de un entorno
+                        a otro (hardware, software, organizacional). Incluye: (1) Adaptabilidad - capacidad de ser adaptado efectiva
+                        y eficientemente a diferentes o evolutivos entornos de hardware, software u operacionales; (2) Instalabilidad -
+                        facilidad con la cual el producto puede ser instalado y desinstalado exitosamente en un entorno especificado;
+                        (3) Reemplazabilidad - capacidad del producto de ser reemplazado por otro producto software especificado para
+                        el mismo propósito en el mismo entorno. En contextos de cloud computing y contenedorización, la portabilidad
+                        adquiere importancia estratégica para evitar vendor lock-in y facilitar estrategias multi-cloud.
+                    </p>
+
+                    <div class="info-box">
+                        <h4>ISO 25010: Métricas Ejemplo por Característica</h4>
+                        <table>
+                            <tr>
+                                <th>Característica</th>
+                                <th>Subcaracterística</th>
+                                <th>Métrica Ejemplo</th>
+                                <th>Valor Objetivo</th>
+                            </tr>
+                            <tr>
+                                <td><strong>Fiabilidad</strong></td>
+                                <td>Disponibilidad</td>
+                                <td>Uptime porcentual</td>
+                                <td>≥ 99.9%</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>MTBF</td>
+                                <td>Horas entre fallas</td>
+                                <td>≥ 720 horas</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Eficiencia</strong></td>
+                                <td>Tiempo de respuesta</td>
+                                <td>Latencia percentil 95</td>
+                                <td>< 200ms</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>Utilización recursos</td>
+                                <td>Uso de memoria</td>
+                                <td>< 512MB</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Usabilidad</strong></td>
+                                <td>Aprendizaje</td>
+                                <td>Tiempo a primera tarea</td>
+                                <td>< 5 minutos</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>Accesibilidad</td>
+                                <td>Conformidad WCAG</td>
+                                <td>Nivel AA</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Seguridad</strong></td>
+                                <td>Confidencialidad</td>
+                                <td>Cifrado en tránsito</td>
+                                <td>TLS 1.3</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>Autenticación</td>
+                                <td>Factor múltiple</td>
+                                <td>MFA obligatorio</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Mantenibilidad</strong></td>
+                                <td>Complejidad ciclomática</td>
+                                <td>CC promedio por método</td>
+                                <td>< 10</td>
+                            </tr>
+                            <tr>
+                                <td></td>
+                                <td>Cobertura de tests</td>
+                                <td>% líneas cubiertas</td>
+                                <td>≥ 80%</td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div class="mermaid">
+                    flowchart TD
+                        A[Aplicar ISO 25010 en Proyecto] --> B{Fase del Proyecto}
+
+                        B -->|Inicio| C[Definir Requisitos de Calidad]
+                        C --> C1[Seleccionar características aplicables]
+                        C --> C2[Definir métricas específicas]
+                        C --> C3[Establecer valores objetivo]
+
+                        B -->|Diseño| D[Arquitectura para Calidad]
+                        D --> D1[Diseñar para fiabilidad]
+                        D --> D2[Diseñar para seguridad]
+                        D --> D3[Diseñar para mantenibilidad]
+
+                        B -->|Desarrollo| E[Implementar con Calidad]
+                        E --> E1[Revisiones de código]
+                        E --> E2[Testing continuo]
+                        E --> E3[Análisis estático]
+
+                        B -->|Testing| F[Validar Calidad]
+                        F --> F1[Tests funcionales]
+                        F --> F2[Tests no funcionales]
+                        F --> F3[Tests de aceptación]
+
+                        C3 --> G[Métricas Definidas]
+                        D3 --> G
+                        E3 --> G
+                        F3 --> G
+
+                        G --> H{¿Cumple Objetivos?}
+                        H -->|Sí| I[Release Aprobado]
+                        H -->|No| J[Acciones Correctivas]
+                        J --> E
+
+                        style I fill:#90EE90
+                        style J fill:#FFB6C1
+                    </flowchart>
+                    </div>
+
                     <div class="mermaid">
                     mindmap
                         root((ISO/IEC 25010<br/>Calidad del Producto))
@@ -293,6 +450,127 @@
                         en estándares, procedimientos, herramientas y métodos. El Nivel 4 (Gestionado Cuantitativamente) introduce
                         medición y control estadístico de procesos. El Nivel 5 (Optimizado) enfoca la mejora continua de procesos.
                     </p>
+
+                    <h3>Niveles de Madurez CMMI: Descripción Exhaustiva</h3>
+
+                    <p>
+                        <strong>Nivel 1 - Inicial:</strong> Las organizaciones en este nivel carecen de procesos estables. El éxito
+                        del proyecto depende casi exclusivamente de la competencia individual y el heroísmo de las personas en lugar
+                        de procesos repetibles. Los proyectos frecuentemente exceden presupuestos y cronogramas. La capacidad de la
+                        organización es impredecible: incluso si un proyecto tiene éxito, no hay garantía de que el siguiente proyecto
+                        similar también lo tendrá. Los procesos son típicamente ad-hoc y caóticos. La organización no proporciona
+                        ambiente estable para el desarrollo. El desempeño depende de capacidades individuales de las estrellas del
+                        equipo. Cuando estas personas se van, el conocimiento y la capacidad se pierden. Las crisis constantes
+                        caracterizan estos entornos, donde se trabaja siempre en modo "apagar incendios".
+                    </p>
+
+                    <p>
+                        <strong>Nivel 2 - Gestionado:</strong> Los proyectos están planificados y ejecutados de acuerdo con políticas
+                        documentadas. Los procesos son disciplinados porque se planifican, se ejecutan según el plan, se monitorean
+                        y se controlan. Las prácticas exitosas pueden repetirse. Las áreas de proceso clave del Nivel 2 incluyen:
+                        Gestión de Requisitos (REQM) - gestionar requisitos y asegurar alineación entre requisitos, planes de trabajo
+                        y productos de trabajo; Planificación de Proyectos (PP) - establecer y mantener planes que definen actividades;
+                        Monitoreo y Control de Proyectos (PMC) - proporcionar comprensión del progreso del proyecto para tomar acciones
+                        correctivas oportunas; Gestión de Acuerdos con Proveedores (SAM) - gestionar adquisiciones; Medición y Análisis
+                        (MA) - desarrollar y sostener capacidad de medición; Aseguramiento de Calidad de Procesos y Productos (PPQA) -
+                        proporcionar visibilidad objetiva de procesos; Gestión de Configuración (CM) - establecer y mantener integridad
+                        de productos de trabajo. En Nivel 2, los procesos pueden diferir entre proyectos, pero dentro de cada proyecto
+                        son disciplinados y gestionados.
+                    </p>
+
+                    <p>
+                        <strong>Nivel 3 - Definido:</strong> Los procesos están bien caracterizados, comprendidos y documentados en
+                        estándares, procedimientos, herramientas y métodos. Se establece un conjunto de procesos estándar para la
+                        organización, y los proyectos adaptan estos procesos estándar a sus necesidades específicas mediante guías
+                        de tailoring. La distinción crítica entre Nivel 2 y 3 es el alcance de estándares, descripciones de procesos
+                        y procedimientos. En Nivel 2, procesos y procedimientos pueden ser bastante diferentes en cada instancia
+                        específica; en Nivel 3, los procesos se describen con mayor rigor y se aplican más consistentemente. Las áreas
+                        de proceso adicionales del Nivel 3 incluyen: Desarrollo de Requisitos (RD) - elicitar, analizar y establecer
+                        requisitos; Solución Técnica (TS) - diseñar, desarrollar e implementar soluciones; Integración de Producto
+                        (PI) - ensamblar el producto desde componentes; Verificación (VER) - asegurar que productos seleccionados
+                        cumplen requisitos; Validación (VAL) - demostrar que el producto cumple su uso previsto; Enfoque en Procesos
+                        Organizacionales (OPF) - planificar, implementar y desplegar mejoras de procesos; Definición de Procesos
+                        Organizacionales (OPD) - establecer conjunto usable de activos de procesos organizacionales; Formación
+                        Organizacional (OT) - desarrollar habilidades y conocimiento de personas; Gestión Integrada de Proyectos (IPM) -
+                        establecer y gestionar el proyecto usando conjunto integrado y definido de procesos; Gestión de Riesgos (RSKM) -
+                        identificar problemas potenciales antes de que ocurran; Análisis y Resolución de Decisiones (DAR) - analizar
+                        alternativas usando proceso de evaluación formal.
+                    </p>
+
+                    <p>
+                        <strong>Nivel 4 - Gestionado Cuantitativamente:</strong> Se establecen objetivos cuantitativos para calidad
+                        y desempeño de procesos, y se usan como criterios en la gestión de proyectos. Los procesos se controlan usando
+                        técnicas estadísticas y otras técnicas cuantitativas. La organización y proyectos establecen objetivos
+                        cuantitativos basados en necesidades del cliente, usuarios finales, organización e implementadores de procesos.
+                        Se utilizan mediciones de calidad y desempeño de proceso para comprender la variación de procesos y qué
+                        causas de variación pueden atribuirse a causas especiales vs. variación aleatoria. Las áreas de proceso del
+                        Nivel 4 incluyen: Gestión Cuantitativa de Proyectos (QPM) - gestionar cuantitativamente el proyecto usando
+                        objetivos definidos basados en necesidades del cliente y organización; Gestión de Rendimiento Organizacional
+                        (OPM) - gestión proactiva del rendimiento de la organización para cumplir objetivos de negocio. En Nivel 4,
+                        la organización puede predecir con mayor precisión el desempeño de proyectos y procesos.
+                    </p>
+
+                    <p>
+                        <strong>Nivel 5 - Optimizado:</strong> La organización mejora continuamente sus procesos basándose en una
+                        comprensión cuantitativa de causas comunes de variación inherentes en los procesos. Se enfoca en mejorar
+                        continuamente el desempeño de procesos mediante mejoras incrementales e innovadoras de procesos y tecnologías.
+                        Los objetivos cuantitativos de mejora de procesos se establecen continuamente, revisan y modifican para
+                        reflejar objetivos cambiantes de negocio y desempeño de la organización. Los efectos de mejoras de procesos
+                        desplegadas se miden y evalúan contra objetivos cuantitativos. Las áreas de proceso del Nivel 5 son:
+                        Innovación Organizacional (OID) - seleccionar y desplegar mejoras incrementales e innovadoras que mejoren
+                        la capacidad de la organización de cumplir objetivos de calidad y desempeño de procesos; Análisis de Causas
+                        y Resolución (CAR) - identificar causas de defectos y otros problemas y tomar acción para prevenir su ocurrencia
+                        futura. En Nivel 5, toda la organización se enfoca en mejora continua de rendimiento de procesos. Las mejoras
+                        se basan en análisis riguroso de datos cuantitativos sobre causas de variación y efectividad de mejoras
+                        implementadas.
+                    </p>
+
+                    <div class="warning-box">
+                        <h4>Errores Comunes en Implementación de CMMI</h4>
+                        <ul>
+                            <li><strong>Burocracia excesiva:</strong> Crear documentación exhaustiva sin valor agregado real</li>
+                            <li><strong>Enfoque en certificación:</strong> Buscar aprobación formal en lugar de mejora genuina</li>
+                            <li><strong>Implementación dogmática:</strong> Aplicar prácticas sin adaptación al contexto organizacional</li>
+                            <li><strong>Falta de compromiso gerencial:</strong> Ausencia de sponsorship ejecutivo sostenido</li>
+                            <li><strong>Saltarse niveles:</strong> Intentar alcanzar Nivel 3 sin estabilizar prácticas de Nivel 2</li>
+                            <li><strong>Incompatibilidad percibida con Agile:</strong> Ver CMMI y Agile como mutuamente excluyentes</li>
+                        </ul>
+                    </div>
+
+                    <div class="mermaid">
+                    graph LR
+                        A[CMMI Nivel 1<br/>INICIAL] -->|Gestión Básica| B[CMMI Nivel 2<br/>GESTIONADO]
+                        B -->|Estandarización| C[CMMI Nivel 3<br/>DEFINIDO]
+                        C -->|Control Cuantitativo| D[CMMI Nivel 4<br/>GESTIONADO<br/>CUANTITATIVAMENTE]
+                        D -->|Mejora Continua| E[CMMI Nivel 5<br/>OPTIMIZADO]
+
+                        A --> A1[Caos y Crisis]
+                        A --> A2[Heroísmo Individual]
+                        A --> A3[Resultados Impredecibles]
+
+                        B --> B1[7 Áreas de Proceso]
+                        B --> B2[Gestión de Proyectos]
+                        B --> B3[Repetibilidad]
+
+                        C --> C1[18 Áreas de Proceso]
+                        C --> C2[Procesos Estándar Org]
+                        C --> C3[Consistencia]
+
+                        D --> D1[20 Áreas de Proceso]
+                        D --> D2[Métricas y Control Estadístico]
+                        D --> D3[Predictibilidad]
+
+                        E --> E1[22 Áreas de Proceso]
+                        E --> E2[Innovación y Optimización]
+                        E --> E3[Excelencia]
+
+                        style A fill:#FFB6C1
+                        style B fill:#FFFFE0
+                        style C fill:#ADD8E6
+                        style D fill:#98FB98
+                        style E fill:#90EE90
+                    </graph>
+                    </div>
 
                     <p>
                         Las áreas de proceso de CMMI organizan prácticas relacionadas en categorías temáticas. En CMMI-DEV v2.0,
@@ -421,6 +699,139 @@
                         utiliza inspecciones, revisiones, pruebas y otras técnicas para verificar que los productos cumplan con
                         criterios de aceptación establecidos antes de su liberación o transición a fases subsecuentes.
                     </p>
+
+                    <h3>QA vs QC: Diferenciación Crítica</h3>
+
+                    <p>
+                        La distinción entre Aseguramiento de Calidad (QA) y Control de Calidad (QC) es fundamental pero frecuentemente
+                        confundida. QA es proactivo y orientado a procesos: se enfoca en prevenir defectos mediante establecimiento
+                        y seguimiento de procesos apropiados. QA pregunta "¿Estamos utilizando el proceso correcto?" y "¿Estamos
+                        siguiendo el proceso definido?" QC es reactivo y orientado a productos: se enfoca en detectar defectos en
+                        entregables mediante inspecciones y pruebas. QC pregunta "¿El producto cumple los requisitos?" y "¿Existen
+                        defectos que necesitan corrección?" QA es responsabilidad de toda la organización y establece sistemas que
+                        facilitan calidad. QC es típicamente responsabilidad de equipos especializados de testing y verificación que
+                        examinan productos específicos.
+                    </p>
+
+                    <p>
+                        En términos de alcance temporal, QA se implementa a lo largo de todo el ciclo de vida del proyecto desde
+                        planificación inicial. Las actividades de QA incluyen: definir estándares de codificación que el equipo debe
+                        seguir, establecer procesos de revisión de código obligatorios, implementar pipelines de integración continua
+                        que ejecutan tests automáticamente, conducir auditorías de proceso para verificar adherencia a metodología,
+                        y facilitar retrospectivas para mejora continua. QC se ejecuta en puntos específicos del ciclo de vida cuando
+                        hay entregables concretos para evaluar. Las actividades de QC incluyen: revisión de documentos de requisitos
+                        para verificar completitud y corrección, ejecución de tests unitarios que verifican funcionalidad de métodos
+                        individuales, ejecución de tests de integración que verifican interacciones entre componentes, realización
+                        de tests de sistema que validan comportamiento end-to-end, y conducción de tests de aceptación de usuario que
+                        confirman cumplimiento de necesidades de negocio.
+                    </p>
+
+                    <p>
+                        Ejemplo concreto: En un proyecto de desarrollo de aplicación móvil, QA establecería que "todos los pull requests
+                        deben pasar revisión de código por al menos un desarrollador senior antes de merge, deben incluir tests
+                        automatizados con cobertura mínima de 80%, y deben cumplir con guías de estilo definidas en el linting
+                        automatizado". El equipo QA conduciría auditorías periódicas para verificar que estos procesos se siguen
+                        consistentemente. QC, por su parte, ejecutaría el suite de tests sobre el build específico planeado para
+                        release, verificando que 1) todas las user stories incluidas en el release funcionan correctamente según
+                        criterios de aceptación, 2) no existen defectos críticos o de alta severidad abiertos, 3) el desempeño cumple
+                        SLAs definidos (ej: tiempo de carga < 2 segundos), y 4) la aplicación funciona correctamente en dispositivos
+                        objetivo especificados.
+                    </p>
+
+                    <div class="info-box">
+                        <h4>QA vs QC: Tabla Comparativa</h4>
+                        <table>
+                            <tr>
+                                <th>Aspecto</th>
+                                <th>Aseguramiento de Calidad (QA)</th>
+                                <th>Control de Calidad (QC)</th>
+                            </tr>
+                            <tr>
+                                <td><strong>Enfoque</strong></td>
+                                <td>Prevención de defectos</td>
+                                <td>Detección de defectos</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Naturaleza</strong></td>
+                                <td>Proactiva</td>
+                                <td>Reactiva</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Orientación</strong></td>
+                                <td>Procesos</td>
+                                <td>Productos/Entregables</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Objetivo</strong></td>
+                                <td>Mejorar procesos de desarrollo</td>
+                                <td>Identificar defectos en productos</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Alcance</strong></td>
+                                <td>Todo el ciclo de vida del proyecto</td>
+                                <td>Puntos específicos de verificación</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Responsabilidad</strong></td>
+                                <td>Toda la organización/equipo</td>
+                                <td>Equipo especializado de testing/QC</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Actividades</strong></td>
+                                <td>Auditorías de proceso, definición de estándares, formación, mejora continua</td>
+                                <td>Inspecciones, reviews, testing funcional y no funcional</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Métricas</strong></td>
+                                <td>Adherencia a procesos, madurez de procesos, efectividad de mejoras</td>
+                                <td>Defectos encontrados, densidad de defectos, tasa de escape</td>
+                            </tr>
+                            <tr>
+                                <td><strong>Resultado</strong></td>
+                                <td>Procesos robustos que facilitan calidad</td>
+                                <td>Productos verificados que cumplen criterios</td>
+                            </tr>
+                        </table>
+                    </div>
+
+                    <div class="mermaid">
+                    graph TB
+                        A[Gestión de Calidad en Software] --> B[QA - Aseguramiento]
+                        A --> C[QC - Control]
+
+                        B --> B1[Actividades Proactivas]
+                        B1 --> B11[Definir Estándares]
+                        B1 --> B12[Establecer Procesos]
+                        B1 --> B13[Formar Equipos]
+                        B1 --> B14[Auditar Adherencia]
+
+                        B --> B2[Enfoque: PREVENCIÓN]
+                        B2 --> B21[Evitar Defectos]
+                        B2 --> B22[Procesos Correctos]
+                        B2 --> B23[Mejora Continua]
+
+                        C --> C1[Actividades Reactivas]
+                        C1 --> C11[Revisiones de Código]
+                        C1 --> C12[Testing Funcional]
+                        C1 --> C13[Testing No Funcional]
+                        C1 --> C14[Inspecciones]
+
+                        C --> C2[Enfoque: DETECCIÓN]
+                        C2 --> C21[Encontrar Defectos]
+                        C2 --> C22[Verificar Cumplimiento]
+                        C2 --> C23[Reportar Problemas]
+
+                        B23 --> D[Menor Incidencia<br/>de Defectos]
+                        C23 --> E[Defectos Identificados<br/>y Corregidos]
+
+                        D --> F[SOFTWARE DE ALTA CALIDAD]
+                        E --> F
+
+                        style B fill:#ADD8E6
+                        style C fill:#FFE4B5
+                        style F fill:#90EE90
+                    </graph>
+                    </div>
 
                     <p>
                         Las revisiones técnicas constituyen una técnica fundamental de control de calidad. Las revisiones de código

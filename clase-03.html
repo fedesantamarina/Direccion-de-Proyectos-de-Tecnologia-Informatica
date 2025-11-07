@@ -56,14 +56,29 @@
                 <section>
                     <h2>3.1 El Modelo en Cascada: Origen y Características</h2>
 
+                    <h3>3.1.1 Contexto Histórico y Formalización</h3>
+
                     <p>
                         El modelo en cascada (Waterfall Model) representa el paradigma fundacional de las metodologías tradicionales
                         de desarrollo de software y gestión de proyectos tecnológicos. Formalizado por Winston W. Royce en 1970 en
-                        su artículo seminal "Managing the Development of Large Software Systems", el modelo en cascada establece un
-                        enfoque secuencial donde cada fase del proyecto debe completarse antes de que la siguiente pueda comenzar.
-                        Irónicamente, Royce presentó este modelo para ilustrar sus limitaciones, no para promoverlo, pero la industria
-                        adoptó ampliamente el enfoque secuencial durante las siguientes décadas.
+                        su artículo seminal "Managing the Development of Large Software Systems" presentado en una conferencia de
+                        IEEE WESCON, el modelo en cascada establece un enfoque secuencial donde cada fase del proyecto debe
+                        completarse antes de que la siguiente pueda comenzar. Irónicamente, Royce presentó este modelo para
+                        ilustrar sus limitaciones y propuso iteraciones, aunque la industria adoptó ampliamente solo el enfoque
+                        secuencial durante las siguientes décadas, ignorando sus advertencias.
                     </p>
+
+                    <p>
+                        El modelo en cascada emergió en un contexto donde los proyectos de software eran relativam ente raros,
+                        caros, y ejecutados principalmente por gobiernos y grandes corporaciones con acceso a sistemas mainframe.
+                        El pensamiento dominante, influenciado por la ingeniería civil y manufacturera, asumía que el software
+                        podía planificarse completamente por adelantado, diseñarse exhaustivamente antes de la construcción, y
+                        construirse correctamente la primera vez si se seguían procesos rigurosos. Esta asunción resultó ser
+                        problemática para el software, cuya maleabilidad y complejidad conceptual diferían fundamentalmente de
+                        artefactos físicos como puentes o automóviles.
+                    </p>
+
+                    <h3>3.1.2 Fases del Modelo en Cascada</h3>
 
                     <p>
                         Las fases típicas del modelo en cascada incluyen: Análisis de Requisitos, Diseño del Sistema, Implementación,
@@ -390,6 +405,8 @@
                 <section>
                     <h2>3.5 Ventajas y Limitaciones de Enfoques Tradicionales</h2>
 
+                    <h3>3.5.1 Ventajas de las Metodologías Tradicionales</h3>
+
                     <p>
                         Los enfoques tradicionales de gestión de proyectos ofrecen ventajas significativas en contextos apropiados,
                         pero también presentan limitaciones que han motivado el desarrollo y adopción de metodologías alternativas.
@@ -398,6 +415,112 @@
                         declarar que un enfoque es universalmente superior, sino en reconocer que diferentes contextos demandan
                         diferentes enfoques.
                     </p>
+
+                    <p>
+                        La predictibilidad representa una ventaja fundamental de metodologías tradicionales. La planificación
+                        exhaustiva inicial, cuando basada en requisitos estables y bien comprendidos, permite crear cronogramas
+                        detallados, presupuestos precisos, y planes de recursos que facilitan la toma de decisiones ejecutivas sobre
+                        inversiones de capital, reservas de recursos, y coordinación con otras iniciativas organizacionales. Esta
+                        predictibilidad resulta especialmente valiosa para proyectos financiados mediante presupuestos anuales fijos,
+                        proyectos que requieren aprobaciones de junta directiva basadas en business cases detallados, o contextos
+                        donde compromisos contractuales requieren especificación precisa de alcance, cronograma y precio.
+                    </p>
+
+                    <p>
+                        La documentación comprehensiva generada en metodologías tradicionales proporciona beneficios sustanciales
+                        en múltiples contextos. Para proyectos sujetos a regulaciones estrictas (FDA, FAA, ISO), la trazabilidad
+                        completa de requisitos a diseño a implementación a pruebas resulta no solo beneficiosa sino mandatoria.
+                        La documentación detallada facilita auditorías internas y externas, proporciona evidencia de cumplimiento
+                        regulatorio, y protege a la organización en disputas contractuales. Para sistemas con ciclos de vida largos
+                        (10-30 años como frecuentemente ocurre en aerospace, defensa, o infraestructura crítica), la documentación
+                        exhaustiva permite que generaciones futuras de ingenieros comprendan el sistema sin depender de conocimiento
+                        tácito de desarrolladores originales que pueden haber dejado la organización.
+                    </p>
+
+                    <h3>3.5.2 Limitaciones y Desafíos</h3>
+
+                    <p>
+                        La rigidez inherente a enfoques tradicionales representa su limitación más significativa en contextos de
+                        alta incertidumbre. El modelo de cambio controlado mediante procesos formales de control de cambios (Change
+                        Control Boards, análisis de impacto rigurosos, aprobaciones multi-nivel) introduce fricción significativa
+                        que puede retardar la adaptación a cambios de mercado, feedback de usuarios, o evolución tecnológica. En
+                        dominios como desarrollo de aplicaciones móviles, plataformas web consumer-facing, o productos de startup
+                        donde el aprendizaje rápido y la adaptación son críticos para la supervivencia competitiva, esta fricción
+                        puede resultar fatal.
+                    </p>
+
+                    <p>
+                        El retraso del feedback de usuarios hasta fases tardías del proyecto constituye otra limitación crítica.
+                        En el modelo en cascada puro, los usuarios no ven el sistema funcionando hasta que el desarrollo está
+                        substancialmente completo y se inician las pruebas de aceptación de usuario (UAT). En este punto, si se
+                        descubre que el sistema no satisface adecuadamente las necesidades reales (versus las necesidades
+                        especificadas en documentos de requisitos creados meses o años antes), los cambios requeridos son
+                        extremadamente costosos. Fred Brooks articuló esta problemática en su clásico "The Mythical Man-Month":
+                        "Plan to throw one away; you will, anyhow." Esta observación reconoce que frecuentemente es imposible
+                        especificar completamente los requisitos correctos sin construir y experimentar con una versión inicial
+                        del sistema.
+                    </p>
+
+                    <div class="mermaid">
+                    graph LR
+                        A[Metodologías Tradicionales]
+                        B[Ventajas]
+                        C[Limitaciones]
+
+                        A --> B
+                        A --> C
+
+                        B --> B1[Predictibilidad]
+                        B --> B2[Documentación]
+                        B --> B3[Control Formal]
+                        B --> B4[Adecuado para Regulación]
+                        B --> B5[Roles Claros]
+
+                        C --> C1[Rigidez al Cambio]
+                        C --> C2[Feedback Tardío]
+                        C --> C3[Overhead Administrativo]
+                        C --> C4[Asunciones Irrealistas]
+                        C --> C5[Documentación Obsoleta]
+
+                        style A fill:#e1f5ff
+                        style B fill:#d4edda
+                        style C fill:#f8d7da
+                    </div>
+
+                    <div class="warning-box">
+                        <h4>Cuándo Evitar Metodologías Tradicionales</h4>
+                        <ul>
+                            <li><strong>Requisitos altamente volátiles:</strong> Cuando el dominio es nuevo o exploratorio</li>
+                            <li><strong>Time-to-market crítico:</strong> Cuando la velocidad de entrega supera la importancia de documentación completa</li>
+                            <li><strong>Equipos pequeños y colocados:</strong> Cuando la comunicación informal es más efectiva que procesos formales</li>
+                            <li><strong>Productos consumer-facing:</strong> Cuando el feedback de usuario es crítico y debe obtenerse temprano y frecuentemente</li>
+                            <li><strong>Innovación y experimentación:</strong> Cuando el proyecto es fundamentalmente exploratorio y requiere aprendizaje rápido</li>
+                        </ul>
+                    </div>
+
+                    <div class="mermaid">
+                    flowchart TD
+                        A[Contexto del Proyecto] --> B{Requisitos}
+                        B -->|Estables y Conocidos| C[Tradicional Apropiado]
+                        B -->|Volátiles e Inciertos| D[Ágil Apropiado]
+
+                        A --> E{Regulación}
+                        E -->|Estricta con Auditoría| C
+                        E -->|Mínima| D
+
+                        A --> F{Tamaño y Duración}
+                        F -->|Grande y Multi-año| G[Considerar Tradicional o Híbrido]
+                        F -->|Pequeño-Mediano| D
+
+                        A --> H{Criticidad}
+                        H -->|Misión Crítica con Alto Riesgo| C
+                        H -->|Moderada| I[Flexibilidad de Elección]
+
+                        style C fill:#fff4e1
+                        style D fill:#e1ffe1
+                        style G fill:#f0e1ff
+                        style I fill:#e1f5ff
+                    </div>
 
                     <p>
                         Entre las ventajas principales de metodologías tradicionales se encuentra la predictibilidad y control que

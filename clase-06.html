@@ -364,6 +364,124 @@
                             <li>Fundamenta negociaciones sobre extensiones de plazo o reducción de alcance</li>
                         </ul>
                     </div>
+
+                    <h3>6.4.1 Ejemplo Numérico de Análisis CPM</h3>
+                    <p>
+                        Para ilustrar la aplicación práctica del Método del Camino Crítico, consideremos un proyecto de desarrollo de
+                        aplicación móvil con las siguientes actividades y dependencias:
+                    </p>
+
+                    <table style="width:100%; margin: 20px 0; border-collapse: collapse;">
+                        <thead>
+                            <tr style="background-color: #003366; color: white;">
+                                <th style="padding: 12px; text-align: left; border: 1px solid #ddd;">Actividad</th>
+                                <th style="padding: 12px; text-align: center; border: 1px solid #ddd;">Duración (días)</th>
+                                <th style="padding: 12px; text-align: left; border: 1px solid #ddd;">Predecesoras</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #ddd;">A: Análisis de Requerimientos</td>
+                                <td style="padding: 10px; text-align: center; border: 1px solid #ddd;">5</td>
+                                <td style="padding: 10px; border: 1px solid #ddd;">-</td>
+                            </tr>
+                            <tr style="background-color: #f9f9f9;">
+                                <td style="padding: 10px; border: 1px solid #ddd;">B: Diseño UI/UX</td>
+                                <td style="padding: 10px; text-align: center; border: 1px solid #ddd;">8</td>
+                                <td style="padding: 10px; border: 1px solid #ddd;">A</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #ddd;">C: Diseño Arquitectura Backend</td>
+                                <td style="padding: 10px; text-align: center; border: 1px solid #ddd;">6</td>
+                                <td style="padding: 10px; border: 1px solid #ddd;">A</td>
+                            </tr>
+                            <tr style="background-color: #f9f9f9;">
+                                <td style="padding: 10px; border: 1px solid #ddd;">D: Desarrollo Frontend</td>
+                                <td style="padding: 10px; text-align: center; border: 1px solid #ddd;">12</td>
+                                <td style="padding: 10px; border: 1px solid #ddd;">B</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #ddd;">E: Desarrollo Backend</td>
+                                <td style="padding: 10px; text-align: center; border: 1px solid #ddd;">15</td>
+                                <td style="padding: 10px; border: 1px solid #ddd;">C</td>
+                            </tr>
+                            <tr style="background-color: #f9f9f9;">
+                                <td style="padding: 10px; border: 1px solid #ddd;">F: Integración</td>
+                                <td style="padding: 10px; text-align: center; border: 1px solid #ddd;">4</td>
+                                <td style="padding: 10px; border: 1px solid #ddd;">D, E</td>
+                            </tr>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #ddd;">G: Testing</td>
+                                <td style="padding: 10px; text-align: center; border: 1px solid #ddd;">7</td>
+                                <td style="padding: 10px; border: 1px solid #ddd;">F</td>
+                            </tr>
+                            <tr style="background-color: #f9f9f9;">
+                                <td style="padding: 10px; border: 1px solid #ddd;">H: Despliegue</td>
+                                <td style="padding: 10px; text-align: center; border: 1px solid #ddd;">3</td>
+                                <td style="padding: 10px; border: 1px solid #ddd;">G</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <p>
+                        <strong>Cálculo Forward Pass (Fechas Más Tempranas):</strong><br/>
+                        • A: ES=0, EF=0+5=5<br/>
+                        • B: ES=5, EF=5+8=13<br/>
+                        • C: ES=5, EF=5+6=11<br/>
+                        • D: ES=13, EF=13+12=25<br/>
+                        • E: ES=11, EF=11+15=26<br/>
+                        • F: ES=max(25,26)=26, EF=26+4=30<br/>
+                        • G: ES=30, EF=30+7=37<br/>
+                        • H: ES=37, EF=37+3=40<br/>
+                        <strong>Duración total del proyecto: 40 días</strong>
+                    </p>
+
+                    <p>
+                        <strong>Cálculo Backward Pass (Fechas Más Tardías):</strong><br/>
+                        • H: LF=40, LS=40-3=37<br/>
+                        • G: LF=37, LS=37-7=30<br/>
+                        • F: LF=30, LS=30-4=26<br/>
+                        • E: LF=26, LS=26-15=11<br/>
+                        • D: LF=26, LS=26-12=14<br/>
+                        • C: LF=11, LS=11-6=5<br/>
+                        • B: LF=14, LS=14-8=6<br/>
+                        • A: LF=min(5,6)=5, LS=5-5=0
+                    </p>
+
+                    <p>
+                        <strong>Cálculo de Holgura Total:</strong><br/>
+                        • A: Holgura = LS - ES = 0 - 0 = 0 (CRÍTICA)<br/>
+                        • B: Holgura = 6 - 5 = 1 día<br/>
+                        • C: Holgura = 5 - 5 = 0 (CRÍTICA)<br/>
+                        • D: Holgura = 14 - 13 = 1 día<br/>
+                        • E: Holgura = 11 - 11 = 0 (CRÍTICA)<br/>
+                        • F: Holgura = 26 - 26 = 0 (CRÍTICA)<br/>
+                        • G: Holgura = 30 - 30 = 0 (CRÍTICA)<br/>
+                        • H: Holgura = 37 - 37 = 0 (CRÍTICA)<br/>
+                        <strong>Camino Crítico: A → C → E → F → G → H (40 días)</strong>
+                    </p>
+
+                    <div class="mermaid">
+                    graph LR
+                        A[A: Análisis<br/>5d ES:0-5<br/>Holgura: 0] --> B[B: UI/UX<br/>8d ES:5-13<br/>Holgura: 1]
+                        A --> C[C: Backend Arch<br/>6d ES:5-11<br/>Holgura: 0]
+                        B --> D[D: Frontend<br/>12d ES:13-25<br/>Holgura: 1]
+                        C --> E[E: Backend Dev<br/>15d ES:11-26<br/>Holgura: 0]
+                        D --> F[F: Integración<br/>4d ES:26-30<br/>Holgura: 0]
+                        E --> F
+                        F --> G[G: Testing<br/>7d ES:30-37<br/>Holgura: 0]
+                        G --> H[H: Deploy<br/>3d ES:37-40<br/>Holgura: 0]
+
+                        style A fill:#FFB6C1,stroke:#333,stroke-width:3px
+                        style C fill:#FFB6C1,stroke:#333,stroke-width:3px
+                        style E fill:#FFB6C1,stroke:#333,stroke-width:3px
+                        style F fill:#FFB6C1,stroke:#333,stroke-width:3px
+                        style G fill:#FFB6C1,stroke:#333,stroke-width:3px
+                        style H fill:#FFB6C1,stroke:#333,stroke-width:3px
+                        style B fill:#90EE90
+                        style D fill:#90EE90
+                    </graph>
+                    </div>
                 </section>
 
                 <section>
@@ -442,6 +560,154 @@
                             matemáticos aparentemente precisos basados en estimaciones arbitrarias.
                         </p>
                     </div>
+
+                    <h3>6.5.1 Ejemplo Numérico de Cálculos PERT</h3>
+                    <p>
+                        Retomando el ejemplo del proyecto de aplicación móvil, aplicamos PERT para cuantificar la incertidumbre en las
+                        estimaciones de duración:
+                    </p>
+
+                    <table style="width:100%; margin: 20px 0; border-collapse: collapse;">
+                        <thead>
+                            <tr style="background-color: #003366; color: white;">
+                                <th style="padding: 12px; text-align: left; border: 1px solid #ddd;">Actividad</th>
+                                <th style="padding: 12px; text-align: center; border: 1px solid #ddd;">Optimista (O)</th>
+                                <th style="padding: 12px; text-align: center; border: 1px solid #ddd;">Más Probable (M)</th>
+                                <th style="padding: 12px; text-align: center; border: 1px solid #ddd;">Pesimista (P)</th>
+                                <th style="padding: 12px; text-align: center; border: 1px solid #ddd;">TE = (O+4M+P)/6</th>
+                                <th style="padding: 12px; text-align: center; border: 1px solid #ddd;">σ = (P-O)/6</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td style="padding: 10px; border: 1px solid #ddd;">A: Análisis</td>
+                                <td style="padding: 10px; text-align: center; border: 1px solid #ddd;">4</td>
+                                <td style="padding: 10px; text-align: center; border: 1px solid #ddd;">5</td>
+                                <td style="padding: 10px; text-align: center; border: 1px solid #ddd;">8</td>
+                                <td style="padding: 10px; text-align: center; border: 1px solid #ddd;">5.33</td>
+                                <td style="padding: 10px; text-align: center; border: 1px solid #ddd;">0.67</td>
+                            </tr>
+                            <tr style="background-color: #FFB6C1;">
+                                <td style="padding: 10px; border: 1px solid #ddd;"><strong>C: Arq Backend (CRÍTICA)</strong></td>
+                                <td style="padding: 10px; text-align: center; border: 1px solid #ddd;">5</td>
+                                <td style="padding: 10px; text-align: center; border: 1px solid #ddd;">6</td>
+                                <td style="padding: 10px; text-align: center; border: 1px solid #ddd;">9</td>
+                                <td style="padding: 10px; text-align: center; border: 1px solid #ddd;">6.33</td>
+                                <td style="padding: 10px; text-align: center; border: 1px solid #ddd;">0.67</td>
+                            </tr>
+                            <tr style="background-color: #FFB6C1;">
+                                <td style="padding: 10px; border: 1px solid #ddd;"><strong>E: Dev Backend (CRÍTICA)</strong></td>
+                                <td style="padding: 10px; text-align: center; border: 1px solid #ddd;">12</td>
+                                <td style="padding: 10px; text-align: center; border: 1px solid #ddd;">15</td>
+                                <td style="padding: 10px; text-align: center; border: 1px solid #ddd;">24</td>
+                                <td style="padding: 10px; text-align: center; border: 1px solid #ddd;">16.00</td>
+                                <td style="padding: 10px; text-align: center; border: 1px solid #ddd;">2.00</td>
+                            </tr>
+                            <tr style="background-color: #FFB6C1;">
+                                <td style="padding: 10px; border: 1px solid #ddd;"><strong>F: Integración (CRÍTICA)</strong></td>
+                                <td style="padding: 10px; text-align: center; border: 1px solid #ddd;">3</td>
+                                <td style="padding: 10px; text-align: center; border: 1px solid #ddd;">4</td>
+                                <td style="padding: 10px; text-align: center; border: 1px solid #ddd;">7</td>
+                                <td style="padding: 10px; text-align: center; border: 1px solid #ddd;">4.33</td>
+                                <td style="padding: 10px; text-align: center; border: 1px solid #ddd;">0.67</td>
+                            </tr>
+                            <tr style="background-color: #FFB6C1;">
+                                <td style="padding: 10px; border: 1px solid #ddd;"><strong>G: Testing (CRÍTICA)</strong></td>
+                                <td style="padding: 10px; text-align: center; border: 1px solid #ddd;">5</td>
+                                <td style="padding: 10px; text-align: center; border: 1px solid #ddd;">7</td>
+                                <td style="padding: 10px; text-align: center; border: 1px solid #ddd;">11</td>
+                                <td style="padding: 10px; text-align: center; border: 1px solid #ddd;">7.33</td>
+                                <td style="padding: 10px; text-align: center; border: 1px solid #ddd;">1.00</td>
+                            </tr>
+                            <tr style="background-color: #FFB6C1;">
+                                <td style="padding: 10px; border: 1px solid #ddd;"><strong>H: Despliegue (CRÍTICA)</strong></td>
+                                <td style="padding: 10px; text-align: center; border: 1px solid #ddd;">2</td>
+                                <td style="padding: 10px; text-align: center; border: 1px solid #ddd;">3</td>
+                                <td style="padding: 10px; text-align: center; border: 1px solid #ddd;">5</td>
+                                <td style="padding: 10px; text-align: center; border: 1px solid #ddd;">3.17</td>
+                                <td style="padding: 10px; text-align: center; border: 1px solid #ddd;">0.50</td>
+                            </tr>
+                        </tbody>
+                    </table>
+
+                    <p>
+                        <strong>Cálculo de Duración Esperada del Proyecto:</strong><br/>
+                        Sumando las TE de actividades en el camino crítico (A + C + E + F + G + H):<br/>
+                        TE_proyecto = 5.33 + 6.33 + 16.00 + 4.33 + 7.33 + 3.17 = <strong>42.49 días</strong>
+                    </p>
+
+                    <p>
+                        <strong>Cálculo de Varianza y Desviación Estándar del Proyecto:</strong><br/>
+                        La varianza del proyecto es la suma de las varianzas de actividades críticas:<br/>
+                        σ²_proyecto = 0.67² + 0.67² + 2.00² + 0.67² + 1.00² + 0.50²<br/>
+                        σ²_proyecto = 0.45 + 0.45 + 4.00 + 0.45 + 1.00 + 0.25 = <strong>6.60</strong><br/>
+                        σ_proyecto = √6.60 = <strong>2.57 días</strong>
+                    </p>
+
+                    <p>
+                        <strong>Análisis Probabilístico:</strong><br/>
+                        Asumiendo distribución normal, podemos calcular probabilidades:<br/>
+                        • 68% de probabilidad de completar entre 42.49 - 2.57 = 39.92 días y 42.49 + 2.57 = 45.06 días<br/>
+                        • 95% de probabilidad de completar entre 42.49 - (2×2.57) = 37.35 días y 42.49 + (2×2.57) = 47.63 días<br/>
+                        • 99.7% de probabilidad de completar entre 42.49 - (3×2.57) = 34.78 días y 42.49 + (3×2.57) = 50.20 días
+                    </p>
+
+                    <p>
+                        <strong>Probabilidad de Completar en Fecha Objetivo:</strong><br/>
+                        Si la fecha objetivo es 45 días, calculamos Z-score:<br/>
+                        Z = (45 - 42.49) / 2.57 = 0.98<br/>
+                        Consultando tabla de distribución normal estándar: P(Z ≤ 0.98) ≈ 83.6%<br/>
+                        <strong>Hay aproximadamente 83.6% de probabilidad de completar el proyecto en 45 días o menos.</strong>
+                    </p>
+
+                    <div class="mermaid">
+                    %%{init: {'theme':'base', 'themeVariables': {'primaryColor':'#ffcccc'}}}%%
+                    graph TD
+                        A[Análisis de Incertidumbre PERT] --> B[Estimaciones de Tres Puntos]
+                        B --> C[Optimista O]
+                        B --> D[Más Probable M]
+                        B --> E[Pesimista P]
+
+                        C --> F[Cálculo de TE<br/>TE = O + 4M + P / 6]
+                        D --> F
+                        E --> F
+
+                        C --> G[Cálculo de σ<br/>σ = P - O / 6]
+                        E --> G
+
+                        F --> H[Duración Esperada<br/>del Proyecto]
+                        G --> I[Varianza del Proyecto<br/>suma de σ²]
+
+                        H --> J[Análisis Probabilístico]
+                        I --> J
+
+                        J --> K[68% dentro de ±1σ<br/>95% dentro de ±2σ<br/>99.7% dentro de ±3σ]
+                        J --> L[Probabilidad de cumplir<br/>fecha objetivo específica]
+
+                        style K fill:#90EE90
+                        style L fill:#87CEEB
+                    </graph>
+                    </div>
+
+                    <h3>6.5.2 Limitaciones y Consideraciones de PERT</h3>
+                    <p>
+                        A pesar de su utilidad, PERT enfrenta limitaciones importantes. La suposición de independencia estadística entre
+                        duraciones de actividades raramente se cumple en la práctica: si un desarrollador es más lento de lo esperado en
+                        una actividad, probablemente será más lento en actividades subsecuentes, creando correlación positiva. Esta
+                        correlación significa que la variabilidad real del proyecto puede exceder significativamente la calculada por PERT
+                        tradicional. La simulación Monte Carlo, que puede modelar estas correlaciones explícitamente, proporciona análisis
+                        más sofisticado aunque requiere mayor inversión de tiempo y herramientas especializadas.
+                    </p>
+
+                    <p>
+                        La calidad de las estimaciones de tres puntos determina la validez de los resultados PERT. Si las estimaciones
+                        optimistas, más probables y pesimistas se desarrollan sin fundamento empírico o sin involucramiento de personas con
+                        expertise técnico directo, los cálculos subsecuentes, aunque matemáticamente correctos, carecen de significado
+                        práctico. La tendencia del sesgo de optimismo puede afectar las tres estimaciones: incluso la estimación "pesimista"
+                        puede ser demasiado optimista si el estimador no considera adecuadamente riesgos técnicos, dependencias o
+                        complejidades ocultas. Calibración mediante comparación de estimaciones históricas contra resultados reales mejora
+                        gradualmente la precisión organizacional.
+                    </p>
                 </section>
 
                 <section>

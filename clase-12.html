@@ -202,6 +202,104 @@
                         innovación y adaptación continua.
                     </p>
 
+                    <h3>Modelo Hersey-Blanchard: Liderazgo Situacional Detallado</h3>
+
+                    <p>
+                        El modelo de Hersey-Blanchard integra dos dimensiones fundamentales del comportamiento de liderazgo: comportamiento
+                        directivo (cuánta dirección y guía proporciona el líder) y comportamiento de apoyo (cuánto soporte socio-emocional
+                        ofrece el líder). Estas dimensiones se calibran según el nivel de desarrollo del seguidor, que combina competencia
+                        (habilidades y conocimiento para la tarea específica) y compromiso (confianza y motivación). Crítico comprender
+                        que el nivel de desarrollo es situacional: un desarrollador senior puede tener alta competencia en tecnologías
+                        conocidas (D4) pero baja competencia cuando se introduce una stack tecnológico completamente nuevo (D1).
+                    </p>
+
+                    <p>
+                        Los cuatro estilos de liderazgo se mapean a cuatro niveles de desarrollo: <strong>S1 - Directing (Alto Directivo,
+                        Bajo Apoyo)</strong> apropiado para D1 (baja competencia, alto compromiso) - típicamente nuevos integrantes del
+                        equipo o personas enfrentando tareas completamente nuevas. El líder proporciona instrucciones específicas,
+                        supervisa de cerca y toma decisiones unilateralmente. Ejemplo: un desarrollador junior recién graduado requiere
+                        instrucciones detalladas sobre arquitectura del sistema, estándares de codificación y flujo de trabajo del equipo.
+                    </p>
+
+                    <p>
+                        <strong>S2 - Coaching (Alto Directivo, Alto Apoyo)</strong> apropiado para D2 (cierta competencia, bajo compromiso) -
+                        personas que han adquirido algunas habilidades pero cuyo compromiso puede estar disminuyendo debido a dificultades
+                        enfrentadas o expectativas poco realistas. El líder continúa proporcionando dirección pero invierte tiempo explicando
+                        decisiones, solicitando sugerencias y apoyando progreso. Ejemplo: un desarrollador que completó primeros sprints
+                        pero se siente abrumado por complejidad del dominio de negocio requiere dirección técnica combinada con coaching
+                        sobre gestión de complejidad y celebración de progresos incrementales.
+                    </p>
+
+                    <p>
+                        <strong>S3 - Supporting (Bajo Directivo, Alto Apoyo)</strong> apropiado para D3 (alta competencia, compromiso variable) -
+                        personas con habilidades pero cuyo compromiso fluctúa debido a inseguridad o falta de confianza. El líder facilita
+                        y apoya esfuerzos del seguidor pero reduce dirección técnica. Ejemplo: un desarrollador experimentado que duda de
+                        sus decisiones arquitectónicas no necesita instrucciones técnicas detalladas sino validación, facilitación de
+                        discusiones con pares y apoyo para construir confianza en su expertise.
+                    </p>
+
+                    <p>
+                        <strong>S4 - Delegating (Bajo Directivo, Bajo Apoyo)</strong> apropiado para D4 (alta competencia, alto compromiso) -
+                        profesionales maduros que poseen tanto habilidades como motivación. El líder delega decisiones y responsabilidades,
+                        interviniendo principalmente para remover obstáculos y facilitar recursos. Ejemplo: un tech lead experimentado con
+                        historial probado puede recibir objetivos de alto nivel ("rediseñar módulo de autenticación para soportar SSO") y
+                        autonomía completa sobre decisiones de implementación, con el director actuando como escalamiento cuando se requiere
+                        autoridad organizacional.
+                    </p>
+
+                    <div class="mermaid">
+                    %%{init: {'theme':'base'}}%%
+                    quadrantChart
+                        title Modelo Hersey-Blanchard de Liderazgo Situacional
+                        x-axis "Comportamiento Directivo" 0 --> 100
+                        y-axis "Comportamiento de Apoyo" 0 --> 100
+                        quadrant-1 S2: Coaching<br/>Alto Directivo<br/>Alto Apoyo
+                        quadrant-2 S3: Supporting<br/>Bajo Directivo<br/>Alto Apoyo
+                        quadrant-3 S4: Delegating<br/>Bajo Directivo<br/>Bajo Apoyo
+                        quadrant-4 S1: Directing<br/>Alto Directivo<br/>Bajo Apoyo
+                        D1 Nuevo en Equipo: [90, 20]
+                        D2 Aprendiendo pero Frustrado: [80, 80]
+                        D3 Competente pero Inseguro: [30, 85]
+                        D4 Experto y Motivado: [15, 15]
+                    </quadrantChart>
+                    </div>
+
+                    <div class="info-box">
+                        <h4>Liderazgo Situacional: Señales para Adaptar Estilo</h4>
+                        <table>
+                            <tr>
+                                <th>Nivel</th>
+                                <th>Señales Observables</th>
+                                <th>Estilo Apropiado</th>
+                                <th>Acciones del Líder</th>
+                            </tr>
+                            <tr>
+                                <td><strong>D1</strong></td>
+                                <td>Hace muchas preguntas básicas, entusiasta pero inseguro, requiere validación frecuente</td>
+                                <td>S1 Directing</td>
+                                <td>Instrucciones específicas, supervisión cercana, decisiones unilaterales</td>
+                            </tr>
+                            <tr>
+                                <td><strong>D2</strong></td>
+                                <td>Cierto progreso pero frustración visible, compromiso inconsistente, cuestiona capacidad propia</td>
+                                <td>S2 Coaching</td>
+                                <td>Explicar decisiones, solicitar input, celebrar logros, apoyo emocional</td>
+                            </tr>
+                            <tr>
+                                <td><strong>D3</strong></td>
+                                <td>Técnicamente capaz pero busca validación, duda de decisiones, necesita aliento</td>
+                                <td>S3 Supporting</td>
+                                <td>Facilitar discusiones, validar decisiones, construir confianza</td>
+                            </tr>
+                            <tr>
+                                <td><strong>D4</strong></td>
+                                <td>Actúa con confianza, toma iniciativa, resuelve problemas autónomamente</td>
+                                <td>S4 Delegating</td>
+                                <td>Delegar decisiones, remover obstáculos, proporcionar recursos</td>
+                            </tr>
+                        </table>
+                    </div>
+
                     <div class="success-box">
                         <h4>Competencias Clave del Líder de Proyectos TI</h4>
                         <ul class="checklist">
@@ -244,6 +342,106 @@
                         o la conexión del trabajo con algo más grande que uno mismo. Estos principios tienen implicaciones profundas
                         para diseño de roles, estructuras de equipos y gestión de proyectos tecnológicos.
                     </p>
+
+                    <h3>Teorías de Motivación Aplicadas a Proyectos TI</h3>
+
+                    <p>
+                        La <strong>teoría de dos factores de Herzberg</strong> distingue entre factores higiénicos y factores motivadores.
+                        Los factores higiénicos (salario, condiciones de trabajo, políticas organizacionales, supervisión, relaciones
+                        interpersonales) no generan motivación cuando están presentes, pero su ausencia causa insatisfacción. Los
+                        factores motivadores (logro, reconocimiento, el trabajo mismo, responsabilidad, crecimiento) realmente impulsan
+                        motivación cuando están presentes. En proyectos TI, esto implica que mejorar salarios o ambiente de oficina
+                        puede eliminar insatisfacción pero no creará motivación genuina. La motivación real emerge de asignar trabajo
+                        técnicamente desafiante, reconocer contribuciones específicas, delegar responsabilidad significativa y
+                        proporcionar oportunidades de desarrollo profesional.
+                    </p>
+
+                    <p>
+                        La <strong>teoría de expectativas de Vroom</strong> modela motivación como función de tres componentes:
+                        Expectativa (E) - creencia de que esfuerzo conducirá a desempeño deseado; Instrumentalidad (I) - creencia
+                        de que desempeño conducirá a recompensas; y Valencia (V) - valor que el individuo asigna a las recompensas.
+                        La motivación se calcula como Motivación = E × I × V. Si cualquier componente es cero, la motivación total
+                        es cero. Aplicación práctica: un desarrollador puede tener baja motivación si (1) cree que incluso esfuerzo
+                        heroico no logrará completar feature complejo en tiempo irreal asignado (baja E), o (2) observa que desempeño
+                        excepcional no resulta en reconocimiento o promoción (baja I), o (3) las recompensas ofrecidas no son valiosas
+                        personalmente - quizás bonos monetarios cuando la persona valora más flexibilidad de horarios (baja V).
+                    </p>
+
+                    <p>
+                        La <strong>teoría de establecimiento de metas de Locke</strong> postula que metas específicas y desafiantes
+                        conducen a mayor desempeño que metas vagas o fáciles. Las características de metas efectivas incluyen:
+                        Especificidad - "Reducir tiempo de carga de página a < 1.5 segundos" es más efectivo que "Mejorar desempeño";
+                        Dificultad apropiada - metas que estiran capacidades pero son alcanzables; Aceptación - el individuo acepta
+                        la meta como legítima y está comprometido a alcanzarla; Retroalimentación - progreso hacia la meta es visible
+                        y se proporciona feedback regular. En proyectos ágiles, las metas de Sprint (completar historias comprometidas
+                        cumpliendo DoD) proporcionan estructura de establecimiento de metas efectiva cuando el equipo participa en
+                        determinación de qué comprometer (aceptación) y la ceremonia de Sprint Review proporciona retroalimentación clara.
+                    </p>
+
+                    <p>
+                        La <strong>teoría de equidad de Adams</strong> propone que los individuos evalúan su motivación comparando
+                        su ratio esfuerzo/recompensa con el de colegas. Cuando perciben inequidad (trabajar más duro que colegas pero
+                        recibir mismas o menores recompensas), experimentan desmotivación e insatisfacción. Relevante en proyectos TI
+                        donde algunos miembros del equipo pueden percibir que "cargan" con trabajo mientras otros contribuyen menos.
+                        Los directores deben asegurar distribución equitativa de trabajo desafiante, reconocimiento visible y ajustado
+                        a contribución, y transparencia en criterios de evaluación y recompensa. La percepción de justicia procedural
+                        (cómo se toman decisiones) es tan importante como la justicia distributiva (cómo se reparten recompensas).
+                    </p>
+
+                    <div class="mermaid">
+                    graph TD
+                        A[Técnicas de Motivación en Proyectos TI] --> B[Autonomía]
+                        A --> C[Maestría]
+                        A --> D[Propósito]
+                        A --> E[Reconocimiento]
+                        A --> F[Equidad]
+
+                        B --> B1[Elegir técnicas]
+                        B --> B2[Horarios flexibles]
+                        B --> B3[Ownership de componentes]
+
+                        C --> C1[Proyectos desafiantes]
+                        C --> C2[Formación técnica]
+                        C --> C3[Conferencias y certificaciones]
+
+                        D --> D1[Conectar con impacto negocio]
+                        D --> D2[Visibilidad de contribución]
+                        D --> D3[Misión del proyecto]
+
+                        E --> E1[Reconocimiento público]
+                        E --> E2[Feedback específico]
+                        E --> E3[Oportunidades de crecimiento]
+
+                        F --> F1[Distribución justa trabajo]
+                        F --> F2[Transparencia en recompensas]
+                        F --> F3[Justicia procedural]
+
+                        B1 --> G[Equipo Altamente Motivado]
+                        C1 --> G
+                        D1 --> G
+                        E1 --> G
+                        F1 --> G
+
+                        style G fill:#90EE90
+                    </graph>
+                    </div>
+
+                    <div class="important-box">
+                        <h4>Estrategias Prácticas de Motivación para Equipos Técnicos</h4>
+                        <p><strong>Autonomía Técnica:</strong> Permitir a desarrolladores decidir sobre herramientas, frameworks y
+                        arquitecturas (dentro de guardrails razonables). Ejemplo: "El requisito es autenticación OAuth; tú decides
+                        la biblioteca y approach de implementación".</p>
+                        <p><strong>Tiempo para Innovación:</strong> Google's 20% time, permitiendo a ingenieros dedicar tiempo a
+                        proyectos de interés personal que podrían beneficiar a la organización.</p>
+                        <p><strong>Rotación de Roles:</strong> Rotar miembros del equipo a través de diferentes áreas técnicas para
+                        desarrollar habilidades diversas y prevenir aburrimiento.</p>
+                        <p><strong>Visibilidad Externa:</strong> Facilitar presentaciones en meetups, contribución a open source, o
+                        publicación de blog posts técnicos que aumentan reputación profesional.</p>
+                        <p><strong>InnerSource:</strong> Permitir contribuciones a proyectos internos más allá de asignación formal,
+                        fomentando colaboración y visibilidad cross-team.</p>
+                        <p><strong>Retrospectivas Efectivas:</strong> Espacios seguros donde el equipo identifica mejoras sin culpabilización,
+                        dando control sobre evolución de sus propios procesos.</p>
+                    </div>
 
                     <p>
                         La gestión del desempeño en proyectos de tecnología informática debe trascender evaluaciones anuales
@@ -361,6 +559,102 @@
                         toma de decisiones, gestión de riesgos y balance trabajo-vida. Los directores de proyectos efectivos
                         desarrollan inteligencia cultural para navegar estas diferencias constructivamente.
                     </p>
+
+                    <h3>Estilos de Comunicación y Adaptación Contextual</h3>
+
+                    <p>
+                        Los estilos de comunicación varían según personalidad, cultura y contexto. El modelo de comunicación asertiva
+                        distingue cuatro estilos principales: <strong>Pasivo</strong> - evita expresar opiniones o necesidades, cede
+                        frecuentemente a demandas de otros, teme conflicto; <strong>Agresivo</strong> - expresa opiniones dominantemente,
+                        frecuentemente a expensas de otros, puede ser confrontacional; <strong>Pasivo-Agresivo</strong> - expresa
+                        desacuerdo indirectamente mediante sarcasmo, sabotaje sutil o resistencia pasiva; <strong>Asertivo</strong> -
+                        expresa opiniones y necesidades claramente y respetuosamente, respeta perspectivas de otros, busca soluciones
+                        win-win. En contextos profesionales de TI, la comunicación asertiva es el estilo más efectivo, permitiendo
+                        expresión honesta de perspectivas técnicas mientras se mantiene colaboración constructiva.
+                    </p>
+
+                    <p>
+                        Las técnicas de comunicación asertiva incluyen: <strong>Uso de declaraciones "Yo"</strong> en lugar de "Tú" -
+                        "Yo me siento preocupado por el cronograma" en lugar de "Tú siempre subestimas la complejidad"; <strong>Técnica
+                        del disco rayado</strong> - repetir calmadamente una posición sin escalación emocional cuando se recibe presión;
+                        <strong>Fogging</strong> - reconocer elemento válido en crítica sin ceder completamente ("Tienes razón que
+                        esta tarea tomó más tiempo, y creo que aprendí lecciones sobre estimación"); <strong>Compromiso workable</strong> -
+                        proponer soluciones que satisfacen parcialmente necesidades de ambas partes; <strong>Técnica del sándwich</strong> -
+                        estructurar feedback como positivo-crítico-positivo, aunque debe usarse genuinamente para evitar que parezca
+                        manipulativo.
+                    </p>
+
+                    <p>
+                        La comunicación efectiva con stakeholders ejecutivos requiere adaptación específica. Los ejecutivos típicamente
+                        valoran: Brevedad - presentaciones concisas que respetan tiempo limitado; Orientación a resultados de negocio -
+                        vincular decisiones técnicas con impacto en ingresos, costos, riesgos o ventajas competitivas; Opciones con
+                        recomendaciones - presentar alternativas evaluadas pero recomendar curso de acción preferido; Transparencia
+                        sobre riesgos - comunicar problemas tempranamente con planes de mitigación en lugar de sorpresas tardías;
+                        Visualización de datos - dashboards y gráficos que comunican tendencias rápidamente. Evitar jerga técnica excesiva
+                        o inmersión en detalles de implementación que no son relevantes para decisiones de negocio.
+                    </p>
+
+                    <p>
+                        La comunicación con equipos técnicos, por contraste, valoriza: Profundidad técnica - explicaciones detalladas
+                        de trade-offs arquitectónicos y decisiones de diseño; Justificación lógica - razones técnicas fundamentadas
+                        en lugar de autoridad; Debate técnico - discusión abierta de alternativas y crítica constructiva de propuestas;
+                        Documentación precisa - especificaciones técnicas detalladas y actualizadas; Acceso a contexto - comprensión
+                        del "por qué" detrás de requisitos, no solo el "qué". Los directores de proyectos efectivos actúan como
+                        traductores bidireccionales: traduciendo visión de negocio a requisitos técnicos para desarrolladores, y
+                        traduciendo complejidad técnica a implicaciones de negocio para ejecutivos.
+                    </p>
+
+                    <div class="mermaid">
+                    flowchart LR
+                        A[Director de Proyecto<br/>como Comunicador] --> B[Stakeholders Ejecutivos]
+                        A --> C[Equipo Técnico]
+                        A --> D[Product Owners]
+                        A --> E[Usuarios Finales]
+                        A --> F[Vendors/Proveedores]
+
+                        B --> B1[Lenguaje: Impacto negocio]
+                        B --> B2[Formato: Dashboards, resúmenes]
+                        B --> B3[Frecuencia: Semanal/mensual]
+
+                        C --> C1[Lenguaje: Técnico profundo]
+                        C --> C2[Formato: Docs técnicas, diagramas]
+                        C --> C3[Frecuencia: Diaria - stand-ups]
+
+                        D --> D1[Lenguaje: Funcionalidad de usuario]
+                        D --> D2[Formato: User stories, prototipos]
+                        D --> D3[Frecuencia: Sprint planning/review]
+
+                        E --> E1[Lenguaje: Términos simples]
+                        E --> E2[Formato: Demos, tutoriales]
+                        E --> E3[Frecuencia: UAT, training]
+
+                        F --> F1[Lenguaje: Contractual/SLA]
+                        F --> F2[Formato: Statements of work]
+                        F --> F3[Frecuencia: Según contrato]
+
+                        B1 --> G[Comunicación Efectiva]
+                        C1 --> G
+                        D1 --> G
+                        E1 --> G
+                        F1 --> G
+
+                        style A fill:#FFE4B5
+                        style G fill:#90EE90
+                    </flowchart>
+                    </div>
+
+                    <div class="warning-box">
+                        <h4>Antipatrones de Comunicación en Proyectos TI</h4>
+                        <ul>
+                            <li><strong>Mushroom Management:</strong> Mantener al equipo "en la oscuridad" sin contexto de decisiones de negocio</li>
+                            <li><strong>Sandwich tóxico:</strong> Usar formato positivo-negativo-positivo para entregar malas noticias, perdiendo credibilidad</li>
+                            <li><strong>Email para temas complejos:</strong> Usar email para discusiones que requieren diálogo interactivo</li>
+                            <li><strong>Reunionitis:</strong> Exceso de reuniones sin agendas claras o resultados accionables</li>
+                            <li><strong>Comunicación selectiva:</strong> Filtrar información negativa hacia arriba, generando sorpresas posteriores</li>
+                            <li><strong>Jerga técnica inapropiada:</strong> Usar terminología especializada con audiencias no técnicas</li>
+                            <li><strong>Falta de cierre de loop:</strong> No confirmar que mensajes críticos fueron recibidos y comprendidos</li>
+                        </ul>
+                    </div>
 
                     <div class="warning-box">
                         <h4>Barreras Comunes de Comunicación en Proyectos TI</h4>

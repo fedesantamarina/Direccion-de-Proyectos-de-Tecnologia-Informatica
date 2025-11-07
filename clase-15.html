@@ -162,6 +162,116 @@
                         etapa de publicación almacena artefactos en repositorio (Artifactory, Nexus) para despliegue posterior.
                     </p>
 
+                    <div class="code-box">
+                        <h4>Ejemplo de Pipeline CI/CD con GitLab CI (.gitlab-ci.yml)</h4>
+                        <pre><code>stages:
+  - build
+  - test
+  - quality
+  - package
+  - deploy
+
+variables:
+  MAVEN_OPTS: "-Dmaven.repo.local=.m2/repository"
+  DOCKER_REGISTRY: "registry.example.com"
+
+build:
+  stage: build
+  image: maven:3.8-openjdk-17
+  script:
+    - mvn clean compile
+  artifacts:
+    paths:
+      - target/
+    expire_in: 1 hour
+  only:
+    - branches
+
+unit-tests:
+  stage: test
+  image: maven:3.8-openjdk-17
+  script:
+    - mvn test
+    - mvn jacoco:report
+  coverage: '/Total.*?([0-9]{1,3})%/'
+  artifacts:
+    reports:
+      junit: target/surefire-reports/TEST-*.xml
+      coverage_report:
+        coverage_format: cobertura
+        path: target/site/jacoco/jacoco.xml
+
+integration-tests:
+  stage: test
+  image: maven:3.8-openjdk-17
+  services:
+    - postgres:14
+    - redis:7
+  variables:
+    POSTGRES_DB: testdb
+    POSTGRES_USER: testuser
+    POSTGRES_PASSWORD: testpass
+  script:
+    - mvn verify -Dskip.unit.tests=true
+  only:
+    - main
+    - develop
+
+code-quality:
+  stage: quality
+  image: sonarsource/sonar-scanner-cli:latest
+  script:
+    - sonar-scanner
+      -Dsonar.projectKey=my-project
+      -Dsonar.sources=src/main
+      -Dsonar.host.url=$SONAR_URL
+      -Dsonar.login=$SONAR_TOKEN
+  only:
+    - main
+    - merge_requests
+
+build-docker:
+  stage: package
+  image: docker:24
+  services:
+    - docker:24-dind
+  script:
+    - docker login -u $CI_REGISTRY_USER -p $CI_REGISTRY_PASSWORD $DOCKER_REGISTRY
+    - docker build -t $DOCKER_REGISTRY/my-app:$CI_COMMIT_SHA .
+    - docker tag $DOCKER_REGISTRY/my-app:$CI_COMMIT_SHA $DOCKER_REGISTRY/my-app:latest
+    - docker push $DOCKER_REGISTRY/my-app:$CI_COMMIT_SHA
+    - docker push $DOCKER_REGISTRY/my-app:latest
+  only:
+    - main
+
+deploy-staging:
+  stage: deploy
+  image: bitnami/kubectl:latest
+  script:
+    - kubectl config use-context staging
+    - kubectl set image deployment/my-app my-app=$DOCKER_REGISTRY/my-app:$CI_COMMIT_SHA
+    - kubectl rollout status deployment/my-app
+  environment:
+    name: staging
+    url: https://staging.example.com
+  only:
+    - main
+
+deploy-production:
+  stage: deploy
+  image: bitnami/kubectl:latest
+  script:
+    - kubectl config use-context production
+    - kubectl set image deployment/my-app my-app=$DOCKER_REGISTRY/my-app:$CI_COMMIT_SHA
+    - kubectl rollout status deployment/my-app
+  environment:
+    name: production
+    url: https://app.example.com
+  when: manual
+  only:
+    - main</code></pre>
+                    </div>
+
                     <p>
                         La gestión de branches impacta significativamente efectividad de CI. El trunk-based development mantiene
                         una branch principal donde todos desarrollan, con integración continua verdadera. Las feature branches
@@ -198,6 +308,41 @@
                         K --> L[Deploy to Dev/Test]
                         J --> M[Desarrollador Arregla]
                         M --> A
+                    </div>
+
+                    <div class="mermaid">
+                    graph TD
+                        A[Cultura DevOps] --> B[Colaboración]
+                        A --> C[Automatización]
+                        A --> D[Feedback Continuo]
+                        A --> E[Mejora Iterativa]
+                        B --> B1[Dev + Ops + QA + Sec]
+                        B --> B2[Responsabilidad Compartida]
+                        C --> C1[CI/CD]
+                        C --> C2[IaC]
+                        C --> C3[Testing Automatizado]
+                        D --> D1[Monitoreo]
+                        D --> D2[Alertas]
+                        D --> D3[Métricas]
+                        E --> E1[Retrospectivas]
+                        E --> E2[Experimentación]
+                        E --> E3[Aprendizaje de Fallos]
+                    </div>
+
+                    <div class="mermaid">
+                    graph LR
+                        A[Deployment Strategies] --> B[Blue-Green]
+                        A --> C[Canary]
+                        A --> D[Rolling Update]
+                        A --> E[Feature Toggles]
+                        B --> B1[Dos ambientes idénticos]
+                        B --> B2[Switch instantáneo]
+                        C --> C1[Despliegue gradual]
+                        C --> C2[Monitoreo de métricas]
+                        D --> D1[Actualización progresiva]
+                        D --> D2[Sin downtime]
+                        E --> E1[Desacoplar deploy de release]
+                        E --> E2[A/B testing]
                     </div>
                 </section>
 
@@ -376,6 +521,80 @@
                         acelerando builds incrementales y distribución de imágenes.
                     </p>
 
+                    <div class="code-box">
+                        <h4>Ejemplo Dockerfile Multi-Stage Build</h4>
+                        <pre><code># Stage 1: Build
+FROM maven:3.8-openjdk-17 AS build
+WORKDIR /app
+
+# Copy dependency definitions
+COPY pom.xml .
+# Download dependencies (cached layer)
+RUN mvn dependency:go-offline
+
+# Copy source code
+COPY src ./src
+# Build application
+RUN mvn clean package -DskipTests
+
+# Stage 2: Runtime
+FROM eclipse-temurin:17-jre-alpine
+WORKDIR /app
+
+# Create non-root user
+RUN addgroup -S appgroup && adduser -S appuser -G appgroup
+USER appuser
+
+# Copy JAR from build stage
+COPY --from=build /app/target/*.jar app.jar
+
+# Health check
+HEALTHCHECK --interval=30s --timeout=3s --start-period=40s \
+  CMD wget --no-verbose --tries=1 --spider http://localhost:8080/actuator/health || exit 1
+
+# Expose port
+EXPOSE 8080
+
+# Set JVM options
+ENV JAVA_OPTS="-Xms512m -Xmx1024m -XX:+UseG1GC"
+
+# Run application
+ENTRYPOINT ["sh", "-c", "java $JAVA_OPTS -jar app.jar"]</code></pre>
+
+                        <h4>Ejemplo Dockerfile para Node.js</h4>
+                        <pre><code>FROM node:18-alpine AS build
+WORKDIR /app
+
+# Install dependencies (cached layer)
+COPY package*.json ./
+RUN npm ci --only=production
+
+# Copy application code
+COPY . .
+
+# Build production bundle
+RUN npm run build
+
+# Production stage
+FROM node:18-alpine
+WORKDIR /app
+
+# Security: Run as non-root
+RUN addgroup -g 1001 -S nodejs
+RUN adduser -S nextjs -u 1001
+USER nextjs
+
+# Copy built application
+COPY --from=build --chown=nextjs:nodejs /app/dist ./dist
+COPY --from=build --chown=nextjs:nodejs /app/node_modules ./node_modules
+COPY --from=build --chown=nextjs:nodejs /app/package.json ./
+
+EXPOSE 3000
+ENV NODE_ENV=production
+
+CMD ["node", "dist/server.js"]</code></pre>
+                    </div>
+
                     <p>
                         Los registros de containers almacenan y distribuyen imágenes. Docker Hub proporciona registro público con
                         millones de imágenes de terceros. Los registros privados (Amazon ECR, Azure Container Registry, Google
@@ -402,6 +621,150 @@
                         Services (abstracción para acceso a conjunto de Pods), Deployments (gestión declarativa de Pods replicados),
                         ConfigMaps y Secrets (gestión de configuración), y Persistent Volumes (storage duradero).
                     </p>
+
+                    <div class="code-box">
+                        <h4>Ejemplo Kubernetes Deployment y Service</h4>
+                        <pre><code>apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: my-app
+  namespace: production
+  labels:
+    app: my-app
+    version: v1
+spec:
+  replicas: 3
+  revisionHistoryLimit: 10
+  strategy:
+    type: RollingUpdate
+    rollingUpdate:
+      maxSurge: 1
+      maxUnavailable: 0
+  selector:
+    matchLabels:
+      app: my-app
+  template:
+    metadata:
+      labels:
+        app: my-app
+        version: v1
+    spec:
+      containers:
+      - name: my-app
+        image: registry.example.com/my-app:1.2.3
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8080
+          protocol: TCP
+        env:
+        - name: SPRING_PROFILES_ACTIVE
+          value: "production"
+        - name: DATABASE_URL
+          valueFrom:
+            secretKeyRef:
+              name: db-credentials
+              key: url
+        resources:
+          requests:
+            memory: "512Mi"
+            cpu: "500m"
+          limits:
+            memory: "1Gi"
+            cpu: "1000m"
+        livenessProbe:
+          httpGet:
+            path: /actuator/health/liveness
+            port: 8080
+          initialDelaySeconds: 60
+          periodSeconds: 10
+          timeoutSeconds: 3
+          failureThreshold: 3
+        readinessProbe:
+          httpGet:
+            path: /actuator/health/readiness
+            port: 8080
+          initialDelaySeconds: 30
+          periodSeconds: 5
+          timeoutSeconds: 3
+          failureThreshold: 3
+        volumeMounts:
+        - name: config
+          mountPath: /app/config
+          readOnly: true
+      volumes:
+      - name: config
+        configMap:
+          name: my-app-config
+      affinity:
+        podAntiAffinity:
+          preferredDuringSchedulingIgnoredDuringExecution:
+          - weight: 100
+            podAffinityTerm:
+              labelSelector:
+                matchExpressions:
+                - key: app
+                  operator: In
+                  values:
+                  - my-app
+              topologyKey: kubernetes.io/hostname
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: my-app-service
+  namespace: production
+  labels:
+    app: my-app
+spec:
+  type: ClusterIP
+  selector:
+    app: my-app
+  ports:
+  - port: 80
+    targetPort: 8080
+    protocol: TCP
+    name: http
+  sessionAffinity: None
+---
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: my-app-hpa
+  namespace: production
+spec:
+  scaleTargetRef:
+    apiVersion: apps/v1
+    kind: Deployment
+    name: my-app
+  minReplicas: 3
+  maxReplicas: 10
+  metrics:
+  - type: Resource
+    resource:
+      name: cpu
+      target:
+        type: Utilization
+        averageUtilization: 70
+  - type: Resource
+    resource:
+      name: memory
+      target:
+        type: Utilization
+        averageUtilization: 80
+  behavior:
+    scaleDown:
+      stabilizationWindowSeconds: 300
+      policies:
+      - type: Percent
+        value: 50
+        periodSeconds: 60
+    scaleUp:
+      stabilizationWindowSeconds: 0
+      policies:
+      - type: Percent
+        value: 100
+        periodSeconds: 30</code></pre>
+                    </div>
 
                     <p>
                         Kubernetes facilita patrones operacionales sofisticados. El auto-scaling horizontal ajusta número de pod
@@ -447,6 +810,45 @@
                         asociar spike en tasa de error (métrica) con logs específicos y trace de request fallido - facilita
                         debugging efectivo de sistemas distribuidos complejos.
                     </p>
+
+                    <div class="mermaid">
+                    graph TD
+                        A[Tres Pilares Observabilidad] --> B[Métricas]
+                        A --> C[Logs]
+                        A --> D[Traces Distribuidos]
+                        B --> B1[Prometheus]
+                        B --> B2[Grafana]
+                        B --> B3[Counters, Gauges, Histograms]
+                        C --> C1[ELK Stack]
+                        C --> C2[Loki]
+                        C --> C3[Agregación centralizada]
+                        D --> D1[Jaeger]
+                        D --> D2[Zipkin]
+                        D --> D3[OpenTelemetry]
+                    </div>
+
+                    <div class="mermaid">
+                    graph TD
+                        subgraph K8s Control Plane
+                        A[API Server]
+                        B[etcd]
+                        C[Scheduler]
+                        D[Controller Manager]
+                        end
+                        subgraph Worker Nodes
+                        E[kubelet]
+                        F[kube-proxy]
+                        G[Container Runtime]
+                        H[Pods]
+                        end
+                        A --> B
+                        A --> C
+                        A --> D
+                        A --> E
+                        E --> G
+                        G --> H
+                        F --> H
+                    </div>
 
                     <p>
                         El stack de observabilidad típicamente incluye múltiples herramientas especializadas. Prometheus domina
