@@ -1,14 +1,14 @@
-# Especialización en Dirección de Proyectos de Tecnología Informática
+# Diplomado en Dirección de Proyectos de Tecnología Informática
 
-Sitio web educativo completo para la **Especialización en Dirección de Proyectos de Tecnología Informática** de la Universidad Abierta Interamericana (UAI).
+Sitio web educativo completo para el **Diplomado en Dirección de Proyectos de Tecnología Informática** de Liskov Ed Tech.
 
 ## 📚 Descripción
 
-Este proyecto contiene un sitio web completo con 16 clases académicas de aproximadamente 2000 palabras cada una, diseñado como material introductorio para la especialización. Cada clase aborda aspectos fundamentales de la dirección de proyectos de tecnología informática, desde conceptos básicos hasta tendencias emergentes.
+Este proyecto contiene un sitio web completo con 16 clases académicas de aproximadamente 4000 palabras cada una, diseñado como material educativo para el diplomado. Cada clase aborda aspectos fundamentales de la dirección de proyectos de tecnología informática, desde conceptos básicos hasta tendencias emergentes.
 
 ## 🎯 Características
 
-- **16 Clases Completas**: Contenido académico riguroso de ~2000 palabras por clase
+- **16 Clases Completas**: Contenido académico riguroso de ~4000-5000 palabras por clase
 - **Estructura Académica**: Cada clase contiene 6 subtemas principales
 - **Diagramas Visuales**: Integración de Mermaid.js para diagramas interactivos
 - **Diseño Responsivo**: Adaptable a diferentes dispositivos
@@ -105,49 +105,20 @@ cd Direccion-de-Proyectos-de-Tecnologia-Informatica
   - Diagramas de arquitectura
 
 ### Estilo Académico
-- Paleta de colores institucional UAI
+- Paleta de colores profesional
 - Tipografía clara y legible
 - Espaciado optimizado para lectura prolongada
 - Estructura jerárquica de contenidos
 
-## 🎓 Información Académica
-
-**Institución**: Universidad Abierta Interamericana (UAI)
-**Programa**: Especialización en Dirección de Proyectos de Tecnología Informática
-**Acreditación**: CONEAU Sesión N° 619 - RCS 6350/23
-**Modalidad**: Virtual
-**Duración**: 1 año y medio + trabajo final
-
-### Director Académico
-Dr. Rubén Leandro Antonelli
-
-### Secretaria Académica
-Dra. Roxana Martínez
-
-## 📞 Contacto
-
-- **Dirección**: Av. San Juan 951, 10mo Piso, CABA
-- **WhatsApp**: +54 9 11 2759-1488
-- **Email**: posgrados@uai.edu.ar
-- **Web**: www.uai.edu.ar
-
-## 📝 Licencia
-
-Este contenido ha sido creado para fines educativos basándose en el programa oficial de la Especialización en Dirección de Proyectos de Tecnología Informática de la UAI.
-
-## 🤝 Contribuciones
-
-Este proyecto es material educativo introductorio. Para información oficial sobre el programa, visite www.uai.edu.ar o contacte a posgrados@uai.edu.ar
-
 ## 📊 Estadísticas del Proyecto
 
 - **Total de clases**: 16
-- **Palabras por clase**: ~2000
-- **Total de palabras**: ~32,000
-- **Subtemas por clase**: 6
-- **Total de subtemas**: 96
-- **Diagramas Mermaid**: 50+
-- **Líneas de código**: 10,000+
+- **Palabras por clase**: ~4000-5500
+- **Total de palabras**: ~72,000+
+- **Subtemas por clase**: 6+
+- **Total de subtemas**: 96+
+- **Diagramas Mermaid**: 100+
+- **Líneas de código**: 14,500+
 
 ## 🔍 Temas Cubiertos
 
@@ -177,5 +148,5 @@ Este proyecto es material educativo introductorio. Para información oficial sob
 
 ---
 
-**Desarrollado para la Universidad Abierta Interamericana**
-*Material educativo introductorio - 2025*
+**Desarrollado por Liskov Ed Tech**
+*Material educativo para el Diplomado en Dirección de Proyectos TI - 2025*
