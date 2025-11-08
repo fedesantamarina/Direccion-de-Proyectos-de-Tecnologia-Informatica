@@ -488,6 +488,47 @@
                         conduce a mejora continua.
                     </p>
 
+                    <p>
+                        El chaos engineering representa práctica emergente de inyectar fallos deliberadamente en sistemas de producción
+                        para validar resiliencia y descubrir debilidades antes de que causen incidentes reales. Popularizado por Netflix
+                        mediante Chaos Monkey y la Simian Army, el chaos engineering reconoce que en sistemas distribuidos complejos, los
+                        fallos son inevitables y los ingenieros deben diseñar para resiliencia en lugar de prevención total de fallos.
+                        Los experimentos de caos comienzan con hipótesis sobre estado estable del sistema, introducen variables caóticas
+                        controladas como latencia de red, fallos de servicios o desconexión de datacenters, y observan si el sistema
+                        mantiene estado estable. Los experimentos que falsifican hipótesis revelan debilidades a corregir.
+                    </p>
+
+                    <p>
+                        La adopción progresiva de chaos engineering comienza con ambientes no productivos, expandiéndose gradualmente a
+                        producción a medida que confianza aumenta. Los game days programan ejercicios donde equipos simulan incidentes
+                        mayores, practicando respuesta coordinada y validando runbooks. Esta práctica contraintintuitiva de romper
+                        deliberadamente sistemas paradójicamente aumenta confiabilidad al forzar diseño de sistemas resistentes a fallos
+                        parciales, redundancia apropiada, degradación graceful y recuperación automática. Las organizaciones maduras en
+                        SRE consideran chaos engineering componente esencial de ingeniería de confiabilidad, no actividad opcional o
+                        experimental. Los directores de proyectos deben facilitar adopción de chaos engineering mediante sponsorship
+                        ejecutivo, asignación de tiempo dedicado y creación de cultura que valora aprendizaje de experimentos en lugar de
+                        castigar revelación de debilidades.
+                    </p>
+
+                    <p>
+                        Las retrospectivas de incidentes sin culpa constituyen mecanismo clave de aprendizaje organizacional en cultura
+                        DevOps. Cuando ocurren incidentes de producción, el objetivo del post-mortem no es identificar culpables sino
+                        comprender cadenas de causalidad, identificar factores contribuyentes sistémicos y desarrollar acciones correctivas
+                        que prevengan recurrencia. El modelo de queso suizo de Reason reconoce que incidentes raramente resultan de error
+                        individual sino de alineación de múltiples fallos latentes en sistemas complejos. Las retrospectivas efectivas
+                        documentan timeline detallado, impact cuantitativo, factores contribuyentes, acciones correctivas con responsables
+                        y fechas, y lecciones aprendidas compartidas ampliamente. La publicación externa de post-mortems, practicada por
+                        organizaciones como Google y Amazon, demuestra transparencia y contribuye al aprendizaje de industria completa.
+                    </p>
+
+                    <p>
+                        La evolución de DevOps hacia DevSecOps integra seguridad desde el inicio del ciclo de desarrollo en lugar de
+                        tratarla como gate final previo a producción. Security as Code automatiza verificaciones de seguridad en pipelines
+                        CI/CD mediante análisis estático de código, scanning de vulnerabilidades de dependencias, análisis de configuración
+                        de infraestructura y testing de penetración automatizado. Esta integración temprana detecta vulnerabilidades cuando
+                        son económicas de corregir y previene acumulación de deuda de seguridad.
+                    </p>
+
                     <div class="important-box">
                         <h4>Reflexión: DevOps como Habilitador de Excelencia en Entrega</h4>
                         <p>
