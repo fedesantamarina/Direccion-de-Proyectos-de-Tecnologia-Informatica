@@ -105,6 +105,67 @@
                             <li><strong>Calidad en Uso:</strong> Experiencia del usuario en contextos específicos de utilización</li>
                         </ul>
                     </div>
+
+                    <h3>1.1 El Costo de la No-Calidad</h3>
+
+                    <p>
+                        Comprender el costo de la no-calidad resulta fundamental para justificar inversiones en prácticas de calidad.
+                        El costo de la calidad se divide conceptualmente en dos categorías principales: el costo de conformidad
+                        (inversión en prevención y evaluación) y el costo de no conformidad (fallos internos y externos). Los
+                        estudios empíricos consistentemente demuestran que la inversión en prevención y detección temprana de
+                        defectos genera retornos significativos mediante la reducción de costos de fallo.
+                    </p>
+
+                    <p>
+                        La regla 1-10-100 ilustra la economía de la calidad del software: un defecto que cuesta 1 unidad
+                        corregir durante el diseño, costará 10 unidades corregir durante la implementación y 100 unidades
+                        corregir después del despliegue en producción. Esta progresión exponencial refleja el esfuerzo creciente
+                        de identificar la causa raíz, coordinar correcciones a través de múltiples componentes potencialmente
+                        afectados, gestionar impactos en usuarios y clientes, y mantener compatibilidad con sistemas dependientes.
+                    </p>
+
+                    <p>
+                        Los costos de no-calidad externa incluyen no solo la remediación directa de defectos sino también impactos
+                        en reputación, pérdida de clientes, penalizaciones contractuales, responsabilidad legal y oportunidad de
+                        negocio perdida. El colapso del sistema de reservas de British Airways en 2017, atribuido a problemas de
+                        alimentación eléctrica agravados por procedimientos inadecuados, costó a la empresa aproximadamente 80
+                        millones de libras en compensaciones y pérdida de ingresos, además de daño reputacional incalculable.
+                    </p>
+
+                    <div class="mermaid">
+                    pie title Distribución del Costo de Calidad
+                        "Prevención" : 10
+                        "Evaluación" : 25
+                        "Fallos Internos" : 25
+                        "Fallos Externos" : 40
+                    </div>
+
+                    <h3>1.2 Calidad vs. Velocidad: Un Falso Dilema</h3>
+
+                    <p>
+                        La tensión aparente entre calidad y velocidad de entrega constituye uno de los debates recurrentes en
+                        proyectos de tecnología informática. Frecuentemente se presenta como un trade-off inevitable: podemos
+                        entregar rápido o entregar con calidad, pero no ambos. Sin embargo, esta dicotomía representa una
+                        comprensión superficial de la dinámica real. La evidencia empírica de organizaciones de alto desempeño
+                        demuestra que calidad y velocidad no son mutuamente excluyentes sino mutuamente reforzantes.
+                    </p>
+
+                    <p>
+                        El concepto de deuda técnica, acuñado por Ward Cunningham, proporciona un marco útil para comprender
+                        esta relación. Así como la deuda financiera puede ser herramienta útil si se gestiona apropiadamente,
+                        la deuda técnica (decisiones de diseño subóptimas tomadas conscientemente para acelerar entrega) puede
+                        ser aceptable si es intencional, documentada y planificada para remediación. El problema surge cuando
+                        la deuda técnica se acumula de manera no intencional e incontrolada, eventualmente "bankroteando" la
+                        capacidad del equipo de entregar funcionalidad nueva.
+                    </p>
+
+                    <p>
+                        Las prácticas de ingeniería modernas como integración continua, testing automatizado, infraestructura
+                        como código y despliegue continuo demuestran que la inversión en calidad de procesos y automatización
+                        actualmente habilita velocidad de entrega sin precedentes. Organizaciones como Amazon, Google y Netflix
+                        despliegan cambios a producción miles de veces por día manteniendo alta confiabilidad, no a pesar de
+                        sus prácticas de calidad sino debido a ellas.
+                    </p>
                 </section>
 
                 <section>
@@ -168,6 +229,68 @@
                         G --> G1[Auditorías Internas]
                         G --> G2[Revisión por Dirección]
                     </div>
+
+                    <h3>2.1 Certificación ISO 9001: Proceso y Beneficios</h3>
+
+                    <p>
+                        La certificación ISO 9001 involucra un proceso estructurado de implementación del sistema de gestión de
+                        calidad, auditoría externa independiente y certificación formal. El proceso típicamente comienza con un
+                        análisis de brechas (gap analysis) que compara prácticas actuales contra requisitos del estándar,
+                        identificando áreas que requieren desarrollo o mejora. Esta evaluación inicial proporciona la base para
+                        planificar la implementación del sistema de gestión de calidad.
+                    </p>
+
+                    <p>
+                        La implementación incluye documentación de procesos, establecimiento de objetivos de calidad medibles,
+                        definición de roles y responsabilidades, implementación de controles operacionales y establecimiento de
+                        mecanismos de monitoreo y medición. En organizaciones de desarrollo de software, esto frecuentemente
+                        implica formalizar prácticas que pueden haberse ejecutado informalmente, así como introducir nuevas
+                        prácticas para abordar requisitos específicos del estándar.
+                    </p>
+
+                    <p>
+                        La auditoría de certificación típicamente ocurre en dos etapas. La etapa 1 revisa la documentación del
+                        sistema de gestión de calidad para verificar que aborda todos los requisitos de ISO 9001 y que el
+                        sistema está listo para auditoría completa. La etapa 2 evalúa la implementación efectiva del sistema
+                        mediante entrevistas, observación de operaciones y revisión de registros. Si la auditoría identifica
+                        no conformidades, la organización debe implementar acciones correctivas antes de que se otorgue la
+                        certificación.
+                    </p>
+
+                    <p>
+                        Los beneficios de la certificación ISO 9001 incluyen mejora de procesos organizacionales, incremento
+                        en satisfacción del cliente, reducción de desperdicios y retrabajo, mejora en moral y comunicación
+                        del equipo, y acceso a mercados que requieren certificación como condición de participación. En
+                        licitaciones gubernamentales y proyectos empresariales grandes, la certificación ISO 9001 frecuentemente
+                        constituye un requisito mínimo de calificación o proporciona ventaja competitiva significativa.
+                    </p>
+
+                    <h3>2.2 ISO 9001 en Contextos Ágiles</h3>
+
+                    <p>
+                        La integración de ISO 9001 con metodologías ágiles inicialmente generó debates sobre compatibilidad.
+                        Los críticos argumentaban que los requisitos de documentación y procesos formales de ISO 9001 contradecían
+                        los valores ágiles de "software funcionando sobre documentación exhaustiva" y "respuesta al cambio sobre
+                        seguimiento de un plan". Sin embargo, análisis más matizados reconocen que ISO 9001:2015, con su énfasis
+                        reducido en procedimientos documentados obligatorios, permite flexibilidad considerable en implementación.
+                    </p>
+
+                    <p>
+                        Las prácticas ágiles pueden satisfacer requisitos de ISO 9001 de maneras que son naturales al enfoque
+                        ágil. Las historias de usuario y criterios de aceptación documentan requisitos. Los sprints planificados
+                        y retrospectivas proporcionan mecanismos de planificación y mejora. Las definiciones de "hecho" (Definition
+                        of Done) establecen criterios de calidad. Los backlogs priorizados gestionan requisitos cambiantes. Los
+                        burndown charts y métricas de velocidad monitorean progreso. La clave es reconocer que ISO 9001 prescribe
+                        resultados (el "qué") pero permite flexibilidad en métodos (el "cómo").
+                    </p>
+
+                    <p>
+                        Organizaciones exitosas que integran ISO 9001 y agilidad típicamente adoptan enfoque de "conformidad
+                        ligera", documentando lo necesario para cumplir requisitos del estándar sin introducir burocracia
+                        innecesaria. Utilizan herramientas digitales (wikis, sistemas de gestión de backlog, herramientas de
+                        CI/CD) para capturar información de calidad de manera que sea útil para el trabajo diario además de
+                        demostrar conformidad con el estándar.
+                    </p>
                 </section>
 
                 <section>

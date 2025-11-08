@@ -534,6 +534,58 @@
                         optimización limitado.
                     </p>
 
+                    <p>
+                        Las decisiones arquitectónicas deben documentarse mediante Architectural Decision Records (ADRs), formato
+                        estructurado que captura contexto, decisión tomada, alternativas consideradas, y consecuencias esperadas. Los
+                        ADRs crean registro histórico invaluable que explica por qué el sistema es como es, facilitando que futuros
+                        desarrolladores comprendan razonamiento en lugar de percibir arquitectura como conjunto arbitrario de restricciones.
+                        Los ADRs típicamente incluyen: título descriptivo, estado (propuesto, aceptado, deprecated), contexto que motiva
+                        la decisión, decisión específica tomada, consecuencias positivas y negativas, y enlaces a ADRs relacionados. La
+                        inmutabilidad de ADRs preserva historia; cuando decisiones cambian, se deprecan ADRs antiguos y crean nuevos en
+                        lugar de modificar registros existentes.
+                    </p>
+
+                    <p>
+                        El fitness functions concept de Neal Ford proporciona mecanismo para verificar objetivamente si arquitectura
+                        mantiene características deseadas a medida que sistema evoluciona. Los fitness functions son verificaciones automatizadas
+                        que validan propiedades arquitectónicas: límites de latencia de componentes críticos, restricciones de dependencias
+                        entre módulos, cumplimiento de estándares de seguridad, límites de tamaño de deployables. Estos tests ejecutados
+                        en pipelines CI previenen architectural drift - deterioro gradual de integridad arquitectónica mediante violaciones
+                        acumulativas pequeñas que colectivamente degradan calidad sistémica. Los fitness functions transforman aspiraciones
+                        arquitectónicas de documentos estáticos en guardrails ejecutables que protegen inversión en arquitectura.
+                    </p>
+
+                    <p>
+                        La refactorización arquitectónica representa categoría de trabajo técnico frecuentemente subestimado en planificación
+                        de proyectos. Los sistemas evolucionan; arquitecturas apropiadas para fase inicial pueden volverse inadecuadas para
+                        escala futura. El strangler fig pattern facilita migración gradual de arquitectura legacy a nueva mediante
+                        reemplazo incremental de componentes en lugar de reescrituras big-bang arriesgadas. Los seams arquitectónicos son
+                        puntos de división natural donde sistema puede partirse limpiamente, facilitando evolución modular. La asignación
+                        deliberada de tiempo para refactorización arquitectónica en roadmaps de producto previene acumulación de deuda
+                        técnica que eventualmente bloquea velocity completamente. El balance entre features nuevos y trabajo arquitectónico
+                        representa trade-off estratégico donde directores de proyectos deben facilitar conversaciones informadas entre
+                        stakeholders técnicos y de negocio.
+                    </p>
+
+                    <p>
+                        El concepto de arquitectura evolutiva reconoce que sistemas exitosos de larga vida deben adaptarse continuamente
+                        a requisitos cambiantes, tecnologías emergentes y contextos de negocio dinámicos. La arquitectura evolutiva se
+                        diseña explícitamente para cambio incremental y guiado mediante principios de modularidad fuerte, acoplamiento
+                        bajo, cohesión alta y fitness functions que protegen características arquitectónicas durante evolución. Los sistemas
+                        construidos con mentalidad evolutiva mantienen opciones abiertas, difieren decisiones irreversibles hasta disponer
+                        de información suficiente, y emplean técnicas como feature toggles para desacoplar deployment de release. Esta
+                        filosofía reconoce que no podemos predecir perfectamente requisitos futuros; por tanto, debemos diseñar sistemas
+                        que puedan evolucionar responsivamente en lugar de arquitecturas rígidas optimizadas prematuramente para escenarios
+                        especulativos que pueden nunca materializarse.
+                    </p>
+
+                    <p>
+                        La gobernanza arquitectónica establece mecanismos para asegurar que decisiones de diseño e implementación
+                        alineadas con principios y estándares arquitectónicos organizacionales. Los comités de revisión arquitectónica
+                        evalúan propuestas significativas antes de implementación. Las guías y patrones arquitectónicos documentados
+                        proporcionan dirección consistente.
+                    </p>
+
                     <div class="important-box">
                         <h4>Reflexión: Arquitectura como Serie de Trade-offs</h4>
                         <p>
